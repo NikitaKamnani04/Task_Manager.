@@ -18,7 +18,7 @@
                     <input type="text" placeholder="Search.." name="search"
                         class="border border-red  ps-4 m-2 rounded-pill">
                     <span type="submit"><i
-                            class="fa fa-search  p-3 position-absolute top-50 end-0 translate-middle"></i></span>
+                            class="fa fa-search  pe-2 position-absolute top-50 end-0 translate-middle"></i></span>
                 </form>
             </div>
 
@@ -28,7 +28,7 @@
             <i class="fa-regular fa-question  border rounded-3 p-2"></i>
         </div>
     </div>
-    <div class="sidebar-top ">
+    <div class="sidebar">
 
         <div id="sidebar-wrapper" class="border-end ">
             <ul class="sidebar-nav nav-pills nav-stacked border-bottom pb-2" id="menu">
@@ -36,9 +36,20 @@
                     <a href="#"><span class="fa-stack fa-lg pull-left"><i
                                 class="fa fa-dashboard fa-stack-1x "></i></span> Dashboard</a>
                 </li>
+
                 <li>
                     <a href="#"><span class="fa-stack fa-lg pull-left"><i
-                                class="fa fa-list-check fa-stack-1x "></i></span>Task</a>
+                                class="fa fa-list-check fa-stack-1x "></i></span>Projects</a>
+
+                </li>
+                <li>
+                    <a href="#"><span class="fa-stack fa-lg pull-left"><i
+                                class="fa fa-list-check fa-stack-1x "></i></span>Leaves</a>
+
+                </li>
+                <li>
+                    <a href="#"><span class="fa-stack fa-lg pull-left"><i
+                                class="fa fa-list-check fa-stack-1x "></i></span>Events</a>
 
                 </li>
                 <li>
@@ -51,6 +62,63 @@
         </div>
         <div class="sign_out  mb-1  py-3 rounded-3 fs-5 position-absolute bottom-0 start-0 border-top"> <i
                 class="fa-solid fa-arrow-right-from-bracket"></i><span class="ms-3">Sign Out</span></div>
+    </div>
+    <div class="body pt-4 position-relative">
+        <div class="body_top ps-4 ">
+            <span class="fs-4  ">Welcome User Name</span>
+            <span class="position-absolute end-0 px-4 py-3 me-4 bg-success text-white rounded">Clock In</span>
+        </div>
+        <div class="m-4 p-4 d-flex">
+            <div class="user_card p-4  ">
+                <div class="d-flex border-bottom border-danger pb-3">
+                    <img src="https://images.freeimages.com/365/images/istock/previews/1009/100996291-male-avatar-profile-picture-vector.jpg"
+                        alt="">
+                    <div class="">
+                        <div class="ms-3 mt-2 ">
+                            <div>
+                                <span>Employee Name</span><br>
+                                <span>Department</span><br>
+                            </div>
+                            <div class="pt-3"><span>Employee Id </span></div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="user_task d-flex justify-content-between mt-2">
+                    <div class="tasks">Tasks</div>
+                    <div class="projects">Projects</div>
+                </div>
+                <div class="user_task d-flex justify-content-between mt-2">
+                    <div class="tasks fs-2">0</div>
+                    <div class="projects fs-2">0</div>
+                </div>
+            </div>
+
+            <div class="task_card">
+                <div class="task_card_header p-3 d-flex justify-content-between">
+                    <div class="container_task d-flex align_items-center">
+                        <div class="today_task px-3 fs-5 ">
+                            <p>Today's Tasks <span class="ms-3 p-1  rounded-3 bg-dark text-white">105</span></p>
+                        </div>
+                        <div class="upcoming px-3 fs-5">
+                            <p>Upcoming <span class="ms-3 p-1  rounded-3 bg-dark text-white">99</span></p>
+                        </div>
+
+                    </div>
+                    <div class="search_box  fs-5">
+                        <div class=" search_bar_task border border-danger rounded-pill position-relative">
+                            <form class="">
+                                <input type="text" placeholder="Search.." name="search"
+                                    class=" task_search border border-red  ps-4 m-2 rounded-pill">
+                                <span type="submit"><i
+                                        class="fa fa-search  pe-1  position-absolute top-50 end-0 translate-middle"></i></span>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
 
 </div>

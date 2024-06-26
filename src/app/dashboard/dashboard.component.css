@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+}
+.profile_avatar {
+  width: 50px;
+  height: 50px;
+}
+
+body {
+  overflow: hidden;
+}
+
+.user_info {
+  padding-left: 10px;
+}
+
+.search {
+  position: relative;
+}
+
+.sign_out {
+  padding: 68px;
+}
+input {
+  width: 500px;
+  padding-left: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-items: center;
+}
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: absolute;
+  left: 250px;
+  width: 0;
+  height: -webkit-fill-available;
+  margin-left: -250px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-top: 2px;
+}
+
+.sidebar-nav li {
+  text-indent: 15px;
+  line-height: 40px;
+  border-right: #999999;
+}
+
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #000000;
+  border-right: #999999;
+}
+
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  color: #392ddf;
+  background: rgba(240, 66, 66, 0.2);
+  border-left: red 2px solid;
+}
+
+.body {
+  width: 85%;
+  height: 700px;
+  /* background-color: rgb(148, 236, 229); */
+  margin-left: 13%;
+}
+.col-8 {
+  width: 62.666667%;
+  height: 500px;
+}
+img {
+  width: 100px;
+  height: 100px;
+}
+.user_card {
+  width: 37%;
+  height: 250px;
+  background-color: bisque;
+  border-radius: 10px;
+}
+.task_card {
+  width: 60%;
+  height: 250px;
+  margin-left: 3%;
+  /* background-color: bisque; */
+  border: 2px solid #999999;
+  border-radius: 15px;
+}
+.task_card_header {
+  width: 100%;
+  height: 40%;
+  /* background-color: #f17c7c; */
+  border-bottom: 2px solid #999999;
+}
+.today_task {
+  height: 50px;
+  width: 210px;
+  padding: 12px;
+  background-color: #999999;
+  border-radius: 10px;
+}
+.upcoming {
+  height: 50px;
+
+  padding: 12px;
+  /* background-color: #999999; */
+  font-style: bold;
+}
+.task_search {
+  width: 250px;
+  padding-right: 15%;
+  border: none;
+}
+.search_bar_task {
+  width: 300px;
+  height: 52px;
+}
+
+@media (min-width: 768px) {
+  .fixed-brand {
+    width: 250px;
+  }
+
+  #sidebar-wrapper {
+    border-right: #999999;
+    width: 250px;
+  }
+}
