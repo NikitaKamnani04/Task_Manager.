@@ -1,0 +1,75 @@
+/* body{
+    background-color: black;
+} */
+
+/* .main-container {
+    background-color: black;
+    width: 100%;
+} */
+
+.col h5{
+    color: white;
+}
+.container {
+    /* background-color: black; */
+    margin-top: 10%;
+}
+
+.mb-3 {
+    width: 43%;
+}
+
+.mb-3 input {
+    /* width: 60%; */
+    padding: 10px;
+}
+
+.mb-3 label{
+    color: white;
+}
+
+
+
+.mb-3 button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5%;
+}
+
+.mb-3 svg {
+    width: 14%;
+    /* margin: 5px 1px 20px 20px; */
+    margin: 12px 10px;
+    background-color: white;
+    border-radius: 60%;
+    /* border: 5px ; */
+    padding: 5px;
+}
+
+.mb-3 .form-account {
+    margin-left: 60%;
+}
+
+.mb-3 a{
+    color: white;
+    margin-left: 63%;
+   
+}
+
+/* .col-1 {
+    margin-right: 50px;
+} */
+
+.col h5{
+    margin-bottom: 5%;
+}
+
+.card-body {
+    --mask: radial-gradient(50px at 100% 0,#0000 98%,#000);
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+  }
+
+  .mb-4{
+    margin: 1px 17px 4px 77px;
+  }
