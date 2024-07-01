@@ -1,40 +1,9 @@
 <div class="parent d-flex justify-content-between">
-    <div id="sidebar">
-        <app-sidebar></app-sidebar>
-    </div>
     <div class="body pt-4 position-relative w-100">
-
-        <!-- <div class="body_top ps-4 ">
-            <span class="fs-4  ">Employees</span>
-
-            <span class=" button-36 position-absolute end-0 px-4 py-2 me-4 fs-3 ">Clock In</span>
-        </div> -->
+        <div id="sidebar">
+            <app-sidebar></app-sidebar>
+        </div>
         <div class="m-4 p-4 d-flex">
-            <!-- <div class="user_card p-4  ">
-                <div class=" user_card_head d-flex   pb-3">
-                    <img src="https://images.freeimages.com/365/images/istock/previews/1009/100996291-male-avatar-profile-picture-vector.jpg"
-                        alt="">
-                    <div class="">
-                        <div class="ms-3 mt-2 ">
-                            <div>
-                                <span>Employee Name</span><br>
-                                <span>Department</span><br>
-                            </div>
-                            <div class="pt-3"><span>Employee Id </span></div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="user_task d-flex justify-content-between mt-2">
-                    <div class="tasks">Tasks</div>
-                    <div class="projects">Projects</div>
-                </div>
-                <div class="user_task d-flex justify-content-between mt-2">
-                    <div class="tasks fs-2">0</div>
-                    <div class="projects fs-2">0</div>
-                </div>
-            </div> -->
-
 
             <div class="task_card">
                 <div class="task_card_header p-3 ">
@@ -64,518 +33,575 @@
                 </div>
                 <div class="task_card_body d-flex justify-content-center align_items-center align-items-center ">
                     <div class="task_card_table  fs-5 pl-3">
-                        <div class="grid">
-                            <div class="grid-container">
+                        <div class="table_head">
+                            <span class="number">No.</span>
+                            <span class="name">Full Name </span>
+                            <span class="email">Email</span>
+                            <span class="gender">Gender</span>
+                            <span class="dob">D_O_B</span>
+                            <span class="join_date">Join Date</span>
+                            <span class="department">Department</span>
+                            <span class="role">Role</span>
+                            <span class="actions">Actions</span>
+                        </div>
+                        <div class="tableFixHead">
+                            <table>
 
-                                <!-- <table class="table table-borderless scrolldown"> -->
-                                <table class="table table-responsive">
-                                    <thead >
-                                        <tr class="border  pt-3">
-                                            <th>No. <div class="pb-5">No.</div>
-                                            </th>
-                                            <th>Full Name <div>Full Name</div>
-                                            </th>
-                                            <th>Email <div>Email</div>
-                                            </th>
-                                            <th>Gender<div>Gender</div>
-                                            </th>
-                                            <th>D-O-B <div>D-O-B</div>
-                                            </th>
-                                            <th>Join Date <div>Join Date</div>
-                                            </th>
-                                            <th>Role <div>Role</div>
-                                            </th>
-                                            <th>Department <div>Department</div></th>
-                                            <th>Action<div>Actions</div></th>
-                                            
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark jacob</td>
-                                            <td>mark@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>23-8-1984</td>
-                                            <td>4-7-206</td>
-                                            <td>Civil</td>
-                                            <td>Estimator</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>John Benz</td>
-                                            <td>benz@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>14-3-1974</td>
-                                            <td>14-9-2019</td>
-                                            <td>IT</td>
-                                            <td>Front End</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark jacob</td>
-                                            <td>mark@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>23-8-1984</td>
-                                            <td>4-7-206</td>
-                                            <td>Civil</td>
-                                            <td>Estimator</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>John Benz</td>
-                                            <td>benz@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>14-3-1974</td>
-                                            <td>14-9-2019</td>
-                                            <td>IT</td>
-                                            <td>Front End</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark jacob</td>
-                                            <td>mark@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>23-8-1984</td>
-                                            <td>4-7-206</td>
-                                            <td>Civil</td>
-                                            <td>Estimator</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>John Benz</td>
-                                            <td>benz@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>14-3-1974</td>
-                                            <td>14-9-2019</td>
-                                            <td>IT</td>
-                                            <td>Front End</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark jacob</td>
-                                            <td>mark@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>23-8-1984</td>
-                                            <td>4-7-206</td>
-                                            <td>Civil</td>
-                                            <td>Estimator</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>John Benz</td>
-                                            <td>benz@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>14-3-1974</td>
-                                            <td>14-9-2019</td>
-                                            <td>IT</td>
-                                            <td>Front End</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark jacob</td>
-                                            <td>mark@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>23-8-1984</td>
-                                            <td>4-7-206</td>
-                                            <td>Civil</td>
-                                            <td>Estimator</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>John Benz</td>
-                                            <td>benz@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>14-3-1974</td>
-                                            <td>14-9-2019</td>
-                                            <td>IT</td>
-                                            <td>Front End</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark jacob</td>
-                                            <td>mark@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>23-8-1984</td>
-                                            <td>4-7-206</td>
-                                            <td>Civil</td>
-                                            <td>Estimator</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>John Benz</td>
-                                            <td>benz@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>14-3-1974</td>
-                                            <td>14-9-2019</td>
-                                            <td>IT</td>
-                                            <td>Front End</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark jacob</td>
-                                            <td>mark@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>23-8-1984</td>
-                                            <td>4-7-206</td>
-                                            <td>Civil</td>
-                                            <td>Estimator</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>John Benz</td>
-                                            <td>benz@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>14-3-1974</td>
-                                            <td>14-9-2019</td>
-                                            <td>IT</td>
-                                            <td>Front End</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark jacob</td>
-                                            <td>mark@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>23-8-1984</td>
-                                            <td>4-7-206</td>
-                                            <td>Civil</td>
-                                            <td>Estimator</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>John Benz</td>
-                                            <td>benz@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>14-3-1974</td>
-                                            <td>14-9-2019</td>
-                                            <td>IT</td>
-                                            <td>Front End</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark jacob</td>
-                                            <td>mark@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>23-8-1984</td>
-                                            <td>4-7-206</td>
-                                            <td>Civil</td>
-                                            <td>Estimator</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>John Benz</td>
-                                            <td>benz@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>14-3-1974</td>
-                                            <td>14-9-2019</td>
-                                            <td>IT</td>
-                                            <td>Front End</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark jacob</td>
-                                            <td>mark@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>23-8-1984</td>
-                                            <td>4-7-206</td>
-                                            <td>Civil</td>
-                                            <td>Estimator</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>John Benz</td>
-                                            <td>benz@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>14-3-1974</td>
-                                            <td>14-9-2019</td>
-                                            <td>IT</td>
-                                            <td>Front End</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark jacob</td>
-                                            <td>mark@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>23-8-1984</td>
-                                            <td>4-7-206</td>
-                                            <td>Civil</td>
-                                            <td>Estimator</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>John Benz</td>
-                                            <td>benz@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>14-3-1974</td>
-                                            <td>14-9-2019</td>
-                                            <td>IT</td>
-                                            <td>Front End</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark jacob</td>
-                                            <td>mark@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>23-8-1984</td>
-                                            <td>4-7-206</td>
-                                            <td>Civil</td>
-                                            <td>Estimator</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>John Benz</td>
-                                            <td>benz@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>14-3-1974</td>
-                                            <td>14-9-2019</td>
-                                            <td>IT</td>
-                                            <td>Front End</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark jacob</td>
-                                            <td>mark@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>23-8-1984</td>
-                                            <td>4-7-206</td>
-                                            <td>Civil</td>
-                                            <td>Estimator</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>John Benz</td>
-                                            <td>benz@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>14-3-1974</td>
-                                            <td>14-9-2019</td>
-                                            <td>IT</td>
-                                            <td>Front End</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark jacob</td>
-                                            <td>mark@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>23-8-1984</td>
-                                            <td>4-7-206</td>
-                                            <td>Civil</td>
-                                            <td>Estimator</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>John Benz</td>
-                                            <td>benz@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>14-3-1974</td>
-                                            <td>14-9-2019</td>
-                                            <td>IT</td>
-                                            <td>Front End</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark jacob</td>
-                                            <td>mark@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>23-8-1984</td>
-                                            <td>4-7-206</td>
-                                            <td>Civil</td>
-                                            <td>Estimator</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>John Benz</td>
-                                            <td>benz@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>14-3-1974</td>
-                                            <td>14-9-2019</td>
-                                            <td>IT</td>
-                                            <td>Front End</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark jacob</td>
-                                            <td>mark@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>23-8-1984</td>
-                                            <td>4-7-206</td>
-                                            <td>Civil</td>
-                                            <td>Estimator</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>John Benz</td>
-                                            <td>benz@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>14-3-1974</td>
-                                            <td>14-9-2019</td>
-                                            <td>IT</td>
-                                            <td>Front End</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark jacob</td>
-                                            <td>mark@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>23-8-1984</td>
-                                            <td>4-7-206</td>
-                                            <td>Civil</td>
-                                            <td>Estimator</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>John Benz</td>
-                                            <td>benz@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>14-3-1974</td>
-                                            <td>14-9-2019</td>
-                                            <td>IT</td>
-                                            <td>Front End</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark jacob</td>
-                                            <td>mark@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>23-8-1984</td>
-                                            <td>4-7-206</td>
-                                            <td>Civil</td>
-                                            <td>Estimator</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>John Benz</td>
-                                            <td>benz@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>14-3-1974</td>
-                                            <td>14-9-2019</td>
-                                            <td>IT</td>
-                                            <td>Front End</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark jacob</td>
-                                            <td>mark@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>23-8-1984</td>
-                                            <td>4-7-206</td>
-                                            <td>Civil</td>
-                                            <td>Estimator</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>John Benz</td>
-                                            <td>benz@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>14-3-1974</td>
-                                            <td>14-9-2019</td>
-                                            <td>IT</td>
-                                            <td>Front End</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mark jacob</td>
-                                            <td>mark@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>23-8-1984</td>
-                                            <td>4-7-206</td>
-                                            <td>Civil</td>
-                                            <td>Estimator</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>John Benz</td>
-                                            <td>benz@gmail.com</td>
-                                            <td>Male</td>
-                                            <td>14-3-1974</td>
-                                            <td>14-9-2019</td>
-                                            <td>IT</td>
-                                            <td>Front End</td>
-                                            <td><i class="fa-regular update_icon fa-pen-to-square"></i><span
-                                                    class="del_icon"><i class="fa-solid fa-trash"></i></span></td>
-                                        </tr>
+                                <tbody>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td>
+                                            <div class="name_info">Prince paleawer</div>
+                                        </td>
+                                        <td>
+                                            <div class="email_info">Princepaleawer@gmail.com</div>
+                                        </td>
+                                        <td>
+                                            <div class="gender_info">Female</div>
+                                        </td>
+                                        <td>
+                                            <div class="dob_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="join_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="dep_info">Information Technology</div>
+                                        </td>
+                                        <td>
+                                            <div class="role_info">Software Developer</div>
+                                        </td>
+                                        <td>
+                                            <div class="action_info"><span><i
+                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
+                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td>
+                                            <div class="name_info">Prince paleawer</div>
+                                        </td>
+                                        <td>
+                                            <div class="email_info">Princepaleawer@gmail.com</div>
+                                        </td>
+                                        <td>
+                                            <div class="gender_info">Female</div>
+                                        </td>
+                                        <td>
+                                            <div class="dob_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="join_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="dep_info">Information Technology</div>
+                                        </td>
+                                        <td>
+                                            <div class="role_info">Software Developer</div>
+                                        </td>
+                                        <td>
+                                            <div class="action_info"><span><i
+                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
+                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td>
+                                            <div class="name_info">Prince paleawer</div>
+                                        </td>
+                                        <td>
+                                            <div class="email_info">Princepaleawer@gmail.com</div>
+                                        </td>
+                                        <td>
+                                            <div class="gender_info">Female</div>
+                                        </td>
+                                        <td>
+                                            <div class="dob_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="join_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="dep_info">Information Technology</div>
+                                        </td>
+                                        <td>
+                                            <div class="role_info">Software Developer</div>
+                                        </td>
+                                        <td>
+                                            <div class="action_info"><span><i
+                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
+                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td>
+                                            <div class="name_info">Prince paleawer</div>
+                                        </td>
+                                        <td>
+                                            <div class="email_info">Princepaleawer@gmail.com</div>
+                                        </td>
+                                        <td>
+                                            <div class="gender_info">Female</div>
+                                        </td>
+                                        <td>
+                                            <div class="dob_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="join_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="dep_info">Information Technology</div>
+                                        </td>
+                                        <td>
+                                            <div class="role_info">Software Developer</div>
+                                        </td>
+                                        <td>
+                                            <div class="action_info"><span><i
+                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
+                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td>
+                                            <div class="name_info">Prince paleawer</div>
+                                        </td>
+                                        <td>
+                                            <div class="email_info">Princepaleawer@gmail.com</div>
+                                        </td>
+                                        <td>
+                                            <div class="gender_info">Female</div>
+                                        </td>
+                                        <td>
+                                            <div class="dob_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="join_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="dep_info">Information Technology</div>
+                                        </td>
+                                        <td>
+                                            <div class="role_info">Software Developer</div>
+                                        </td>
+                                        <td>
+                                            <div class="action_info"><span><i
+                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
+                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td>
+                                            <div class="name_info">Prince paleawer</div>
+                                        </td>
+                                        <td>
+                                            <div class="email_info">Princepaleawer@gmail.com</div>
+                                        </td>
+                                        <td>
+                                            <div class="gender_info">Female</div>
+                                        </td>
+                                        <td>
+                                            <div class="dob_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="join_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="dep_info">Information Technology</div>
+                                        </td>
+                                        <td>
+                                            <div class="role_info">Software Developer</div>
+                                        </td>
+                                        <td>
+                                            <div class="action_info"><span><i
+                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
+                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td>
+                                            <div class="name_info">Prince paleawer</div>
+                                        </td>
+                                        <td>
+                                            <div class="email_info">Princepaleawer@gmail.com</div>
+                                        </td>
+                                        <td>
+                                            <div class="gender_info">Female</div>
+                                        </td>
+                                        <td>
+                                            <div class="dob_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="join_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="dep_info">Information Technology</div>
+                                        </td>
+                                        <td>
+                                            <div class="role_info">Software Developer</div>
+                                        </td>
+                                        <td>
+                                            <div class="action_info"><span><i
+                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
+                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td>
+                                            <div class="name_info">Prince paleawer</div>
+                                        </td>
+                                        <td>
+                                            <div class="email_info">Princepaleawer@gmail.com</div>
+                                        </td>
+                                        <td>
+                                            <div class="gender_info">Female</div>
+                                        </td>
+                                        <td>
+                                            <div class="dob_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="join_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="dep_info">Information Technology</div>
+                                        </td>
+                                        <td>
+                                            <div class="role_info">Software Developer</div>
+                                        </td>
+                                        <td>
+                                            <div class="action_info"><span><i
+                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
+                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td>
+                                            <div class="name_info">Prince paleawer</div>
+                                        </td>
+                                        <td>
+                                            <div class="email_info">Princepaleawer@gmail.com</div>
+                                        </td>
+                                        <td>
+                                            <div class="gender_info">Female</div>
+                                        </td>
+                                        <td>
+                                            <div class="dob_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="join_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="dep_info">Information Technology</div>
+                                        </td>
+                                        <td>
+                                            <div class="role_info">Software Developer</div>
+                                        </td>
+                                        <td>
+                                            <div class="action_info"><span><i
+                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
+                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td>
+                                            <div class="name_info">Prince paleawer</div>
+                                        </td>
+                                        <td>
+                                            <div class="email_info">Princepaleawer@gmail.com</div>
+                                        </td>
+                                        <td>
+                                            <div class="gender_info">Female</div>
+                                        </td>
+                                        <td>
+                                            <div class="dob_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="join_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="dep_info">Information Technology</div>
+                                        </td>
+                                        <td>
+                                            <div class="role_info">Software Developer</div>
+                                        </td>
+                                        <td>
+                                            <div class="action_info"><span><i
+                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
+                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td>
+                                            <div class="name_info">Prince paleawer</div>
+                                        </td>
+                                        <td>
+                                            <div class="email_info">Princepaleawer@gmail.com</div>
+                                        </td>
+                                        <td>
+                                            <div class="gender_info">Female</div>
+                                        </td>
+                                        <td>
+                                            <div class="dob_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="join_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="dep_info">Information Technology</div>
+                                        </td>
+                                        <td>
+                                            <div class="role_info">Software Developer</div>
+                                        </td>
+                                        <td>
+                                            <div class="action_info"><span><i
+                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
+                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td>
+                                            <div class="name_info">Prince paleawer</div>
+                                        </td>
+                                        <td>
+                                            <div class="email_info">Princepaleawer@gmail.com</div>
+                                        </td>
+                                        <td>
+                                            <div class="gender_info">Female</div>
+                                        </td>
+                                        <td>
+                                            <div class="dob_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="join_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="dep_info">Information Technology</div>
+                                        </td>
+                                        <td>
+                                            <div class="role_info">Software Developer</div>
+                                        </td>
+                                        <td>
+                                            <div class="action_info"><span><i
+                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
+                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td>
+                                            <div class="name_info">Prince paleawer</div>
+                                        </td>
+                                        <td>
+                                            <div class="email_info">Princepaleawer@gmail.com</div>
+                                        </td>
+                                        <td>
+                                            <div class="gender_info">Female</div>
+                                        </td>
+                                        <td>
+                                            <div class="dob_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="join_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="dep_info">Information Technology</div>
+                                        </td>
+                                        <td>
+                                            <div class="role_info">Software Developer</div>
+                                        </td>
+                                        <td>
+                                            <div class="action_info"><span><i
+                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
+                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td>
+                                            <div class="name_info">Prince paleawer</div>
+                                        </td>
+                                        <td>
+                                            <div class="email_info">Princepaleawer@gmail.com</div>
+                                        </td>
+                                        <td>
+                                            <div class="gender_info">Female</div>
+                                        </td>
+                                        <td>
+                                            <div class="dob_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="join_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="dep_info">Information Technology</div>
+                                        </td>
+                                        <td>
+                                            <div class="role_info">Software Developer</div>
+                                        </td>
+                                        <td>
+                                            <div class="action_info"><span><i
+                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
+                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td>
+                                            <div class="name_info">Prince paleawer</div>
+                                        </td>
+                                        <td>
+                                            <div class="email_info">Princepaleawer@gmail.com</div>
+                                        </td>
+                                        <td>
+                                            <div class="gender_info">Female</div>
+                                        </td>
+                                        <td>
+                                            <div class="dob_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="join_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="dep_info">Information Technology</div>
+                                        </td>
+                                        <td>
+                                            <div class="role_info">Software Developer</div>
+                                        </td>
+                                        <td>
+                                            <div class="action_info"><span><i
+                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
+                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td>
+                                            <div class="name_info">Prince paleawer</div>
+                                        </td>
+                                        <td>
+                                            <div class="email_info">Princepaleawer@gmail.com</div>
+                                        </td>
+                                        <td>
+                                            <div class="gender_info">Female</div>
+                                        </td>
+                                        <td>
+                                            <div class="dob_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="join_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="dep_info">Information Technology</div>
+                                        </td>
+                                        <td>
+                                            <div class="role_info">Software Developer</div>
+                                        </td>
+                                        <td>
+                                            <div class="action_info"><span><i
+                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
+                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td>
+                                            <div class="name_info">Prince paleawer</div>
+                                        </td>
+                                        <td>
+                                            <div class="email_info">Princepaleawer@gmail.com</div>
+                                        </td>
+                                        <td>
+                                            <div class="gender_info">Female</div>
+                                        </td>
+                                        <td>
+                                            <div class="dob_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="join_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="dep_info">Information Technology</div>
+                                        </td>
+                                        <td>
+                                            <div class="role_info">Software Developer</div>
+                                        </td>
+                                        <td>
+                                            <div class="action_info"><span><i
+                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
+                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td>
+                                            <div class="name_info">Prince paleawer</div>
+                                        </td>
+                                        <td>
+                                            <div class="email_info">Princepaleawer@gmail.com</div>
+                                        </td>
+                                        <td>
+                                            <div class="gender_info">Female</div>
+                                        </td>
+                                        <td>
+                                            <div class="dob_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="join_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="dep_info">Information Technology</div>
+                                        </td>
+                                        <td>
+                                            <div class="role_info">Software Developer</div>
+                                        </td>
+                                        <td>
+                                            <div class="action_info"><span><i
+                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
+                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td>
+                                            <div class="name_info">Prince paleawer</div>
+                                        </td>
+                                        <td>
+                                            <div class="email_info">Princepaleawer@gmail.com</div>
+                                        </td>
+                                        <td>
+                                            <div class="gender_info">Female</div>
+                                        </td>
+                                        <td>
+                                            <div class="dob_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="join_info">23-21-25</div>
+                                        </td>
+                                        <td>
+                                            <div class="dep_info">Information Technology</div>
+                                        </td>
+                                        <td>
+                                            <div class="role_info">Software Developer</div>
+                                        </td>
+                                        <td>
+                                            <div class="action_info"><span><i
+                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
+                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        </td>
+                                    </tr>
 
-
-                                    </tbody>
-                                </table>
-                            </div>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
