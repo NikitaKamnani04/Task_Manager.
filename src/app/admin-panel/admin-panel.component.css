@@ -8,14 +8,15 @@
   height: 100vh;
   overflow: hidden;
 }
+.parent_container{
+  margin: 50px;
+}
 
 input {
   padding-left: 10px;
   outline: none;
   border: none;
-
 }
-
 
 .body {
   width: 85%;
@@ -113,7 +114,6 @@ th {
   line-height: 0;
   padding-top: 0;
   padding-bottom: 0;
-
   border: none;
   border-bottom: 3px solid black;
   white-space: nowrap;
@@ -127,8 +127,6 @@ th div {
   margin-left: -25px;
   line-height: normal;
 }
-
-
 
 .table_data_table ::-webkit-scrollbar {
   display: none;
@@ -162,37 +160,6 @@ th div {
   width: 10%;
 } */
 
-/* .name_info {
-  margin-left: 40px;
-  padding: 18px 0px;
-}
-.email_info {
-  margin-left: 35px;
-  padding: 18px 0px;
-  text-overflow: ellipsis;
-}
-.gender_info {
-  margin-left: 35px;
-  padding: 18px 0px;
-}
-.dob_info {
-  margin-left: 36px;
-  padding: 18px 0px;
-}
-.join_info {
-  margin-left: 32px;
-}
-.dep_info {
-  margin-left: 55px;
-  padding: 18px 0px;
-}
-.role_info {
-  margin-left: 42px;
-  padding: 18px 0px;
-}
-.action_info {
-  margin-left: 35px;
-} */
 .form_button {
   cursor: pointer;
 }
@@ -201,11 +168,7 @@ th div {
 .table.table-condensed.table-striped {
   margin-bottom: 0px;
 }
-.BI_tablehead {
-  background-color: #5e5e60;
 
-  width: 100%;
-}
 .table-condensed > thead.BI_tablehead > tr > th {
   padding: 20px 10px 20px 20px;
   text-transform: uppercase;
@@ -239,8 +202,9 @@ td {
 }
 
 .fixed_header {
-  table-layout: fixed;
+  table-layout: auto;
   border-collapse: collapse;
+  width: 100%;
 }
 
 .fixed_header tbody {
@@ -248,6 +212,9 @@ td {
   width: 100%;
   overflow: auto;
   max-height: 560px;
+}
+.table-responsive {
+  width: 100%;
 }
 
 .fixed_header thead tr {
@@ -261,19 +228,42 @@ td {
   width: 200px;
 }
 
-/* @media (min-width: 768px) {
-  .button-36 {
-    padding: 0 2.6rem;
+@media (max-width: 820px) {
+  .btn_name {
+    display: none;
+    content: "Hero";
+    color: #fff;
+  }
+  .add_emp {
+    width: 55px;
+  }
+  .total_emp {
+    display: none;
+  }
+  /* .table_data_table{
+    margin-right: 15px;
+  } */
+  .parent_container{
+    margin-left:20px
+  }
+  .table_data{
+    width: 88%;
+  }
+  .fixed_header tbody {
+    max-height: 700px
+  }
+  .table-condensed > thead.BI_tablehead > tr > th,.table-condensed > tbody.BI_tablebody > tr > td{
+    font-weight: 500;
+    font-size: medium;
   }
 }
-
-@media (min-width: 768px) {
-  .fixed-brand {
-    width: 250px;
+@media (max-width: 768px) {
+  .fixed_header tbody {
+    max-height: 500px
   }
-
-  #sidebar-wrapper {
-    border-right: #999999;
-    width: 250px;
+}
+@media (min-width: 821px) {
+  .btn_icon {
+    display: none;
   }
-} */
+}

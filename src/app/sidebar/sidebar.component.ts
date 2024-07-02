@@ -9,24 +9,14 @@ export class SidebarComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    const body:any = document.querySelector('body'),
-      sidebar:any = document.querySelector('.sidebar'),
-      toggle:any = document.querySelector('.toggle'),
-      modeSwitch:any = document.querySelector('.toggle-switch'),
-      modeText:any = document.querySelector('.mode-text'),
-      searchBtn:any = document.querySelector('.search-bar');
-
-    modeSwitch.addEventListener('click', () => {
-      body.classList.toggle('dark');
-      //   document.querySelector(".mode-text").innertext=""
-
-      if (body.classList.contains('dark')) {
-        modeText.innerText = ' Light Mode ';
-      } else modeText.innerText = ' Dark Mode ';
-    });
+    const body: any = document.querySelector('body'),
+      sidebar: any = document.querySelector('.sidebar'),
+      toggle: any = document.querySelector('.toggle'),
+      searchBtn: any = document.querySelector('.search-bar');
 
     toggle.addEventListener('click', () => {
       sidebar.classList.toggle('close');
+      
     });
 
     searchBtn.addEventListener('click', () => {
