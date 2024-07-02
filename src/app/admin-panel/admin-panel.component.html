@@ -5,14 +5,14 @@
         </div>
         <div class="m-4 p-4 d-flex">
 
-            <div class="task_card">
-                <div class="task_card_header p-3 ">
-                    <div class="task_card_head_container pb-2 d-flex justify-content-between">
+            <div class="table_data">
+                <div class="table_data_header p-3 ">
+                    <div class="table_data_head_container pb-2 d-flex justify-content-between">
                         <div class="container_task d-flex align_items-center">
-                            <div class="today_task px-3 fs-5 ">
+                            <div class="add_emp px-3 fs-5 ">
                                 <p><span>Add Employee</span></p>
                             </div>
-                            <div class="upcoming px-3 fs-5">
+                            <div class="total_emp px-3 fs-5">
                                 <p style="color: #9381ff;">Total Employees <span class="ms-3 p-1  rounded-3 text-white"
                                         style="background-color: #9381ff;">999</span></p>
                             </div>
@@ -31,578 +31,947 @@
                     </div>
 
                 </div>
-                <div class="task_card_body d-flex justify-content-center align_items-center align-items-center ">
-                    <div class="task_card_table  fs-5 pl-3">
-                        <div class="table_head">
-                            <span class="number">No.</span>
-                            <span class="name">Full Name </span>
-                            <span class="email">Email</span>
-                            <span class="gender">Gender</span>
-                            <span class="dob">D_O_B</span>
-                            <span class="join_date">Join Date</span>
-                            <span class="department">Department</span>
-                            <span class="role">Role</span>
-                            <span class="actions">Actions</span>
-                        </div>
-                        <div class="tableFixHead">
-                            <table>
+                <div class="table_data_body d-flex justify-content-center align_items-center align-items-center ">
+                    <div class="table_data_table  fs-5 pl-3">
 
-                                <tbody>
+                        <div class="table-responsive">
+                            <table class="table table-condensed table-striped fixed_header">
+                                <thead class="BI_tablehead">
                                     <tr>
-                                        <td>1.</td>
-                                        <td>
-                                            <div class="name_info">Prince paleawer</div>
-                                        </td>
-                                        <td>
-                                            <div class="email_info">Princepaleawer@gmail.com</div>
-                                        </td>
-                                        <td>
-                                            <div class="gender_info">Female</div>
-                                        </td>
-                                        <td>
-                                            <div class="dob_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="join_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="dep_info">Information Technology</div>
-                                        </td>
-                                        <td>
-                                            <div class="role_info">Software Developer</div>
-                                        </td>
-                                        <td>
-                                            <div class="action_info"><span><i
-                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
-                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        <th class="number " style="width: 3%;">No.</th>
+                                        <th class="name" style="width: 10%;">Full Name</th>
+                                        <th class="email" style="width: 20%;">Email</th>
+                                        <th class="gender" style="width: 10%;">Gender</th>
+                                        <th class="dob" style="width: 10%;">D_O_B</th>
+                                        <th class="join_date" style="width: 10%;">Join Date</th>
+                                        <th class="department" style="width: 17%;">Department</th>
+                                        <th class="role" style="width: 10%;">Role</th>
+                                        <th class="actions" style="width: 10%;">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="BI_tablebody ">
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>1.</td>
-                                        <td>
-                                            <div class="name_info">Prince paleawer</div>
-                                        </td>
-                                        <td>
-                                            <div class="email_info">Princepaleawer@gmail.com</div>
-                                        </td>
-                                        <td>
-                                            <div class="gender_info">Female</div>
-                                        </td>
-                                        <td>
-                                            <div class="dob_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="join_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="dep_info">Information Technology</div>
-                                        </td>
-                                        <td>
-                                            <div class="role_info">Software Developer</div>
-                                        </td>
-                                        <td>
-                                            <div class="action_info"><span><i
-                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
-                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>1.</td>
-                                        <td>
-                                            <div class="name_info">Prince paleawer</div>
-                                        </td>
-                                        <td>
-                                            <div class="email_info">Princepaleawer@gmail.com</div>
-                                        </td>
-                                        <td>
-                                            <div class="gender_info">Female</div>
-                                        </td>
-                                        <td>
-                                            <div class="dob_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="join_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="dep_info">Information Technology</div>
-                                        </td>
-                                        <td>
-                                            <div class="role_info">Software Developer</div>
-                                        </td>
-                                        <td>
-                                            <div class="action_info"><span><i
-                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
-                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>1.</td>
-                                        <td>
-                                            <div class="name_info">Prince paleawer</div>
-                                        </td>
-                                        <td>
-                                            <div class="email_info">Princepaleawer@gmail.com</div>
-                                        </td>
-                                        <td>
-                                            <div class="gender_info">Female</div>
-                                        </td>
-                                        <td>
-                                            <div class="dob_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="join_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="dep_info">Information Technology</div>
-                                        </td>
-                                        <td>
-                                            <div class="role_info">Software Developer</div>
-                                        </td>
-                                        <td>
-                                            <div class="action_info"><span><i
-                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
-                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>1.</td>
-                                        <td>
-                                            <div class="name_info">Prince paleawer</div>
-                                        </td>
-                                        <td>
-                                            <div class="email_info">Princepaleawer@gmail.com</div>
-                                        </td>
-                                        <td>
-                                            <div class="gender_info">Female</div>
-                                        </td>
-                                        <td>
-                                            <div class="dob_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="join_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="dep_info">Information Technology</div>
-                                        </td>
-                                        <td>
-                                            <div class="role_info">Software Developer</div>
-                                        </td>
-                                        <td>
-                                            <div class="action_info"><span><i
-                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
-                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>1.</td>
-                                        <td>
-                                            <div class="name_info">Prince paleawer</div>
-                                        </td>
-                                        <td>
-                                            <div class="email_info">Princepaleawer@gmail.com</div>
-                                        </td>
-                                        <td>
-                                            <div class="gender_info">Female</div>
-                                        </td>
-                                        <td>
-                                            <div class="dob_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="join_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="dep_info">Information Technology</div>
-                                        </td>
-                                        <td>
-                                            <div class="role_info">Software Developer</div>
-                                        </td>
-                                        <td>
-                                            <div class="action_info"><span><i
-                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
-                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>1.</td>
-                                        <td>
-                                            <div class="name_info">Prince paleawer</div>
-                                        </td>
-                                        <td>
-                                            <div class="email_info">Princepaleawer@gmail.com</div>
-                                        </td>
-                                        <td>
-                                            <div class="gender_info">Female</div>
-                                        </td>
-                                        <td>
-                                            <div class="dob_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="join_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="dep_info">Information Technology</div>
-                                        </td>
-                                        <td>
-                                            <div class="role_info">Software Developer</div>
-                                        </td>
-                                        <td>
-                                            <div class="action_info"><span><i
-                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
-                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>1.</td>
-                                        <td>
-                                            <div class="name_info">Prince paleawer</div>
-                                        </td>
-                                        <td>
-                                            <div class="email_info">Princepaleawer@gmail.com</div>
-                                        </td>
-                                        <td>
-                                            <div class="gender_info">Female</div>
-                                        </td>
-                                        <td>
-                                            <div class="dob_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="join_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="dep_info">Information Technology</div>
-                                        </td>
-                                        <td>
-                                            <div class="role_info">Software Developer</div>
-                                        </td>
-                                        <td>
-                                            <div class="action_info"><span><i
-                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
-                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>1.</td>
-                                        <td>
-                                            <div class="name_info">Prince paleawer</div>
-                                        </td>
-                                        <td>
-                                            <div class="email_info">Princepaleawer@gmail.com</div>
-                                        </td>
-                                        <td>
-                                            <div class="gender_info">Female</div>
-                                        </td>
-                                        <td>
-                                            <div class="dob_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="join_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="dep_info">Information Technology</div>
-                                        </td>
-                                        <td>
-                                            <div class="role_info">Software Developer</div>
-                                        </td>
-                                        <td>
-                                            <div class="action_info"><span><i
-                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
-                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>1.</td>
-                                        <td>
-                                            <div class="name_info">Prince paleawer</div>
-                                        </td>
-                                        <td>
-                                            <div class="email_info">Princepaleawer@gmail.com</div>
-                                        </td>
-                                        <td>
-                                            <div class="gender_info">Female</div>
-                                        </td>
-                                        <td>
-                                            <div class="dob_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="join_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="dep_info">Information Technology</div>
-                                        </td>
-                                        <td>
-                                            <div class="role_info">Software Developer</div>
-                                        </td>
-                                        <td>
-                                            <div class="action_info"><span><i
-                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
-                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>1.</td>
-                                        <td>
-                                            <div class="name_info">Prince paleawer</div>
-                                        </td>
-                                        <td>
-                                            <div class="email_info">Princepaleawer@gmail.com</div>
-                                        </td>
-                                        <td>
-                                            <div class="gender_info">Female</div>
-                                        </td>
-                                        <td>
-                                            <div class="dob_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="join_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="dep_info">Information Technology</div>
-                                        </td>
-                                        <td>
-                                            <div class="role_info">Software Developer</div>
-                                        </td>
-                                        <td>
-                                            <div class="action_info"><span><i
-                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
-                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>1.</td>
-                                        <td>
-                                            <div class="name_info">Prince paleawer</div>
-                                        </td>
-                                        <td>
-                                            <div class="email_info">Princepaleawer@gmail.com</div>
-                                        </td>
-                                        <td>
-                                            <div class="gender_info">Female</div>
-                                        </td>
-                                        <td>
-                                            <div class="dob_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="join_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="dep_info">Information Technology</div>
-                                        </td>
-                                        <td>
-                                            <div class="role_info">Software Developer</div>
-                                        </td>
-                                        <td>
-                                            <div class="action_info"><span><i
-                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
-                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>1.</td>
-                                        <td>
-                                            <div class="name_info">Prince paleawer</div>
-                                        </td>
-                                        <td>
-                                            <div class="email_info">Princepaleawer@gmail.com</div>
-                                        </td>
-                                        <td>
-                                            <div class="gender_info">Female</div>
-                                        </td>
-                                        <td>
-                                            <div class="dob_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="join_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="dep_info">Information Technology</div>
-                                        </td>
-                                        <td>
-                                            <div class="role_info">Software Developer</div>
-                                        </td>
-                                        <td>
-                                            <div class="action_info"><span><i
-                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
-                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>1.</td>
-                                        <td>
-                                            <div class="name_info">Prince paleawer</div>
-                                        </td>
-                                        <td>
-                                            <div class="email_info">Princepaleawer@gmail.com</div>
-                                        </td>
-                                        <td>
-                                            <div class="gender_info">Female</div>
-                                        </td>
-                                        <td>
-                                            <div class="dob_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="join_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="dep_info">Information Technology</div>
-                                        </td>
-                                        <td>
-                                            <div class="role_info">Software Developer</div>
-                                        </td>
-                                        <td>
-                                            <div class="action_info"><span><i
-                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
-                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>1.</td>
-                                        <td>
-                                            <div class="name_info">Prince paleawer</div>
-                                        </td>
-                                        <td>
-                                            <div class="email_info">Princepaleawer@gmail.com</div>
-                                        </td>
-                                        <td>
-                                            <div class="gender_info">Female</div>
-                                        </td>
-                                        <td>
-                                            <div class="dob_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="join_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="dep_info">Information Technology</div>
-                                        </td>
-                                        <td>
-                                            <div class="role_info">Software Developer</div>
-                                        </td>
-                                        <td>
-                                            <div class="action_info"><span><i
-                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
-                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>1.</td>
-                                        <td>
-                                            <div class="name_info">Prince paleawer</div>
-                                        </td>
-                                        <td>
-                                            <div class="email_info">Princepaleawer@gmail.com</div>
-                                        </td>
-                                        <td>
-                                            <div class="gender_info">Female</div>
-                                        </td>
-                                        <td>
-                                            <div class="dob_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="join_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="dep_info">Information Technology</div>
-                                        </td>
-                                        <td>
-                                            <div class="role_info">Software Developer</div>
-                                        </td>
-                                        <td>
-                                            <div class="action_info"><span><i
-                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
-                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>1.</td>
-                                        <td>
-                                            <div class="name_info">Prince paleawer</div>
-                                        </td>
-                                        <td>
-                                            <div class="email_info">Princepaleawer@gmail.com</div>
-                                        </td>
-                                        <td>
-                                            <div class="gender_info">Female</div>
-                                        </td>
-                                        <td>
-                                            <div class="dob_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="join_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="dep_info">Information Technology</div>
-                                        </td>
-                                        <td>
-                                            <div class="role_info">Software Developer</div>
-                                        </td>
-                                        <td>
-                                            <div class="action_info"><span><i
-                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
-                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>1.</td>
-                                        <td>
-                                            <div class="name_info">Prince paleawer</div>
-                                        </td>
-                                        <td>
-                                            <div class="email_info">Princepaleawer@gmail.com</div>
-                                        </td>
-                                        <td>
-                                            <div class="gender_info">Female</div>
-                                        </td>
-                                        <td>
-                                            <div class="dob_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="join_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="dep_info">Information Technology</div>
-                                        </td>
-                                        <td>
-                                            <div class="role_info">Software Developer</div>
-                                        </td>
-                                        <td>
-                                            <div class="action_info"><span><i
-                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
-                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>1.</td>
-                                        <td>
-                                            <div class="name_info">Prince paleawer</div>
-                                        </td>
-                                        <td>
-                                            <div class="email_info">Princepaleawer@gmail.com</div>
-                                        </td>
-                                        <td>
-                                            <div class="gender_info">Female</div>
-                                        </td>
-                                        <td>
-                                            <div class="dob_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="join_info">23-21-25</div>
-                                        </td>
-                                        <td>
-                                            <div class="dep_info">Information Technology</div>
-                                        </td>
-                                        <td>
-                                            <div class="role_info">Software Developer</div>
-                                        </td>
-                                        <td>
-                                            <div class="action_info"><span><i
-                                                        class="fa-solid fa-pencil me-5  form_button"></i></span><span><i
-                                                        class="fa-solid fa-trash form_button"></i></span></div>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 3%;">1.</td>
+                                        <td class="" style="width: 10%;">prince Palewar </td>
+                                        <td title={{text}}>princepalewar123@gmail.com princepalewar123@gmail.com
+                                            princepalewar123@gmail.com
+                                            princepalewar123@gmail.com</td>
+                                        <td style="width: 10%;">Male</td>
+                                        <td style="width: 10%;">22-4-2016</td>
+                                        <td style="width: 10%;">21-7-2013</td>
+                                        <td style="width: 17%;">Information Technology</td>
+                                        <td style="width: 10%;">Software Developer</td>
+                                        <td style="width: 10%;">
+                                            <span title="Edit"><i class="fa-solid fa-pencil ms-3  form_button"></i></span>
+                                            <span title="Delete"><i class="fa-solid fa-trash ms-4 form_button"></i></span>
+                                        </td>
+                                    </tr>
+                                  
+
+
 
                                 </tbody>
                             </table>
                         </div>
+
+
+
                     </div>
                 </div>
 
