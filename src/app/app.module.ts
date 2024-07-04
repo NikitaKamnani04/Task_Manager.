@@ -9,6 +9,9 @@ import { RegistrationFormComponent } from './registration-form/registration-form
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SidebarModule } from 'ng-sidebar';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { HttpClientModule } from '@angular/common/http';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,13 +21,17 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
     DashboardComponent,
     RegistrationFormComponent,
     SidebarComponent,
-    AdminPanelComponent
+    AdminPanelComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,SidebarModule.forRoot()
+    AppRoutingModule,
+    SidebarModule.forRoot(),
+    HttpClientModule,
+    Ng2SearchPipeModule,
+    FormsModule 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
