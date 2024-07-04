@@ -1,0 +1,335 @@
+* {
+  box-sizing: border-box
+}
+
+.main {
+  background-color: #e2eafc;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* .container {
+   background-color:white;
+   height: 100vh;
+   height: 95%;
+   margin-top: 23px;
+   margin-bottom: 30px;
+ } */
+
+
+.column1 {
+  height: 650px;
+  width: 40%;
+  background: white;
+  border-radius: 30px 0 0 30px;
+}
+
+.form_container {
+  margin-top: 12%;
+  float: left;
+
+}
+
+.column2 {
+  float: left;
+  height: 650px;
+  width: 60%;
+  background: #4A52BC;
+  border-radius: 0 30px 30px 0;
+
+}
+
+.row {
+  margin-top: 10.8%;
+  margin-bottom: 10%;
+  margin-left:10%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.card-1 {
+  padding-top: 55%;
+  margin-left: 15%;
+}
+
+.card-2 .form-group ::placeholder {
+  color: white;
+
+}
+
+.card-2 {
+  margin: 0 5% 0 5%;
+  background-color: #7C81CE;
+  width: 90%;
+  height: 80%;
+  border-radius: 30px 30px 30px 30px;
+  border: 1px solid #fff;
+
+  /* margin-top: 0%; */
+}
+
+.card-2 input {
+  background-color: #7C81CE;
+  border-color: #fff;
+}
+
+img,
+svg {
+  margin-top: 7%;
+  margin-left: -8%;
+}
+
+.email_valid,
+.name_valid,
+.mobile_valid,
+.password_valid,
+.add_valid {
+  height: 20px;
+
+}
+
+/* .text input{
+  border-color: #fff;
+} */
+
+.registerbtn {
+  background-color: #fff;
+  color: #7f6bf5;
+  padding: 10px 10px;
+  border-color: white;
+  cursor: pointer;
+  width: 30%;
+  margin-left: 36%;
+  font-family: Roboto-slab;
+  font-weight: 800;
+}
+
+input[type=text],
+input[type=password] {
+  width: 100%;
+  padding: 7px;
+  display: inline-block;
+
+}
+
+form {
+  margin: 0.9rem;
+}
+
+.form_field_left {
+  margin: 1%;
+  margin-top: 4%;
+  margin-left: 4%;
+}
+
+.form_field_right {
+  margin: 1%;
+  margin-top: 4%;
+  margin-right: 4%;
+}
+
+.signin {
+  margin-left: 31%;
+  margin-top: 2%;
+  color: #fff;
+  font-family: Roboto-slab;
+  font-weight: 400;
+}
+
+.form-select {
+  background-color: #7C81CE;
+  width: 100%;
+  padding: 7px;
+  margin: 2px 3px 5px 0;
+  display: inline-block;
+  font-size: 1rem;
+  color: #fff;
+  font-family: Roboto-slab;
+  font-weight: 400;
+}
+
+input[type="radio"] {
+  margin: 0 5px 0 6px;
+}
+
+.text-danger {
+  color: red !important;
+}
+
+a {
+  color: white;
+
+}
+
+.h2,
+h2 {
+  font-size: 2.5rem;
+  margin-top: -50%;
+  margin-left: 8%;
+  color: #4A52BC;
+  font-family: Roboto-slab;
+  font-weight: 800;
+}
+
+.h4,
+h4 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-right: 16%;
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.8;
+  color: grey;
+  font-family: Roboto-slab;
+  font-weight: 500;
+}
+
+b,
+strong {
+  font-weight: bolder;
+  color: white;
+  font-weight: 800;
+  font-family: Roboto-slab;
+}
+
+label {
+  display: inline-block;
+  color: white;
+}
+
+.text-center {
+  text-align: center !important;
+  color: white;
+  font-family: Roboto-slab;
+  font-weight: 400;
+}
+
+.form-control {
+  color: #fff;
+  font-family: Roboto-slab;
+  font-weight: 500;
+}
+
+hr {
+  margin: 1rem;
+  color: white;
+  background-color: currentColor;
+  border: 0;
+  opacity: .25;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+@media screen and (max-width:360px) {
+  h2 {
+    color: black;
+    font-weight: 400;
+    text-align: center;
+    margin-right: 25%;
+    padding-top: 10%;
+  }
+
+  img,
+  svg {
+    height: 283px;
+    width: 286px;
+    margin-top:12%;
+    /* margin-right:9%; */
+  }
+ .label1{
+  margin-top:3%;
+ }
+
+  .column1 {
+    width: 100%;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+
+  .column2 {
+    width: 100%;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scroll {
+    display: block;
+    padding: 5px;
+    margin-top: 3px;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    margin-left: 0px;
+  }
+
+  .leftformfield{
+   margin-top: 3%;
+   width: 100%;
+   margin-right: 6%;
+  }
+
+  .rightformfield{
+    margin-top:6%;
+    width: 100%;
+   }
+
+  .column2 {
+    height: 125%;
+  }
+
+  .card-2 {
+    height: 87%;
+    overflow-x: hidden;
+  }
+
+  .formrow{
+    flex-direction: column;
+    margin-right: 5%;
+  }
+
+  .signinform{
+   margin-left: 12%;
+  }
+}
+
+@media screen and (max-width:768px){
+  .signinlink{
+      margin-left: 19%;
+  }
+
+  h2 {
+    color: black;
+    font-weight: 400;
+    text-align: center;
+    margin-right: 25%;
+    padding-top: 8%;
+  }
+   
+  .formspace{
+    margin-right: 2px;
+        margin-left: 3px;
+        margin-top:23%;
+  }
+  .leftgroup{
+margin-left: 2%;
+  }
+
+  .rightgroup{
+    margin-right: 2%;
+  }
+}
