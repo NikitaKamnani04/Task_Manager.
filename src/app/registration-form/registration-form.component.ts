@@ -28,6 +28,7 @@ Username: any;
       password: new FormControl('',[Validators.required,Validators.minLength(6)]),
       confirm_pass: new FormControl('',[Validators.required]),
       dept_id: new FormControl('',[Validators.required]),
+      address: new FormControl()
      });
   }
 

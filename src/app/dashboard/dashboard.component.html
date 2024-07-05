@@ -10,121 +10,144 @@
 
             <span class=" button-36 position-absolute end-0 px-4 py-2 me-4 fs-3 ">Clock In</span>
         </div>
-        <div class="m-4 p-4 d-flex">
-            <div class="user_card p-4  ">
-                <div class=" user_card_head d-flex   pb-3">
-                    <img src="https://images.freeimages.com/365/images/istock/previews/1009/100996291-male-avatar-profile-picture-vector.jpg"
-                        alt="">
-                    <div class="">
-                        <div class="ms-3 mt-2 ">
-                            <div>
-                                <span>Employee Name</span><br>
-                                <span>Department</span><br>
+        <div class="m-4 p-4 contaier">
+            <div class="row">
+
+                <div class="section_one col-sm-4">
+                    <div>
+                        <div class="user_card p-4  ">
+                            <div class=" user_card_head d-flex   pb-3">
+                                <img src="https://images.freeimages.com/365/images/istock/previews/1009/100996291-male-avatar-profile-picture-vector.jpg"
+                                    alt="">
+                                <div class="">
+                                    <div class="ms-3 mt-2 ">
+                                        <div>
+                                            <span>Employee Name</span><br>
+                                            <span>Department</span><br>
+                                        </div>
+                                        <div class="pt-3"><span>Employee Id </span></div>
+                                    </div>
+
+                                </div>
                             </div>
-                            <div class="pt-3"><span>Employee Id </span></div>
+                            <div class="user_task d-flex justify-content-between mt-2">
+                                <div class="tasks">Tasks</div>
+                                <div class="projects">Projects</div>
+                            </div>
+                            <div class="user_task d-flex justify-content-between mt-2">
+                                <div class="tasks fs-2">0</div>
+                                <div class="projects fs-2">0</div>
+                            </div>
+                        </div>
+                        <div class="linechart">
+                            <canvas class="graph" id="linechart"></canvas>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="section_two col-sm-8 order-1">
+
+                    <div class="task_card ">
+                        <div class="task_card_header p-3 ">
+                            <div class="task_card_head_container pb-2 d-flex justify-content-between">
+                                <div class="container_task d-flex align_items-center">
+                                    <div class="today_task px-3 fs-5 ">
+                                        <p>Today's Tasks <span class="ms-3 p-1  rounded-3  text-white"
+                                                style="background-color: #9381ff;">105</span></p>
+                                    </div>
+                                    <div class="upcoming px-3 fs-5">
+                                        <p style="color: #9381ff;">Upcoming <span class="ms-3 p-1  rounded-3 text-white"
+                                                style="background-color: #9381ff;">99</span></p>
+                                    </div>
+
+                                </div>
+                                <div class="search_box  ">
+                                    <div class=" search_bar_task bg-white  rounded-pill position-relative">
+                                        <form class="">
+                                            <input type="text" placeholder="Search.." name="search"
+                                                class=" task_search  ps-4 my-1  rounded-pill fs-5">
+                                            <span type="submit"><i
+                                                    class="fa fa-search  pe-1  position-absolute top-50 end-0 translate-middle"></i></span>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div
+                            class="task_card_body d-flex justify-content-center align_items-center align-items-center ">
+                            <div class="task_card_table  fs-5 pl-3">
+                                <table class="table table-borderless">
+                                    <thead>
+                                        <tr class="border-bottom">
+                                            <th scope="col">No.</th>
+                                            <th scope="col">Task Name</th>
+                                            <th scope="col">Team</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Priority</th>
+                                            <th scope="col">Deadline</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>Todo</td>
+                                            <td>Medium</td>
+                                            <td>End Date</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>In progress</td>
+                                            <td>Medium</td>
+                                            <td>End Date</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td>Larry</td>
+                                            <td>the Bird</td>
+                                            <td>@twitter</td>
+                                            <td>Medium</td>
+                                            <td>End Date</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">4</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>Paused</td>
+                                            <td>Medium</td>
+                                            <td>End Date</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">5</th>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>@fat</td>
+                                            <td>Medium</td>
+                                            <td>End Date</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
 
                     </div>
-                </div>
-                <div class="user_task d-flex justify-content-between mt-2">
-                    <div class="tasks">Tasks</div>
-                    <div class="projects">Projects</div>
-                </div>
-                <div class="user_task d-flex justify-content-between mt-2">
-                    <div class="tasks fs-2">0</div>
-                    <div class="projects fs-2">0</div>
+                    <canvas id="doughnut">
+
+
+
+                    </canvas>
                 </div>
             </div>
 
-            <div class="task_card">
-                <div class="task_card_header p-3 ">
-                    <div class="task_card_head_container pb-2 d-flex justify-content-between">
-                        <div class="container_task d-flex align_items-center">
-                            <div class="today_task px-3 fs-5 ">
-                                <p>Today's Tasks <span class="ms-3 p-1  rounded-3  text-white"
-                                        style="background-color: #9381ff;">105</span></p>
-                            </div>
-                            <div class="upcoming px-3 fs-5">
-                                <p style="color: #9381ff;">Upcoming <span class="ms-3 p-1  rounded-3 text-white"
-                                        style="background-color: #9381ff;">99</span></p>
-                            </div>
-
-                        </div>
-                        <div class="search_box  ">
-                            <div class=" search_bar_task bg-white  rounded-pill position-relative">
-                                <form class="">
-                                    <input type="text" placeholder="Search.." name="search"
-                                        class=" task_search  ps-4 my-1  rounded-pill fs-5">
-                                    <span type="submit"><i
-                                            class="fa fa-search  pe-1  position-absolute top-50 end-0 translate-middle"></i></span>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="task_card_body d-flex justify-content-center align_items-center align-items-center ">
-                    <div class="task_card_table  fs-5 pl-3">
-                        <table class="table table-borderless">
-                            <thead>
-                                <tr class="border-bottom">
-                                    <th scope="col">No.</th>
-                                    <th scope="col">Task Name</th>
-                                    <th scope="col">Team</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Priority</th>
-                                    <th scope="col">Deadline</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>Todo</td>
-                                    <td>Medium</td>
-                                    <td>End Date</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>In progress</td>
-                                    <td>Medium</td>
-                                    <td>End Date</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                    <td>Medium</td>
-                                    <td>End Date</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>Paused</td>
-                                    <td>Medium</td>
-                                    <td>End Date</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                    <td>Medium</td>
-                                    <td>End Date</td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-            </div>
         </div>
+
 
     </div>
 

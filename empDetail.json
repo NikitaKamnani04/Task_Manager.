@@ -1,26 +1,6 @@
 {
   "empDetails": [
     {
-      "id": 3,
-      "name": "manoj Pichai",
-      "email": "google.ceo.company@gmail.com",
-      "gender": "Male",
-      "dob": "12-8-92",
-      "join_date": "3-6-24",
-      "department": "Representative",
-      "role": "CEO"
-    },
-    {
-      "id": 4,
-      "name": "nikita Pichai",
-      "email": "google.ceo.company@gmail.com",
-      "gender": "Male",
-      "dob": "12-8-92",
-      "join_date": "3-6-24",
-      "department": "Representative",
-      "role": "CEO"
-    },
-    {
       "id": 5,
       "name": "rahi Pichai",
       "email": "google.ceo.company@gmail.com",
@@ -29,7 +9,8 @@
       "join_date": "3-6-24",
       "department": "Representative",
       "role": "CEO"
-    },    {
+    },
+    {
       "id": 6,
       "name": "manoj Pichai",
       "email": "google.ceo.company@gmail.com",
@@ -58,7 +39,8 @@
       "join_date": "3-6-24",
       "department": "Representative",
       "role": "CEO"
-    },    {
+    },
+    {
       "id": 9,
       "name": "manoj Pichai",
       "email": "google.ceo.company@gmail.com",
@@ -87,7 +69,8 @@
       "join_date": "3-6-24",
       "department": "Representative",
       "role": "CEO"
-    },    {
+    },
+    {
       "id": 12,
       "name": "manoj Pichai",
       "email": "google.ceo.company@gmail.com",
@@ -100,16 +83,6 @@
     {
       "id": 13,
       "name": "nikita Pichai",
-      "email": "google.ceo.company@gmail.com",
-      "gender": "Male",
-      "dob": "12-8-92",
-      "join_date": "3-6-24",
-      "department": "Representative",
-      "role": "CEO"
-    },
-    {
-      "id": 14,
-      "name": "rahi Pichai",
       "email": "google.ceo.company@gmail.com",
       "gender": "Male",
       "dob": "12-8-92",
