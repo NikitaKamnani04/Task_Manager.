@@ -1,6 +1,6 @@
 <div class="main">
     <div class="container">
-    <div class="row form_container scroll">
+        <div class="row form_container scroll">
             <div class="column1">
                 <div class="card-1">
                     <h2>Task Manager</h2>
@@ -15,11 +15,7 @@
                 <div class="text-center pb-3">SignUp to continue using</div>
 
                 <div class="card-2 mb-4">
-<<<<<<< HEAD
-                     <form [formGroup]="form">
-=======
-                    <form  [formGroup]="form">
->>>>>>> 44e061325fe1921d4b238e08f7f4dcc918e58f83
+                    <form [formGroup]="form">
                         <div class="formrow form d-flex">
                             <div class="form_field_left leftformfield leftgroup">
 
@@ -27,24 +23,14 @@
 
                                     <input type="text " formControlName="username" placeholder="Enter Username"
                                         class="form-control" name="username" id="username" size="30" required>
-<<<<<<< HEAD
-                                    <div class="name_valid name _name">
-
-                                        <div class="text-danger"
-=======
                                     <div class="name_valid">
                                         <div class="text-danger "
->>>>>>> 44e061325fe1921d4b238e08f7f4dcc918e58f83
                                             *ngIf="form.controls['username']?.invalid && form.controls['username'].touched"
                                             class="">
                                             <small class="name_ text-danger smallText mb-4 "
                                                 *ngIf="form.get('username')?.touched && form.get('username')?.hasError('required')">Username
                                                 is required.</small>
-<<<<<<< HEAD
-                                            <small class="name_ text-danger smallText mb-4 "
-=======
                                             <small class="name_ text-danger smallText mb-4"
->>>>>>> 44e061325fe1921d4b238e08f7f4dcc918e58f83
                                                 *ngIf="form.get('username')?.touched && form.get('username')?.hasError('minlength')">at
                                                 least 7 characters
                                                 is required.</small>
@@ -87,24 +73,12 @@
                                 <div class="form-group">
 
                                     <input type="text " formControlName="address" placeholder="Enter address"
-<<<<<<< HEAD
-                                        class="form-control mt-3 formcontrol" name="address" id="address" size="30"
-                                        required>
-                                    <div class="add_valid addresss _address">
-                                        <div class="text-danger"
-                                            *ngIf="form.controls['address']?.invalid && form.controls['address'].touched"
-                                            class="">
-                                            <small class="text-danger smallText  "
-                                                *ngIf="form.get('address')?.touched && form.get('address')?.hasError('required')">Address
-                                                is required.</small>
-=======
                                         class="form-control mt-3" name="address" id="address" size="30" required>
                                     <div class="add_valid">
                                         <div class="text-danger"
                                             *ngIf="form.controls['address']?.invalid && form.controls['address'].touched"
                                             class="">
 
->>>>>>> 44e061325fe1921d4b238e08f7f4dcc918e58f83
                                         </div>
                                     </div>
                                 </div>
@@ -122,15 +96,9 @@
                                             <small class="text-danger smallText "
                                                 *ngIf="form.get('password')?.touched && form.get('password')?.hasError('required')">Password
                                                 is required.</small>
-<<<<<<< HEAD
-                                            <small class="text-danger smallText "
-                                                *ngIf="form.get('password')?.touched && form.get('password')?.hasError('minlength')">at
-                                                least 6 characters is required.</small>
-=======
                                             <small class="text-danger smallText"
                                                 *ngIf="form.get('password')?.touched && form.get('password')?.hasError('minlength')">Password
                                                 must be at least 6 characters.</small>
->>>>>>> 44e061325fe1921d4b238e08f7f4dcc918e58f83
                                         </div>
                                     </div>
                                 </div>
@@ -138,7 +106,7 @@
                                 <div class="form-group mt-3 role _role">
                                     <select class="form-select form-select-lg mb-3 "
                                         aria-label=".form-select-lg example">
-                                        <option selected >Roles</option>
+                                        <option selected>Roles</option>
                                         <option value="1">Admin</option>
                                         <option value="2">Employee/User</option>
                                         <option value="3">HR</option>
@@ -181,22 +149,13 @@
                             </form>
                         </div>
                         <hr>
-<<<<<<< HEAD
-                        <button type="submit" class="button-23 buttons signupbutton" role="button"
-                            (click)="SignUp()">Sign Up</button>
-                        <div class="signin signinform signinlink">
-                            <p>Already have an account? <a href="#">Sign in</a>.</p>
-                        </div>
                     </form>
-=======
-                    </form> 
                     <button type="submit" class="registerbtn ">Sign Up</button>
                     <div class="signin signinform signinlink">
                         <p>Already have an account? <a href="#">Sign in</a>.</p>
                     </div>
->>>>>>> 44e061325fe1921d4b238e08f7f4dcc918e58f83
                 </div>
             </div>
         </div>
     </div>
-</div> 
+</div>
