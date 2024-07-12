@@ -6,14 +6,14 @@ import { AppComponent } from './app.component';
 import { SignInPageComponent } from './sign-in-page/sign-in-page.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
-<<<<<<< HEAD
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-=======
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { SidebarModule } from 'ng-sidebar';
-import { AdminPanelComponent } from './admin-panel/admin-panel.component';
->>>>>>> f4c1ab51ad372dcd55095daf2fe29fb315113280
+import { HttpClientModule } from '@angular/common/http';
+import { AddTaskComponent } from './add-task/add-task.component';
+// =======
+// import { SidebarComponent } from './sidebar/sidebar.component';
+// import { SidebarModule } from 'ng-sidebar';
+// import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+// >>>>>>> f4c1ab51ad372dcd55095daf2fe29fb315113280
 
 
 @NgModule({
@@ -22,22 +22,16 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
     SignInPageComponent,
     DashboardComponent,
     RegistrationFormComponent,
-<<<<<<< HEAD
-
-  ],
+    AddTaskComponent,
+ ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-=======
-    SidebarComponent,
-    AdminPanelComponent
-  ],
-  imports: [
     BrowserModule,
-    AppRoutingModule,SidebarModule.forRoot()
->>>>>>> f4c1ab51ad372dcd55095daf2fe29fb315113280
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
