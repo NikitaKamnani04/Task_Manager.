@@ -1,6 +1,7 @@
 import { UserServicesService } from './../services/user-services.service';
 import { Component, OnInit } from '@angular/core';
 import { Chart, registerables } from 'node_modules/chart.js';
+import * as $ from 'jquery';
 Chart.register(...registerables);
 @Component({
   selector: 'app-dashboard',
@@ -8,15 +9,62 @@ Chart.register(...registerables);
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-  constructor(private UserServicesService: UserServicesService) {}
+  name = 'Angular 5';
+  statusList: Array<any> = [];
+  priorityList: Array<any> = [];
+  // schedule: { branch: '' };
+
+  constructor(private UserServicesService: UserServicesService) {
+    this.statusList = [
+      { status: 'in progress', name: 'In Progress' },
+      { status: 'not started', name: 'Not Started' },
+      { status: 'on hold', name: 'On Hold' },
+      { status: 'canceled', name: 'Canceled' },
+      { status: 'completed', name: 'Completed' },
+      { status: 'overdue', name: 'Overdue' },
+      { status: 'sent for review', name: 'Sent for review ' },
+    ];
+    this.priorityList = [
+      { priority: 'high', name: 'High' },
+      { priority: 'medium', name: 'Medium' },
+      { priority: 'low', name: 'Low' },
+    ];
+  }
   chartdata: any;
   labeldata: any[] = [];
   realdata: any[] = [];
   colordata: any[] = [];
-  
 
   ngOnInit(): void {
     this.getChartData();
+    $(function () {
+      $('.dropdown > .caption').on('click', function () {
+        $(this).parent().toggleClass('open');
+      });
+
+      $('.dropdown > .list > .item').on('click', function () {
+        $('.dropdown > .list > .item').removeClass('selected');
+        $(this)
+          .addClass('selected')
+          .parent()
+          .parent()
+          .removeClass('open')
+          .children('.caption')
+          .text($(this).text());
+      });
+
+      $(document).on('keyup', function (evt) {
+        if ((evt.keyCode || evt.which) === 27) {
+          $('.dropdown').removeClass('open');
+        }
+      });
+
+      $(document).on('click', function (evt) {
+        if ($(evt.target).closest('.dropdown > .caption').length === 0) {
+          $('.dropdown').removeClass('open');
+        }
+      });
+    });
   }
   getChartData() {
     this.UserServicesService.getChartInfo().subscribe((res) => {
@@ -32,15 +80,32 @@ export class DashboardComponent implements OnInit {
         console.log(this.realdata);
         console.log(this.colordata);
 
-        this.RenderChart(this.labeldata, this.realdata, this.colordata,'line', 'linechart');
-        this.RenderChart(this.labeldata, this.realdata, this.colordata,'doughnut', 'doughnut');
+        this.RenderChart(
+          this.labeldata,
+          this.realdata,
+          this.colordata,
+          'line',
+          'linechart'
+        );
+        this.RenderChart(
+          undefined,
+          this.realdata,
+          this.colordata,
+          'doughnut',
+          'doughnut'
+        );
       }
     });
   }
-  RenderChart(labeldata: any, maindata: any, colordata: any, type:any, id: any) {
-    const myChart:any = document.getElementById('myChart');
-      // id.canvas.parentNode.style.height = '528px';
-    // id.canvas.parentNode.style.width = '528px';
+  RenderChart(
+    labeldata: any,
+    maindata: any,
+    colordata: any,
+    type: any,
+    id: any
+  ) {
+    const myChart: any = document.getElementById('myChart');
+
     new Chart(id, {
       type: type,
       data: {
@@ -51,7 +116,7 @@ export class DashboardComponent implements OnInit {
             data: maindata,
             backgroundColor: colordata,
             borderColor: ['rgba(154,165,235,1)'],
-            borderWidth: 3,
+            borderWidth: 1,
           },
         ],
       },
@@ -59,6 +124,14 @@ export class DashboardComponent implements OnInit {
         scales: {
           y: {
             beginAtZero: true,
+            grid: {
+              drawOnChartArea: false,
+            },
+          },
+          x: {
+            grid: {
+              drawOnChartArea: true,
+            },
           },
         },
       },

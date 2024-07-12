@@ -5,9 +5,9 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
-  { path: 'emp_register', component: RegistrationFormComponent },
+  { path: 'admin/emp_register', component: RegistrationFormComponent },
   { path: 'admin', component: AdminPanelComponent },
-  {path: 'user', component: DashboardComponent}
+  { path: 'user', component: DashboardComponent },
 ];
 
 @NgModule({

@@ -1,16 +1,20 @@
-<div class="parent d-flex justify-content-between">
+<div class="parent ">
 
     <div id="sidebar">
         <app-sidebar></app-sidebar>
     </div>
-    <div class="body pt-4 position-relative">
+    <div class="body pt-4 position-relative ">
 
         <div class="body_top ps-4 ">
-            <span class="fs-4  ">Welcome User Name</span>
+            <p class="fs-4  ">Welcome User Name</p>
+            <div class="d-flex justify-content-between">
 
-            <span class=" button-36 position-absolute end-0 px-4 py-2 me-4 fs-3 ">Clock In</span>
+                <span class=" button-36 pt-3 fs-5"><i class="fa-solid fa-plus fs-3 pe-3"></i>Add Task</span>
+                <span class=" button-36 position-absolute end-0  pt-3 fs-4 ">Clock In</span>
+            </div>
+
         </div>
-        <div class="m-4 p-4 contaier">
+        <div class="m-4 contaier">
             <div class="row">
 
                 <div class="section_one col-sm-4">
@@ -39,8 +43,10 @@
                                 <div class="projects fs-2">0</div>
                             </div>
                         </div>
-                        <div class="linechart">
-                            <canvas class="graph" id="linechart"></canvas>
+                        <div class="linechart d-flex justify-content-center align-items-center">
+                            <div class="contianer_graph_one">
+                                <canvas class="graph_one" id="linechart"></canvas>
+                            </div>
 
                         </div>
                     </div>
@@ -61,7 +67,6 @@
                                         <p style="color: #9381ff;">Upcoming <span class="ms-3 p-1  rounded-3 text-white"
                                                 style="background-color: #9381ff;">99</span></p>
                                     </div>
-
                                 </div>
                                 <div class="search_box  ">
                                     <div class=" search_bar_task bg-white  rounded-pill position-relative">
@@ -79,70 +84,115 @@
                         <div
                             class="task_card_body d-flex justify-content-center align_items-center align-items-center ">
                             <div class="task_card_table  fs-5 pl-3">
-                                <table class="table table-borderless">
+
+
+                                <table class="table  table-borderless">
                                     <thead>
                                         <tr class="border-bottom">
-                                            <th scope="col">No.</th>
-                                            <th scope="col">Task Name</th>
-                                            <th scope="col">Team</th>
-                                            <th scope="col">Status</th>
-                                            <th scope="col">Priority</th>
-                                            <th scope="col">Deadline</th>
+                                            <th style="width: 5%">No.</th>
+                                            <th style="width: 20%">Task Name</th>
+                                            <th style="width: 20%">Status</th>
+                                            <th style="width: 20%">Priority</th>
+                                            <th style="width: 15%">Deadline</th>
+                                            <th style="width: 20%; margin-left: 15px;">Team</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody class="table_container">
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>Todo</td>
-                                            <td>Medium</td>
-                                            <td>End Date</td>
+                                            <th style="width: 5%" scope="row">1</th>
+                                            <td style="width: 20%">Work on automation</td>
+                                            <td style="width: 20%">
+                                                <select>
+                                                    <option>Select</option>
+                                                    <option *ngFor="let item of this.statusList; let i = index"
+                                                        value="{{ item.status }}" [selected]="i == 0">
+                                                        {{ item.name }}
+                                                    </option>
+                                                </select>
+                                                <!-- <div class="container">
+                                                    <div class="dropdown">
+                                                        <div class="caption" id="status">Select
+                                                        </div>
+                                                        <div class="list">
+                                                            <div class="item text-success">In Progress</div>
+                                                            <div class="item">Paused</div>
+                                                            <div class="item">To-do</div>
+                                                        </div>
+                                                    </div>
+                                                </div> -->
+                                            </td>
+                                            <td style="width: 20%" class="ps-3">
+                                                <select>
+                                                    <option>Select</option>
+                                                    <option *ngFor="let item of this.priorityList; let i = index"
+                                                        value="{{ item.priority }}" [selected]="i == 0">
+                                                        {{ item.name }}
+                                                    </option>
+                                                </select>
+                                                <!-- <div class="container">
+                                                    <div class="dropdown">
+                                                        <div class="caption" id="priority">select</div>
+                                                        <div class="list">
+                                                            <div class="item">High</div>
+                                                            <div class="item">Low</div>
+                                                            <div class="item bg-success" id="medium">Medium</div>
+                                                        </div>
+                                                    </div>
+                                                </div> -->
+                                            </td>
+                                            <td style="width: 15%" class="ps-4">Tomorrow</td>
+                                            <td style="width: 20%;">
+                                                <div class="avatar-group">
+
+                                                    <div class="avatar">
+                                                        <span class="avatar-name">Someone 5</span>
+                                                        <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                                                            alt="Image">
+                                                    </div>
+                                                    <div class="avatar">
+                                                        <span class="avatar-name">Someone 5</span>
+                                                        <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                                                            alt="Image">
+                                                    </div>
+                                                    <div class="avatar">
+                                                        <span class="avatar-name">Someone 5</span>
+                                                        <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                                                            alt="Image">
+                                                    </div>
+                                                    <div class="avatar">
+                                                        <span class="avatar-name">Someone 5</span>
+                                                        <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                                                            alt="Image">
+                                                    </div>
+                                                    <div class="avatar">
+                                                        <span class="avatar-name">Someone 5</span>
+                                                        <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                                                            alt="Image">
+                                                    </div>
+                                                    <div class="avatar">
+                                                        <span class="avatar-name">Someone 5</span>
+                                                        <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                                                            alt="Image">
+                                                    </div>
+
+                                                </div>
+                                            </td>
                                         </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>In progress</td>
-                                            <td>Medium</td>
-                                            <td>End Date</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                            <td>Medium</td>
-                                            <td>End Date</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">4</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>Paused</td>
-                                            <td>Medium</td>
-                                            <td>End Date</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">5</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                            <td>Medium</td>
-                                            <td>End Date</td>
-                                        </tr>
+                                        
 
                                     </tbody>
                                 </table>
+
                             </div>
                         </div>
 
                     </div>
-                    <canvas id="doughnut">
+                    <div class="piechart d-flex justify-content-center align-items-center">
+                        <div class="contianer_graph_two ">
+                            <canvas class="graph_two " id="doughnut"></canvas>
 
-
-
-                    </canvas>
+                        </div>
+                    </div>
                 </div>
             </div>
 
