@@ -1,11 +1,12 @@
-<div class="main ">
+<div class="main">
     <div class="container d-flex">
-        <div class="card1">
+            <div class="card1">
+                
             <h3>Task Manager</h3>
             <img src="../../assets/Images/Task-Manager.png">
         </div>
 
-        <div class="card2  ">
+        <div class="card2 ">
             <h2>Welcome To<br>Organization!</h2>
             <p>Signup to continue using</p>
             <div class="card3">
@@ -27,7 +28,9 @@
                                 class="text-danger text">
                                 <div><span *ngIf="registerForm.controls?.['email']?.errors?.['required']">Email is
                                         Required</span>
-                                    <span *ngIf="registerForm.controls?.['email']?.errors?.['pattern']">Email must be in proper format</span></div>
+                                    <span *ngIf="registerForm.controls?.['email']?.errors?.['pattern']">Email must be in
+                                        proper format</span>
+                                </div>
                             </div>
                             <!-- <label for="hint">Sample: harry@gmail.com</label> -->
                         </div>
@@ -38,40 +41,43 @@
                             <div *ngIf="registerForm.get('mobno')?.invalid && (registerForm.get('mobno')?.dirty || registerForm.get('mobno')?.touched)"
                                 class="text-danger text">
                                 <div>
-                                    <span *ngIf="registerForm.controls?.['mobno']?.errors?.['required']">Contact.No is Required</span>
+                                    <span *ngIf="registerForm.controls?.['mobno']?.errors?.['required']">Contact.No is
+                                        Required</span>
                                 </div>
                             </div>
                         </div>
                         <div class="mb-1">
-                            <textarea formControlName="address" style="resize: none; " type="address" class="form-control"
-                                id="exampleInputaddress1" aria-describedby="addressHelp" placeholder="Enter address"
-                                rows="3" cols="4"></textarea>
-                                <div *ngIf="registerForm.get('address')?.invalid && (registerForm.get('address')?.dirty || registerForm.get('address')?.touched)" class="text-danger text">
-                                    <div>
-                                        <span *ngIf="registerForm.controls?.['address']?.errors?.['required']">Address is Required</span>
-                                    </div>
+                            <textarea formControlName="address" style="resize: none; " type="address"
+                                class="form-control" id="exampleInputaddress1" aria-describedby="addressHelp"
+                                placeholder="Enter address" rows="3" cols="4"></textarea>
+                            <div *ngIf="registerForm.get('address')?.invalid && (registerForm.get('address')?.dirty || registerForm.get('address')?.touched)"
+                                class="text-danger text">
+                                <div>
+                                    <span *ngIf="registerForm.controls?.['address']?.errors?.['required']">Address is
+                                        Required</span>
                                 </div>
+                            </div>
                         </div>
                         <div class="mb-1">
-                            <input   [type]="FieldTextType ? 'text' : 'password'" formControlName="password"  type="password" class="form-control" id="exampleInputpassword1"
+                            <input [type]="FieldTextType ? 'text' : 'password'" formControlName="password"
+                                type="password" class="form-control" id="exampleInputpassword1"
                                 aria-describedby="passwordHelp" placeholder="Enter password">
-                                <span class="password-icon"><i
-                                    class="fa"
-                                    [ngClass]="{
+                            <span class="password-icon"><i class="fa" [ngClass]="{
                                       'fa-eye-slash': !FieldTextType,
                                       'fa-eye': FieldTextType
-                                    }"
-                                    (click)="toggleFieldTextType()"
-                                  ></i>
-                                </span>
-                                
-                                <div *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)" class="text-danger text">
-                                    <div>
-                                        <span *ngIf="registerForm.controls?.['password']?.errors?.['required']">Password is Required</span>
-                                        <span *ngIf="registerForm.controls?.['password']?.errors?.['pattern0']">Password is not Valid</span>
-                                    </div>
-                                    <!-- <label for="hint">Sample: Harry@123</label> -->
+                                    }" (click)="toggleFieldTextType()"></i>
+                            </span>
+
+                            <div *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)"
+                                class="text-danger text">
+                                <div>
+                                    <span *ngIf="registerForm.controls?.['password']?.errors?.['required']">Password is
+                                        Required</span>
+                                    <span *ngIf="registerForm.controls?.['password']?.errors?.['pattern0']">Password is
+                                        not Valid</span>
                                 </div>
+                                <!-- <label for="hint">Sample: Harry@123</label> -->
+                            </div>
                         </div>
                         <button type="button" [disabled]="registerForm.invalid">Sign up</button>
                     </div>
@@ -80,3 +86,4 @@
         </div>
     </div>
 </div>
+

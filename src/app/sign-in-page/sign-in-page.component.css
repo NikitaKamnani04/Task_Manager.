@@ -324,12 +324,13 @@ body {
 
 /* Card Shape */
 .box {
-    margin-top: 20px;
+    /* margin-top: 20px; */
     width: 37%;
     height: 75%;
     background: #4C50BF;
-    margin: 100px auto;
+    /* margin: 100px auto; */
     filter: url(#round);
+    margin: 10%;
     /* position:relative; */
 }
 
@@ -384,8 +385,8 @@ body {
 }
 
 .mb-3 a {
-    color: #4C50BF;
-margin-left: 60%
+    color: #494dc0;
+    margin-left: 60%
 }
 
 .email-text {
@@ -397,13 +398,22 @@ margin-left: 60%
 
 
 
-    /* .box {
+     .box {
       
-        width: 300px;
+        /* width: 300px;
         position: absolute;
-        top: 43px;
-        right: 70%;
-      
+        top: 43px; */
+        /* right: 700px; */
+     
+    } 
+
+    .boxText{
+        width: 80%;
+        /* margin-right: 40%; */
+        position: absolute;
+        /* right: 400px; */
+        translate    : -159px -5px;
+        /* margin: 10%; */
     }
 
     .col-4 h4 {
@@ -419,62 +429,62 @@ margin-left: 60%
     }
 
 
-    .card1 {
+    /* .card1 {
        
         width: 290px;
-        margin: 70% 0 0 20%;
-        
-        top: 60%;
+        margin: 20% 0 0 20%;
+        top: 0%;
         right: 13%;
        
-    }
+    } */
 
-    .mb-3 a {
-        width: 100%;
+    .password a {
         position: absolute;
-        left: 41%;
+        left: 69%;
     }
 
     .container {
         overflow-y: scroll;
-        height: 740px;
+        /* height: 740px; */
         flex-direction: column;
     }
 
     ::-webkit-scrollbar {
         display: none;
-    } */
+    } 
 
     .card1{
         position: absolute;
+        margin: 20% 0 0 10%;
+        left: 5px;
         top: 95%;
-        width: 300px;
+        /* width: 270px; */
     }
 
     .col-4{
-        width: 200px;
+        /* width: 200px;
         position: absolute;
-        top: 43px;
-        right: 200px;
+        top: 43px; */
+        /* right: 200px; */
     }
 
-    .box{
+    /* .box{
         width: 300px;
     
         position: absolute;
         top: 43px;
         right: 20%;
-    }
+    } */
 
     .container{
         overflow-y: scroll;
-        height: 740px;
+        /* height: 740px; */
         flex-direction: column;
     }
 
-    .loginBox{
-        width: 300px;
-    }
+    /* .loginBox{
+        width: 200px;
+    } */
 
     .col-4 img {
         width: 67%;
@@ -482,8 +492,71 @@ margin-left: 60%
         margin-top: 29%;
         margin-left: 16%;
     }
-    
 
+    .card1 .fa-eyeIcon{
+        position: absolute;
+        padding: 1px;
+        translate: 100px;
+        
+      } 
+
+      /* .form-password{
+        margin-top: 7px;
+        margin-left: 145px;
+        width: 100px;
+     } */
+
+      /* .form-password a{
+        position: absolute;
+       right: 20px;
+      } */
+
+      /* .fa-eye-slash{
+   
+       position: absolute;
+       left: 30%;
+      } */
+
+      .content-modal{
+        translate: -240px 30px;
+        padding: 11px 15px;
+        margin: 10px;
+      }
+
+      .email-input input{
+        /* width: 400px; */
+        /* margin: 4px 4px; */
+      }
+
+      .modal-body{
+       position: absolute;
+        left: 7px;
+       /* padding: 2px; */
+      }
+
+      .heading{
+       padding: 1px;
+       width: 300px;
+      }
+
+      .footer .closeButton{
+        margin-right: 175px !important;
+
+      }
+
+      .footer .continueButton{
+        right: 3px !important;
+      }
+
+      .footer .btn-container1{
+        right: 23%;
+        /* top: 30px; */
+       padding-right: 4px;
+      }
+
+      .footer .btn-container2{
+        right: 15px;
+      }
 }
 
 
@@ -574,17 +647,7 @@ margin-left: 60%
         margin-left: 1px;
       }
 
-      /* .main-modal{
-        width: 100px;
-      } */
-/* 
-      .form-control .email{
-        width: 10px;
-      }
-
-      .email-input{
-        width: 10px;
-      } */
+      
 
       .footer .btn-container1{
         right: 23%;
@@ -618,16 +681,9 @@ margin-left: 60%
        
     
      }
-
-      
-      
-      
-      
     
 }
 
-
-/* Try n check */
 
 .modal:before {
     content: '';
@@ -685,8 +741,6 @@ margin-left: 60%
 }
 
 
-
-
 .btn[disabled] {
     background-color: #F5F5F5;
 }
@@ -695,35 +749,4 @@ margin-left: 60%
     background-color: #F5F5F5;
 }
 
-/* .modal:after{
-    width: 50%;
-} */
-
-/* .modal-body input{
-    width: 40%;
-    height: 30%;
-} */
-/* 
-@-webkit-keyframes modal-animation {
-    from {
-        top: -100px;
-        opacity: 0;
-    }
-
-    to {
-        top: 0px;
-        opacity: 1;
-    }
-}
-
-@keyframes modal-animation {
-    from {
-        top: -100px;
-        opacity: 0;
-    }
-
-    to {
-        top: 0px;
-        opacity: 1;
-    }
-} */
+ 
