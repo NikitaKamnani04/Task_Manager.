@@ -95,11 +95,17 @@ body.dark {
 }
 
 .header-text .main {
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
   font-weight: 600;
+  font-style: normal;
 }
 
 .header-text .sub {
-  margin-top: -2px;
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
 
 .sidebar header .toggle {
@@ -162,6 +168,10 @@ body.dark {
   border-radius: 6px;
   transition: var(--trans-04);
   text-align: left;
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .sidebar li a:hover {
@@ -193,6 +203,7 @@ body.dark .sidebar .image img {
 
 .sidebar.close .text {
   opacity: 0;
+  display: none;
 }
 
 .sidebar.close .search-bar {

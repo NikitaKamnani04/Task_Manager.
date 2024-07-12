@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, MinLengthValidator } from '@angular/forms';
+import { FormGroup, MinLengthValidator, } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { RegistrationServiceService } from '../services/registration-service.service';
@@ -11,6 +11,7 @@ import { RegistrationServiceService } from '../services/registration-service.ser
 })
 
 export class RegistrationFormComponent implements OnInit {
+<<<<<<< HEAD
   data: any;
   form!: FormGroup
   f: any;
@@ -25,17 +26,47 @@ Roles: any;
 
   ngOnInit(): void {
     this.showData()
+=======
+
+  form !:FormGroup
+  f: any;
+  submitted!: false;
+  Username: any;
+
+
+  constructor(private formBuilder: FormBuilder ) { }
+
+  ngOnInit(): void {
+<<<<<<< HEAD
+>>>>>>> 44e061325fe1921d4b238e08f7f4dcc918e58f83
     this.form = new FormGroup({
       username: new FormControl('', [Validators.required, Validators.minLength(7)]),
       email: new FormControl('', [Validators.required]),
       mobile_no: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+<<<<<<< HEAD
       address: new FormControl('', [Validators.required]),
       role: new FormControl('', [Validators.required]), 
       dept: new FormControl('', [Validators.required]),
       dateNo: new FormControl('', [Validators.required]),
     });
 
+=======
+      confirm_pass: new FormControl('', [Validators.required]),
+      dept_id: new FormControl('', [Validators.required]),
+    });
+=======
+    this.form  = new FormGroup({
+      username: new FormControl('',[Validators.required,Validators.minLength(7)]),
+      email: new FormControl('',[Validators.required]),
+      mobile_no: new FormControl('',[Validators.required]),
+      password: new FormControl('',[Validators.required,Validators.minLength(6)]),
+      confirm_pass: new FormControl('',[Validators.required]),
+      dept_id: new FormControl('',[Validators.required]),
+      address: new FormControl()
+     });
+>>>>>>> 35943f25c2211de2c8db61fb47ad3ba84ee74be1
+>>>>>>> 44e061325fe1921d4b238e08f7f4dcc918e58f83
   }
   showData() {
     this.Regservice.fetchData().subscribe(res => {
