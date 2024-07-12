@@ -119,8 +119,7 @@
                 <div class="text-center pb-3">SignUp to continue using</div>
 
                 <div class="card-2 mb-4">
-
-                    <form [formGroup]="form">
+                    <form  [formGroup]="form">
                         <div class="formrow form d-flex">
                             <div class="form_field_left leftformfield leftgroup">
 
@@ -128,7 +127,7 @@
 
                                     <input type="text " formControlName="username" placeholder="Enter Username"
                                         class="form-control" name="username" id="username" size="30" required>
-                                    <div class="name_valid ">
+                                    <div class="name_valid">
                                         <div class="text-danger "
                                             *ngIf="form.controls['username']?.invalid && form.controls['username'].touched"
                                             class="">
@@ -257,7 +256,7 @@
                         </div>
 
                         <hr>
-                    </form>
+                    </form> 
                     <button type="submit" class="registerbtn ">Sign Up</button>
                     <div class="signin signinform signinlink">
                         <p>Already have an account? <a href="#">Sign in</a>.</p>
@@ -266,4 +265,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> 

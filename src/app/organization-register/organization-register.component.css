@@ -115,3 +115,139 @@
     margin: 25%;
     color: #4A52BC;
 }
+
+
+@media (max-width:768px)
+{
+    .card3{
+        position: relative;
+        right: 79px;
+        width: 90%;
+        margin-top: 63px;
+    }
+
+    .card3 input{
+        position: relative;
+        right: 40px;
+        width: 334px;
+    }
+
+    .card3 textarea
+    {
+        position: relative;
+        right: 40px;
+        width: 334px;
+    }
+
+    .card2{
+        width: 58%;
+    }
+
+    .password-icon
+    {
+        position: absolute;
+        top: 66%;
+        right: 32px;
+        padding: 3px;
+    }
+
+     .card2 h2,p{
+        position: relative;
+        right: 40px;
+    } 
+
+    .text{
+       position: relative;
+       right: 40px;
+    }
+
+    .card1 h3{
+        width: 180px;
+    }
+
+    .card1 img{
+        width: 80%;
+        height: 50%;
+        margin: 25px;
+    }
+}
+
+@media (max-width:360px)
+{
+    
+     * {
+        box-sizing: border-box;
+      }
+
+      .card1{
+        position: relative;
+        width: 40%;
+        border-radius: 20px;
+        display: none;
+      }
+
+      .card2{
+        /* position: relative;
+        top: 0%; */
+        width: 99%;
+        right: 39%;
+        height: 758px;
+        position: absolute;
+        left: 2px;
+        bottom: -26px;
+      }
+
+      .card3{
+        /* position:absolute;
+        top: 0%;  */
+      }
+      
+      .card3 input{
+        width: 278px;
+        margin-top: 10px;
+      }
+
+      .card3 textarea{
+        width: 280px;
+      }
+
+      .card3 button{
+        margin: 27px 0 0 4px;
+      }
+
+      .card1 img{
+        display: none;
+      }
+
+      .fa{
+        position: relative;
+        top: 54px;
+        padding: 13px;
+      }
+
+      /* .card3 .form-group{
+       position: relative;
+        right: 82px;
+        width: 90%;
+        margin-top: 55px;
+      }
+
+     
+    .card3{
+        position: relative;
+       margin-right: 22px;
+    }     */
+
+    .container{
+        display: none;
+    }
+
+    .card3{
+        position: relative;
+        right: 82px;
+    }
+
+    .card3 .form-group{
+        padding-top: 7px;
+    }
+}
