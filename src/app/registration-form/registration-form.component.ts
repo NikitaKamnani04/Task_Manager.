@@ -21,6 +21,7 @@ export class RegistrationFormComponent implements OnInit {
   constructor(private formBuilder: FormBuilder ) { }
 
   ngOnInit(): void {
+<<<<<<< HEAD
     this.form = new FormGroup({
       username: new FormControl('', [Validators.required, Validators.minLength(7)]),
       email: new FormControl('', [Validators.required]),
@@ -29,6 +30,17 @@ export class RegistrationFormComponent implements OnInit {
       confirm_pass: new FormControl('', [Validators.required]),
       dept_id: new FormControl('', [Validators.required]),
     });
+=======
+    this.form  = new FormGroup({
+      username: new FormControl('',[Validators.required,Validators.minLength(7)]),
+      email: new FormControl('',[Validators.required]),
+      mobile_no: new FormControl('',[Validators.required]),
+      password: new FormControl('',[Validators.required,Validators.minLength(6)]),
+      confirm_pass: new FormControl('',[Validators.required]),
+      dept_id: new FormControl('',[Validators.required]),
+      address: new FormControl()
+     });
+>>>>>>> 35943f25c2211de2c8db61fb47ad3ba84ee74be1
   }
 
 

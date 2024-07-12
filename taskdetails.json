@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+      "year": 2015,
+      "amount": 6000,
+      "colorcode": "red"
+    },
+    {
+      "year": 2016,
+      "amount": 5000,
+      "colorcode": "blue"
+    },
+    {
+      "year": 2017,
+      "amount": 7000,
+      "colorcode": "green"
+    },{
+        "year": 2016,
+        "amount": 8000,
+        "colorcode": "yellow"
+      },
+      {
+        "year": 2017,
+        "amount": 9000,
+        "colorcode": "orange"
+      }
+  ]
+}

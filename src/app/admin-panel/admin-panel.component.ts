@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './admin-panel.component.html',
   styleUrls: ['./admin-panel.component.css'],
 })
-export class AdminPanelComponent implements OnInit {  
-  empInfo: any;
-  deleteEmpInfo: any;
-  searchText:any;
+export class AdminPanelComponent implements OnInit {
+  empInfo: any = [];
+  deleteEmpInfo: any = '';
+  searchText: any;
   constructor(private AdminPanelServiceService: AdminPanelServiceService) {}
 
   ngOnInit(): void {

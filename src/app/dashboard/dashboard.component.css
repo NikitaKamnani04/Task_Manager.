@@ -105,16 +105,37 @@ img {
   border-bottom: 3px solid #9994;
 }
 .user_card {
-  width: 37%;
+  width: 100%;
   height: 250px;
   background-color: #f2eff888;
   border-radius: 10px;
   border: 3px solid #9994;
+  margin-bottom: 8%;
 }
+.graph {
+  display: block !important;
+  box-sizing: border-box !important;
+  height: 50vh !important;
+  width: 472px !important;
+}
+/* .piechart{
+  height: 600px;
+  width: 600px;
+} */
+/* .chart {
+  width: 100%;
+  height: 243px;
+  margin-left: 2%;
+  margin-top: 4%;
+  background-color: bisque;
+  border: 3px solid #9994;
+  border-radius: 15px;
+  background-color: #f2eff888
+} */
 .task_card {
-  width: 60%;
+  width: 100%;
   height: 460px;
-  margin-left: 3%;
+  margin-left: 2%;
   /* background-color: bisque; */
   border: 3px solid #9994;
   border-radius: 15px;
@@ -138,20 +159,22 @@ img {
 .task_card_body {
   width: 100%;
   height: 82%;
+  margin-bottom: 4%;
+
   background-color: #f2eff888;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
 }
 .today_task {
   height: 50px;
-  width: 210px;
+  width: 230px;
   padding: 12px;
   background-color: #f8f7ff;
   border-radius: 10px;
 }
 .upcoming {
   height: 50px;
-
+  width: 175px;
   padding: 12px;
   /* background-color: #999999; */
   font-style: bold;
@@ -162,7 +185,7 @@ img {
   /* border: none; */
 }
 .search_bar_task {
-  width: 450px;
+  width: 415px;
   height: 42px;
   background-color: #f2eff888;
 
@@ -207,6 +230,15 @@ img {
 .button-36:hover {
   box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
   transition-duration: 0.1s;
+}
+.linechart {
+  position: relative;
+  width: 26vw;
+  height: 52vh;
+  background-color: #f2eff888;
+  border-radius: 10px;
+  border: 3px solid #9994;
+  margin-bottom: 8%;
 }
 
 @media (min-width: 768px) {
