@@ -23,10 +23,10 @@ export class RegistrationFormComponent implements OnInit {
   selectedStatus: any;
 
   roles: string | undefined;
- department: string | undefined;
+  department: string | undefined;
   date: string | any;
   roles_items = ['Admin', 'Hr', 'Manager', 'Employee/User'];
- department_items=['IT','Production ','Sales','Digital Marketing','Research & Development','Finance','Administration','Human Resources']
+  department_items = ['IT', 'Production ', 'Sales', 'Digital Marketing', 'Research & Development', 'Finance', 'Administration', 'Human Resources']
 
   constructor(private Regservice: RegistrationServiceService) { }
   ngOnInit(): void {

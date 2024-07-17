@@ -4,14 +4,24 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddTaskComponent } from './add-task/add-task.component';
 
 const routes: Routes = [
-  {path:'add-task', component:AddTaskComponent},
-  {path:'app-registration-form',component:RegistrationFormComponent},
+  { path: 'add-task', component: AddTaskComponent },
+  { path: 'app-registration-form', component: RegistrationFormComponent },
   { path: 'admin/emp_register', component: RegistrationFormComponent },
   { path: 'admin', component: AdminPanelComponent },
   { path: 'user', component: DashboardComponent },
-  {path:'signin',component:SignInPageComponent},
-  {path:'resetpassword',component:ResetPasswordComponent},
-  {path:'addproject',component:AddProjectComponent}
+  { path: 'signin', component: SignInPageComponent },
+  { path: 'resetpassword', component: ResetPasswordComponent },
+  { path: 'addproject', component: AddProjectComponent },
+  { path: '', component: DashboardComponent },
+  { path: 'add-task', component: AddTaskComponent },
+  { path: 'app-registration-form', component: RegistrationFormComponent },
+  { path: 'emp_register', component: RegistrationFormComponent },
+  { path: 'employees', component: AdminPanelComponent },
+  { path: 'workControl', component: DashboardComponent },
+  { path: 'resetpassword/signin', component: SignInPageComponent },
+  { path: 'resetpassword', component: ResetPasswordComponent },
+  { path: 'addproject', component: AddProjectComponent },
+  { path: 'dashboard', component: DashboardComponent },
 ];
 import { SignInPageComponent } from './sign-in-page/sign-in-page.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
@@ -25,4 +35,4 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
