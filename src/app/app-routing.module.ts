@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'admin/emp_register', component: RegistrationFormComponent },
   { path: 'admin', component: AdminPanelComponent },
   { path: 'user', component: DashboardComponent },
-  {path:'resetpassword/signin',component:SignInPageComponent},
+  {path:'signin',component:SignInPageComponent},
   {path:'resetpassword',component:ResetPasswordComponent},
   {path:'addproject',component:AddProjectComponent}
 ];

@@ -1,4 +1,4 @@
-* {
+ * {
   box-sizing: border-box
 }
 
@@ -9,14 +9,6 @@
   justify-content: center;
   overflow: hidden;
 }
-
-/* .container {
-   background-color:white;
-   height: 100vh;
-   height: 95%;
-   margin-top: 23px;
-   margin-bottom: 30px;
- } */
 
 
 .column1 {
@@ -71,7 +63,7 @@
   border-radius: 30px 30px 30px 30px;
   border: 1px solid #fff;
 
-  /* margin-top: 0%; */
+  
 }
 
 .card-2 input {
@@ -94,9 +86,7 @@ svg {
 
 }
 
-/* .text input{
-  border-color: #fff;
-} */
+
 
 .button-23  {
  background-color: #FFFFFF;
@@ -121,7 +111,7 @@ svg {
   user-select: none;
   -webkit-user-select: none;
   width: auto;
-  margin-left:41%;
+  margin-left:40%;
 }
 
 .button-23:focus-visible {
@@ -169,7 +159,7 @@ form {
   background-color: #7C81CE;
   width: 100%;
   padding: 6px;
-  /* margin: 2px 3px 5px 0; */
+  
   display: inline-block;
   font-size: 1rem;
   border-color: #fff;
@@ -276,7 +266,7 @@ hr {
     width: 286px;
     margin-top:12%;
     display: none;
-    /* margin-right:9%; */
+   
   }
  .label1{
   margin-top:3%;
@@ -354,15 +344,18 @@ hr {
     padding:5px 10px;
         
   }
-
-  ._name,._email,._mob,._address,._password{
-    height:20px !important;
+ .name1,.email1,.mob1,.address1{
+    height: 20px !important;
   }
+  .password1{
+    height:20px !important;
+  } 
+
 }
 
 @media screen and (max-width:768px){
   .signinlink{
-      margin-left: 17%;
+      margin-left: 19%;
   }
 
   h2 {
@@ -396,7 +389,7 @@ margin-left:35% !important;
  }
 
  .name,.email,.password,.addresss,.mob{
-  height:30px;
+  height:32px ;
  }
  .role{
   height:21%;
@@ -407,7 +400,9 @@ margin-left:35% !important;
  .card-2{
   height:85%;
  }
- }
+}
 
-        
-           
+
+
+
+            

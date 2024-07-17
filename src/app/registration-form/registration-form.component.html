@@ -23,7 +23,7 @@
 
                                     <input type="text " formControlName="username" placeholder="Enter Username"
                                         class="form-control" name="username" id="username" size="30" required>
-                                    <div class="name_valid">
+                                    <div class="name_valid name name1">
                                         <div class="text-danger "
                                             *ngIf="form.controls['username']?.invalid && form.controls['username'].touched"
                                             class="">
@@ -39,11 +39,11 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group ">
+                                <div class="form-group">
 
                                     <input type="text" formControlName="email" placeholder="Enter Email"
                                         class="form-control mt-3" name="email" id="email" required>
-                                    <div class="email_valid email _email">
+                                    <div class="email_valid email email1 ">
                                         <div class="text-danger"
                                             *ngIf="form.controls['email']?.invalid && form.controls['email'].touched"
                                             class="">
@@ -57,8 +57,8 @@
                                 <div class="form-group">
 
                                     <input type="text" formControlName="mobile_no" placeholder="Enter Mob No."
-                                        name="mobile_no" class="form-control mt-3 formcontrol" id="mobile_no" required>
-                                    <div class="mobile_valid mob _mob">
+                                        name="mobile_no" class="form-control mt-3 " id="mobile_no" required>
+                                    <div class="mobile_valid mob mob1">
                                         <div class="text-danger"
                                             *ngIf="form.controls['mobile_no']?.invalid && form.controls['mobile_no'].touched"
                                             class="">
@@ -74,7 +74,7 @@
 
                                     <input type="text " formControlName="address" placeholder="Enter address"
                                         class="form-control mt-3" name="address" id="address" size="30" required>
-                                    <div class="add_valid">
+                                    <div class="add_valid addresss address1">
                                         <div class="text-danger"
                                             *ngIf="form.controls['address']?.invalid && form.controls['address'].touched"
                                             class="">
@@ -89,7 +89,7 @@
 
                                     <input type="password" formControlName="password" placeholder="Enter Password"
                                         name="password" class="form-control" id="password" size="30" required>
-                                    <div class="password_valid password _password">
+                                    <div class="password_valid password password1">
                                         <div class="text-danger"
                                             *ngIf="form.controls['password']?.invalid && form.controls['password'].touched"
                                             class="">
@@ -97,41 +97,42 @@
                                                 *ngIf="form.get('password')?.touched && form.get('password')?.hasError('required')">Password
                                                 is required.</small>
                                             <small class="text-danger smallText"
-                                                *ngIf="form.get('password')?.touched && form.get('password')?.hasError('minlength')">Password
-                                                must be at least 6 characters.</small>
+                                                *ngIf="form.get('password')?.touched && form.get('password')?.hasError('minlength')">
+                                                at least 6 characters is required.</small>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="form-group mt-3 role _role">
-                                    <select class="form-select form-select-lg mb-3 "
+                                <div class="form-group mt-3 role _role ">
+                                    <select  [(ngModel)]="roles" formControlName="role"
+                                        class="form-select  form-select-lg mb-3 "
                                         aria-label=".form-select-lg example">
-                                        <option selected>Roles</option>
-                                        <option value="1">Admin</option>
-                                        <option value="2">Employee/User</option>
-                                        <option value="3">HR</option>
-                                        <option value="4">Manager</option>
+                                        <option [value]="null" [disabled]="true" [selected]="true">
+                                            Select Roles
+                                        </option>
+                                        <option *ngFor="let item of roles_items">         
+                                            {{item}}
+                                        </option>  
                                     </select>
+                                    
 
                                 </div>
 
-                                <div class="form-group mt-3 dept _dept">
-                                    <select class="form-select form-select-lg mb-3 "
+                                <div class="form-group mt-3 dept _dept ">
+                                    <select [(ngModel)]="department" formControlName="dept" class="form-select form-select-lg mb-3 "
                                         aria-label=".form-select-lg example">
-                                        <option selected>Department name</option>
-                                        <option value="1">IT</option>
-                                        <option value="2">Finance</option>
-                                        <option value="3">Production</option>
-                                        <option value="4">Digital Marketing</option>
-                                        <option value="5">Sales</option>
-                                        <option value="6">Human Resources</option>
-                                        <option value="7">Research & Development</option>
-                                        <option value="8">Administration</option>
+                                        <option [value]="null" [disabled]="true" [selected]="true">
+                                            Select Department
+                                        </option>
+                                        <option *ngFor="let item of department_items">         
+                                            {{item}}
+                                        </option>  
+                                    
                                     </select>
                                 </div>
 
                                 <div class="form-group mt-3 dateNo _dateNo">
-                                    <input type="Date" placeholder=" Joining Date" name="start_date"
+                                    <input [(ngModel)]="date" formControlName="dateNo" type="Date" placeholder=" Joining Date" name="start_date"
                                         title="Joining Date" class="form-control mt-3" id="Joining Date" size="30">
                                 </div>
                             </div>
@@ -150,7 +151,7 @@
                         </div>
                         <hr>
                     </form>
-                    <button type="submit" class="registerbtn ">Sign Up</button>
+                    <button type="submit" class=" buttons  button-23 signupbutton" (click)="SignUp()">Sign Up</button>
                     <div class="signin signinform signinlink">
                         <p>Already have an account? <a href="#">Sign in</a>.</p>
                     </div>

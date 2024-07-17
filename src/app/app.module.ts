@@ -4,36 +4,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignInPageComponent } from './sign-in-page/sign-in-page.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
-
-
-
-
-
 import { AddTaskComponent } from './add-task/add-task.component';
-
 import { SidebarModule } from 'ng-sidebar';
-
-
-
-
 import { OrganizationRegisterComponent } from './organization-register/organization-register.component';
-
 import { FormGroup,FormsModule,Validators,ReactiveFormsModule} from '@angular/forms';
-
-
-
-
-
-
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { HttpClientModule } from '@angular/common/http';
-
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { AddProjectComponent } from './add-project/add-project.component';
-
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+// import { RegFormComponent } from './reg-form/reg-form.component';
 
 
 // import { FormsModule } from '@angular/forms';
@@ -50,40 +32,21 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
    RegistrationFormComponent,
    ResetPasswordComponent,
    AddProjectComponent,
-   AddTaskComponent
+   AddTaskComponent,
+   
  ],
+ imports: [
 
-
-
-  
-
-
-
-  imports: [
-
-    ReactiveFormsModule,
-
-    // Ng2SearchPipeModule,
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
- 
-
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-
-    HttpClientModule,
-
-    BrowserModule,
-    AppRoutingModule,
-    SidebarModule.forRoot(),
-    HttpClientModule,
-    Ng2SearchPipeModule,
-
-    FormsModule,
-
-    FormsModule 
+   ReactiveFormsModule,
+   BrowserModule,
+   AppRoutingModule,
+   FormsModule,
+   AppRoutingModule,
+   HttpClientModule,
+   AppRoutingModule,
+   SidebarModule.forRoot(),
+   HttpClientModule,
+   Ng2SearchPipeModule,
 
   ],
   providers: [],
