@@ -50,7 +50,7 @@ Roles: any;
   showData() {
     this.Regservice.fetchData().subscribe(res => {
       this.data = res;
-      // console.log(this.data);
+
 
     })
   }
@@ -66,7 +66,7 @@ Roles: any;
       dateNo:this.form.value.dateNo,
     }
     this.Regservice.getEmployeeData(emp_data).subscribe((res) => {
-      console.log(res);
+
       })
      this.form.reset()
   }

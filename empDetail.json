@@ -79,16 +79,6 @@
       "join_date": "3-6-24",
       "department": "Representative",
       "role": "CEO"
-    },
-    {
-      "id": 13,
-      "name": "nikita Pichai",
-      "email": "google.ceo.company@gmail.com",
-      "gender": "Male",
-      "dob": "12-8-92",
-      "join_date": "3-6-24",
-      "department": "Representative",
-      "role": "CEO"
     }
   ]
 }

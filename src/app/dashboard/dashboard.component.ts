@@ -1,6 +1,7 @@
 import { UserServicesService } from './../services/user-services.service';
 import { Component, OnInit } from '@angular/core';
 import { Chart, registerables } from 'node_modules/chart.js';
+
 import * as $ from 'jquery';
 Chart.register(...registerables);
 @Component({
@@ -12,8 +13,11 @@ export class DashboardComponent implements OnInit {
   name = 'Angular 5';
   statusList: Array<any> = [];
   priorityList: Array<any> = [];
-  // schedule: { branch: '' };
-
+  searchText: any;
+  taskData: any;
+  labeldata: any[] = [];
+  realdata: any[] = [];
+  colordata: any[] = [];
   constructor(private UserServicesService: UserServicesService) {
     this.statusList = [
       { status: 'in progress', name: 'In Progress' },
@@ -30,10 +34,6 @@ export class DashboardComponent implements OnInit {
       { priority: 'low', name: 'Low' },
     ];
   }
-  chartdata: any;
-  labeldata: any[] = [];
-  realdata: any[] = [];
-  colordata: any[] = [];
 
   ngOnInit(): void {
     this.getChartData();
@@ -68,31 +68,30 @@ export class DashboardComponent implements OnInit {
   }
   getChartData() {
     this.UserServicesService.getChartInfo().subscribe((res) => {
-      this.chartdata = res;
-      if (this.chartdata != null) {
-        for (let i = 0; i < this.chartdata.length; i++) {
-          console.log(this.chartdata[i]);
-          this.labeldata.push(this.chartdata[i].year);
-          this.realdata.push(this.chartdata[i].amount);
-          this.colordata.push(this.chartdata[i].colorcode);
+      this.taskData = res;
+      if (this.taskData != null) {
+        for (let i = 0; i < this.taskData.length; i++) {
+       
+          this.labeldata.push(this.taskData[i].day);
+          this.realdata.push(this.taskData[i].hours);
+          this.colordata.push(this.taskData[i].colorcode);
         }
-        console.log(this.labeldata);
-        console.log(this.realdata);
-        console.log(this.colordata);
-
+  
+        this.RenderChart(
+          this.labeldata,
+          this.realdata,
+          "#9381FF",
+          'line',
+          'linechart',
+          true
+        );
         this.RenderChart(
           this.labeldata,
           this.realdata,
           this.colordata,
-          'line',
-          'linechart'
-        );
-        this.RenderChart(
-          undefined,
-          this.realdata,
-          this.colordata,
           'doughnut',
-          'doughnut'
+          'doughnut',
+          false
         );
       }
     });
@@ -102,7 +101,8 @@ export class DashboardComponent implements OnInit {
     maindata: any,
     colordata: any,
     type: any,
-    id: any
+    id: any,
+    drawOnChartArea: any,
   ) {
     const myChart: any = document.getElementById('myChart');
 
@@ -112,7 +112,7 @@ export class DashboardComponent implements OnInit {
         labels: labeldata,
         datasets: [
           {
-            label: '# of Votes',
+            label: 'No. of hours',
             data: maindata,
             backgroundColor: colordata,
             borderColor: ['rgba(154,165,235,1)'],
@@ -130,7 +130,7 @@ export class DashboardComponent implements OnInit {
           },
           x: {
             grid: {
-              drawOnChartArea: true,
+              drawOnChartArea: drawOnChartArea,
             },
           },
         },

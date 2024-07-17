@@ -1,28 +1,38 @@
 {
   "tasks": [
     {
-      "year": 2015,
-      "amount": 6000,
-      "colorcode": "red"
+      "task_name": "work On automation",
+      "deadline": "Tomorrow",
+      "day": "Monday",
+      "hours": 6,
+      "colorcode": "#9381FF"
     },
     {
-      "year": 2016,
-      "amount": 5000,
-      "colorcode": "blue"
+      "task_name": "work On navbar",
+      "deadline": "12-10-2024",
+      "day": "Tuesday",
+      "hours": 5,
+      "colorcode": "#B8B8FF"
     },
     {
-      "year": 2017,
-      "amount": 7000,
-      "colorcode": "green"
+      "task_name": "work on Api services",
+      "deadline": "12-5-2024",
+      "day": "Wednesday",
+      "hours": 7,
+      "colorcode": "#EAECFA"
     },{
-        "year": 2016,
-        "amount": 8000,
-        "colorcode": "yellow"
+      "task_name": "Routing implementations",
+      "deadline": "Today",
+        "day": "Thursday",
+        "hours": 8,
+        "colorcode": "#E2EAFC"
       },
       {
-        "year": 2017,
-        "amount": 9000,
-        "colorcode": "orange"
+        "task_name": "work On responsiveness",
+        "deadline": "Today",
+        "day": "Friday",
+        "hours": 9,
+        "colorcode": "#F8F7FF"
       }
   ]
 }

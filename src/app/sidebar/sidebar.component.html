@@ -1,5 +1,5 @@
 <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-<nav class="sidebar">
+<nav  class="sidebar">
   <header>
     <div class="image-text">
       <span class="image">
@@ -11,6 +11,7 @@
         <span class="sub">Manager</span>
       </div>
     </div>
+    <!-- (click)="toggle=!toggle" -->
     <div class="hide_icon" (click)="toggle=!toggle">
       <i class=" toggle_icon bx bx-chevron-right toggle " style="background-color: #9381ff;"></i>
     </div>
@@ -20,7 +21,7 @@
     <div class="menu">
       <ul class="menu-links">
 
-        <li class="nav-link">
+        <li class="nav-link" routerLink="/dashboard">
           <a>
             <i class=" bx bx-home-alt icons"></i>
             <span class="text nav-text">Dashboard</span>
@@ -28,8 +29,14 @@
         </li>
         <li class="nav-link">
           <a>
-            <i class="bx bx-bar-chart-alt-2 icons"></i>
+            <i class="bx bxs-grid icons"></i>
             <span class="text nav-text">Projects</span>
+          </a>
+        </li>
+        <li class="nav-link">
+          <a>
+            <i class="bx bx-task icons"></i>
+            <span class="text nav-text">Tasks</span>
           </a>
         </li>
         <li class="nav-link">
@@ -44,10 +51,11 @@
             <span class="text nav-text">Events</span>
           </a>
         </li>
-        <li class="nav-link">
+
+        <li class="nav-link" routerLink="/employees">
           <a>
-            <i class="bx bx-heart icons"></i>
-            <span class="text nav-text">Overview</span>
+            <i class="bx bx-user icons"></i>
+            <span class="text nav-text">Employees</span>
           </a>
         </li>
       </ul>

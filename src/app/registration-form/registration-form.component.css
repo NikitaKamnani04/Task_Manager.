@@ -258,6 +258,19 @@ hr {
 .role{
   height:21%;
 }
+.prev_button{
+  height: 45px;
+  width: 125px;
+  background-color: #7C81CE;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 15px;
+  margin-top: 8px;
+  position: absolute;
+  border: 1px solid #fff;
+  cursor: pointer;
+  font-family: Roboto-slab;
+}
 
 
 @media screen and (max-width:360px) {
