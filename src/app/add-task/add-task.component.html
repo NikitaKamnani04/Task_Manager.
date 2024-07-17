@@ -1,51 +1,17 @@
-<header class="main-header bg-white" id="header">
+<div class="main">
+    <h2>ADD TASK</h2>
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <form [formGroup]="form"]>
+                    <div class="form-group">
 
-    <div class="row">
-        <div class="col">
-            <div class="input-group">
-                <h2 class="mb-0 f-18 font-weight-bold ">
-                    <span class="d-inline-block text-truncate">Tasks</span>
-                </h2>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <div class="text-duration d-flex">
-                <h6>Duration</h6>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-
-                        <select class="form-select example d-flex">
-                            <option selected>Start date to End date</option>
-                            <option value="1">Today</option>
-                            <option value="2">last 30 days</option>
-                            <option value="3">This Month</option>
-                            <option value="4">last Month</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-     <div class="col">
-            <div class="text-Status d-flex">
-                <h6>Status</h6>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <select class="form-select example">
-                            <option selected>Hide Completed Task</option>
-                            <option value="1">All</option>
-                            <option value="2">Incomplete</option>
-                            <option value="3">Dev-Testing</option>
-                            <option value="4">On Hold</option>
-                            <option value="4">Completed</option>
-                        </select>
-
-                    </div>
-                </div>
-            </div>
-        </div>
+                        <label for="task name">Task Name</label>
+                        <input type="text " formControlName="username" placeholder="Enter a Task Name"
+                            class="form-control" name="username" id="username" size="3" required>
+                        <div class="name_valid name _name">
+                        </div>
+                        </div>
 
         <div class="col 3">
             <div class="text-Search">
@@ -63,74 +29,3 @@
             </div>
         </div>
     </div>
-
-     <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">+ ADD TASK</button>
-
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-      <div class="offcanvas-header">
-        <h4 id="offcanvasRightLabel">Add Task</h4>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        ...
-      </div>
-    </div>
-
-  
-</header>
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div class="heading">
-    <h2 class="mb-0 f-18 font-weight-bold ">
-        <span class="d-inline-block text-truncate ">Tasks</span>
-    </h2>
-
-    <div class="navbar-left float-left d-flex align-items-center ">
-        <h6>Duration:</h6>
-        <div class="form-group">
-         <select class="form-select example">
-             <option selected>Start date to End date</option>
-             <option value="1">Today</option>
-             <option value="2">last 30 days</option>
-             <option value="3">This Month</option>
-             <option value="4">last Month</option>
-         </select> 
-        </div>
-    </div>
-   
-    <div class="navbar-left float-left d-flex align-items-center">
-        <h6>Status:</h6>
-        <div class="form-group">
-         <select class="form-select example">
-             <option selected>Hide Completed Task</option>
-             <option value="1">All</option>
-             <option value="2">Incomplete</option>
-             <option value="3">Dev-Testing</option>
-             <option value="4">On Hold</option>
-             <option value="4">Completed</option>
-         </select> 
-        </div>
-</div>
-<div class="search">
-    <form action="#">
-        <input type="text" placeholder="Search"
-               name="search">
-        <button>
-            <i class="fa fa-search"></i>
-        </button>
-    </form>
-</div>
-<div>
-<button type="button" class="btn btn-dark">+ ADD TASK</button>
-</div>
-</div>
-</div> -->

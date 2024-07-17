@@ -47,7 +47,7 @@ export class RegistrationFormComponent implements OnInit {
   showData() {
     this.Regservice.fetchData().subscribe(res => {
       this.data = res;
-      // console.log(this.data);
+
 
     })
   }

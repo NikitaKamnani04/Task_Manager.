@@ -1,17 +1,14 @@
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 <div class="parent ">
-
-    <div id="sidebar">
-        <app-sidebar></app-sidebar>
-    </div>
-    <div class="body pt-4 position-relative ">
+    <div class="body position-relative ">
 
         <div class="body_top ps-4 ">
-            <p class="fs-4  ">Welcome User Name</p>
-            <div class="d-flex justify-content-between">
+            <p class="fs-4 user_name">Welcome User Name</p>
+            <!-- <div class="d-flex justify-content-between">
 
-                <span class=" button-36 pt-3 fs-5"><i class="fa-solid fa-plus fs-3 pe-3"></i>Add Task</span>
+                <span class="add_task_button"><i class="fa-solid fa-plus fs-4 me-2 "></i>Add Task</span>
                 <span class=" button-36 position-absolute end-0  pt-3 fs-4 ">Clock In</span>
-            </div>
+            </div> -->
 
         </div>
         <div class="m-4 contaier">
@@ -45,7 +42,8 @@
                         </div>
                         <div class="linechart d-flex justify-content-center align-items-center">
                             <div class="contianer_graph_one">
-                                <canvas class="graph_one" id="linechart"></canvas>
+                                <canvas class="graph_two " id="doughnut"></canvas>
+
                             </div>
 
                         </div>
@@ -61,7 +59,8 @@
                                 <div class="container_task d-flex align_items-center">
                                     <div class="today_task px-3 fs-5 ">
                                         <p>Today's Tasks <span class="ms-3 p-1  rounded-3  text-white"
-                                                style="background-color: #9381ff;">105</span></p>
+                                                style="background-color: #9381ff;">{{taskData? taskData.length:
+                                                "00"}}</span></p>
                                     </div>
                                     <div class="upcoming px-3 fs-5">
                                         <p style="color: #9381ff;">Upcoming <span class="ms-3 p-1  rounded-3 text-white"
@@ -72,9 +71,11 @@
                                     <div class=" search_bar_task bg-white  rounded-pill position-relative">
                                         <form class="">
                                             <input type="text" placeholder="Search.." name="search"
-                                                class=" task_search  ps-4 my-1  rounded-pill fs-5">
+                                                class=" task_search  ps-4 my-1  rounded-pill fs-5"
+                                                [(ngModel)]="searchText" autocomplete="off"
+                                                placeholder="Start searching for Tasks">
                                             <span type="submit"><i
-                                                    class="fa fa-search  pe-1  position-absolute top-50 end-0 translate-middle"></i></span>
+                                                    class="fa-brands fa-searchengin  pe-1  position-absolute top-50 end-0 translate-middle"></i></span>
                                         </form>
                                     </div>
                                 </div>
@@ -98,9 +99,9 @@
                                         </tr>
                                     </thead>
                                     <tbody class="table_container">
-                                        <tr>
-                                            <th style="width: 5%" scope="row">1</th>
-                                            <td style="width: 20%">Work on automation</td>
+                                        <tr *ngFor="let items of taskData | filter:searchText;let i = index">
+                                            <th style="width: 5%" scope="row">{{i+1}}</th>
+                                            <td style="width: 20%">{{items.task_name}}</td>
                                             <td style="width: 20%">
                                                 <select>
                                                     <option>Select</option>
@@ -109,17 +110,7 @@
                                                         {{ item.name }}
                                                     </option>
                                                 </select>
-                                                <!-- <div class="container">
-                                                    <div class="dropdown">
-                                                        <div class="caption" id="status">Select
-                                                        </div>
-                                                        <div class="list">
-                                                            <div class="item text-success">In Progress</div>
-                                                            <div class="item">Paused</div>
-                                                            <div class="item">To-do</div>
-                                                        </div>
-                                                    </div>
-                                                </div> -->
+
                                             </td>
                                             <td style="width: 20%" class="ps-3">
                                                 <select>
@@ -129,19 +120,10 @@
                                                         {{ item.name }}
                                                     </option>
                                                 </select>
-                                                <!-- <div class="container">
-                                                    <div class="dropdown">
-                                                        <div class="caption" id="priority">select</div>
-                                                        <div class="list">
-                                                            <div class="item">High</div>
-                                                            <div class="item">Low</div>
-                                                            <div class="item bg-success" id="medium">Medium</div>
-                                                        </div>
-                                                    </div>
-                                                </div> -->
+
                                             </td>
-                                            <td style="width: 15%" class="ps-4">Tomorrow</td>
-                                            <td style="width: 20%;">
+                                            <td style="width: 15%" class="ps-4 ">{{items.deadline}}</td>
+                                            <td style="width: 20%; ">
                                                 <div class="avatar-group">
 
                                                     <div class="avatar">
@@ -178,27 +160,19 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                        
-
                                     </tbody>
                                 </table>
-
                             </div>
                         </div>
-
                     </div>
                     <div class="piechart d-flex justify-content-center align-items-center">
                         <div class="contianer_graph_two ">
-                            <canvas class="graph_two " id="doughnut"></canvas>
+                            <canvas class="graph_one" id="linechart"></canvas>
 
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-
-
     </div>
-
 </div>

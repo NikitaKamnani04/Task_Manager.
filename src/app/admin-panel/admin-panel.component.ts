@@ -18,19 +18,18 @@ export class AdminPanelComponent implements OnInit {
   showEmpDetail() {
     this.AdminPanelServiceService.empDetail().subscribe((data) => {
       this.empInfo = data;
-      console.log(this.empInfo);
-      // console.log(typeof this.empInfo[0].id);
+   
     });
   }
   empData(data: any) {
     this.deleteEmpInfo = data;
-    console.log(this.deleteEmpInfo.name);
+
   }
   deleteEmpDetail() {
     this.AdminPanelServiceService.deleteEmpDetail(
       this.deleteEmpInfo.id
     ).subscribe((data) => {
-      console.log(data);
+ 
       this.showEmpDetail();
     });
   }

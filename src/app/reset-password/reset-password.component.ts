@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import {  AbstractControl,
+import {
+  AbstractControl,
   FormBuilder,
   FormControl,
   FormGroup,
-  Validators,} from '@angular/forms';
+  Validators,
+} from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
 @Component({
   selector: 'app-reset-password',
   templateUrl: './reset-password.component.html',
-  styleUrls: ['./reset-password.component.css']
+  styleUrls: ['./reset-password.component.css'],
 })
 export class ResetPasswordComponent implements OnInit {
-
   // resetPasswordForm!:FormBuilder;
   // resetPassword!: FormGroup;
   passwordsMatching = false;
@@ -22,19 +23,14 @@ export class ResetPasswordComponent implements OnInit {
 
   // }
 
-
   // ngOnInit(): void {
   //   this.resetPassword = new FormGroup({
   //     'newPassword': new FormControl('', [Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,18}$')]),
   //     'confirmPassword': new FormControl('', [Validators.required,Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,18}$')]),
-      
-    
-  //   }); 
+
+  //   });
   //   this.resetPassword.reset()
   // }
-
-  
-
 
   // checkPasswords(pw: string, cpw: string) {
   //   this.isConfirmPasswordDirty = true;
@@ -72,8 +68,6 @@ export class ResetPasswordComponent implements OnInit {
   //   }
   // }
 
-
-
   newPassword = new FormControl(null, [
     (c: AbstractControl) => Validators.required(c),
     Validators.pattern(
@@ -95,25 +89,11 @@ export class ResetPasswordComponent implements OnInit {
     {
       validator: this.ConfirmedValidator('newPassword', 'confirmPassword'),
     }
-    
   );
 
+  constructor(private formBuilder: FormBuilder, private router: Router) {}
 
-
-  constructor(private formBuilder: FormBuilder,private router:Router) {}
-
-
-  ngOnInit() {
-
-  }
-
-  // onSubmit(): void {
-  //   console.log(this.resetPasswordForm);
-  //   if (!this.resetPasswordForm?.valid) {
-  //     return;
-  //   }
-  // }
-
+  ngOnInit() {}
 
   ConfirmedValidator(controlName: string, matchingControlName: string) {
     return (formGroup: FormGroup) => {
@@ -133,6 +113,3 @@ export class ResetPasswordComponent implements OnInit {
     };
   }
 }
-
-
-

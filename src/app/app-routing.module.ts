@@ -17,12 +17,9 @@ import { SignInPageComponent } from './sign-in-page/sign-in-page.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { AddProjectComponent } from './add-project/add-project.component';
 
-
-
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
