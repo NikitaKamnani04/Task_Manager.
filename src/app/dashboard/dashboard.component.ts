@@ -1,7 +1,7 @@
 import { UserServicesService } from './../services/user-services.service';
 import { Component, OnInit } from '@angular/core';
-import { Chart, registerables } from 'node_modules/chart.js';
-Chart.register(...registerables);
+// import { Chart, registerables } from 'node_modules/chart.js';
+// Chart.register(...registerables);
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -32,36 +32,36 @@ export class DashboardComponent implements OnInit {
         console.log(this.realdata);
         console.log(this.colordata);
 
-        this.RenderChart(this.labeldata, this.realdata, this.colordata,'line', 'linechart');
-        this.RenderChart(this.labeldata, this.realdata, this.colordata,'doughnut', 'doughnut');
+        // this.RenderChart(this.labeldata, this.realdata, this.colordata,'line', 'linechart');
+        // this.RenderChart(this.labeldata, this.realdata, this.colordata,'doughnut', 'doughnut');
       }
     });
   }
-  RenderChart(labeldata: any, maindata: any, colordata: any, type:any, id: any) {
-    const myChart:any = document.getElementById('myChart');
+  // RenderChart(labeldata: any, maindata: any, colordata: any, type:any, id: any) {
+    // const myChart:any = document.getElementById('myChart');
       // id.canvas.parentNode.style.height = '528px';
     // id.canvas.parentNode.style.width = '528px';
-    new Chart(id, {
-      type: type,
-      data: {
-        labels: labeldata,
-        datasets: [
-          {
-            label: '# of Votes',
-            data: maindata,
-            backgroundColor: colordata,
-            borderColor: ['rgba(154,165,235,1)'],
-            borderWidth: 3,
-          },
-        ],
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true,
-          },
-        },
-      },
-    });
-  }
+    // new Chart(id, {
+    //   type: type,
+    //   data: {
+    //     labels: labeldata,
+    //     datasets: [
+    //       {
+    //         label: '# of Votes',
+    //         data: maindata,
+    //         backgroundColor: colordata,
+    //         borderColor: ['rgba(154,165,235,1)'],
+    //         borderWidth: 3,
+    //       },
+    //     ],
+    //   },
+//       options: {
+//         scales: {
+//           y: {
+//             beginAtZero: true,
+//           },
+//         },
+//       },
+//     });
+//   }
 }

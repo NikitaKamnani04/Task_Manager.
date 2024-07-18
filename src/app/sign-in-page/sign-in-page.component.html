@@ -1,5 +1,4 @@
-
-<div class="main" style="background-color: #494dc0;">
+<div class="main">
 	<div class="container d-flex" style="background-color:white;padding: 20px;" scroll>
 		<div class="card1">
 			<h5 class="heading"> Please Enter your Login Details</h5>
@@ -21,7 +20,6 @@
 						</div>
 					</div>
 				</div>
-
 
 				<label for="exampleInputPassword1" class="form-label">Password</label>
 				<input [type]="FieldTextType ? 'text' : 'password'" formControlName='password' type="password"
@@ -89,38 +87,6 @@
 																</div>
 															</div>
 
-															<!-- </div> -->
-															<!-- <div class="form-group">
-														<label for="exampleInput2">Confirm Password</label>
-														<input [type]="FieldTextType ? 'text' : 'password'"
-															type="password" formControlName="confirmPassword"
-															class="form-control" id="exampleInput2"
-															placeholder="Confirm Password" #cpw
-															(keyup)='checkPasswords(pw.value, cpw.value)'>
-														<span class="fPassword-icon"><i class="fa" [ngClass]="{
-													'fa-eye-slash': !FieldTextType,
-													'fa-eye': FieldTextType
-												  }" (click)="toggleFieldTextType()"></i>
-														</span>
-
-														<div class="password-text">
-															<div *ngIf="passwordForm.get('confirmPassword')?.invalid && (passwordForm.get('confirmPassword')?.dirty || passwordForm.get('confirmPassword')?.touched)"
-																class="text-danger">
-																<span
-																	*ngIf="passwordForm.controls?.['confirmPassword']?.errors?.['required']">Password
-																	is Required</span>
-
-															</div>
-															<div class='text-danger'
-																*ngIf='!passwordsMatching && isConfirmPasswordDirty'>
-																Passwords did not match
-															</div>
-														</div>
-
-
-
-													</div> -->
-
 														</form>
 													</div>
 												</div>
@@ -132,7 +98,8 @@
 													<button type="button" class="btn-container1 foot closeButton"
 														data-bs-dismiss="modal">Close</button>
 													<button type="button" class="btn btn-container2 foot continueButton"
-														[disabled]="resetForm.invalid">Continue</button>
+														[disabled]="resetForm.invalid"
+														(click)="forgotPassword()">Continue</button>
 												</div>
 											</div>
 										</div>
@@ -145,39 +112,48 @@
 
 
 				<div class="mb-3">
-					<button type="button" class="btn" [disabled]="loginForm.invalid">SIGN IN</button>
+					<button type="button" class="btn" [disabled]="loginForm.invalid" (click)="loginUser()"
+						data-bs-toggle="modal" data-bs-target="#exampleModal1">SIGN IN</button>
 				</div>
-				<!-- <div class="mb-4">
-					<div class="mb-3">
-
-					</div>
-				</div> -->
-				<!-- <div class="mb-3">
-					<a href="" class="form-account">Create an account</a>
-				</div> -->
 			</form>
 		</div>
 
 
 		<div class="box boxText">
-		<div class="col-4 loginBox" style="padding: 20px;">
-			<h4> "Let's conquer tasks with precision and purpose! Let's do this – one task at a time, with
-				enthusiasm and determination!"</h4>
+			<div class="col-4 loginBox" style="padding: 20px;">
+				<h4> "Let's conquer tasks with precision and purpose! Let's do this – one task at a time, with
+					enthusiasm and determination!"</h4>
+				<img src="../../assets/Images/Task-Manager.png">
 
-			<img src="../../assets/Images/Task-Manager.png">
+			</div>
+		</div>
 
+		<svg style="visibility: hidden; position: absolute;" xmlns="http://www.w3.org/2000/svg" version="1.1">
+			<defs>
+				<filter id="round">
+					<feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+					<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+						result="goo" />
+					<feComposite in="SourceGraphic" in2="goo" operator="atop" />
+				</filter>
+			</defs>
+		</svg>
+	</div>
+</div>
+
+<!-- Pop for Login -->
+ <div class="loginPopup">
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+				<!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+			</div>
+			<div class="modal-body">
+				Login Sucessfull
+			</div>
 		</div>
 	</div>
-
-	<svg style="visibility: hidden; position: absolute;" xmlns="http://www.w3.org/2000/svg" version="1.1">
-		<defs>
-			<filter id="round">
-				<feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
-				<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
-					result="goo" />
-				<feComposite in="SourceGraphic" in2="goo" operator="atop" />
-			</filter>
-		</defs>
-	</svg>
 </div>
 </div>

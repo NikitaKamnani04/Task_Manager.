@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
+import { UserServicesService } from '../services/user-services.service';
 
 @Component({
   selector: 'app-sign-in-page',
@@ -13,11 +13,11 @@ export class SignInPageComponent implements OnInit {
   FieldTextType: any;
   passwordForm!:FormGroup;
   resetForm!:FormGroup;
-
   passwordsMatching = false;
   isConfirmPasswordDirty = false;
   confirmPasswordClass = 'form-control';
-  constructor() { }
+  
+  constructor(private userService: UserServicesService) { }
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
@@ -39,48 +39,23 @@ toggleFieldTextType() {
 }
 
 
-
-
-
-// forgotPassword(){
-//   this.passwordForm=new FormGroup({
-//       'newPassword' : new FormControl('',[Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,18}$')]),
-//       'confirmPassword': new FormControl('',[Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,18}$')]),  
-//     });
-    
-//   }
-
- 
-
-
-// ConfirmedValidator(controlName: string, matchingControlName: string) {
-//   return (formGroup: FormGroup) => {
-//     const control = formGroup.controls[controlName];
-//     const matchingControl = formGroup.controls[matchingControlName];
-//     if (
-//       matchingControl.errors &&
-//       !matchingControl.errors?.['confirmedValidator']
-//     ) {
-//       return;
-//     }
-//     if (control.value !== matchingControl.value) {
-//       matchingControl.setErrors({ confirmedValidator: true });
-//     } else {
-//       matchingControl.setErrors(null);
-//     }
-//   };
-// }
-// }
-
-checkPasswords(pw: string, cpw: string) {
-  this.isConfirmPasswordDirty = true;
-  if (pw == cpw) {
-    this.passwordsMatching = true;
-    this.confirmPasswordClass = 'form-control is-valid';
-  } else {
-    this.passwordsMatching = false;
-    this.confirmPasswordClass = 'form-control is-invalid';
+loginUser(){   //make the function for login sucessfully
+  let loginCred = {
+    email : this.loginForm.value.email,
+    password: this.loginForm.value.password
   }
+  // console.log(loginCred);
+  
+  this.userService.loginData(loginCred).subscribe(res=>{
+    console.log(res); 
+  })
+}
+
+forgotPassword(){      //for reset sucessfully
+  let forgotPass = {
+        email: this.resetForm.value.email,
+  }
+  console.log(forgotPass);
 }
 }
 
