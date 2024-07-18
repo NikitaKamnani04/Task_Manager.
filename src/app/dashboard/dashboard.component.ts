@@ -2,66 +2,141 @@ import { UserServicesService } from './../services/user-services.service';
 import { Component, OnInit } from '@angular/core';
 // import { Chart, registerables } from 'node_modules/chart.js';
 // Chart.register(...registerables);
+import { Chart, registerables } from 'node_modules/chart.js';
+
+import * as $ from 'jquery';
+Chart.register(...registerables);
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-  constructor(private UserServicesService: UserServicesService) {}
-  chartdata: any;
+  name = 'Angular 5';
+  statusList: Array<any> = [];
+  priorityList: Array<any> = [];
+  searchText: any;
+  taskData: any;
   labeldata: any[] = [];
   realdata: any[] = [];
   colordata: any[] = [];
-  
+  constructor(private UserServicesService: UserServicesService) {
+    this.statusList = [
+      { status: 'in progress', name: 'In Progress' },
+      { status: 'not started', name: 'Not Started' },
+      { status: 'on hold', name: 'On Hold' },
+      { status: 'canceled', name: 'Canceled' },
+      { status: 'completed', name: 'Completed' },
+      { status: 'overdue', name: 'Overdue' },
+      { status: 'sent for review', name: 'Sent for review ' },
+    ];
+    this.priorityList = [
+      { priority: 'high', name: 'High' },
+      { priority: 'medium', name: 'Medium' },
+      { priority: 'low', name: 'Low' },
+    ];
+  }
 
   ngOnInit(): void {
     this.getChartData();
+    $(function () {
+      $('.dropdown > .caption').on('click', function () {
+        $(this).parent().toggleClass('open');
+      });
+
+      $('.dropdown > .list > .item').on('click', function () {
+        $('.dropdown > .list > .item').removeClass('selected');
+        $(this)
+          .addClass('selected')
+          .parent()
+          .parent()
+          .removeClass('open')
+          .children('.caption')
+          .text($(this).text());
+      });
+
+      $(document).on('keyup', function (evt) {
+        if ((evt.keyCode || evt.which) === 27) {
+          $('.dropdown').removeClass('open');
+        }
+      });
+
+      $(document).on('click', function (evt) {
+        if ($(evt.target).closest('.dropdown > .caption').length === 0) {
+          $('.dropdown').removeClass('open');
+        }
+      });
+    });
   }
   getChartData() {
     this.UserServicesService.getChartInfo().subscribe((res) => {
-      this.chartdata = res;
-      if (this.chartdata != null) {
-        for (let i = 0; i < this.chartdata.length; i++) {
-          console.log(this.chartdata[i]);
-          this.labeldata.push(this.chartdata[i].year);
-          this.realdata.push(this.chartdata[i].amount);
-          this.colordata.push(this.chartdata[i].colorcode);
+      this.taskData = res;
+      if (this.taskData != null) {
+        for (let i = 0; i < this.taskData.length; i++) {
+       
+          this.labeldata.push(this.taskData[i].day);
+          this.realdata.push(this.taskData[i].hours);
+          this.colordata.push(this.taskData[i].colorcode);
         }
-        console.log(this.labeldata);
-        console.log(this.realdata);
-        console.log(this.colordata);
-
-        // this.RenderChart(this.labeldata, this.realdata, this.colordata,'line', 'linechart');
-        // this.RenderChart(this.labeldata, this.realdata, this.colordata,'doughnut', 'doughnut');
+  
+        this.RenderChart(
+          this.labeldata,
+          this.realdata,
+          "#9381FF",
+          'line',
+          'linechart',
+          true
+        );
+        this.RenderChart(
+          this.labeldata,
+          this.realdata,
+          this.colordata,
+          'doughnut',
+          'doughnut',
+          false
+        );
       }
     });
   }
-  // RenderChart(labeldata: any, maindata: any, colordata: any, type:any, id: any) {
-    // const myChart:any = document.getElementById('myChart');
-      // id.canvas.parentNode.style.height = '528px';
-    // id.canvas.parentNode.style.width = '528px';
-    // new Chart(id, {
-    //   type: type,
-    //   data: {
-    //     labels: labeldata,
-    //     datasets: [
-    //       {
-    //         label: '# of Votes',
-    //         data: maindata,
-    //         backgroundColor: colordata,
-    //         borderColor: ['rgba(154,165,235,1)'],
-    //         borderWidth: 3,
-    //       },
-    //     ],
-    //   },
-//       options: {
-//         scales: {
-//           y: {
-//             beginAtZero: true,
-//           },
-//         },
-//       },
-//     });
-//   }
+  RenderChart(
+    labeldata: any,
+    maindata: any,
+    colordata: any,
+    type: any,
+    id: any,
+    drawOnChartArea: any,
+  ) {
+    const myChart: any = document.getElementById('myChart');
+
+    new Chart(id, {
+      type: type,
+      data: {
+        labels: labeldata,
+        datasets: [
+          {
+            label: 'No. of hours',
+            data: maindata,
+            backgroundColor: colordata,
+            borderColor: ['rgba(154,165,235,1)'],
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+            grid: {
+              drawOnChartArea: false,
+            },
+          },
+          x: {
+            grid: {
+              drawOnChartArea: drawOnChartArea,
+            },
+          },
+        },
+      },
+    });
+  }
 }

@@ -1,113 +1,6 @@
-<!-- <div>
-    <div class="container">
-        <div class="text-center"><b>Welcome to Our Task Manager Website</b></div>
-        <div class="text-center">Register here to continue using</div>
-       
-        <hr>
-        <form [formGroup]="form">
-            <div class="text-center">
-                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
-                <h6>Upload a Profile Picture</h6>
-                 <input _ngcontent-wkr-c0="" id="file" type="file"> -->
-<!-- </div>
-           <div class="form-group">
-                <label for="Username"><b>Username</b></label>
-                <input type="text" formControlName="username" placeholder="Enter Username" class="form-control"
-                    name="username" id="username" required>
-                <div class="text-danger" *ngIf="form.controls['username']?.invalid && form.controls['username'].touched"
-                    class="">
-                    <small class="text-danger smallText"
-                        *ngIf="form.get('username')?.touched && form.get('username')?.hasError('required')">Username
-                        is required.</small>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="email"><b>Email</b></label>
-                <input type="text" formControlName="email" placeholder="Enter email" class="form-control" name="email"
-                    id="email" required>
-                <div class="text-danger" *ngIf="form.controls['email']?.invalid && form.controls['email'].touched"
-                    class="">
-                    <small class="text-danger smallText"
-                        *ngIf="form.get('email')?.touched && form.get('email')?.hasError('required')">Email
-                        is required.</small>
-                    <small class="text-danger smallText" *ngIf="form.controls['email']?.errors?.['email']">Please,
-                        enter valid email address.</small>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="mobile_no"><b>Mob No.</b></label>
-                <input type="text" formControlName="mobile_no" placeholder="Enter Mob No." name="mobile_no"
-                    class="form-control" id="mobile_no" required>
-                <div class="text-danger"
-                    *ngIf="form.controls['mobile_no']?.invalid && form.controls['mobile_no'].touched" class="">
-                    <small class="text-danger smallText"
-                        *ngIf="form.get('mobile_no')?.touched && form.get('mobile_no')?.hasError('required')">Mob No
-                        is required.</small>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="pasword"><b>Password</b></label>
-                <input type="password" formControlName="password" placeholder="Enter Password" name="password"
-                    class="form-control" id="password" required>
-                <div class="text-danger" *ngIf="form.controls['password']?.invalid && form.controls['password'].touched"
-                    class="">
-                    <small class="text-danger smallText"
-                        *ngIf="form.get('password')?.touched && form.get('password')?.hasError('required')">Password
-                        is required.</small>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="confirm_pass"><b>Confirm_Password</b></label>
-                <input type="password" formControlName="confirm_pass" placeholder="Enter Confirm_Password"
-                    name="confirm_pass" class="form-control" id="confirm_pass" required>
-                <div class="text-danger"
-                    *ngIf="form.controls['confirm_pass']?.invalid && form.controls['confirm_pass'].touched" class="">
-                    <small class="text-danger smallText"
-                        *ngIf="form.get('confirm_pass')?.touched && form.get('confirm_pass')?.hasError('required')">Confirm_Password
-                        is required.</small>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="dept_id"><b>Dept_id</b></label>
-                <input type="text" formControlName="dept_id" placeholder="Enter Dept_id" class="form-control"
-                    name="dept_id" id="dept_id" required>
-                <div class="text-danger" *ngIf="form.controls['dept_id']?.invalid && form.controls['dept_id'].touched"
-                    class="">
-                    <small class="text-danger smallText"
-                        *ngIf="form.get('dept_id')?.touched && form.get('dept_id')?.hasError('required')">Not
-                        Mandatory !</small>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="gender"><b>Gender</b></label>
-                <form>
-                    <label class="radio-inline">
-                        <input type="radio" name="optradio" checked>Male
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="optradio">Female
-                    </label>
-                </form>
-            </div>
-
-            <hr>
-        </form>
-        <button type="submit" class="registerbtn" style="width: 90%;">Register</button>
-        <div class="signin" style="width: 98%;">
-            <p>Already have an account? <a href="#">Sign in</a>.</p>
-        </div>
-    </div>
-</div> -->
-
 <div class="main">
     <div class="container">
-        <div class="row form_container scroll formspace">
+        <div class="row form_container scroll">
             <div class="column1">
                 <div class="card-1">
                     <h2>Task Manager</h2>
@@ -118,11 +11,12 @@
                 </div>
             </div>
             <div class="column2">
+                <span class="prev_button" routerLink="/employees"><i class="fa-solid fa-arrow-left me-3"></i>Previous</span>
                 <div class="text-center mt-3"><b>Welcome</b></div>
                 <div class="text-center pb-3">SignUp to continue using</div>
 
                 <div class="card-2 mb-4">
-                    <form  [formGroup]="form">
+                    <form [formGroup]="form">
                         <div class="formrow form d-flex">
                             <div class="form_field_left leftformfield leftgroup">
 
@@ -130,30 +24,31 @@
 
                                     <input type="text " formControlName="username" placeholder="Enter Username"
                                         class="form-control" name="username" id="username" size="30" required>
-                                    <div class="name_valid">
+                                    <div class="name_valid name name1">
                                         <div class="text-danger "
                                             *ngIf="form.controls['username']?.invalid && form.controls['username'].touched"
                                             class="">
-                                            <small class="name_ text-danger smallText mb-4"
+                                            <small class="name_ text-danger smallText mb-4 "
                                                 *ngIf="form.get('username')?.touched && form.get('username')?.hasError('required')">Username
                                                 is required.</small>
                                             <small class="name_ text-danger smallText mb-4"
                                                 *ngIf="form.get('username')?.touched && form.get('username')?.hasError('minlength')">at
                                                 least 7 characters
                                                 is required.</small>
+
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="form-group ">
+                                <div class="form-group">
 
                                     <input type="text" formControlName="email" placeholder="Enter Email"
                                         class="form-control mt-3" name="email" id="email" required>
-                                    <div class="email_valid">
+                                    <div class="email_valid email email1 ">
                                         <div class="text-danger"
                                             *ngIf="form.controls['email']?.invalid && form.controls['email'].touched"
                                             class="">
-                                            <small class="text-danger smallText"
+                                            <small class="text-danger smallText "
                                                 *ngIf="form.get('email')?.touched && form.get('email')?.hasError('required')">Email
                                                 is required.</small>
                                         </div>
@@ -163,12 +58,12 @@
                                 <div class="form-group">
 
                                     <input type="text" formControlName="mobile_no" placeholder="Enter Mob No."
-                                        name="mobile_no" class="form-control   mt-3" id="mobile_no" required>
-                                    <div class="mobile_valid">
+                                        name="mobile_no" class="form-control mt-3 " id="mobile_no" required>
+                                    <div class="mobile_valid mob mob1">
                                         <div class="text-danger"
                                             *ngIf="form.controls['mobile_no']?.invalid && form.controls['mobile_no'].touched"
                                             class="">
-                                            <small class="text-danger smallText"
+                                            <small class="text-danger smallText "
                                                 *ngIf="form.get('mobile_no')?.touched && form.get('mobile_no')?.hasError('required')">Mob
                                                 No
                                                 is required.</small>
@@ -180,7 +75,7 @@
 
                                     <input type="text " formControlName="address" placeholder="Enter address"
                                         class="form-control mt-3" name="address" id="address" size="30" required>
-                                    <div class="add_valid">
+                                    <div class="add_valid addresss address1">
                                         <div class="text-danger"
                                             *ngIf="form.controls['address']?.invalid && form.controls['address'].touched"
                                             class="">
@@ -195,51 +90,50 @@
 
                                     <input type="password" formControlName="password" placeholder="Enter Password"
                                         name="password" class="form-control" id="password" size="30" required>
-                                    <div class="password_valid">
+                                    <div class="password_valid password password1">
                                         <div class="text-danger"
                                             *ngIf="form.controls['password']?.invalid && form.controls['password'].touched"
                                             class="">
-                                            <small class="text-danger smallText"
+                                            <small class="text-danger smallText "
                                                 *ngIf="form.get('password')?.touched && form.get('password')?.hasError('required')">Password
                                                 is required.</small>
                                             <small class="text-danger smallText"
-                                                *ngIf="form.get('password')?.touched && form.get('password')?.hasError('minlength')">Password
-                                                must be at least 6 characters.</small>
+                                                *ngIf="form.get('password')?.touched && form.get('password')?.hasError('minlength')">
+                                                at least 6 characters is required.</small>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="form-group mt-3">
-                                    <select class="form-select form-select-lg mb-3 "
+                                <div class="form-group mt-3 role _role ">
+                                    <select  [(ngModel)]="roles" formControlName="role"
+                                        class="form-select  form-select-lg mb-3 "
                                         aria-label=".form-select-lg example">
-                                        <option selected>Roles</option>
-                                        <option value="1">Admin</option>
-                                        <option value="2">Employee/User</option>
-                                        <option value="3">HR</option>
-                                        <option value="3">Manager</option>
+                                        <option [value]="null" [disabled]="true" [selected]="true">
+                                            Select Roles
+                                        </option>
+                                        <option *ngFor="let item of roles_items">         
+                                            {{item}}
+                                        </option>  
                                     </select>
+                                    
 
                                 </div>
 
-                                <div class="form-group mt-3">
-                                    <select class="form-select form-select-lg mb-3 "
+                                <div class="form-group mt-3 dept _dept ">
+                                    <select [(ngModel)]="department" formControlName="dept" class="form-select form-select-lg mb-3 "
                                         aria-label=".form-select-lg example">
-                                        <option selected>Department name</option>
-                                        <option value="1">IT</option>
-                                        <option value="2">Finance</option>
-                                        <option value="3">Production</option>
-                                        <option value="4">Digital Marketing</option>
-                                        <option value="5">Sales</option>
-                                        <option value="6">Human Resources</option>
-                                        <option value="7">Research & Development</option>
-                                        <option value="8">Administration</option>
+                                        <option [value]="null" [disabled]="true" [selected]="true">
+                                            Select Department
+                                        </option>
+                                        <option *ngFor="let item of department_items">         
+                                            {{item}}
+                                        </option>  
+                                    
                                     </select>
-
                                 </div>
 
-                                <div class="form-group mt-3">
-
-                                    <input type="Date" placeholder=" Joining Date" name="start_date"
+                                <div class="form-group mt-3 dateNo _dateNo">
+                                    <input [(ngModel)]="date" formControlName="dateNo" type="Date" placeholder=" Joining Date" name="start_date"
                                         title="Joining Date" class="form-control mt-3" id="Joining Date" size="30">
                                 </div>
                             </div>
@@ -256,10 +150,9 @@
                                 </label>
                             </form>
                         </div>
-
                         <hr>
-                    </form> 
-                    <button type="submit" class="registerbtn ">Sign Up</button>
+                    </form>
+                    <button type="submit" class=" buttons  button-23 signupbutton" (click)="SignUp()">Sign Up</button>
                     <div class="signin signinform signinlink">
                         <p>Already have an account? <a href="#">Sign in</a>.</p>
                     </div>
@@ -267,4 +160,4 @@
             </div>
         </div>
     </div>
-</div> 
+</div>

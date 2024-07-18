@@ -1,16 +1,17 @@
-<div class="parent d-flex justify-content-between">
-
-    <div id="sidebar">
-        <!-- <app-sidebar></app-sidebar> -->
-    </div>
-    <div class="body pt-4 position-relative">
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+<div class="parent ">
+    <div class="body position-relative ">
 
         <div class="body_top ps-4 ">
-            <span class="fs-4  ">Welcome User Name</span>
+            <p class="fs-4 user_name">Welcome User Name</p>
+            <!-- <div class="d-flex justify-content-between">
 
-            <span class=" button-36 position-absolute end-0 px-4 py-2 me-4 fs-3 ">Clock In</span>
+                <span class="add_task_button"><i class="fa-solid fa-plus fs-4 me-2 "></i>Add Task</span>
+                <span class=" button-36 position-absolute end-0  pt-3 fs-4 ">Clock In</span>
+            </div> -->
+
         </div>
-        <div class="m-4 p-4 contaier">
+        <div class="m-4 contaier">
             <div class="row">
 
                 <div class="section_one col-sm-4">
@@ -39,8 +40,11 @@
                                 <div class="projects fs-2">0</div>
                             </div>
                         </div>
-                        <div class="linechart">
-                            <canvas class="graph" id="linechart"></canvas>
+                        <div class="linechart d-flex justify-content-center align-items-center">
+                            <div class="contianer_graph_one">
+                                <canvas class="graph_two " id="doughnut"></canvas>
+
+                            </div>
 
                         </div>
                     </div>
@@ -55,21 +59,23 @@
                                 <div class="container_task d-flex align_items-center">
                                     <div class="today_task px-3 fs-5 ">
                                         <p>Today's Tasks <span class="ms-3 p-1  rounded-3  text-white"
-                                                style="background-color: #9381ff;">105</span></p>
+                                                style="background-color: #9381ff;">{{taskData? taskData.length:
+                                                "00"}}</span></p>
                                     </div>
                                     <div class="upcoming px-3 fs-5">
                                         <p style="color: #9381ff;">Upcoming <span class="ms-3 p-1  rounded-3 text-white"
                                                 style="background-color: #9381ff;">99</span></p>
                                     </div>
-
                                 </div>
                                 <div class="search_box  ">
                                     <div class=" search_bar_task bg-white  rounded-pill position-relative">
                                         <form class="">
                                             <input type="text" placeholder="Search.." name="search"
-                                                class=" task_search  ps-4 my-1  rounded-pill fs-5">
+                                                class=" task_search  ps-4 my-1  rounded-pill fs-5"
+                                                [(ngModel)]="searchText" autocomplete="off"
+                                                placeholder="Start searching for Tasks">
                                             <span type="submit"><i
-                                                    class="fa fa-search  pe-1  position-absolute top-50 end-0 translate-middle"></i></span>
+                                                    class="fa-brands fa-searchengin  pe-1  position-absolute top-50 end-0 translate-middle"></i></span>
                                         </form>
                                     </div>
                                 </div>
@@ -79,76 +85,94 @@
                         <div
                             class="task_card_body d-flex justify-content-center align_items-center align-items-center ">
                             <div class="task_card_table  fs-5 pl-3">
-                                <table class="table table-borderless">
+
+
+                                <table class="table  table-borderless">
                                     <thead>
                                         <tr class="border-bottom">
-                                            <th scope="col">No.</th>
-                                            <th scope="col">Task Name</th>
-                                            <th scope="col">Team</th>
-                                            <th scope="col">Status</th>
-                                            <th scope="col">Priority</th>
-                                            <th scope="col">Deadline</th>
+                                            <th style="width: 5%">No.</th>
+                                            <th style="width: 20%">Task Name</th>
+                                            <th style="width: 20%">Status</th>
+                                            <th style="width: 20%">Priority</th>
+                                            <th style="width: 15%">Deadline</th>
+                                            <th style="width: 20%; margin-left: 15px;">Team</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>Todo</td>
-                                            <td>Medium</td>
-                                            <td>End Date</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>In progress</td>
-                                            <td>Medium</td>
-                                            <td>End Date</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                            <td>Medium</td>
-                                            <td>End Date</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">4</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>Paused</td>
-                                            <td>Medium</td>
-                                            <td>End Date</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">5</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                            <td>Medium</td>
-                                            <td>End Date</td>
-                                        </tr>
+                                    <tbody class="table_container">
+                                        <tr *ngFor="let items of taskData | filter:searchText;let i = index">
+                                            <th style="width: 5%" scope="row">{{i+1}}</th>
+                                            <td style="width: 20%">{{items.task_name}}</td>
+                                            <td style="width: 20%">
+                                                <select>
+                                                    <option>Select</option>
+                                                    <option *ngFor="let item of this.statusList; let i = index"
+                                                        value="{{ item.status }}" [selected]="i == 0">
+                                                        {{ item.name }}
+                                                    </option>
+                                                </select>
 
+                                            </td>
+                                            <td style="width: 20%" class="ps-3">
+                                                <select>
+                                                    <option>Select</option>
+                                                    <option *ngFor="let item of this.priorityList; let i = index"
+                                                        value="{{ item.priority }}" [selected]="i == 0">
+                                                        {{ item.name }}
+                                                    </option>
+                                                </select>
+
+                                            </td>
+                                            <td style="width: 15%" class="ps-4 ">{{items.deadline}}</td>
+                                            <td style="width: 20%; ">
+                                                <div class="avatar-group">
+
+                                                    <div class="avatar">
+                                                        <span class="avatar-name">Someone 5</span>
+                                                        <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                                                            alt="Image">
+                                                    </div>
+                                                    <div class="avatar">
+                                                        <span class="avatar-name">Someone 5</span>
+                                                        <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                                                            alt="Image">
+                                                    </div>
+                                                    <div class="avatar">
+                                                        <span class="avatar-name">Someone 5</span>
+                                                        <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                                                            alt="Image">
+                                                    </div>
+                                                    <div class="avatar">
+                                                        <span class="avatar-name">Someone 5</span>
+                                                        <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                                                            alt="Image">
+                                                    </div>
+                                                    <div class="avatar">
+                                                        <span class="avatar-name">Someone 5</span>
+                                                        <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                                                            alt="Image">
+                                                    </div>
+                                                    <div class="avatar">
+                                                        <span class="avatar-name">Someone 5</span>
+                                                        <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                                                            alt="Image">
+                                                    </div>
+
+                                                </div>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-
                     </div>
-                    <canvas id="doughnut">
+                    <div class="piechart d-flex justify-content-center align-items-center">
+                        <div class="contianer_graph_two ">
+                            <canvas class="graph_one" id="linechart"></canvas>
 
-
-
-                    </canvas>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
-
-
     </div>
-
 </div>

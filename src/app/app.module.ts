@@ -6,9 +6,14 @@ import { SignInPageComponent } from './sign-in-page/sign-in-page.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 
 
-import { FormGroup, FormsModule, Validators, ReactiveFormsModule } from '@angular/forms';
+import { AddTaskComponent } from './add-task/add-task.component';
+import { SidebarModule } from 'ng-sidebar';
+
 import { OrganizationRegisterComponent } from './organization-register/organization-register.component';
 
+
+
+import { FormGroup,FormsModule,Validators,ReactiveFormsModule} from '@angular/forms';
 
 
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -19,11 +24,16 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { AddProjectComponent } from './add-project/add-project.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { CommonModule } from '@angular/common';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+// import { RegFormComponent } from './reg-form/reg-form.component';
+
+import { NavbarComponent } from './navbar/navbar.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
     SignInPageComponent,
     OrganizationRegisterComponent,
     SidebarComponent,
@@ -31,17 +41,23 @@ import { CommonModule } from '@angular/common';
     DashboardComponent,
    RegistrationFormComponent,
    ResetPasswordComponent,
-   AddProjectComponent
-  ],
-  imports: [
+   AddProjectComponent,
+   AddTaskComponent,
+   
+ ],
+ imports: [
 
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    NgSelectModule,
-    CommonModule
+   ReactiveFormsModule,
+   BrowserModule,
+   AppRoutingModule,
+   FormsModule,
+   AppRoutingModule,
+   HttpClientModule,
+   AppRoutingModule,
+   SidebarModule.forRoot(),
+   HttpClientModule,
+   Ng2SearchPipeModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],
@@ -50,4 +66,4 @@ import { CommonModule } from '@angular/common';
     NO_ERRORS_SCHEMA
   ]
 })
-export class AppModule { }
+export class AppModule {}
