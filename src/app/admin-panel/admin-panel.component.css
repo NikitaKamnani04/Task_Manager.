@@ -24,9 +24,9 @@ input {
 }
 
 .body {
-  width: 85%;
-  height: 700px;
+  margin-top:3%;
   margin-left: 13%;
+  width: 100%;
 }
 
 .btn_name {

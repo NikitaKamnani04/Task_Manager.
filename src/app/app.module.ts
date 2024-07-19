@@ -7,16 +7,9 @@ import { RegistrationFormComponent } from './registration-form/registration-form
 
 import { AddTaskComponent } from './add-task/add-task.component';
 
-import { SidebarModule } from 'ng-sidebar';
-
 import { OrganizationRegisterComponent } from './organization-register/organization-register.component';
 
-import {
-  FormGroup,
-  FormsModule,
-  Validators,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -26,11 +19,12 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { AddProjectComponent } from './add-project/add-project.component';
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import * as ApexCharts from 'apexcharts';
+
 import { NavbarComponent } from './navbar/navbar.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
+import { SidebarModule } from 'primeng/sidebar';
 
 @NgModule({
   declarations: [
@@ -53,7 +47,7 @@ import { ButtonModule } from 'primeng/button';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    SidebarModule.forRoot(),
+    SidebarModule,
     Ng2SearchPipeModule,
     BrowserAnimationsModule,
     ButtonModule,
