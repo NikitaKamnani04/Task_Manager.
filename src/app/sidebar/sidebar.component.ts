@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-declare var $: any;
-var document: Document;
+import * as $ from 'jquery'; // var document: Document;
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -12,20 +11,14 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {}
 
   toggle: boolean = false;
-  ngAfterViewInit() {
-    const body: any = document.querySelector('body'),
-      sidebar: any = document.querySelector('.sidebar'),
-      toggle: any = document.querySelector('.toggle'),
-      searchBtn: any = document.querySelector('.search-bar');
-    if (toggle) {
-      toggle.addEventListener('click', () => {
-        sidebar.classList.toggle('close');
-      });
-    } else {
-      searchBtn.addEventListener('click', () => {
-        sidebar.classList.remove('close');
-      });
-    }
-  }
 
+  changetoggle() {
+    if (!this.toggle) {
+      $('#sidebar').addClass('close');
+    } else {
+      $('#sidebar').removeClass('close');
+    }
+
+    this.toggle = !this.toggle;
+  }
 }

@@ -1,7 +1,7 @@
 <nav>
     <span>Dashboard</span>
     <div class="nav_items">
-        <p>Show Time</p>
+        <p class="showtime">Show Time</p>
         <ul>
 
             <li type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
@@ -12,16 +12,31 @@
     </div>
 </nav>
 <!-- Toggle right off canvas -->
-<div class="offcanvas offcanvas-end notes_toggle" tabindex="-1" id="offcanvasRight"
+<div class="offcanvas offcanvas-end notes_toggle " tabindex="-1" id="offcanvasRight"
     aria-labelledby="offcanvasRightLabel">
- 
-        <span type="button" class="btn-close  toggle" data-bs-dismiss="offcanvas" aria-label="Close"></span>
- 
-    <div class="offcanvas-header">
+
+    <span type="button" class="btn-close  toggle" data-bs-dismiss="offcanvas" aria-label="Close"></span>
+
+    <div *ngIf="!toggleNote" class="offcanvas-header">
         <h5 class="offcanvas-title add_notes_heading" id="offcanvasRightLabel">Sticky Notes</h5>
         <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
     </div>
     <div class="offcanvas-body">
-        <span class="add_task_button"><i class="fa-solid fa-plus fs-4 me-2 "></i>Add Notes</span>
+
+        <span *ngIf="!toggleNote" type="button" (click)="visibleSidebar3 = true" class="add_task_button"
+            (click)="toggelNoteSection()"><i class="fa-solid fa-plus fs-4 me-2 "></i>Add Notes</span>
+        <div *ngIf="toggleNote" class="notes_content">
+            <p-sidebar id="button" [(visible)]="visibleSidebar3" position="top" [baseZIndex]="100">
+                <h1 class="notes_heading">Add Notes</h1>
+                <div class="notes_body">
+                    <!-- <div class="notes_heading">Notes Details</div> -->
+                    <textarea [rows]="5" [cols]="150" pInputTextarea [autoResize]="true"></textarea>
+                </div>
+                <p-button type="button" (click)="visibleSidebar3 = false" label="Save" styleClass="p-button-success"
+                    (onClick)="showAddNotes()"></p-button>
+                <p-button type="button" (click)="visibleSidebar3 = false" label="Cancel" styleClass="p-button-secondary"
+                    (onClick)="showAddNotes()"></p-button>
+            </p-sidebar>
+        </div>
     </div>
 </div>

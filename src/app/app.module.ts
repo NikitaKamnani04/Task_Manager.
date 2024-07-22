@@ -23,8 +23,10 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NavbarComponent } from './navbar/navbar.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// PrimeNg
 import { ButtonModule } from 'primeng/button';
 import { SidebarModule } from 'primeng/sidebar';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 @NgModule({
   declarations: [
@@ -47,10 +49,11 @@ import { SidebarModule } from 'primeng/sidebar';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    SidebarModule,
     Ng2SearchPipeModule,
     BrowserAnimationsModule,
+    SidebarModule,
     ButtonModule,
+    InputTextareaModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
