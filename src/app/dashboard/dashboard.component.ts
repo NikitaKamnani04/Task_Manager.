@@ -1,5 +1,7 @@
 import { UserServicesService } from './../services/user-services.service';
 import { Component, OnInit } from '@angular/core';
+// import { Chart, registerables } from 'node_modules/chart.js';
+// Chart.register(...registerables);
 import { Chart, registerables } from 'node_modules/chart.js';
 
 import * as $ from 'jquery';
@@ -37,12 +39,12 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getChartData();
-    $(function () {
-      $('.dropdown > .caption').on('click', function () {
+    $( () => {
+      $('.dropdown > .caption').on('click',  () => {
         $(this).parent().toggleClass('open');
       });
 
-      $('.dropdown > .list > .item').on('click', function () {
+      $('.dropdown > .list > .item').on('click',  () => {
         $('.dropdown > .list > .item').removeClass('selected');
         $(this)
           .addClass('selected')
@@ -53,13 +55,13 @@ export class DashboardComponent implements OnInit {
           .text($(this).text());
       });
 
-      $(document).on('keyup', function (evt) {
+      $(document).on('keyup', function (evt: { keyCode: any; which: any; }) {
         if ((evt.keyCode || evt.which) === 27) {
           $('.dropdown').removeClass('open');
         }
       });
 
-      $(document).on('click', function (evt) {
+      $(document).on('click', function (evt: { target: any; }) {
         if ($(evt.target).closest('.dropdown > .caption').length === 0) {
           $('.dropdown').removeClass('open');
         }

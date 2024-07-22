@@ -1,34 +1,112 @@
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-  }
+.parent{
+    margin-left: 15%;
+    margin-top: 2%;
+   
+}
   
-  .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
-  
-  .sidenav .closebtn {
+.page-title sup{
+    color: gray;
+    font-size: small;
+}
+
+
+.input-group{
+    width: 20%;
+}
+
+.form-select-duration{
+    font-size: small;
+    color:gray ;  
+ 
+}
+.form-select-status{
+    font-size: small;
+    color:gray ;  
+    width: 13%;
+}
+
+.form-control .rounded{
+    padding: 3px 4px;
+}
+
+.fas{
+    margin-right: 12px;
+    position: relative;
+    top: 5px;
+}
+
+.btn-light{
+    margin-left: 20px;
+    border: 1px solid black;
+}
+
+.offcanvas.show {
+    transform: none;
+    width: 84%;
+}
+
+.offcanvas-title{
+    font-weight: bold;
+}
+
+.offcanvas-body{
+    margin-left: 40px;
+}
+.input-category{
+    width: 95%;
+}
+.btn-outline-secondary{
+
+}
+
+.form-check{
+    margin-top: 27px;
+}
+
+.form-check-input{
+    width: 22px;
+    height: 22px;
+}
+.form-check-label{
+    
+    margin:4px;
+    font-size: small;
+}
+
+.rounded-circle{
+    width: 50%;
+}
+
+#inputGroupSelect05{
+width: 98%;
+}
+
+#inputGroupSelect06{
+    width: 98%;
+}
+
+/* #inputGroupSelect06 ::placeholder{
+    padding-top: 12px;
     position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
-  
+    top: 12px;
+} */
+
+#saveButton{
+    width: 6%;
+}
+
+#cancelButton{
+    width: 6%;
+}
+
+/* .ng-select.ng-select-multiple
+{
+    top: 12px;
+    padding-bottom: 5px;
+    padding-left: 3px;
+} */
+
+.ng-select.ng-select-multiple .ng-placeholder{
+    position: absolute;
+    top: 12px ;
+}

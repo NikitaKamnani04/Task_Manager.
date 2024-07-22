@@ -5,9 +5,13 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class UserServicesService {
-  constructor(private HttpClient: HttpClient) {}
+  constructor(private HttpClient: HttpClient) { }
 
   getChartInfo() {
     return this.HttpClient.get('http://localhost:3000/tasks');
+  }
+
+  loginData(data: any) {                                 //Fetching the data from server using post method
+    return this.HttpClient.post('http://localhost:3000/empDetails', data)
   }
 }
