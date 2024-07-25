@@ -18,26 +18,6 @@
         <div class="input-group mt-4">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="status">Status</span>
-<div class="row">
-    <div class="col d-flex" style="margin-top: 60px;">
-        <div class="input-group d-flex mt-4" style="margin-left: 16%;">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="duration">Duration</span>
-            </div>
-            <select class="form-select-duration">
-
-                <option selected disabled>Start Date to End Date</option>
-                <option value="2">Today</option>
-                <option value="3">Last 30 Days</option>
-                <option value="4">This Month</option>
-                <option value="5">Last Month</option>
-            </select>
-
-        </div>
-
-        <div class="input-group mt-4">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="status">Status</span>
             </div>
             <select class="form-select-status">
 
@@ -58,32 +38,13 @@
                 aria-describedby="search-addon">
             <span class="input-group-text border-0" id="search-addon" style="display: none;">
             </span>
-            <select class="form-select-status">
-
-                <option selected disabled>All</option>
-                <option value="Overdue">Overdue</option>
-                <option value="In Progress">In Progress</option>
-                <option value="Not Started">Not Started</option>
-                <option value="On Hold">On Hold</option>
-                <option value="Cancelled">Cancelled</option>
-                <option value="Completed">Completed</option>
-            </select>
-
         </div>
-
-        <div class="input-group mt-4" style="margin-left:-6%;position: relative;">
-            <i class="fas fa-search mt-2 mr-2"></i>
-            <input type="search" class="form-control rounded" placeholder="Start typing to search" aria-label="Search"
-                aria-describedby="search-addon">
-            <span class="input-group-text border-0" id="search-addon" style="display: none;">
-            </span>
-        </div>
-
-
 
 
     </div>
 </div>
+
+
 
 
 <!-- add task form -->
@@ -109,20 +70,22 @@
                     <div class="row">
                         <div class="col1">
                             <div class="form-group">
-                                <label for="task-name">Task Name<span class="text-danger"> *</span></label>
-                                <input type="text " formControlName="Task_Name" placeholder="Enter Task Name"
-                                    class="form-control" name="Task Name" id="Task Name" required>
-                                <div class="text-danger"
-                                    *ngIf="Taskform.controls['Task_Name']?.invalid && Taskform.controls['Task_Name'].touched"
-                                    class="">
-                                    <small class="text-danger smallText "
-                                        *ngIf="Taskform.get('Task_Name')?.touched && Taskform.get('Task_Name')?.hasError('required')">This
-                                        field
-                                        is required.</small>
+                                <div class="_name">
+                                    <label for="task-name">Task Name<span class="text-danger"> *</span></label>
+                                    <input type="text " formControlName="Task_Name" placeholder="Enter Task Name"
+                                        class="form-control" name="Task Name" id="Task Name" required>
+
+                                    <div class="text-danger"
+                                        *ngIf="Taskform.controls['Task_Name']?.invalid && Taskform.controls['Task_Name'].touched"
+                                        class="">
+                                        <small class="text-danger smallText "
+                                            *ngIf="Taskform.get('Task_Name')?.touched && Taskform.get('Task_Name')?.hasError('required')">This
+                                            field
+                                            is required.</small>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
                         <div class="col2">
                             <div class="form-group">
                                 <label for="task-category">Task Category</label>
@@ -151,33 +114,48 @@
                     <div class="row">
                         <div class="col4">
                             <div class="form-group">
-                                <label for="start date">Start Date<span class="text-danger"> *</span></label>
-                                <input type="date" formControlName="Start_Date" type="Date"
-                                    placeholder=" Select Start Date" name="Start Date" class="form-control">
-                                <div class="text-danger"
-                                    *ngIf="Taskform.controls['Start_Date']?.invalid && Taskform.controls['Start_Date'].touched"
-                                    class="">
-                                    <small class="text-danger smallText "
-                                        *ngIf="Taskform.get('Start_Date')?.touched && Taskform.get('Start_Date')?.hasError('required')">This
-                                        field
-                                        is required.</small>
+                                <div class="_startdt">
+                                    <label for="start date">Start Date<span class="text-danger"> *</span></label>
+                                    <input type="date" formControlName="Start_Date" type="Date"
+                                        placeholder=" Select Start Date" name="Start Date" class="form-control">
+                                    <div class="text-danger"
+                                        *ngIf="Taskform.controls['Start_Date']?.invalid && Taskform.controls['Start_Date'].touched"
+                                        class="">
+                                        <small class="text-danger smallText "
+                                            *ngIf="Taskform.get('Start_Date')?.touched && Taskform.get('Start_Date')?.hasError('required')">This
+                                            field
+                                            is required.</small>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col5">
+                        <div *ngIf="!this.togglepattern" class="col5">
                             <div class="form-group">
-                                <label for="start date">End Date<span class="text-danger"> *</span></label>
-                                <input type="date" formControlName="End_Date" type="Date" placeholder="Select End Date"
-                                    name="End Date" class="form-control">
-                                <div class="text-danger"
-                                    *ngIf="Taskform.controls['End_Date']?.invalid && Taskform.controls['End_Date'].touched"
-                                    class="">
-                                    <small class="text-danger smallText "
-                                        *ngIf="Taskform.get('End_Date')?.touched && Taskform.get('End_Date')?.hasError('required')">This
-                                        field
-                                        is required.</small>
+                                <div class="_enddt">
+                                    <label for="start date">End Date<span class="text-danger"> *</span></label>
+                                    <input type="date" formControlName="End_Date" type="Date"
+                                        placeholder="Select End Date" name="End Date" class="form-control">
+                                    <div class="text-danger"
+                                        *ngIf="Taskform.controls['End_Date']?.invalid && Taskform.controls['End_Date'].touched"
+                                        class="">
+                                        <small class="text-danger smallText "
+                                            *ngIf="Taskform.get('End_Date')?.touched && Taskform.get('End_Date')?.hasError('required')">This
+                                            field
+                                            is required.</small>
+                                    </div>
                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="col6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" (click)="Seetoggle()" value=""
+                                    id="checkboxdefault">
+                                <label class="form-check-label" for="checkboxdefault">
+                                    Without Due Date
+                                </label>
+
                             </div>
                         </div>
                     </div>
@@ -188,7 +166,8 @@
 
                                 <p>Task Description</p>
                                 <quill-editor id="text-editor" placeholder="Enter Text" [modules]="modules"
-                                    (onSelectionChanged)="logChange($event)" style="width: 100%;"></quill-editor>
+                                    (onSelectionChanged)="logChange($event)"
+                                    style="width: 100%;height:100px"></quill-editor>
                             </div>
                         </div>
                     </div>
@@ -211,7 +190,8 @@
                             <div class="form-group">
 
                                 <button id="save" name="save" class="btn btn-primary" value="1"
-                                    style="margin-top: 40px;"><i class="fa fa-check"></i> Save</button>
+                                    style="margin-top: 40px;" (click)="saveTaskFormData()"><i
+                                        class="fa fa-check"></i>Save</button>
                                 <button id="cancel" name="cancel" class="btn btn-white"
                                     style="margin-left: 1%; margin-top: 40px;border-color: black;"
                                     value="1">Cancel</button>

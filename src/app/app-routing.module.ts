@@ -13,7 +13,7 @@ import { UserAuthGuard } from './guards/user-auth.guard';
 const routes: Routes = [
   {
     path: '',
-    canActivate: [UserAuthGuard],
+    // canActivate: [UserAuthGuard],
     children: [
       { path: 'add-task', component: AddTaskComponent },
       { path: 'app-registration-form', component: RegistrationFormComponent },
@@ -21,7 +21,7 @@ const routes: Routes = [
       { path: 'admin', component: AdminPanelComponent },
       { path: 'resetpassword', component: ResetPasswordComponent },
       { path: 'addproject', component: AddProjectComponent },
-      { path: '', component: SignInPageComponent },
+      { path: 'signin', component: SignInPageComponent },
       { path: 'add-task', component: AddTaskComponent },
       { path: 'app-registration-form', component: RegistrationFormComponent },
       { path: 'emp_register', component: RegistrationFormComponent },
@@ -30,7 +30,7 @@ const routes: Routes = [
       { path: 'resetpassword/signin', component: SignInPageComponent },
       { path: 'resetpassword', component: ResetPasswordComponent },
       { path: 'addproject', component: AddProjectComponent },
-      { path: 'dashboard', component: DashboardComponent },
+      { path: '', component: DashboardComponent },
     ],
   }, 
     { path: 'signin', component: SignInPageComponent },
