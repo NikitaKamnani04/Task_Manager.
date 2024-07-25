@@ -1,7 +1,5 @@
 .parent {
     margin-left: 15%;
-    margin-top: 2%;
-
 }
 
 .page-title sup {
@@ -181,6 +179,42 @@
     content:"*";
     color: red;
  }
+
+ /* .icon-right{
+    height: 20px;
+    width: 20px;
+    border-radius: 40%;
+ } */
+
+.icon-view{
+    position: absolute;
+    right: 150px;
+  
+
+}
+
+.bi-three-dots-vertical{
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
  @media(max-width:768px){
