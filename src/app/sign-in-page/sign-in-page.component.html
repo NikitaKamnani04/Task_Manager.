@@ -92,7 +92,6 @@
 												</div>
 											</div>
 
-
 											<div class="footer">
 												<div class="modal-footer">
 													<button type="button" class="btn-container1 foot closeButton"
@@ -112,7 +111,7 @@
 
 
 				<div class="mb-3">
-					<button type="button" class="btn" [disabled]="loginForm.invalid" (click)="loginUser()"
+					<button type="button" class="btn" [disabled]="loginForm.invalid" (click)="loginUser();loginForm.reset()"
 						data-bs-toggle="modal" data-bs-target="#exampleModal1">SIGN IN</button>
 				</div>
 			</form>
@@ -141,19 +140,3 @@
 	</div>
 </div>
 
-<!-- Pop for Login -->
- <div class="loginPopup">
-<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
-				<!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-			</div>
-			<div class="modal-body">
-				Login Sucessfull
-			</div>
-		</div>
-	</div>
-</div>
-</div>

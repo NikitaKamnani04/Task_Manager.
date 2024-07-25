@@ -4,18 +4,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignInPageComponent } from './sign-in-page/sign-in-page.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
-
-
 import { AddTaskComponent } from './add-task/add-task.component';
 import { SidebarModule } from 'ng-sidebar';
-
 import { OrganizationRegisterComponent } from './organization-register/organization-register.component';
-
-
-
 import { FormGroup,FormsModule,Validators,ReactiveFormsModule} from '@angular/forms';
-
-
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -24,12 +16,10 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { AddProjectComponent } from './add-project/add-project.component';
 import { CommonModule } from '@angular/common';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-// import { RegFormComponent } from './reg-form/reg-form.component';
-
 import { NavbarComponent } from './navbar/navbar.component';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { QuillModule } from 'ngx-quill';
 
 
 @NgModule({
@@ -44,8 +34,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
    ResetPasswordComponent,
    AddProjectComponent,
    AddTaskComponent,
-   NavbarComponent
-   
+   NavbarComponent 
  ],
  imports: [
 
@@ -60,8 +49,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
    HttpClientModule,
    Ng2SearchPipeModule,
    NgSelectModule,
-   BrowserAnimationsModule
-
+   BrowserAnimationsModule,
+   QuillModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

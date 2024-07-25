@@ -100,7 +100,7 @@
 }
     
 .text{
-    width: 250px;
+    width: 300px;
     height: 0px;
 }
 
@@ -197,11 +197,6 @@
         bottom: -26px;
       }
 
-      .card3{
-        /* position:absolute;
-        top: 0%;  */
-      }
-      
       .card3 input{
         width: 278px;
         margin-top: 10px;

@@ -12,6 +12,15 @@ export class UserServicesService {
   }
 
   loginData(data: any) {                                 //Fetching the data from server using post method
-    return this.HttpClient.post('http://localhost:3000/empDetails', data)
+    return this.HttpClient.post('http://localhost:3000/empDetails', data);
   }
+
+  projectData(data:any){
+    return this.HttpClient.post('http://localhost:3000/empDetails',data);
+  }
+
+  orgRegister(data:any){
+    return this.HttpClient.post('http://localhost:3000/empDetails',data);
+  }
+
 }

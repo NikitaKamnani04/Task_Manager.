@@ -34,10 +34,10 @@ export class SignInPageComponent implements OnInit {
     // this.forgotPassword();
   
 }
+
 toggleFieldTextType() {
   this.FieldTextType = !this.FieldTextType;
 }
-
 
 loginUser(){   //make the function for login sucessfully
   let loginCred = {
