@@ -10,7 +10,7 @@ export class AdminPanelServiceService {
   constructor(private http: HttpClient) { }
 
   empDetail(){
-    return this.http.get<Employee>(' http://localhost:3000/empDetails')
+    return this.http.get<Employee>(' http://localhost:3500/empDetails')
   }
   deleteEmpDetail(id:number){
     return this.http.delete('http://localhost:3000/empDetails/'+id)

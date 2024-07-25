@@ -19,8 +19,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { AddProjectComponent } from './add-project/add-project.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-// import { RegFormComponent } from './reg-form/reg-form.component';
-
+import { QuillModule } from 'ngx-quill';
 import { NavbarComponent } from './navbar/navbar.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -38,8 +37,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
    ResetPasswordComponent,
    AddProjectComponent,
    AddTaskComponent,
+   NavbarComponent,
    
- ],
+  ],
  imports: [
 
    ReactiveFormsModule,
@@ -52,7 +52,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
    SidebarModule.forRoot(),
    HttpClientModule,
    Ng2SearchPipeModule,
-
+   QuillModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -22,6 +22,7 @@ const routes: Routes = [
   { path: 'resetpassword', component: ResetPasswordComponent },
   { path: 'addproject', component: AddProjectComponent },
   { path: 'dashboard', component: DashboardComponent },
+
 ];
 import { SignInPageComponent } from './sign-in-page/sign-in-page.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
