@@ -24,10 +24,7 @@ import { QuillModule } from 'ngx-quill';
 import { NavbarComponent } from './navbar/navbar.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// PrimeNg
-import { ButtonModule } from 'primeng/button';
-import { SidebarModule } from 'primeng/sidebar';
-import { InputTextareaModule } from 'primeng/inputtextarea';
+
 
 @NgModule({
   declarations: [
@@ -48,12 +45,11 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 
    ReactiveFormsModule,
    BrowserModule,
-   AppRoutingModule,
+
    FormsModule,
    AppRoutingModule,
    HttpClientModule,
    AppRoutingModule,
-   SidebarModule.forRoot(),
    HttpClientModule,
    Ng2SearchPipeModule,
    QuillModule.forRoot(),
@@ -64,18 +60,6 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     NavbarComponent,
   ],
 
-  imports: [
-    ReactiveFormsModule,
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    Ng2SearchPipeModule,
-    BrowserAnimationsModule,
-    SidebarModule,
-    ButtonModule,
-    InputTextareaModule,
-  ],
   providers: [],
   bootstrap: [AppComponent],
 
