@@ -45,10 +45,10 @@
             <span class="text nav-text">Leaves</span>
           </a>
         </li>
-        <li class="nav-link">
+        <li class="nav-link" routerLink="signin">
           <a>
             <i class="bx bx-pie-chart-alt icons"></i>
-            <span class="text nav-text">Events</span>
+            <span class="text nav-text">LOGIN</span>
           </a>
         </li>
 
@@ -61,14 +61,13 @@
       </ul>
     </div>
 
-    <div class="bottom-content">
-      <li class="nav-link">
+    <div class="bottom-content" >
+      <li class="nav-link"  (click)="logout()" >
         <a>
           <i class="bx bx-log-out icons"></i>
-          <span class="text nav-text">Log Out</span>
+          <span class="text nav-text" >Log Out</span>
         </a>
-      </li>
-
     </div>
   </div>
 </nav>
+<p-toast></p-toast>

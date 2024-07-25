@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { SignInPageComponent } from './sign-in-page/sign-in-page.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 
-
 import { AddTaskComponent } from './add-task/add-task.component';
 
 import { OrganizationRegisterComponent } from './organization-register/organization-register.component';
@@ -27,6 +26,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
 import { SidebarModule } from 'primeng/sidebar';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import {ToastModule} from 'primeng/toast';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {BreadcrumbModule} from 'primeng/breadcrumb';
 
 @NgModule({
   declarations: [
@@ -54,9 +56,12 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     SidebarModule,
     ButtonModule,
     InputTextareaModule,
+    CommonModule,
+    ToastModule,
+    ConfirmDialogModule,
+    BreadcrumbModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-
 })
 export class AppModule {}

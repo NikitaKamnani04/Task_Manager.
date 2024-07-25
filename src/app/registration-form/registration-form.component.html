@@ -11,7 +11,8 @@
                 </div>
             </div>
             <div class="column2">
-                <span class="prev_button" routerLink="/employees"><i class="fa-solid fa-arrow-left me-3"></i>Previous</span>
+                <span class="prev_button" routerLink="/employees"><i
+                        class="fa-solid fa-arrow-left me-3"></i>Previous</span>
                 <div class="text-center mt-3"><b>Welcome</b></div>
                 <div class="text-center pb-3">SignUp to continue using</div>
 
@@ -22,17 +23,17 @@
 
                                 <div class="form-group">
 
-                                    <input type="text " formControlName="username" placeholder="Enter Username"
-                                        class="form-control" name="username" id="username" size="30" required>
+                                    <input type="text " formControlName="name" placeholder="Enter Username"
+                                        class="form-control" name="name" id="name" size="30" required>
                                     <div class="name_valid name name1">
                                         <div class="text-danger "
-                                            *ngIf="form.controls['username']?.invalid && form.controls['username'].touched"
+                                            *ngIf="form.controls['name']?.invalid && form.controls['name'].touched"
                                             class="">
                                             <small class="name_ text-danger smallText mb-4 "
-                                                *ngIf="form.get('username')?.touched && form.get('username')?.hasError('required')">Username
+                                                *ngIf="form.get('name')?.touched && form.get('name')?.hasError('required')">name
                                                 is required.</small>
                                             <small class="name_ text-danger smallText mb-4"
-                                                *ngIf="form.get('username')?.touched && form.get('username')?.hasError('minlength')">at
+                                                *ngIf="form.get('name')?.touched && form.get('name')?.hasError('minlength')">at
                                                 least 7 characters
                                                 is required.</small>
 
@@ -57,14 +58,14 @@
 
                                 <div class="form-group">
 
-                                    <input type="text" formControlName="mobile_no" placeholder="Enter Mob No."
-                                        name="mobile_no" class="form-control mt-3 " id="mobile_no" required>
+                                    <input type="text" formControlName="contact" placeholder="Enter Mob No."
+                                        name="contact" class="form-control mt-3 " id="contact" required>
                                     <div class="mobile_valid mob mob1">
                                         <div class="text-danger"
-                                            *ngIf="form.controls['mobile_no']?.invalid && form.controls['mobile_no'].touched"
+                                            *ngIf="form.controls['contact']?.invalid && form.controls['contact'].touched"
                                             class="">
                                             <small class="text-danger smallText "
-                                                *ngIf="form.get('mobile_no')?.touched && form.get('mobile_no')?.hasError('required')">Mob
+                                                *ngIf="form.get('contact')?.touched && form.get('contact')?.hasError('required')">Mob
                                                 No
                                                 is required.</small>
                                         </div>
@@ -105,57 +106,57 @@
                                 </div>
 
                                 <div class="form-group mt-3 role _role ">
-                                    <select  [(ngModel)]="roles" formControlName="role"
-                                        class="form-select  form-select-lg mb-3 "
-                                        aria-label=".form-select-lg example">
-                                        <option [value]="null" [disabled]="true" [selected]="true">
-                                            Select Roles
+                                    <select [(ngModel)]="roles" formControlName="roleId"
+                                        class="form-select  form-select-lg mb-3 " aria-label=".form-select-lg example">
+                                        <option [value]="0" [disabled]="true" [selected]="true">
+                                            Select RoleIds
                                         </option>
-                                        <option *ngFor="let item of roles_items">         
-                                            {{item}}
-                                        </option>  
+                                        <option *ngFor="let item of roles_items" value="{{item.value}}">
+                                            {{item.name}}
+                                        </option>
                                     </select>
-                                    
+
 
                                 </div>
 
                                 <div class="form-group mt-3 dept _dept ">
-                                    <select [(ngModel)]="department" formControlName="dept" class="form-select form-select-lg mb-3 "
-                                        aria-label=".form-select-lg example">
-                                        <option [value]="null" [disabled]="true" [selected]="true">
+                                    <select [(ngModel)]="department" formControlName="deptId"
+                                        class="form-select form-select-lg mb-3 " aria-label=".form-select-lg example">
+                                        <option [value]="0" [disabled]="true" [selected]="true">
                                             Select Department
                                         </option>
-                                        <option *ngFor="let item of department_items">         
-                                            {{item}}
-                                        </option>  
-                                    
+                                        <option *ngFor="let item of department_items" value="{{item.value}}">
+                                            {{item.name}}
+                                        </option>
+
                                     </select>
                                 </div>
 
                                 <div class="form-group mt-3 dateNo _dateNo">
-                                    <input [(ngModel)]="date" formControlName="dateNo" type="Date" placeholder=" Joining Date" name="start_date"
-                                        title="Joining Date" class="form-control mt-3" id="Joining Date" size="30">
+                                    <input [(ngModel)]="date" formControlName="joinDate" type="Date"
+                                        placeholder=" Joining Date" name="joinDate" title="Joining Date"
+                                        class="form-control mt-3" id="Joining Date" size="30">
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group text-center label1">
                             <label for="gender">Gender</label>
-                            <form>
-                                <label class="radio-inline">
-                                    <input type="radio" name="optradio" checked>Male
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="optradio">Female
-                                </label>
+                            <form [formGroup]="form">
+                                <div>
+                                    <label class="radio-inline">
+                                        <input type="radio" formControlName="gender" value="male" name="gender"
+                                            checked>Male
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" formControlName="gender" value="female" name="gender">Female
+                                    </label>
+                                </div>
                             </form>
                         </div>
                         <hr>
                     </form>
                     <button type="submit" class=" buttons  button-23 signupbutton" (click)="SignUp()">Sign Up</button>
-                    <div class="signin signinform signinlink">
-                        <p>Already have an account? <a href="#">Sign in</a>.</p>
-                    </div>
                 </div>
             </div>
         </div>

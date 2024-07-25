@@ -1,16 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+import { UserServicesService } from '../services/user-services.service';
+import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
+
 import * as $ from 'jquery'; // var document: Document;
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],
+  providers: [MessageService],
 })
 export class SidebarComponent implements OnInit {
-  constructor() {}
+  constructor(
+    private Router: Router,
+    private messageService: MessageService,
+    public authService: UserServicesService
+  ) {}
+  toggle: boolean = false;
 
   ngOnInit(): void {}
-
-  toggle: boolean = false;
 
   changetoggle() {
     if (!this.toggle) {
@@ -20,5 +28,10 @@ export class SidebarComponent implements OnInit {
     }
 
     this.toggle = !this.toggle;
+  }
+
+  logout() {
+    localStorage.clear();
+    this.Router.navigate(['/', 'signin']);
   }
 }
