@@ -18,6 +18,26 @@
         <div class="input-group mt-4">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="status">Status</span>
+<div class="row">
+    <div class="col d-flex" style="margin-top: 60px;">
+        <div class="input-group d-flex mt-4" style="margin-left: 16%;">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="duration">Duration</span>
+            </div>
+            <select class="form-select-duration">
+
+                <option selected disabled>Start Date to End Date</option>
+                <option value="2">Today</option>
+                <option value="3">Last 30 Days</option>
+                <option value="4">This Month</option>
+                <option value="5">Last Month</option>
+            </select>
+
+        </div>
+
+        <div class="input-group mt-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="status">Status</span>
             </div>
             <select class="form-select-status">
 
@@ -38,7 +58,28 @@
                 aria-describedby="search-addon">
             <span class="input-group-text border-0" id="search-addon" style="display: none;">
             </span>
+            <select class="form-select-status">
+
+                <option selected disabled>All</option>
+                <option value="Overdue">Overdue</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Not Started">Not Started</option>
+                <option value="On Hold">On Hold</option>
+                <option value="Cancelled">Cancelled</option>
+                <option value="Completed">Completed</option>
+            </select>
+
         </div>
+
+        <div class="input-group mt-4" style="margin-left:-6%;position: relative;">
+            <i class="fas fa-search mt-2 mr-2"></i>
+            <input type="search" class="form-control rounded" placeholder="Start typing to search" aria-label="Search"
+                aria-describedby="search-addon">
+            <span class="input-group-text border-0" id="search-addon" style="display: none;">
+            </span>
+        </div>
+
+
 
 
     </div>
