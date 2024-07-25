@@ -1,19 +1,8 @@
-<div class="main">
+<!-- <div class="main">
     <div class="container">
         <div class="row form_container scroll">
-            <div class="column1">
-                <div class="card-1">
-                    <h2>Task Manager</h2>
-                    <p>
-                    <h4>SignUp</h4>
-                    <p>
-                        <img src='./../../assets/Images/taskmanagericon.png' width="350px" height="320px">
-                </div>
-            </div>
             <div class="column2">
-                <span class="prev_button" routerLink="/employees"><i class="fa-solid fa-arrow-left me-3"></i>Previous</span>
-                <div class="text-center mt-3"><b>Welcome</b></div>
-                <div class="text-center pb-3">SignUp to continue using</div>
+                <div class="text-center mt-4"><b>Register Employee</b></div>
 
                 <div class="card-2 mb-4">
                     <form [formGroup]="form">
@@ -152,12 +141,258 @@
                         </div>
                         <hr>
                     </form>
-                    <button type="submit" class=" buttons  button-23 signupbutton" (click)="SignUp()">Sign Up</button>
-                    <div class="signin signinform signinlink">
-                        <p>Already have an account? <a href="#">Sign in</a>.</p>
-                    </div>
+                    <button type="submit" class=" buttons  button-23 addEmpbutton" (click)="AddEmployee()">Add Employee</button>
                 </div>
             </div>
         </div>
+    </div>
+</div> -->
+
+
+<div class="main">
+    <div class="form_container">
+        <div class="registration_heading heading">Register Employee</div>
+
+        <div class="image-container">
+            <label class="hoverable" for="fileInput">
+                <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'" />
+                <div class="hover-text">Choose file</div>
+            </label>
+            <input id="fileInput" type="file" accept=".png, .jpg, .jpeg" [(ngModel)]="url"
+                class="select-profile-picture" (change)="onSelectFile($event)" />
+            <!-- <span class="message">Tap here to select your picture</span> -->
+        </div>
+        <!-- <br /><button *ngIf="url" (click)="delete()">delete</button> -->
+        <form [formGroup]="regform" style="width: 100%; height: 100%;">
+            <div class="formpage">
+                <div class="row">
+                    <div class="col1">
+
+                        <div class="form-group">
+
+                            <label for="name">Full Name<span class="text-danger">*</span></label>
+                            <input type="text " formControlName="name" placeholder="eg: John Doe" class="form-control"
+                                name="name" id="name" size="30" required>
+                            <div class="name_valid">
+                                <small class="text-danger" 
+                                *ngIf="regform.get('name')?.invalid &&(regform.get('name')?.dirty || regform.get('name')?.touched)">
+                                    <span *ngIf="regform.get('name')?.errors?.['required']">
+                                        Name is Required.
+                                    </span>
+                                    <span *ngIf="regform.get('name')?.errors?.['pattern']">Enter proper format</span>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col2">
+
+                        <div class="form-group">
+
+                            <label for="password"> Password<span class="text-danger">*</span></label>
+                            <input [type]="FieldTextType ? 'text' : 'password'" type="password" formControlName="password" placeholder="eg: John@123"
+                                name="password" class="form-control" id="password" size="30" required>
+                                <div class="icon">
+                                    <span class="password-icon"><i class="fa fa-eyeIcon" [ngClass]="{
+                                              'fa-eye-slash': !FieldTextType,
+                                              'fa-eye': FieldTextType
+                                            }" (click)="toggleFieldTextType()"></i>
+                                    </span>
+                                </div>
+                            <div class="password_valid ">
+                                <small class="text-danger smallText" 
+                                *ngIf="regform.get('password')?.invalid &&(regform.get('password')?.dirty || regform.get('password')?.touched)">
+                                    <span *ngIf="regform.get('password')?.errors?.['required']">
+                                       Password is Required.
+                                    </span>
+                                    <span *ngIf="regform.get('password')?.errors?.['pattern']">Password is invalid</span>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col3">
+
+
+                        <div class="form-group">
+
+                            <label for="Email"> Email<span class="text-danger">*</span></label>
+                            <input type="text" formControlName="email" placeholder="eg: john@gmail.com"
+                                class="form-control" name="email" id="email" required>
+                            <div class="email_valid ">
+                                <small class="text-danger" 
+                                *ngIf="regform.get('email')?.invalid &&(regform.get('email')?.dirty || regform.get('email')?.touched)">
+                                    <span *ngIf="regform.get('email')?.errors?.['required']">
+                                        Email is Required.
+                                    </span>
+                                    <span *ngIf="regform.get('email')?.errors?.['email']">Enter Valid email address</span>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col4">
+
+                        <label for="roles">Roles<span class="text-danger">*</span></label>
+                        <div class="form-group role_valid ">
+                            <select [(ngModel)]="roles" formControlName="roleId" class="form-select mt-2"
+                                aria-label=".form-select-lg example">
+                                <option [value]="null" [disabled]="true" [selected]="true">
+                                    Select Roles
+                                </option>
+                                <option *ngFor="let item of roles_items">
+                                    {{item}}
+                                </option>
+                            </select>
+                            <div class=" ">
+                                <div class="text-danger"
+                                    *ngIf="regform.controls['roleId']?.invalid && regform.controls['roleId'].touched"
+                                    class="">
+                                    <small class="text-danger smallText "
+                                        *ngIf="regform.get('roleId')?.touched && regform.get('roleId')?.hasError('required')">Roles
+                                        is required.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col5">
+
+
+                        <div class="form-group">
+
+                            <label for="contact"> Contact No.<span class="text-danger">*</span></label>
+                            <input type="text" formControlName="contact" placeholder="Enter Contact No." name="contact"
+                                class="form-control " id="contact" required>
+                            <div class="contact_valid">
+                                <small class="text-danger" 
+                                *ngIf="regform.get('contact')?.invalid &&(regform.get('contact')?.dirty || regform.get('contact')?.touched)">
+                                    <span *ngIf="regform.get('contact')?.errors?.['required']">
+                                       Contact No is Required.
+                                    </span>
+                                    <span *ngIf="regform.get('contact')?.errors?.['pattern']">Enter proper contact no.</span>
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col6">
+
+                        <label for="Dept">Department<span class="text-danger">*</span></label>
+                        <div class="form-group  dept_valid  ">
+                            <select [(ngModel)]="department" formControlName="deptId" class="form-select mt-2"
+                                aria-label=".form-select-lg example">
+                                <option [value]="null" [disabled]="true" [selected]="true">
+                                    Select Department
+                                </option>
+                                <option *ngFor="let item of department_items">
+                                    {{item}}
+                                </option>
+                            </select>
+                            <div class="text-danger"
+                                *ngIf="regform.controls['deptId']?.invalid && regform.controls['deptId'].touched"
+                                class="">
+                                <small class="text-danger smallText "
+                                    *ngIf="regform.get('deptId')?.touched && regform.get('deptId')?.hasError('required')">Department
+                                    is required.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col7">
+
+
+                        <div class="form-group">
+
+                            <label for="address"> Address<span class="text-danger">*</span></label>
+                            <input type="text " formControlName="address" placeholder="Enter address"
+                                class="form-control " name="address" id="address" size="30" required>
+                            <div class="add_valid ">
+                                <div class="text-danger"
+                                    *ngIf="regform.controls['address']?.invalid && regform.controls['address'].touched"
+                                    class="">
+                                    <small class="text-danger smallText "
+                                        *ngIf="regform.get('address')?.touched && regform.get('address')?.hasError('required')">Address
+                                        is required.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col8">
+
+                        <label for="joinDate">Joining Date<span class="text-danger">*</span></label>
+                        <div class="form-group joindate_valid ">
+                            <input formControlName="joinDate" type="Date" name=" joinDate" title=" joinDate"
+                                class="form-control" size="30">
+
+                            <div class="text-danger"
+                                *ngIf="regform.controls['joinDate']?.invalid && regform.controls['joinDate'].touched"
+                                class="">
+                                <small class="text-danger smallText "
+                                    *ngIf="regform.get('joinDate')?.touched && regform.get('joinDate')?.hasError('required')">Joining
+                                    Date
+                                    is required.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col9">
+                        <label for="dob">Birth Date<span class="text-danger">*</span></label>
+                        <div class="form-group birthdate_valid">
+                            <input formControlName="dob" type="Date" name="dob" class="form-control" id="dob" size="30">
+                            <div class="text-danger"
+                                *ngIf="regform.controls['dob']?.invalid && regform.controls['dob'].touched" class="">
+                                <small class="text-danger smallText "
+                                    *ngIf="regform.get('dob')?.touched && regform.get('dob')?.hasError('required')">Birth
+                                    Date
+                                    is required.</small>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col10">
+                        <label for="gender">Gender<span class="text-danger">*</span></label>
+                        <div class="form-group gender_valid">
+                            <select [(ngModel)]="gender" formControlName="gender" class="form-select mt-2"
+                                aria-label=".form-select-lg example">
+                                <option [value]="null" [disabled]="true" [selected]="true">
+                                    Choose gender
+                                </option>
+                                <option *ngFor="let item of gender_items">
+                                    {{item}}
+                                </option>
+                            </select>
+                            <div class="text-danger"
+                                *ngIf="regform.controls['gender']?.invalid && regform.controls['gender'].touched"
+                                class="">
+                                <small class="text-danger smallText "
+                                    *ngIf="regform.get('gender')?.touched && regform.get('gender')?.hasError('required')">Gender
+                                    is required.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <button type="submit" class="button-23 addEmpbutton" (click)="AddEmployee() ">Add
+                        Employee</button>
+                    <button type="submit" class="button-23 resetbutton" (click)="resetForm()">Reset Details</button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>

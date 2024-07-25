@@ -40,12 +40,11 @@ import { QuillModule } from 'ngx-quill';
 
    ReactiveFormsModule,
    BrowserModule,
-   AppRoutingModule,
+
    FormsModule,
    AppRoutingModule,
    HttpClientModule,
    AppRoutingModule,
-   SidebarModule.forRoot(),
    HttpClientModule,
    Ng2SearchPipeModule,
    NgSelectModule,
