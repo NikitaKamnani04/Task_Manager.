@@ -1,41 +1,41 @@
-.parent{
+.parent {
     margin-left: 15%;
     margin-top: 2%;
-   
+
 }
-  
-.page-title sup{
+
+.page-title sup {
     color: gray;
     font-size: small;
 }
 
-
-.input-group{
+.input-group {
     width: 20%;
 }
 
-.form-select-duration{
+.form-select-duration {
     font-size: small;
-    color:gray ;  
- 
+    color: gray;
+
 }
-.form-select-status{
+
+.form-select-status {
     font-size: small;
-    color:gray ;  
+    color: gray;
     width: 13%;
 }
 
-.form-control .rounded{
+.form-control .rounded {
     padding: 3px 4px;
 }
 
-.fas{
+.fas {
     margin-right: 12px;
     position: relative;
     top: 5px;
 }
 
-.btn-light{
+.btn-light {
     margin-left: 20px;
     border: 1px solid black;
 }
@@ -45,68 +45,202 @@
     width: 84%;
 }
 
-.offcanvas-title{
+.offcanvas-title {
     font-weight: bold;
 }
 
-.offcanvas-body{
+.offcanvas-body {
     margin-left: 40px;
 }
-.input-category{
+
+.input-category {
     width: 95%;
 }
-.btn-outline-secondary{
 
-}
-
-.form-check{
+.form-check {
     margin-top: 27px;
 }
 
-.form-check-input{
+.form-check-input {
     width: 22px;
     height: 22px;
 }
-.form-check-label{
-    
-    margin:4px;
+
+.form-check-label {
+
+    margin: 4px;
     font-size: small;
 }
 
-.rounded-circle{
+.rounded-circle {
     width: 50%;
 }
 
-#inputGroupSelect05{
-width: 98%;
-}
-
-#inputGroupSelect06{
+#inputGroupSelect05 {
     width: 98%;
 }
 
-/* #inputGroupSelect06 ::placeholder{
+#inputGroupSelect06 {
+    width: 98%;
+}
+
+#inputGroupSelect06 ::placeholder {
     padding-top: 12px;
     position: absolute;
     top: 12px;
-} */
+}
 
-#saveButton{
+#saveButton {
     width: 6%;
 }
 
-#cancelButton{
-    width: 6%;
+#resetButton {
+    width: 7%;
 }
 
-/* .ng-select.ng-select-multiple
-{
-    top: 12px;
-    padding-bottom: 5px;
-    padding-left: 3px;
-} */
+#text-editor {
+    width: 60%;
+    height: 30%;
+}
 
-.ng-select.ng-select-multiple .ng-placeholder{
+.summary {
+    margin-bottom: 3px;
+}
+
+.members-text {
     position: absolute;
-    top: 12px ;
+    top: 79%;
+}
+
+.text {
+    width: 200px;
+    height: 0px;
+}
+
+.toggle {
+    position: absolute;
+    top: 5%;
+    right: 100%;
+    height: 20px;
+    width: 39px;
+    opacity: 1;
+    background-color: #B8B8FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.custom-modal1 {
+    width: 600px;
+}
+
+.text-right {
+    position: relative;
+    left: 238px;
+    top: 6px;
+}
+
+.text-action {
+    position: relative;
+    left: 12%;
+}
+
+.hide {
+    display: none;
+    position: relative;
+    font-size: small;
+    width: 150px;
+    margin: 0;
+    column-span: all;
+}
+
+.myDIV:hover+.hide {
+    display: inline-block;
+    color: gray;
+    cursor: text;
+
+}
+
+
+.category-edit{
+    width: 60px;
+    height: 70px;
+}
+
+.myDIV{
+    width: 150px;
+    margin: 0px;
+}
+
+.required:after { 
+    content:"*";
+    color: red;
+ }
+
+
+ @media(max-width:768px){
+
+    .form-select-duration{
+        margin-top: 40px;
+    }
+
+    #duration{
+        position: absolute;
+        right: 67px;
+    }
+
+    .form-select-duration{
+        position: absolute;
+        left: 62px;
+        bottom: 1px;
+        height: 36px;
+    }
+
+    #status{
+        margin-left: 130px;
+    }
+
+    .fas{
+        margin-left: 130px;
+    }
+
+    #search-field{
+        margin-left: 161px;
+        width: 197px;
+        position: absolute;
+    }
+
+    .form-select-status{
+        height: 37px;
+        width: 40px;
+        position: absolute;
+        left: 190px;
+    }
+
+    #text-editor{
+       width: 97%;
+       height: 50%;
+    }
+
+    .input-category {
+       margin-right: 30px;
+ }
+
+ #saveButton{
+    width: 105px;
+ }
+
+ #resetButton{
+    width: 105px;
+ }
+
+ .mt-5{
+    position: relative;
+    right: 15px;
+ }
 }

@@ -1,51 +1,152 @@
-
-    <div class="row">
-        <div class="col">
-            <div class="input-group">
-                <h2 class="mb-0 f-18 font-weight-bold ">
-                    <span class="d-inline-block text-truncate">Tasks</span>
-                </h2>
+<div class="row">
+    <div class="col d-flex" style="margin-top: 60px;">
+        <div class="input-group d-flex mt-4" style="margin-left: 16%;">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="duration">Duration</span>
             </div>
+            <select class="form-select-duration">
+
+                <option selected disabled>Start Date to End Date</option>
+                <option value="2">Today</option>
+                <option value="3">Last 30 Days</option>
+                <option value="4">This Month</option>
+                <option value="5">Last Month</option>
+            </select>
+
         </div>
+
+        <div class="input-group mt-4">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="status">Status</span>
+            </div>
+            <select class="form-select-status">
+
+                <option selected disabled>All</option>
+                <option value="Overdue">Overdue</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Not Started">Not Started</option>
+                <option value="On Hold">On Hold</option>
+                <option value="Cancelled">Cancelled</option>
+                <option value="Completed">Completed</option>
+            </select>
+
+        </div>
+
+        <div class="input-group mt-4" style="margin-left:-6%;position: relative;">
+            <i class="fas fa-search mt-2 mr-2"></i>
+            <input type="search" class="form-control rounded" placeholder="Start typing to search" aria-label="Search"
+                aria-describedby="search-addon">
+            <span class="input-group-text border-0" id="search-addon" style="display: none;">
+            </span>
+        </div>
+
+
     </div>
-    <div class="row">
-        <div class="col">
-            <div class="text-duration d-flex">
-                <h6>Duration</h6>
-                <div class="input-group">
-                    <div class="input-group-prepend">
+</div>
 
-                        <select class="form-select example d-flex">
-                            <option selected>Start date to End date</option>
-                            <option value="1">Today</option>
-                            <option value="2">last 30 days</option>
-                            <option value="3">This Month</option>
-                            <option value="4">last Month</option>
-                        </select>
-                    </div>
-                </div>
+
+<!-- add task form -->
+<div class="row">
+    <div class="col">
+          
+       
+        <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight">+ ADD TASK</button>
+           
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <span type="button" class="btn-close  toggle" data-bs-dismiss="offcanvas" aria-label="Close"></span>
+
+            <div class="offcanvas-header">
+                <h4 id="offcanvasRightLabel"><b>Add Tasks</b></h4>
+               
+
             </div>
-        </div>
+            <div class="offcanvas-body">
+                <h5>Task Info</h5>
+                <form [formGroup]="Taskform">
+                    <div class="row">
+                        <div class="col1">
+                            <div class="form-group">
+                                <label for="task-name">Task Name<span class="text-danger"> *</span></label>
+                                <input type="text " formControlName="Task_Name" placeholder="Enter Task Name"
+                                    class="form-control" name="Task Name" id="Task Name" required>
+                                    <div class="text-danger"
+                                    *ngIf="Taskform.controls['Task_Name']?.invalid && Taskform.controls['Task_Name'].touched"
+                                    class="">
+                                    <small class="text-danger smallText "
+                                        *ngIf="Taskform.get('Task_Name')?.touched && Taskform.get('Task_Name')?.hasError('required')">This field
+                                        is required.</small>
+                                </div>
+                            </div>
+                        </div>
 
-     <div class="col">
-            <div class="text-Status d-flex">
-                <h6>Status</h6>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <select class="form-select example">
-                            <option selected>Hide Completed Task</option>
-                            <option value="1">All</option>
-                            <option value="2">Incomplete</option>
-                            <option value="3">Dev-Testing</option>
-                            <option value="4">On Hold</option>
-                            <option value="4">Completed</option>
-                        </select>
-
+                        <div class="col2">
+                            <div class="form-group">
+                                <label for="task-category">Task Category</label>
+                                <select class="form-select example">
+                                    <option selected>--</option>
+                                    <option value="1">Frontend Developer</option>
+                                    <option value="2">Backend Developer</option>
+                                    <option value="3">Manual-Testing</option>
+                                    <option value="4">Automation Testing</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
 
+                    <div class="row">
+                        <div class="col3">
+                            <div class="form-group">
+                                <label for="proj-name">Project Name</label>
+                                <input type="text " formControlName="Project_Name" placeholder="Enter Project Name"
+                                    class="form-control" name="Project Name" id="Project Name" required>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col4">
+                            <div class="form-group">
+                                <label for="start date">Start Date<span class="text-danger"> *</span></label>
+                                <input type="date" formControlName="Start_Date" type="Date"
+                                    placeholder=" Select Start Date" name="Start Date" class="form-control">
+                                    <div class="text-danger"
+                                    *ngIf="Taskform.controls['Start_Date']?.invalid && Taskform.controls['Start_Date'].touched"
+                                    class="">
+                                    <small class="text-danger smallText "
+                                        *ngIf="Taskform.get('Start_Date')?.touched && Taskform.get('Start_Date')?.hasError('required')">This field
+                                        is required.</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col5">
+                            <div class="form-group">
+                                <label for="start date">End Date<span class="text-danger"> *</span></label>
+                                <input type="date" formControlName="End_Date" type="Date" placeholder="Select End Date"
+                                    name="End Date" class="form-control">
+                                    <div class="text-danger"
+                                    *ngIf="Taskform.controls['End_Date']?.invalid && Taskform.controls['End_Date'].touched"
+                                    class="">
+                                    <small class="text-danger smallText "
+                                        *ngIf="Taskform.get('End_Date')?.touched && Taskform.get('End_Date')?.hasError('required')">This field
+                                        is required.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col7">
+                            <div class="form-group">
+                                
+                                <p>Task Description</p>
+                                <quill-editor id="text-editor" placeholder="Enter Text" [modules]="modules"
+                                    (onSelectionChanged)="logChange($event)" style="width: 100%;" ></quill-editor>
+                            </div>
+                         </div>
+                    </div>
         <div class="col 3">
             <div class="text-Search">
                 <div class="input-group">
@@ -59,13 +160,12 @@
 
                     </div>
                 </div>
-            </div>
         </div>
     </div>
 
     
 <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button>
-
+<input type="text">
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
   <div class="offcanvas-header">
     <h5 id="offcanvasRightLabel">Offcanvas right</h5>
@@ -76,60 +176,36 @@
   </div>
 </div>
 
-  
+                     <div class="row">
+                        <div class="col8">
+                            <div class="form-group">
+                                <label for="Task priority">Task Priority</label>
+                                <select class="form-select example">
+                                    <option value="1">High</option>
+                                    <option value="2">Medium</option>
+                                    <option value="3">Low</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="row">
+                        <div class="col9">
+                            <div class="form-group">
 
+                                <button id="save" name="save" class="btn btn-primary" value="1" style="margin-top: 40px;"><i
+                                        class="fa fa-check"></i> Save</button>
+                                <button id="cancel" name="cancel" class="btn btn-white" style="margin-left: 1%; margin-top: 40px;border-color: black;"
+                                    value="1">Cancel</button>
 
+                            </div>
+                        </div>
+                    </div> 
+                </form>
+            </div>
 
-
-
-
-
-
-
-
-<!-- <div class="heading">
-    <h2 class="mb-0 f-18 font-weight-bold ">
-        <span class="d-inline-block text-truncate ">Tasks</span>
-    </h2>
-
-    <div class="navbar-left float-left d-flex align-items-center ">
-        <h6>Duration:</h6>
-        <div class="form-group">
-         <select class="form-select example">
-             <option selected>Start date to End date</option>
-             <option value="1">Today</option>
-             <option value="2">last 30 days</option>
-             <option value="3">This Month</option>
-             <option value="4">last Month</option>
-         </select> 
+            
         </div>
     </div>
-   
-    <div class="navbar-left float-left d-flex align-items-center">
-        <h6>Status:</h6>
-        <div class="form-group">
-         <select class="form-select example">
-             <option selected>Hide Completed Task</option>
-             <option value="1">All</option>
-             <option value="2">Incomplete</option>
-             <option value="3">Dev-Testing</option>
-             <option value="4">On Hold</option>
-             <option value="4">Completed</option>
-         </select> 
-        </div>
 </div>
-<div class="search">
-    <form action="#">
-        <input type="text" placeholder="Search"
-               name="search">
-        <button>
-            <i class="fa fa-search"></i>
-        </button>
-    </form>
-</div>
-<div>
-<button type="button" class="btn btn-dark">+ ADD TASK</button>
-</div>
-</div>
-</div> -->
+

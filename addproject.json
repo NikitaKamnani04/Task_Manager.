@@ -1,0 +1,25 @@
+{
+  "projectDetails": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    },
+    {
+      "projectName": "Task Manager",
+      "projectCategory": "1",
+      "startDate": "2024-07-03",
+      "department": "Civil",
+      "projectMembers": [
+        2,
+        3
+      ],
+      "id": "HBE-zWv"
+    }
+  ]
+}

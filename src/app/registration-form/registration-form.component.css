@@ -1,36 +1,200 @@
- * {
-  box-sizing: border-box
+  * {
+    box-sizing: border-box
+  }
+
+  .main {
+    background-color: #e2eafc;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .form_container {
+    position: relative;
+    margin-top: 5%;
+    width: 100%;
+
+  }
+
+  form {
+    position: absolute;
+    right: 145px;
+  }
+
+  .registration_heading {
+    font-weight: 600;
+    margin-left: 19%;
+    font-size: 22px;
+
+  }
+
+  .col1 {
+    width: 48%;
+    margin-top: 30px;
+    margin-right: 2%;
+  }
+
+  .col2 {
+    margin-top: 30px;
+    width: 48%;
+  }
+
+  .row {
+    margin-left: 28%;
+  }
+
+  .col3 {
+    margin-top: 30px;
+    width: 48%;
+    margin-right: 2%;
+  }
+
+  .col4 {
+    margin-top: 30px;
+    width: 48%;
+  }
+
+  .col5 {
+    margin-top: 30px;
+    width: 48%;
+    margin-right: 2%;
+  }
+
+  .col6 {
+    margin-top: 30px;
+    width: 48%;
+  }
+
+  .col7 {
+    margin-top: 30px;
+    width: 48%;
+    margin-right: 2%;
+  }
+
+  .col8 {
+    margin-top: 30px;
+    width: 48%;
+  }
+
+  .col9 {
+    margin-top: 30px;
+    width: 48%;
+    margin-right: 2%;
+  }
+
+  .col10 {
+    margin-top: 30px;
+    width: 48%;
+  }
+
+  
+
+  .button-23  {
+  background-color: #9381ff;
+   border-color: #fff;
+   border-radius: 8px;
+   box-sizing: border-box;
+   color: #ffffff;
+  font-weight: 700;
+   line-height: 20px;
+   padding: 10px 23px;
+   width: auto;
+   margin-left:1%;
+   margin-top:6%;
+   cursor: pointer;
+ }
+ 
+  .button-23:focus-visible {
+    box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+    transition: box-shadow .2s;
+  }
+
+  /* .button-23:active {
+    background-color: #F7F7F7;
+    transform: scale(.96);
+  } */
+
+  .form-control {
+    margin-top: 8px;
+  }
+
+  .email_valid,
+  .name_valid,
+  .contact_valid,
+  .password_valid,
+  .add_valid,
+  .gender_valid,
+  .birthdate_valid,
+  .joindate_valid,
+  .dept_valid,
+  .role_valid {
+    height: 0px;
+
+  }
+
+  ::placeholder{
+    color: grey;
+  }
+
+  .image-container {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin-left:21%;
+  }
+  
+  img {
+    height: 100px;
+    width: 100px;
+    border: 2px solid #000;
+    margin-top:20px;
+  }
+  
+  .select-profile-picture {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+   .icon { 
+       margin-top: -30px;
+       float:right;
+       margin-right: 10px;
+  } 
+
+
+  @media screen and (max-width:768px) {
+
+    .heading {
+      margin-top: 8%;
 }
 
-.main {
-  background-color: #e2eafc;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-}
+    .addEmpbutton {
+      margin-left: 3%;
+      margin-top: 18%;
+    }
 
+    .formpage {
+      margin-left: 16%;
+    }
 
-.column1 {
-  height: 650px;
-  width: 40%;
-  background: white;
-  border-radius: 30px 0 0 30px;
-}
+    .resetbutton{
+      margin-top: 18%;
+    }
+  }
 
-.form_container {
-  margin-top: 12%;
+  /* option{
+  color: gray;
+ } */
+
+  /* .column2 {
   float: left;
-
-}
-
-.column2 {
-  float: left;
   height: 650px;
-  width: 60%;
+  width: 100%;
   background: #4A52BC;
-  border-radius: 0 30px 30px 0;
-
+  border-radius: 30px  30px 30px 30px;
+  margin-left: 35%;
 }
 
 .row {
@@ -56,10 +220,10 @@
 }
 
 .card-2 {
-  margin: 0 5% 0 5%;
+  margin: 5% 5% 0 5%;
   background-color: #7C81CE;
   width: 90%;
-  height: 80%;
+  height: 79%;
   border-radius: 30px 30px 30px 30px;
   border: 1px solid #fff;
 
@@ -111,7 +275,8 @@ svg {
   user-select: none;
   -webkit-user-select: none;
   width: auto;
-  margin-left:40%;
+  margin-left:36%;
+  margin-top:3%;
 }
 
 .button-23:focus-visible {
@@ -147,14 +312,6 @@ form {
   margin-right: 4%;
 }
 
-.signin {
-  margin-left: 31%;
-  margin-top: 2%;
-  color: #fff;
-  font-family: Roboto-slab;
-  font-weight: 400;
-}
-
 .form-select {
   background-color: #7C81CE;
   width: 100%;
@@ -183,35 +340,13 @@ a {
   color: white;
 }
 
-.h2,
-h2 {
-  font-size: 2.5rem;
-  margin-top: -50%;
-  margin-left: 8%;
-  color: #4A52BC;
-  font-family: Roboto-slab;
-  font-weight: 800;
-}
-
-.h4,
-h4 {
-  font-size: 1.5rem;
-  text-align: center;
-  margin-right: 16%;
-  margin-bottom: .5rem;
-  font-weight: 500;
-  line-height: 1.8;
-  color: grey;
-  font-family: Roboto-slab;
-  font-weight: 500;
-}
-
 b,
 strong {
   font-weight: bolder;
   color: white;
   font-weight: 800;
   font-family: Roboto-slab;
+  margin-top:5% !important;
 }
 
 label {
@@ -341,9 +476,6 @@ hr {
     margin-right: 5%;
   }
 
-  .signinform{
-   margin-left: 8% !important;
-  }
   .formspace{
     margin-right: 2px;
     margin-left: 3px;
@@ -367,28 +499,12 @@ hr {
 }
 
 @media screen and (max-width:768px){
-  .signinlink{
-      margin-left: 19%;
-  }
 
-  h2 {
-    color: black;
-    font-weight: 400;
-    text-align: center;
-    margin-right: 31%  !important;
-    padding-top: 8%;
-  }
   .row{
-    margin-top: 15.8%;
-    margin-left: 0px;
-        margin-right: 0px;
-  }
-  img,
-  svg {
-    height: 249px  !important;
-        width: 245px  !important;
-        margin-top: 21%  !important;
-        margin-left: -11%;
+    margin-top: 25.8%;
+        margin-left: 0px;
+        margin-right: 28%;
+        padding-right: 4%;
   }
  .leftgroup{
   margin-left:2% !important;
@@ -397,25 +513,29 @@ hr {
  .rightgroup{
   margin-right:2%  !important;
  }
- .signupbutton{
-margin-left:35% !important;
+ .addEmpbutton{
+margin-left:31% !important;
  }
 
  .name,.email,.password,.addresss,.mob{
   height:32px ;
  }
+
  .role{
   height:21%;
  }
+
  .dept{
   height:21.5%;
  }
+
  .card-2{
   height:85%;
  }
+
 }
 
 
 
 
-            
+             */

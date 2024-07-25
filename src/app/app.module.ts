@@ -4,12 +4,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignInPageComponent } from './sign-in-page/sign-in-page.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
-
 import { AddTaskComponent } from './add-task/add-task.component';
-
+import { SidebarModule } from 'ng-sidebar';
 import { OrganizationRegisterComponent } from './organization-register/organization-register.component';
-
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup,FormsModule,Validators,ReactiveFormsModule} from '@angular/forms';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,9 +16,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { AddProjectComponent } from './add-project/add-project.component';
 import { CommonModule } from '@angular/common';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-
 import { NavbarComponent } from './navbar/navbar.component';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // PrimeNg
 import { ButtonModule } from 'primeng/button';
@@ -29,6 +25,9 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import {ToastModule} from 'primeng/toast';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {BreadcrumbModule} from 'primeng/breadcrumb';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { QuillModule } from 'ngx-quill';
+
 
 @NgModule({
   declarations: [
@@ -38,28 +37,26 @@ import {BreadcrumbModule} from 'primeng/breadcrumb';
     SidebarComponent,
     AdminPanelComponent,
     DashboardComponent,
-    RegistrationFormComponent,
-    ResetPasswordComponent,
-    AddProjectComponent,
-    AddTaskComponent,
-    NavbarComponent,
-  ],
+   RegistrationFormComponent,
+   ResetPasswordComponent,
+   AddProjectComponent,
+   AddTaskComponent,
+   NavbarComponent 
+ ],
+ imports: [
 
-  imports: [
-    ReactiveFormsModule,
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    Ng2SearchPipeModule,
-    BrowserAnimationsModule,
-    SidebarModule,
-    ButtonModule,
-    InputTextareaModule,
-    CommonModule,
-    ToastModule,
-    ConfirmDialogModule,
-    BreadcrumbModule
+   ReactiveFormsModule,
+   BrowserModule,
+
+   FormsModule,
+   AppRoutingModule,
+   HttpClientModule,
+   AppRoutingModule,
+   HttpClientModule,
+   Ng2SearchPipeModule,
+   NgSelectModule,
+   BrowserAnimationsModule,
+   QuillModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

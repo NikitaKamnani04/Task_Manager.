@@ -41,8 +41,9 @@
                             <div *ngIf="registerForm.get('mobno')?.invalid && (registerForm.get('mobno')?.dirty || registerForm.get('mobno')?.touched)"
                                 class="text-danger text">
                                 <div>
-                                    <span *ngIf="registerForm.controls?.['mobno']?.errors?.['required']">Contact.No is
+                                    <span *ngIf="registerForm.controls?.['mobno']?.errors?.['required']">Mobile.no is
                                         Required</span>
+                                        <span *ngIf="registerForm.controls?.['mobno']?.errors?.['pattern']">Please, Enter 10 digit Mobile Number.</span>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +80,7 @@
                                 <!-- <label for="hint">Sample: Harry@123</label> -->
                             </div>
                         </div>
-                        <button type="button" [disabled]="registerForm.invalid">Sign up</button>
+                        <button type="button" [disabled]="registerForm.invalid" (click)="orgRegisterData();registerForm.reset()">Sign up</button>
                     </div>
                 </form>
             </div>
