@@ -5,9 +5,14 @@ import { AppComponent } from './app.component';
 import { SignInPageComponent } from './sign-in-page/sign-in-page.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { AddTaskComponent } from './add-task/add-task.component';
-import { SidebarModule } from 'ng-sidebar';
+// import { SidebarModule } from 'ng-sidebar';
 import { OrganizationRegisterComponent } from './organization-register/organization-register.component';
-import { FormGroup,FormsModule,Validators,ReactiveFormsModule} from '@angular/forms';
+import {
+  FormGroup,
+  FormsModule,
+  Validators,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,12 +27,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
 import { SidebarModule } from 'primeng/sidebar';
 import { InputTextareaModule } from 'primeng/inputtextarea';
-import {ToastModule} from 'primeng/toast';
-import {ConfirmDialogModule} from 'primeng/confirmdialog';
-import {BreadcrumbModule} from 'primeng/breadcrumb';
+import { ToastModule } from 'primeng/toast';
+
 import { NgSelectModule } from '@ng-select/ng-select';
 import { QuillModule } from 'ngx-quill';
-
 
 @NgModule({
   declarations: [
@@ -37,26 +40,28 @@ import { QuillModule } from 'ngx-quill';
     SidebarComponent,
     AdminPanelComponent,
     DashboardComponent,
-   RegistrationFormComponent,
-   ResetPasswordComponent,
-   AddProjectComponent,
-   AddTaskComponent,
-   NavbarComponent 
- ],
- imports: [
-
-   ReactiveFormsModule,
-   BrowserModule,
-
-   FormsModule,
-   AppRoutingModule,
-   HttpClientModule,
-   AppRoutingModule,
-   HttpClientModule,
-   Ng2SearchPipeModule,
-   NgSelectModule,
-   BrowserAnimationsModule,
-   QuillModule.forRoot(),
+    RegistrationFormComponent,
+    ResetPasswordComponent,
+    AddProjectComponent,
+    AddTaskComponent,
+    NavbarComponent,
+  ],
+  imports: [
+    ReactiveFormsModule,
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    AppRoutingModule,
+    HttpClientModule,
+    Ng2SearchPipeModule,
+    NgSelectModule,
+    BrowserAnimationsModule,
+    QuillModule.forRoot(),
+    ToastModule,
+    SidebarModule,
+    ButtonModule,
+    InputTextareaModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

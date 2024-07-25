@@ -114,3 +114,6 @@ p {
 ::ng-deep .p-sidebar-top {
   width: 90% !important;
 }
+::ng-deep .p-sidebar-close >span {
+display: hidden !important;
+}

@@ -4,21 +4,21 @@
         <p class="showtime">Show Time</p>
         <ul>
 
-            <li type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                aria-controls="offcanvasRight"><i class="fa-solid fa-note-sticky"></i></li>
+            <li type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight_notes"
+                aria-controls="offcanvasRight_notes"><i class="fa-solid fa-note-sticky"></i></li>
             <li><i class="fa-solid fa-clock"></i></li>
             <li><i class="fa-solid fa-circle-plus"></i></li>
         </ul>
     </div>
 </nav>
 <!-- Toggle right off canvas -->
-<div class="offcanvas offcanvas-end notes_toggle " tabindex="-1" id="offcanvasRight"
-    aria-labelledby="offcanvasRightLabel">
+<div class="offcanvas offcanvas-end notes_toggle " tabindex="-1" id="offcanvasRight_notes"
+    aria-labelledby="offcanvasRight_notesLabel">
 
     <span type="button" class="btn-close  toggle" data-bs-dismiss="offcanvas" aria-label="Close"></span>
 
     <div *ngIf="!toggleNote" class="offcanvas-header">
-        <h5 class="offcanvas-title add_notes_heading" id="offcanvasRightLabel">Sticky Notes</h5>
+        <h5 class="offcanvas-title add_notes_heading" id="offcanvasRight_notesLabel">Sticky Notes</h5>
         <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
     </div>
     <div class="offcanvas-body">

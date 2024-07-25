@@ -22,4 +22,13 @@ export class UserServicesService {
   }
 
 
+
+  projectData(data:any){
+    return this.HttpClient.post('http://localhost:3000/empDetails',data);
+  }
+
+  orgRegister(data:any){
+    return this.HttpClient.post('http://localhost:3000/empDetails',data);
+  }
+
 }
