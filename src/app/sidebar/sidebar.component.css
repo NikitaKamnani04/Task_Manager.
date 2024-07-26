@@ -68,6 +68,7 @@ body.dark {
   transition: var(--trans-02);
   /* border-top-right-radius: 15px;
   border-bottom-right-radius: 15px; */
+  z-index: 10000;
 }
 .toggle_icon {
   background-color: #9381ff;
