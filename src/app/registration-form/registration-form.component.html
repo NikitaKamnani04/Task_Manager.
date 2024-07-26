@@ -1,22 +1,24 @@
-
 <div class="main">
     <div class="form_container">
         <div class="registration_heading heading">Register Employee</div>
 
-        <div class="image-container">
-            <label class="hoverable" for="fileInput">
-                <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'" />
-                <div class="hover-text">Choose file</div>
-            </label>
-            <input id="fileInput" type="file" accept=".png, .jpg, .jpeg" [(ngModel)]="url"
-                class="select-profile-picture" (change)="onSelectFile($event)" />
-            <!-- <span class="message">Tap here to select your picture</span> -->
-        </div>
+
         <!-- <br /><button *ngIf="url" (click)="delete()">delete</button> -->
         <form [formGroup]="regform" style="width: 100%; height: 100%;">
             <div class="formpage">
+                <div class="image-container">
+                    <label class="hoverable" for="fileInput">
+                        <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'" />
+                        <div class="hover-text">Choose file</div>
+                    </label>
+                    <input id="fileInput" type="file" accept=".png, .jpg, .jpeg" [(ngModel)]="url"
+                        class="select-profile-picture" (change)="onSelectFile($event)" />
+                    <!-- <span class="message">Tap here to select your picture</span> -->
+                </div>
                 <div class="row">
+
                     <div class="col1">
+
 
                         <div class="form-group">
 
@@ -24,8 +26,8 @@
                             <input type="text " formControlName="name" placeholder="eg: John Doe" class="form-control"
                                 name="name" id="name" size="30" required>
                             <div class="name_valid">
-                                <small class="text-danger" 
-                                *ngIf="regform.get('name')?.invalid &&(regform.get('name')?.dirty || regform.get('name')?.touched)">
+                                <small class="text-danger"
+                                    *ngIf="regform.get('name')?.invalid &&(regform.get('name')?.dirty || regform.get('name')?.touched)">
                                     <span *ngIf="regform.get('name')?.errors?.['required']">
                                         Name is Required.
                                     </span>
@@ -41,22 +43,24 @@
                         <div class="form-group">
 
                             <label for="password"> Password<span class="text-danger">*</span></label>
-                            <input [type]="FieldTextType ? 'text' : 'password'" type="password" formControlName="password" placeholder="eg: John@123"
-                                name="password" class="form-control" id="password" size="30" required>
-                                <div class="icon">
-                                    <span class="password-icon"><i class="fa fa-eyeIcon" [ngClass]="{
+                            <input [type]="FieldTextType ? 'text' : 'password'" type="password"
+                                formControlName="password" placeholder="eg: John@123" name="password"
+                                class="form-control" id="password" size="30" required>
+                            <div class="icon">
+                                <span class="password-icon"><i class="fa fa-eyeIcon" [ngClass]="{
                                               'fa-eye-slash': !FieldTextType,
                                               'fa-eye': FieldTextType
                                             }" (click)="toggleFieldTextType()"></i>
-                                    </span>
-                                </div>
+                                </span>
+                            </div>
                             <div class="password_valid ">
-                                <small class="text-danger smallText" 
-                                *ngIf="regform.get('password')?.invalid &&(regform.get('password')?.dirty || regform.get('password')?.touched)">
+                                <small class="text-danger smallText"
+                                    *ngIf="regform.get('password')?.invalid &&(regform.get('password')?.dirty || regform.get('password')?.touched)">
                                     <span *ngIf="regform.get('password')?.errors?.['required']">
-                                       Password is Required.
+                                        Password is Required.
                                     </span>
-                                    <span *ngIf="regform.get('password')?.errors?.['pattern']">Password is invalid</span>
+                                    <span *ngIf="regform.get('password')?.errors?.['pattern']">Password is
+                                        invalid</span>
                                 </small>
                             </div>
                         </div>
@@ -73,12 +77,13 @@
                             <input type="text" formControlName="email" placeholder="eg: john@gmail.com"
                                 class="form-control" name="email" id="email" required>
                             <div class="email_valid ">
-                                <small class="text-danger" 
-                                *ngIf="regform.get('email')?.invalid &&(regform.get('email')?.dirty || regform.get('email')?.touched)">
+                                <small class="text-danger"
+                                    *ngIf="regform.get('email')?.invalid &&(regform.get('email')?.dirty || regform.get('email')?.touched)">
                                     <span *ngIf="regform.get('email')?.errors?.['required']">
                                         Email is Required.
                                     </span>
-                                    <span *ngIf="regform.get('email')?.errors?.['email']">Enter Valid email address</span>
+                                    <span *ngIf="regform.get('email')?.errors?.['email']">Enter Valid email
+                                        address</span>
                                 </small>
                             </div>
                         </div>
@@ -121,12 +126,13 @@
                             <input type="text" formControlName="contact" placeholder="Enter Contact No." name="contact"
                                 class="form-control " id="contact" required>
                             <div class="contact_valid">
-                                <small class="text-danger" 
-                                *ngIf="regform.get('contact')?.invalid &&(regform.get('contact')?.dirty || regform.get('contact')?.touched)">
+                                <small class="text-danger"
+                                    *ngIf="regform.get('contact')?.invalid &&(regform.get('contact')?.dirty || regform.get('contact')?.touched)">
                                     <span *ngIf="regform.get('contact')?.errors?.['required']">
-                                       Contact No is Required.
+                                        Contact No is Required.
                                     </span>
-                                    <span *ngIf="regform.get('contact')?.errors?.['pattern']">Enter proper contact no.</span>
+                                    <span *ngIf="regform.get('contact')?.errors?.['pattern']">Enter proper contact
+                                        no.</span>
                                 </small>
                             </div>
                         </div>

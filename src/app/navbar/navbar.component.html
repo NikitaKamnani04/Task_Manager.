@@ -26,11 +26,11 @@
         <span *ngIf="!toggleNote" type="button" (click)="visibleSidebar3 = true" class="add_task_button"
             (click)="toggelNoteSection()"><i class="fa-solid fa-plus fs-4 me-2 "></i>Add Notes</span>
         <div *ngIf="toggleNote" class="notes_content">
-            <p-sidebar id="button" [(visible)]="visibleSidebar3" position="top" [baseZIndex]="100">
+            <p-sidebar  [(visible)]="visibleSidebar3" position="top" [baseZIndex]="100">
                 <h1 class="notes_heading">Add Notes</h1>
                 <div class="notes_body">
                     <!-- <div class="notes_heading">Notes Details</div> -->
-                    <textarea [rows]="5" [cols]="150" pInputTextarea [autoResize]="false"></textarea>
+                    <textarea class="notes_textArea" [rows]="5" [cols]="150" pInputTextarea [autoResize]="false"></textarea>
                 </div>
                 <p-button type="button" (click)="visibleSidebar3 = false" label="Save" styleClass="p-button-success"
                     (onClick)="showAddNotes()"></p-button>
