@@ -84,22 +84,14 @@ export class RegistrationFormComponent implements OnInit {
       gender: this.regform.value.gender,
       dob: this.regform.value.dob,
     }
-    // console.log(this.regform.valid);
-
+  
     if (this.regform.valid) {
       this.Regservice.getEmployeeData(emp_data).subscribe((res: any) => {
-
-        // if (res.success == 1) {
-
-        // }
         console.log(res);
       })
-
     }
     else {
       this.regform.markAllAsTouched();
-
-      // this.resetForm();
     }
   }
   resetForm() {

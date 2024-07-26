@@ -10,7 +10,12 @@ export class RegistrationServiceService {
   fetchData() {
     return this.httpclient.get('http://localhost:4000/showEmpDetails');
   }
+
   getEmployeeData(data: any) {
-    return this.httpclient.post('http://localhost:4000/registerUserApi', data);
+    return this.httpclient.post('http://localhost:3000/employees/', data);
+  }
+
+  taskformData(data:any){
+   return this.httpclient.post('http://localhost:3000/employees/',data)
   }
 }

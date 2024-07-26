@@ -1,4 +1,7 @@
-.btn-dark {
+*{
+    box-sizing: border-box;
+}
+ .btn-dark {
     color: #fff;
     background-color: #212529;
     border-color: #212529;
@@ -14,7 +17,6 @@
 .col1{
    width:50%;
    margin-top:40px;
-  
 }
 
 .col2{
@@ -41,10 +43,13 @@ label{
     margin-top:40px;
     width:25%;
 }
+.col6{
+    margin-top:77px;
+    width:25%;
+}
 
 .col7{
     margin-top:40px;
-    width:100%;
 }
 
 .col8{
@@ -52,8 +57,25 @@ label{
     width:50%;
 }
 
+.col9{
+    margin-top:40px;
+    width:50%;
+}
+
+/* .col10{
+    /* margin-top:40px;
+    width:50%; */
+
+
  .input-group{
     width: 20%;
+}
+
+.form-check-input {
+    width: 20px;
+    height: 20px;
+    margin-top: .25em;
+    border: 1px solid rgba(0, 0, 0, .25);
 }
 
 .form-select-duration{
@@ -100,8 +122,34 @@ background-color: #25282b;
 color: #fff;
   }
 
-  .table{
-    margin-left: 16%;
-    margin-top: 2%;
-    margin-right:2%;
+  ._name{
+    height:0px;
   }
+  ._startdt,._enddt{
+    height: 72px;
+  }
+ 
+  .form-check-label{
+    margin-left:6px;
+  }
+
+  .table {
+    margin-left: 16%;
+    margin-top: 3%;
+    width:80%;
+  }
+
+  /* #selectinput ::placeholder{
+position:absolute;
+top:2px;
+  } */
+ 
+  .table>thead {
+    text-align: center;
+}
+
+.table>tbody{
+    text-align: center;
+}
+ 
+   
