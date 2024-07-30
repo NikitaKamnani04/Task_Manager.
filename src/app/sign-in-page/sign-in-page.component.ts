@@ -97,5 +97,8 @@ export class SignInPageComponent implements OnInit {
       email: this.resetForm.value.email,
     };
     console.log(forgotPass);
+    this.userService.resetPassword(forgotPass).subscribe((res) => {
+      console.log(res);
+    });
   }
 }

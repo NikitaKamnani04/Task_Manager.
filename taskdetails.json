@@ -20,19 +20,20 @@
       "day": "Wednesday",
       "hours": 7,
       "colorcode": "#EAECFA"
-    },{
+    },
+    {
       "task_name": "Routing implementations",
       "deadline": "Today",
-        "day": "Thursday",
-        "hours": 8,
-        "colorcode": "#E2EAFC"
-      },
-      {
-        "task_name": "work On responsiveness",
-        "deadline": "Today",
-        "day": "Friday",
-        "hours": 9,
-        "colorcode": "#F8F7FF"
-      }
+      "day": "Thursday",
+      "hours": 8,
+      "colorcode": "#E2EAFC"
+    },
+    {
+      "task_name": "work On responsiveness",
+      "deadline": "Today",
+      "day": "Friday",
+      "hours": 9,
+      "colorcode": "#F8F7FF"
+    }
   ]
 }

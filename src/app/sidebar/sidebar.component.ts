@@ -34,4 +34,5 @@ export class SidebarComponent implements OnInit {
     localStorage.clear();
     this.Router.navigate(['/', 'signin']);
   }
+ 
 }

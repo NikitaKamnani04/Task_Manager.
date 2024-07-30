@@ -7,28 +7,26 @@ import { User } from '../models/user';
   providedIn: 'root',
 })
 export class UserServicesService {
-  
-  constructor(private HttpClient: HttpClient) {
-
-  }
+  constructor(private HttpClient: HttpClient) {}
 
   getChartInfo() {
     return this.HttpClient.get('http://localhost:3000/tasks');
   }
-
+  // working
   loginData(data: any) {
     //Fetching the data from server using post method
     return this.HttpClient.post(' http://localhost:4000/userLogin', data);
   }
 
-
-
-  projectData(data:any){
-    return this.HttpClient.post('http://localhost:3000/empDetails',data);
+  projectData(data: any) {
+    return this.HttpClient.post('http://localhost:3000/empDetails', data);
+  }
+  // working
+  orgRegister(data: any) {
+    return this.HttpClient.post('http://localhost:4000/orgApi', data);
   }
 
-  orgRegister(data:any){
-    return this.HttpClient.post('http://localhost:3000/empDetails',data);
+  resetPassword(data: any) {
+    return this.HttpClient.post('http://localhost:4000/forgotPassword', data);
   }
-
 }

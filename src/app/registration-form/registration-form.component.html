@@ -12,7 +12,7 @@
                         <div class="hover-text">Choose file</div>
                     </label>
                     <input id="fileInput" type="file" accept=".png, .jpg, .jpeg" [(ngModel)]="url"
-                        class="select-profile-picture" (change)="onSelectFile($event)" />
+                        class="select-profile-picture" formControlName="profile" (change)="onSelectFile($event)" />
                     <!-- <span class="message">Tap here to select your picture</span> -->
                 </div>
                 <div class="row">
@@ -99,9 +99,8 @@
                                 <option [value]="null" [disabled]="true" [selected]="true">
                                     Select Roles
                                 </option>
-                                <option *ngFor="let item of roles_items">
-                                    {{item}}
-                                </option>
+                                <option *ngFor="let item of roles_items" value={{item.value}}>
+                                    {{item.name}}
                             </select>
                             <div class=" ">
                                 <div class="text-danger"
@@ -148,8 +147,8 @@
                                 <option [value]="null" [disabled]="true" [selected]="true">
                                     Select Department
                                 </option>
-                                <option *ngFor="let item of department_items">
-                                    {{item}}
+                                <option *ngFor="let item of department_items" value={{item.value}}>
+                                    {{item.name}}
                                 </option>
                             </select>
                             <div class="text-danger"
@@ -228,7 +227,7 @@
                                 <option [value]="null" [disabled]="true" [selected]="true">
                                     Choose gender
                                 </option>
-                                <option *ngFor="let item of gender_items">
+                                <option *ngFor="let item of gender_items" >
                                     {{item}}
                                 </option>
                             </select>

@@ -16,7 +16,7 @@ export class OrganizationRegisterComponent implements OnInit {
     this.registerForm=new FormGroup({
       'name': new FormControl('',Validators.required),
       'email':new FormControl('',[Validators.required,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]),
-      'mobno':new FormControl('',[Validators.required,Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]),
+      'contact':new FormControl('',[Validators.required,Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]),
       'address':new FormControl('',Validators.required),
       'password':new FormControl('',[Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,18}$')]),
     })
@@ -30,11 +30,11 @@ export class OrganizationRegisterComponent implements OnInit {
     let orgReg ={
       name : this.registerForm.value.name,
       email : this.registerForm.value.email,
-      mobno : this.registerForm.value.mobno,
+      contact : this.registerForm.value.contact,
       address : this.registerForm.value.address,
       password : this.registerForm.value.password
     }
-    // console.log(orgReg);
+    console.log(orgReg);
     this.userService.orgRegister(orgReg).subscribe(res=>{
       console.log(res);
     })
