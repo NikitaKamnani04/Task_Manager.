@@ -13,11 +13,6 @@
   margin: 50px;
 }
 
-input {
-  padding-left: 10px;
-  outline: none;
-  border: none;
-}
 .btn_name:link {
   text-decoration: none;
   color: red;
@@ -91,10 +86,14 @@ input {
   background-color: #9381ff;
 }
 .task_search {
-  width: 445px;
+  width: 446px;
   height: 38px;
+  padding: 6px 32px 6px 22px;
+}
+input{
+  border: none;
+  outline: none ;
 
-  /* border: none; */
 }
 .search_bar_task {
   width: 450px;
@@ -414,8 +413,7 @@ td {
     transform: scale(.96);
   } */
 
-.form_field
- {
+.form_field {
   margin-top: 8px;
 }
 

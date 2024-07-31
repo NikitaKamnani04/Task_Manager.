@@ -29,4 +29,11 @@ export class UserServicesService {
   resetPassword(data: any) {
     return this.HttpClient.post('http://localhost:4000/forgotPassword', data);
   }
+  updateEmpDetails(data: any) {
+    console.log(data);
+    return this.HttpClient.post(
+      'http://localhost:4000/updateUserApi/',
+      data
+    );
+  }
 }

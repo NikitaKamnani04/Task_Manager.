@@ -11,6 +11,7 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserAuthGuard } from './guards/user-auth.guard';
 import { OrganizationRegisterComponent } from './organization-register/organization-register.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -33,8 +34,8 @@ const routes: Routes = [
       { path: 'addproject', component: AddProjectComponent },
       { path: 'dashboard', component: DashboardComponent },
     ],
-  }, 
-    { path: 'signin', component: SignInPageComponent },
+  },
+  { path: 'signin', component: SignInPageComponent },
   { path: '**', redirectTo: '' },
 ];
 

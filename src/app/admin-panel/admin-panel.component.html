@@ -145,8 +145,8 @@
                         <div class="form-group">
 
                             <label for="name">Full Name<span class="text-danger">*</span></label>
-                            <input type="text " formControlName="name" placeholder="eg: John Doe" class="form-control form_field"
-                                name="name" id="name" size="30" required>
+                            <input type="text " formControlName="name" placeholder="eg: John Doe"
+                                class="form-control form_field" name="name" id="name" size="30" required>
                             <div class="name_valid">
                                 <small class="text-danger"
                                     *ngIf="regform.get('name')?.invalid &&(regform.get('name')?.dirty || regform.get('name')?.touched)">
@@ -329,7 +329,8 @@
                     <div class="col9">
                         <label for="dob">Birth Date<span class="text-danger">*</span></label>
                         <div class="form-group birthdate_valid">
-                            <input formControlName="dob" type="Date" name="dob" class="form-control form_field" id="dob" size="30">
+                            <input formControlName="dob" type="Date" name="dob" class="form-control form_field" id="dob"
+                                size="30">
                             <div class="text-danger"
                                 *ngIf="regform.controls['dob']?.invalid && regform.controls['dob'].touched" class="">
                                 <small class="text-danger smallText "
@@ -390,7 +391,7 @@
                         <div class="hover-text">Choose file</div>
                     </label>
                     <input id="fileInput" type="file" accept=".png, .jpg, .jpeg" [(ngModel)]="url"
-                        class="select-profile-picture" formControlName="profile" (change)="onSelectFile($event)" />
+                        class="select-profile-picture" formControlName="profile" (change)="onSelectFile($event)">
                     <!-- <span class="message">Tap here to select your picture</span> -->
                 </div>
                 <div class="row">
@@ -401,8 +402,8 @@
                         <div class="form-group">
 
                             <label for="name">Full Name<span class="text-danger">*</span></label>
-                            <input type="text" formControlName="name" placeholder="eg: John Doe" class="form-control form_field"
-                                name="name" id="name" size="30" required>
+                            <input type="text" formControlName="name" placeholder="eg: John Doe"
+                                class="form-control form_field" name="name" id="name" size="30" required>
                             <div class="name_valid">
                                 <small class="text-danger"
                                     *ngIf="regform.get('name')?.invalid &&(regform.get('name')?.dirty || regform.get('name')?.touched)">
@@ -418,12 +419,11 @@
 
                     <div class="col2">
 
-                        <div class="form-group">
-
+                        <!-- <div class="form-group">
                             <label for="password"> Password<span class="text-danger">*</span></label>
                             <input [type]="FieldTextType ? 'text' : 'password'" type="password"
                                 formControlName="password" placeholder="eg: John@123" name="password"
-                                class="form-control form_field" id="password" size="30" required>
+                                class="form-control form_field" id="password" size="30" required readonly="readonly">
                             <div class="icon">
                                 <span class="password-icon"><i class="fa fa-eyeIcon" [ngClass]="{
                                               'fa-eye-slash': !FieldTextType,
@@ -441,7 +441,7 @@
                                         invalid</span>
                                 </small>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
@@ -453,7 +453,7 @@
 
                             <label for="Email"> Email<span class="text-danger">*</span></label>
                             <input type="text" formControlName="email" placeholder="eg: john@gmail.com"
-                                class="form-control form_field" name="email" id="email" required>
+                                class="form-control form_field" name="email" id="email" required readonly="readonly">
                             <div class="email_valid ">
                                 <small class="text-danger"
                                     *ngIf="regform.get('email')?.invalid &&(regform.get('email')?.dirty || regform.get('email')?.touched)">
@@ -586,7 +586,8 @@
                     <div class="col9">
                         <label for="dob">Birth Date<span class="text-danger">*</span></label>
                         <div class="form-group birthdate_valid">
-                            <input formControlName="dob" type="Date" name="dob" class="form-control form_field" id="dob" size="30">
+                            <input formControlName="dob" type="Date" name="dob" class="form-control form_field" id="dob"
+                                size="30">
                             <div class="text-danger"
                                 *ngIf="regform.controls['dob']?.invalid && regform.controls['dob'].touched" class="">
                                 <small class="text-danger smallText "
@@ -621,7 +622,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <button type="submit" class="button-23 addEmpbutton">Update
+                    <button type="submit" class="button-23 addEmpbutton" (click)=" updateEmpdetails()">Update
                         Employee</button>
                     <button type="submit" class="button-23 addEmpbutton" (click)="adminPage()"> Cancel</button>
 

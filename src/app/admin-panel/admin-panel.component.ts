@@ -1,3 +1,4 @@
+import { UserServicesService } from './../services/user-services.service';
 import { Employee } from './../models/models.model';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AdminPanelServiceService } from './../services/admin-panel-service.service';
@@ -24,7 +25,7 @@ export class AdminPanelComponent implements OnInit {
   toggleUpdateEmployeeForm: boolean = false;
 
   // Add Employee
-  data: any;
+  // data: any;
   regform!: FormGroup;
   submitted!: false;
   selectedStatus: any;
@@ -37,7 +38,7 @@ export class AdminPanelComponent implements OnInit {
 
   // Update Employee Details
   updateForm!: FormGroup;
-
+  updateEmpId: any;
   onSelectFile(event: any) {
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
@@ -79,7 +80,7 @@ export class AdminPanelComponent implements OnInit {
   constructor(
     private AdminPanelServiceService: AdminPanelServiceService,
     private Regservice: RegistrationServiceService,
-    private router: Router
+    private UserServicesService: UserServicesService
   ) {}
 
   ngOnInit(): void {
@@ -201,11 +202,12 @@ export class AdminPanelComponent implements OnInit {
   patchFormData(data: any) {
     this.toggleUpdateEmployeeForm = !this.toggleUpdateEmployeeForm;
     this.toggleAdminPanel = !this.toggleAdminPanel;
+
+    this.updateEmpId = data.id;
     console.log(data);
     this.roles = data.roleId;
     this.department = data.deptId;
     this.gender = data.gender;
-    console.log(this.gender);
 
     this.updateForm.patchValue({
       name: data.name,
@@ -216,7 +218,6 @@ export class AdminPanelComponent implements OnInit {
       roleId: this.roles,
       deptId: this.department,
       joinDate: data.joinDate,
-      // gender: this.gender,
       dob: data.dob,
     });
   }
@@ -224,6 +225,24 @@ export class AdminPanelComponent implements OnInit {
     this.updateForm.reset();
     this.toggleUpdateEmployeeForm = !this.toggleUpdateEmployeeForm;
     this.toggleAdminPanel = !this.toggleAdminPanel;
+  }
+  updateEmpdetails() {
+    let updatedEmp = {
+      id: Number(this.updateEmpId),
+      name: this.updateForm.value.name,
+      contact: Number(this.updateForm.value.contact),
+      dob: this.updateForm.value.dob,
+      email: this.updateForm.value.email,
+      address: this.updateForm.value.address,
+      deptId: Number(this.updateForm.value.deptId),
+      gender: this.updateForm.value.gender,
+      roleId: Number(this.updateForm.value.roleId),
+    };
+    console.log(updatedEmp);
+
+    this.UserServicesService.updateEmpDetails(updatedEmp).subscribe((res) => {
+      console.log(res);
+    });
   }
 
   // patchEmpData(data: any) {
