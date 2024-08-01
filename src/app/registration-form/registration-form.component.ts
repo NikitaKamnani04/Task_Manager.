@@ -94,6 +94,8 @@ export class RegistrationFormComponent implements OnInit {
       this.regform.markAllAsTouched();
     }
   }
+
+  
   resetForm() {
 
     this.regform.reset()

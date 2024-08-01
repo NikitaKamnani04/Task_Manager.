@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +16,22 @@ export class RegistrationServiceService {
     return this.httpclient.post('http://localhost:3000/employees/', data);
   }
 
+  // taskformData(data:any){
+  //  return this.httpclient.post('http://localhost:3000/employees/',data)
+  // }
+
   taskformData(data:any){
-   return this.httpclient.post('http://localhost:3000/employees/',data)
+     return this.httpclient.post(environment.apiurl +'/createTask',data);
+     
+     }
+
+ 
+ Taskprioritydata(data: any){  
+   return this.httpclient.get(environment.apiurl +'/priorityList',data)
   }
+
+  Taskcategorydata(data:any){
+  return this.httpclient.get(environment.apiurl +'/tskCategoryList',data)
+  }
+
 }
