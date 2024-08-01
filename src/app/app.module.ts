@@ -28,10 +28,9 @@ import { ButtonModule } from 'primeng/button';
 import { SidebarModule } from 'primeng/sidebar';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ToastModule } from 'primeng/toast';
-
+import { DropdownModule } from 'primeng/dropdown';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { QuillModule } from 'ngx-quill';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,11 +56,12 @@ import { QuillModule } from 'ngx-quill';
     Ng2SearchPipeModule,
     NgSelectModule,
     BrowserAnimationsModule,
-    QuillModule.forRoot(),
+    QuillModule,
     ToastModule,
     SidebarModule,
     ButtonModule,
     InputTextareaModule,
+    DropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent],
