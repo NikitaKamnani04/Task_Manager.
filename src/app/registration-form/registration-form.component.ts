@@ -57,9 +57,9 @@ export class RegistrationFormComponent implements OnInit {
   gender_items = ['Male', 'Female'];
 
   constructor(
-    private Regservice: RegistrationServiceService,
-    // private route: ActivatedRoute
-  ) {
+    private Regservice: RegistrationServiceService
+  ) // private route: ActivatedRoute
+  {
     // this.createFormGroup();
     // this.route.queryParams.subscribe((params) => {
     //   console.log(params);

@@ -13,7 +13,6 @@ import * as $ from 'jquery'; // var document: Document;
 export class SidebarComponent implements OnInit {
   constructor(
     private Router: Router,
-    private messageService: MessageService,
     public authService: UserServicesService
   ) {}
   toggle: boolean = false;
@@ -29,10 +28,10 @@ export class SidebarComponent implements OnInit {
 
     this.toggle = !this.toggle;
   }
+  
 
   logout() {
     localStorage.clear();
     this.Router.navigate(['/', 'signin']);
   }
- 
 }

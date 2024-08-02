@@ -31,9 +31,10 @@ export class UserServicesService {
   }
   updateEmpDetails(data: any) {
     console.log(data);
-    return this.HttpClient.post(
-      'http://localhost:4000/updateUserApi/',
-      data
-    );
+    return this.HttpClient.post('http://localhost:4000/updateUserApi/', data);
+  }
+
+  departments() {
+    return this.HttpClient.get('http://localhost:4000/deptList');
   }
 }

@@ -568,7 +568,7 @@
                         <label for="joinDate">Joining Date<span class="text-danger">*</span></label>
                         <div class="form-group joindate_valid ">
                             <input formControlName="joinDate" type="Date" name=" joinDate" title=" joinDate"
-                                class="form-control form_field" size="30">
+                                class="form-control form_field" size="30" readonly="readonly">
 
                             <div class="text-danger"
                                 *ngIf="regform.controls['joinDate']?.invalid && regform.controls['joinDate'].touched"
@@ -631,3 +631,4 @@
         </form>
     </div>
 </div>
+<p-toast></p-toast>

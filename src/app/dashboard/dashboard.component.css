@@ -359,6 +359,9 @@ div.dropdown.open > div.list {
   display: block;
   z-index: 1;
 }
+.deptName {
+  text-transform: uppercase;
+}
 @media (min-width: 768px) {
   /* .button-36 {
     padding: 0 1.6rem;

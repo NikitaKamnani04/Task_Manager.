@@ -7,12 +7,15 @@ import { Router } from '@angular/router';
 
 import { Validators } from '@angular/forms';
 import { RegistrationServiceService } from '../services/registration-service.service';
+import { MessageService } from 'primeng/api';
+
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-admin-panel',
   templateUrl: './admin-panel.component.html',
   styleUrls: ['./admin-panel.component.css'],
+  providers: [MessageService],
 })
 export class AdminPanelComponent implements OnInit {
   empInfo: any = [];
@@ -80,7 +83,8 @@ export class AdminPanelComponent implements OnInit {
   constructor(
     private AdminPanelServiceService: AdminPanelServiceService,
     private Regservice: RegistrationServiceService,
-    private UserServicesService: UserServicesService
+    private UserServicesService: UserServicesService,
+    private messageService: MessageService
   ) {}
 
   ngOnInit(): void {
@@ -178,14 +182,23 @@ export class AdminPanelComponent implements OnInit {
 
     if (this.regform.valid) {
       this.Regservice.getEmployeeData(emp_data).subscribe((res: any) => {
-        // if (res.success == 1) {
-
-        // }
+        if (res.success === 1) {
+          this.messageService.add({
+            severity: 'success',
+            // summary: 'Service Message',
+            detail: 'Employee Registered Successfully',
+          });
+        }
         console.log(res);
         this.regform.reset();
       });
     } else {
       this.regform.markAllAsTouched();
+      this.messageService.add({
+        severity: 'error',
+        // summary: 'Service Message',
+        detail: 'Employee Not Registered',
+      });
 
       // this.resetForm();
     }
@@ -204,6 +217,8 @@ export class AdminPanelComponent implements OnInit {
     this.toggleAdminPanel = !this.toggleAdminPanel;
 
     this.updateEmpId = data.id;
+    console.log(this.updateForm);
+
     console.log(data);
     this.roles = data.roleId;
     this.department = data.deptId;
@@ -232,6 +247,7 @@ export class AdminPanelComponent implements OnInit {
       name: this.updateForm.value.name,
       contact: Number(this.updateForm.value.contact),
       dob: this.updateForm.value.dob,
+      joinDate: this.updateForm.value.joinDate,
       email: this.updateForm.value.email,
       address: this.updateForm.value.address,
       deptId: Number(this.updateForm.value.deptId),
@@ -240,9 +256,16 @@ export class AdminPanelComponent implements OnInit {
     };
     console.log(updatedEmp);
 
-    this.UserServicesService.updateEmpDetails(updatedEmp).subscribe((res) => {
-      console.log(res);
-    });
+    this.UserServicesService.updateEmpDetails(updatedEmp).subscribe(
+      (res: any) => {
+        console.log(res.success);
+        this.messageService.add({
+          severity: 'success',
+          // summary: 'Service Message',
+          detail: 'Employee Details Updated Successfully',
+        });
+      }
+    );
   }
 
   // patchEmpData(data: any) {
