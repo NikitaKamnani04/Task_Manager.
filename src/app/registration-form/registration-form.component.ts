@@ -119,6 +119,16 @@ export class RegistrationFormComponent implements OnInit {
       joinDate: this.regform.value.joinDate,
       gender: this.regform.value.gender,
       dob: this.regform.value.dob,
+
+    }
+  
+    if (this.regform.valid) {
+      this.Regservice.getEmployeeData(emp_data).subscribe((res: any) => {
+        console.log(res);
+      })
+    }
+    else {
+
     };
 
     console.log(emp_data);
@@ -132,11 +142,12 @@ export class RegistrationFormComponent implements OnInit {
         this.regform.reset();
       });
     } else {
-      this.regform.markAllAsTouched();
 
-      // this.resetForm();
+      this.regform.markAllAsTouched();
     }
   }
+
+  
   resetForm() {
     this.regform.reset();
   }

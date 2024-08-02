@@ -18,26 +18,6 @@
         <div class="input-group mt-4">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="status">Status</span>
-<div class="row">
-    <div class="col d-flex" style="margin-top: 60px;">
-        <div class="input-group d-flex mt-4" style="margin-left: 16%;">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="duration">Duration</span>
-            </div>
-            <select class="form-select-duration">
-
-                <option selected disabled>Start Date to End Date</option>
-                <option value="2">Today</option>
-                <option value="3">Last 30 Days</option>
-                <option value="4">This Month</option>
-                <option value="5">Last Month</option>
-            </select>
-
-        </div>
-
-        <div class="input-group mt-4">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="status">Status</span>
             </div>
             <select class="form-select-status">
 
@@ -58,33 +38,11 @@
                 aria-describedby="search-addon">
             <span class="input-group-text border-0" id="search-addon" style="display: none;">
             </span>
-            <select class="form-select-status">
-
-                <option selected disabled>All</option>
-                <option value="Overdue">Overdue</option>
-                <option value="In Progress">In Progress</option>
-                <option value="Not Started">Not Started</option>
-                <option value="On Hold">On Hold</option>
-                <option value="Cancelled">Cancelled</option>
-                <option value="Completed">Completed</option>
-            </select>
-
         </div>
-
-        <div class="input-group mt-4" style="margin-left:-6%;position: relative;">
-            <i class="fas fa-search mt-2 mr-2"></i>
-            <input type="search" class="form-control rounded" placeholder="Start typing to search" aria-label="Search"
-                aria-describedby="search-addon">
-            <span class="input-group-text border-0" id="search-addon" style="display: none;">
-            </span>
-        </div>
-
-
 
 
     </div>
 </div>
-
 
 <!-- add task form -->
 <div class="row">
@@ -92,137 +50,275 @@
 
 
         <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight_addTask"
-            aria-controls="offcanvasRight_addTask">+ ADD TASK</button>
+            aria-controls="offcanvasRight_addTask" (click)="taskPriority()">+ Add Task</button>
+        <button type="button" class="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                <path
+                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+            </svg> My Task</button>
+    </div>
+</div>
 
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight_addTask"
-            aria-labelledby="offcanvasRight_addTaskLabel">
-            <span type="button" class="btn-close  toggle" data-bs-dismiss="offcanvas" aria-label="Close"></span>
+<div class="row">
+    <div class="container">
+        <table class="table table-bordered">
+            <thead text-center>
+                <tr>
+                    <th scope="col" style="width:3%;">Id</th>
+                    <th scope="col" style="width:8%;">Timer</th>
+                    <th scope="col" style="width:11%;">Task</th>
+                    <th scope="col" style="width:8%;">Completed On</th>
+                    <th scope="col" style="width:8%;">Start Date</th>
+                    <th scope="col" style="width:8%;">Due date</th>
+                    <th scope="col" style="width:8%;">Hours Logged</th>
+                    <th scope="col" style="width:8%;">Assigned To</th>
+                    <th scope="col" style="width:9%;">Status</th>
+                    <th scope="col" style="width:5%;">Action</th>
+                </tr>
+            </thead>
+            <tbody>
 
-            <div class="offcanvas-header">
-                <h4 id="offcanvasRight_addTaskLabel"><b>Add Tasks</b></h4>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>
+                        <div class="flex flex-col items-center justify-center h-screen bg-background ">
+                            <div class="text-1xl font-bold" id="timer">{{ displayTime }}</div>
+                            <div class="flex">
+                                <button (click)="startTimer()" class="bg-dark rounded-lg"
+                                    style="color:white">Start</button>
+                                <button (click)="stopTimer()" class="bg-destructive rounded-lg ">Stop</button>
+                            </div>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td>--</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                    <td>
+                        <label for="Status"></label>
+                        <select class="form-select-Status-options">
+                            <option value="On Hold">🔵 On Hold</option>
+                            <option value="To-Do Task ">🟣 To-Do Task</option>
+                            <option value=" Dev-Testing ">🟠 Dev-Testing</option>
+                            <option value="High ">🔴 High</option>
+                            <option value="Low">🟢 Low</option>
+                            <option value="Medium">🟡 Medium </option>
+                        </select>
+                    </td>
+
+                    <td>
+                        <div class="dropdown">
+                            <a data-bs-toggle="dropdown"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                    fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                    <path
+                                        d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
+                                </svg>
+                            </a>
+
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+                                <a class="dropdown-item" href="#"><svg class="icon" viewBox="0 0 32 32"
+                                        stroke-linecap="round">
+                                        <path d="M4,16 C9,28 23,28 28,16" stroke-width="3" />
+                                        <path d="M4,16 C9,4 23,4 28,16" stroke-width="3" />
+                                        <circle cx="16" cy="16" r="4.5" stroke-width="5" />
+                                    </svg><span style="margin-left: 5px;">View</span></a>
+
+                                <a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="15"
+                                        height="15" class="edit-btn" viewBox="0 0 576 512">
+                                        <path
+                                            d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z" />
+                                    </svg>
+                                    <span style="margin-left: 5px;">Edit</span></a>
+
+                                <a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="15"
+                                        height="15" class="delete-btn" viewBox="0 0 448 512">
+                                        <path
+                                            d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.7 23.7 0 0 0 -21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0 -16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z" />
+                                    </svg>
+                                    <span style="margin-left: 5px;">Delete</span></a>
+                            </div>
+                        </div>
+                    </td>
 
 
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight_addTask"
+    aria-labelledby="offcanvasRight_addTaskLabel">
+    <span type="button" class="btn-close  toggle" data-bs-dismiss="offcanvas" aria-label="Close"></span>
+
+    <div class="offcanvas-header">
+        <h4 id="offcanvasRight_addTaskLabel"><b>Add Tasks</b></h4>
+
+
+    </div>
+    <div class="offcanvas-body">
+        <h5>Task Info</h5>
+        <form [formGroup]="Taskform">
+            <div class="row">
+                <div class="col1">
+                    <div class="form-group">
+                        <div class="_name">
+                            <label for="task-name">Task Name<span class="text-danger"> *</span></label>
+                            <input type="text " formControlName="taskName" placeholder="Enter Task Name"
+                                class="form-control" name="Task Name" id="Task Name" required>
+
+                            <div class="text-danger"
+                                *ngIf="Taskform.controls['taskName']?.invalid && Taskform.controls['taskName'].touched"
+                                class="">
+                                <small class="text-danger smallText "
+                                    *ngIf="Taskform.get('taskName')?.touched && Taskform.get('taskName')?.hasError('required')">This
+                                    field
+                                    is required.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col2">
+                    <div class="form-group">
+                        <label for="task-category">Task Category</label>
+                        <select [(ngModel)]="Task_Category" formControlName="categoryId" class="form-select"
+                            aria-label=".form-select-lg example">
+                            <option value="null" selected disabled>
+                                Select Category
+                            </option>
+                            <option *ngFor="let names of this.categorylist" value="{{names.id}}">
+                                {{names.tskCategoryName}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
             </div>
-            <div class="offcanvas-body">
-                <h5>Task Info</h5>
-                <form [formGroup]="Taskform">
-                    <div class="row">
-                        <div class="col1">
-                            <div class="form-group">
-                                <label for="task-name">Task Name<span class="text-danger"> *</span></label>
-                                <input type="text " formControlName="Task_Name" placeholder="Enter Task Name"
-                                    class="form-control" name="Task Name" id="Task Name" required>
-                                <div class="text-danger"
-                                    *ngIf="Taskform.controls['Task_Name']?.invalid && Taskform.controls['Task_Name'].touched"
-                                    class="">
-                                    <small class="text-danger smallText "
-                                        *ngIf="Taskform.get('Task_Name')?.touched && Taskform.get('Task_Name')?.hasError('required')">This
-                                        field
-                                        is required.</small>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="col2">
-                            <div class="form-group">
-                                <label for="task-category">Task Category</label>
-                                <select class="form-select example">
-                                    <option selected>--</option>
-                                    <option value="1">Frontend Developer</option>
-                                    <option value="2">Backend Developer</option>
-                                    <option value="3">Manual-Testing</option>
-                                    <option value="4">Automation Testing</option>
-                                </select>
-                            </div>
-                        </div>
+
+            <div class="row">
+                <div class="col3">
+                    <div class="form-group">
+                        <label for="proj-name">Project Name</label>
+                        <select [(ngModel)]="Project_Name" formControlName="proId" class="form-select"
+                            aria-label=".form-select-lg example">
+                            <option [value]="null" [disabled]="true" [selected]="true">
+                                Choose Project
+                            </option>
+                            <option *ngFor="let item of ProjectName_items">
+                                {{item}}
+                            </option>
+                        </select>
                     </div>
-
-                    <div class="row">
-                        <div class="col3">
-                            <div class="form-group">
-                                <label for="proj-name">Project Name</label>
-                                <input type="text " formControlName="Project_Name" placeholder="Enter Project Name"
-                                    class="form-control" name="Project Name" id="Project Name" required>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col4">
-                            <div class="form-group">
-                                <label for="start date">Start Date<span class="text-danger"> *</span></label>
-                                <input type="date" formControlName="Start_Date" type="Date"
-                                    placeholder=" Select Start Date" name="Start Date" class="form-control">
-                                <div class="text-danger"
-                                    *ngIf="Taskform.controls['Start_Date']?.invalid && Taskform.controls['Start_Date'].touched"
-                                    class="">
-                                    <small class="text-danger smallText "
-                                        *ngIf="Taskform.get('Start_Date')?.touched && Taskform.get('Start_Date')?.hasError('required')">This
-                                        field
-                                        is required.</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col5">
-                            <div class="form-group">
-                                <label for="start date">End Date<span class="text-danger"> *</span></label>
-                                <input type="date" formControlName="End_Date" type="Date" placeholder="Select End Date"
-                                    name="End Date" class="form-control">
-                                <div class="text-danger"
-                                    *ngIf="Taskform.controls['End_Date']?.invalid && Taskform.controls['End_Date'].touched"
-                                    class="">
-                                    <small class="text-danger smallText "
-                                        *ngIf="Taskform.get('End_Date')?.touched && Taskform.get('End_Date')?.hasError('required')">This
-                                        field
-                                        is required.</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col7">
-                            <div class="form-group">
-
-                                <p>Task Description</p>
-                                <quill-editor id="text-editor" placeholder="Enter Text" [modules]="modules"
-                                    (onSelectionChanged)="logChange($event)" style="width: 100%;"></quill-editor>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col8">
-                            <div class="form-group">
-                                <label for="Task priority">Task Priority</label>
-                                <select class="form-select example">
-                                    <option value="1">High</option>
-                                    <option value="2">Medium</option>
-                                    <option value="3">Low</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col9">
-                            <div class="form-group">
-
-                                <button id="save" name="save" class="btn btn-primary" value="1"
-                                    style="margin-top: 40px;"><i class="fa fa-check"></i> Save</button>
-                                <button id="cancel" name="cancel" class="btn btn-white"
-                                    style="margin-left: 1%; margin-top: 40px;border-color: black;"
-                                    value="1">Cancel</button>
-
-                            </div>
-                        </div>
-                    </div>
-                </form>
+                </div>
             </div>
 
+            <div class="row">
+                <div class="col4">
+                    <div class="form-group">
+                        <div class="_startdt">
+                            <label for="start date">Start Date<span class="text-danger"> *</span></label>
+                            <input type="date" formControlName="startDate" type="Date" placeholder=" Select Start Date"
+                                name="Start Date" class="form-control">
+                            <div class="text-danger"
+                                *ngIf="Taskform.controls['startDate']?.invalid && Taskform.controls['startDate'].touched"
+                                class="">
+                                <small class="text-danger smallText "
+                                    *ngIf="Taskform.get('startDate')?.touched && Taskform.get('startDate')?.hasError('required')">This
+                                    field
+                                    is required.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        </div>
+                <div *ngIf="!this.togglepattern" class="col5">
+                    <div class="form-group">
+                        <div class="_enddt">
+                            <label for="end date">End Date<span class="text-danger"> *</span></label>
+                            <input type="date" formControlName="endDate" type="Date" placeholder="Select End Date"
+                                name="End Date" class="form-control">
+                            <div class="text-danger"
+                                *ngIf="Taskform.controls['endDate']?.invalid && Taskform.controls['endDate'].touched"
+                                class="">
+                                <small class="text-danger smallText "
+                                    *ngIf="Taskform.get('endDate')?.touched && Taskform.get('endDate')?.hasError('required')">This
+                                    field
+                                    is required.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" (click)="Seetoggle()" value=""
+                            id="checkboxdefault">
+                        <label class="form-check-label" for="checkboxdefault">
+                            Without Due Date
+                        </label>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col7">
+                    <div class="form-group">
+                        <p>Task Description</p>
+                        <quill-editor id="text-editor" placeholder="Enter Text" [modules]="modules"
+                            (onSelectionChanged)="logChange($event)" style="width: 100%;height:100px"
+                            [(ngModel)]="editorContent" #editor></quill-editor>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col8">
+                    <div class="form-group">
+                        <label for="Add Task Members">Task Assigned To</label>
+                        <ng-select id="selectinput" [multiple]="true" [hideSelected]="true" [closeOnSelect]="false"
+                            [items]="source" bindValue="value" bindLabel="name" placeholder="Select here"
+                            formControlName="memberId">
+                        </ng-select>
+                    </div>
+                </div>
+
+                <div class="col9">
+                    <div class="form-group">
+                        <label for="Task-priority">Task Priority</label>
+                        <select [(ngModel)]="Task_Priority" formControlName="priorityId" class="form-select"
+                            aria-label=".form-select-lg example">
+                            <option value="null" selected disabled>
+                                Select Priority
+                            </option>
+                            <option *ngFor="let names of this.TaskPrioritylist;" value="{{names.id}}">
+                                {{names.priorityName}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col10">
+                    <div class="form-group">
+
+                        <button id="save" name="save" class="btn btn-primary" value="1" style="margin-top: 40px;"
+                            (click)="saveTaskFormData()"><i class="fa fa-check"></i> Save</button>
+                        <button id="cancel" name="cancel" class="btn btn-white"
+                            style="margin-left: 1%; margin-top: 40px;border-color: black;" value="1"
+                            (click)="ResetTaskData()">Reset</button>
+
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
 </div>

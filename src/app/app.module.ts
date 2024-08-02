@@ -30,6 +30,7 @@ import { ToastModule } from 'primeng/toast';
 
 import { NgSelectModule } from '@ng-select/ng-select';
 import { QuillModule } from 'ngx-quill';
+import { DropdownModule } from 'primeng/dropdown';
 
 
 @NgModule({
@@ -63,6 +64,7 @@ import { QuillModule } from 'ngx-quill';
     SidebarModule,
     ButtonModule,
     InputTextareaModule,
+    DropdownModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
