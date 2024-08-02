@@ -19,7 +19,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { AddProjectComponent } from './add-project/add-project.component';
-import { CommonModule } from '@angular/common';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -31,6 +30,7 @@ import { ToastModule } from 'primeng/toast';
 
 import { NgSelectModule } from '@ng-select/ng-select';
 import { QuillModule } from 'ngx-quill';
+
 
 @NgModule({
   declarations: [
@@ -45,6 +45,7 @@ import { QuillModule } from 'ngx-quill';
     AddProjectComponent,
     AddTaskComponent,
     NavbarComponent,
+
   ],
   imports: [
     ReactiveFormsModule,
