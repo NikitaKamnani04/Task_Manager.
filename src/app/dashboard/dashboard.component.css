@@ -19,7 +19,6 @@
 }
 
 input {
-  padding-left: 10px;
   outline: none;
   border: none;
 }
@@ -136,7 +135,7 @@ img {
   font-style: bold;
 }
 .task_search {
-  width: 400px;
+  width: 370px;
 
   /* border: none; */
 }
@@ -359,6 +358,9 @@ div.dropdown.open > div.caption {
 div.dropdown.open > div.list {
   display: block;
   z-index: 1;
+}
+.deptName {
+  text-transform: uppercase;
 }
 @media (min-width: 768px) {
   /* .button-36 {

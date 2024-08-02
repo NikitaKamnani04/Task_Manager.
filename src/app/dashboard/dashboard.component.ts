@@ -3,8 +3,10 @@ import { Component, OnInit } from '@angular/core';
 // import { Chart, registerables } from 'node_modules/chart.js';
 // Chart.register(...registerables);
 import { Chart, registerables } from 'node_modules/chart.js';
+import { ActivatedRoute } from '@angular/router';
 
 import * as $ from 'jquery';
+import { Location } from '@angular/common';
 Chart.register(...registerables);
 @Component({
   selector: 'app-dashboard',
@@ -20,7 +22,27 @@ export class DashboardComponent implements OnInit {
   labeldata: any[] = [];
   realdata: any[] = [];
   colordata: any[] = [];
-  constructor(private UserServicesService: UserServicesService) {
+  loginUserDetail: any;
+  loginUserDepartment: any;
+  router: any;
+  constructor(
+    private UserServicesService: UserServicesService,
+    private route: ActivatedRoute,
+    private location: Location
+  ) {
+    this.loginUserDetail = this.location.getState();
+
+    // to get the department of the login User
+    this.UserServicesService.departments().subscribe((res: any) => {
+      res.data.forEach((element: any, index: any, array: any) => {
+        if (element.id == this.loginUserDetail.data.deptId) {
+          this.loginUserDepartment = element.deptName;
+          console.log(this.loginUserDepartment);
+        }
+      });
+    });
+    // console.log(this.loginUserDetail.data.id);
+
     this.statusList = [
       { status: 'in progress', name: 'In Progress' },
       { status: 'not started', name: 'Not Started' },
@@ -39,12 +61,12 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getChartData();
-    $( () => {
-      $('.dropdown > .caption').on('click',  () => {
+    $(() => {
+      $('.dropdown > .caption').on('click', () => {
         $(this).parent().toggleClass('open');
       });
 
-      $('.dropdown > .list > .item').on('click',  () => {
+      $('.dropdown > .list > .item').on('click', () => {
         $('.dropdown > .list > .item').removeClass('selected');
         $(this)
           .addClass('selected')
@@ -55,13 +77,13 @@ export class DashboardComponent implements OnInit {
           .text($(this).text());
       });
 
-      $(document).on('keyup', function (evt: { keyCode: any; which: any; }) {
+      $(document).on('keyup', function (evt: { keyCode: any; which: any }) {
         if ((evt.keyCode || evt.which) === 27) {
           $('.dropdown').removeClass('open');
         }
       });
 
-      $(document).on('click', function (evt: { target: any; }) {
+      $(document).on('click', function (evt: { target: any }) {
         if ($(evt.target).closest('.dropdown > .caption').length === 0) {
           $('.dropdown').removeClass('open');
         }
@@ -73,16 +95,15 @@ export class DashboardComponent implements OnInit {
       this.taskData = res;
       if (this.taskData != null) {
         for (let i = 0; i < this.taskData.length; i++) {
-       
           this.labeldata.push(this.taskData[i].day);
           this.realdata.push(this.taskData[i].hours);
           this.colordata.push(this.taskData[i].colorcode);
         }
-  
+
         this.RenderChart(
           this.labeldata,
           this.realdata,
-          "#9381FF",
+          '#9381FF',
           'line',
           'linechart',
           true
@@ -104,7 +125,7 @@ export class DashboardComponent implements OnInit {
     colordata: any,
     type: any,
     id: any,
-    drawOnChartArea: any,
+    drawOnChartArea: any
   ) {
     const myChart: any = document.getElementById('myChart');
 

@@ -7,10 +7,12 @@ import { Employee } from '../models/models.model';
 })
 export class AdminPanelServiceService {
   constructor(private http: HttpClient) {}
-
+  // working
   empDetail() {
     return this.http.get<any>('http://localhost:4000/showEmpDetails');
   }
+
+  // working
   deleteEmpDetail(id: number) {
     return this.http.post('http://localhost:4000/deleteUserApi', { id: id });
   }

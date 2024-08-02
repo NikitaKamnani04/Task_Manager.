@@ -1,4 +1,5 @@
 <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
 <nav class="sidebar" id="sidebar">
   <header>
     <div class="image-text">
@@ -39,18 +40,18 @@
             <span class="text nav-text">Tasks</span>
           </a>
         </li>
-        <li class="nav-link">
+        <li class="nav-link" routerLink="org">
           <a>
             <i class="bx bx-bell icons"></i>
-            <span class="text nav-text">Leaves</span>
+            <span class="text nav-text">Organization</span>
           </a>
         </li>
-        <li class="nav-link" routerLink="signin">
+        <!-- <li class="nav-link" routerLink="signin">
           <a>
             <i class="bx bx-pie-chart-alt icons"></i>
             <span class="text nav-text">LOGIN</span>
           </a>
-        </li>
+        </li> -->
 
         <li class="nav-link" routerLink="/employees">
           <a>
@@ -61,11 +62,11 @@
       </ul>
     </div>
 
-    <div class="bottom-content" >
-      <li class="nav-link"  (click)="logout()" >
+    <div class="bottom-content">
+      <li class="nav-link" (click)="logout()">
         <a>
           <i class="bx bx-log-out icons"></i>
-          <span class="text nav-text" >Log Out</span>
+          <span class="text nav-text">Log Out</span>
         </a>
     </div>
   </div>

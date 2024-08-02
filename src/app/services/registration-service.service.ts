@@ -7,6 +7,11 @@ import { environment } from 'src/environments/environment';
 })
 export class RegistrationServiceService {
   constructor(private httpclient: HttpClient) {}
+// working
+  // fetchData() {
+  //   return this.httpclient.get('http://localhost:4000/showEmpDetails');
+  // } 
+
 
   fetchData() {
     return this.httpclient.get('http://localhost:4000/showEmpDetails');
@@ -32,6 +37,11 @@ export class RegistrationServiceService {
 
   Taskcategorydata(data:any){
   return this.httpclient.get(environment.apiurl +'/tskCategoryList',data)
+
+  // working
+  getEmployeeData(data: any) {
+    return this.httpclient.post('http://localhost:4000/registerUserApi/', data);
+
   }
 
 }

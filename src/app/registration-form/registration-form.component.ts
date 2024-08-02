@@ -3,7 +3,7 @@ import { FormGroup, MinLengthValidator } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { RegistrationServiceService } from '../services/registration-service.service';
-
+// import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-registration-form',
@@ -20,8 +20,6 @@ export class RegistrationFormComponent implements OnInit {
   department: string | undefined;
   url: any = '';
   FieldTextType: any;
-
-
 
   onSelectFile(event: any) {
     if (event.target.files && event.target.files[0]) {
@@ -41,35 +39,73 @@ export class RegistrationFormComponent implements OnInit {
     this.FieldTextType = !this.FieldTextType;
   }
 
-  roles_items = ['Hr', 'Manager', 'Employee'];
-  department_items = ['IT', 'Production ', 'Sales', 'Digital Marketing', 'Research & Development', 'Finance', 'Administration', 'Human Resources'];
+  roles_items = [
+    { name: 'Hr', value: 1 },
+    { name: 'Manager', value: 2 },
+    { name: 'Employee', value: 3 },
+  ];
+  department_items = [
+    { name: 'IT', value: 1 },
+    { name: 'Production', value: 2 },
+    { name: 'Sales', value: 3 },
+    { name: 'Digital Marketing', value: 4 },
+    { name: 'Research & Development', value: 5 },
+    { name: 'Finance', value: 6 },
+    { name: 'Administration', value: 7 },
+    { name: 'Human Resources', value: 8 },
+  ];
   gender_items = ['Male', 'Female'];
 
-
-  constructor(private Regservice: RegistrationServiceService) { }
+  constructor(
+    private Regservice: RegistrationServiceService
+  ) // private route: ActivatedRoute
+  {
+    // this.createFormGroup();
+    // this.route.queryParams.subscribe((params) => {
+    //   console.log(params);
+    //   this.regform.patchValue({ name: params['name'] });
+    //   this.regform.patchValue({ email: params['email'] });
+    //   this.regform.patchValue({ contact: params['contact'] });
+    //   this.regform.patchValue({ password: params['password'] });
+    //   this.regform.patchValue({ address: params['address'] });
+    //   this.roles = params['roleId'];
+    //   this.department = params['deptId'];
+    //   this.regform.patchValue({ joinData: params['joinDate'] });
+    //   this.regform.patchValue({ gender: params['gender'] });
+    //   this.regform.patchValue({ dob: params['dob'] });
+    // });
+  }
 
   ngOnInit(): void {
+    // this.showData();
+    this.createFormGroup();
+  }
 
-    this.showData()
-
+  createFormGroup() {
     this.regform = new FormGroup({
-      name: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z]+ [a-zA-Z]+$/)]),
+      name: new FormControl('', [
+        Validators.required,
+        Validators.pattern(/^[a-zA-Z]+ [a-zA-Z]+$/),
+      ]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      contact: new FormControl('', [Validators.required, Validators.pattern("^[0-9]{10}$")]),
-      password: new FormControl('', [Validators.required, Validators.pattern(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,12}$/)]),
+      contact: new FormControl('', [
+        Validators.required,
+        Validators.pattern('^[0-9]{10}$'),
+      ]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.pattern(
+          /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,12}$/
+        ),
+      ]),
       address: new FormControl('', [Validators.required]),
       roleId: new FormControl('', [Validators.required]),
       deptId: new FormControl('', [Validators.required]),
       joinDate: new FormControl('', [Validators.required]),
       gender: new FormControl('', [Validators.required]),
       dob: new FormControl('', [Validators.required]),
+      profile: new FormControl(''),
     });
-
-  }
-  showData() {
-    this.Regservice.fetchData().subscribe(res => {
-      this.data = res;
-    })
   }
   AddEmployee() {
     let emp_data = {
@@ -83,6 +119,7 @@ export class RegistrationFormComponent implements OnInit {
       joinDate: this.regform.value.joinDate,
       gender: this.regform.value.gender,
       dob: this.regform.value.dob,
+
     }
   
     if (this.regform.valid) {
@@ -91,13 +128,27 @@ export class RegistrationFormComponent implements OnInit {
       })
     }
     else {
+
+    };
+
+    console.log(emp_data);
+
+    if (this.regform.valid) {
+      this.Regservice.getEmployeeData(emp_data).subscribe((res: any) => {
+        // if (res.success == 1) {
+
+        // }
+        console.log(res);
+        this.regform.reset();
+      });
+    } else {
+
       this.regform.markAllAsTouched();
     }
   }
 
   
   resetForm() {
-
-    this.regform.reset()
+    this.regform.reset();
   }
 }

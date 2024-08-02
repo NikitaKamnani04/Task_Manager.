@@ -57,9 +57,7 @@ export class SignInPageComponent implements OnInit {
     };
     // console.log(loginCred);
     this.userService.loginData(loginCred).subscribe(
-      (res) => {
-        console.log(res);
-
+      (res: any) => {
         this.signInRes = res;
         console.log(this.signInRes);
         if (this.signInRes.success === 1) {
@@ -70,7 +68,9 @@ export class SignInPageComponent implements OnInit {
 
           localStorage.setItem('islogin', this.signInRes.success);
           setTimeout(() => {
-            this.Router.navigate(['/', 'dashboard']);
+            this.Router.navigateByUrl('/dashboard', {
+              state: this.signInRes,
+            });
           }, 2000);
         } else {
           this.Router.navigate(['/', 'signin']);
@@ -97,5 +97,8 @@ export class SignInPageComponent implements OnInit {
       email: this.resetForm.value.email,
     };
     console.log(forgotPass);
+    this.userService.resetPassword(forgotPass).subscribe((res) => {
+      console.log(res);
+    });
   }
 }
