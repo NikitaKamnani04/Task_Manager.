@@ -18,7 +18,7 @@ export class RegistrationServiceService {
   }
 
   getEmployeeData(data: any) {
-    return this.httpclient.post('http://localhost:3000/employees/', data);
+    return this.httpclient.post('http://localhost:4000/registerUserApi/', data);
   }
 
   // taskformData(data:any){
@@ -38,10 +38,5 @@ export class RegistrationServiceService {
   Taskcategorydata(data:any){
   return this.httpclient.get(environment.apiurl +'/tskCategoryList',data)
 
-  // working
-  getEmployeeData(data: any) {
-    return this.httpclient.post('http://localhost:4000/registerUserApi/', data);
-
   }
-
 }

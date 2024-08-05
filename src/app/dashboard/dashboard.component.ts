@@ -33,15 +33,14 @@ export class DashboardComponent implements OnInit {
     this.loginUserDetail = this.location.getState();
 
     // to get the department of the login User
-    this.UserServicesService.departments().subscribe((res: any) => {
-      res.data.forEach((element: any, index: any, array: any) => {
-        if (element.id == this.loginUserDetail.data.deptId) {
-          this.loginUserDepartment = element.deptName;
-          console.log(this.loginUserDepartment);
-        }
-      });
-    });
-    // console.log(this.loginUserDetail.data.id);
+    // this.UserServicesService.departments().subscribe((res: any) => {
+    //   res.data.forEach((element: any, index: any, array: any) => {
+    //     if (element.id == this.loginUserDetail.data.deptId) {
+    //       this.loginUserDepartment = element.deptName;
+    //       // console.log(this.loginUserDepartment);
+    //     }
+    //   });
+    // });
 
     this.statusList = [
       { status: 'in progress', name: 'In Progress' },
@@ -60,6 +59,8 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // console.log(this.loginUserDetail.data.id);
+
     this.getChartData();
     $(() => {
       $('.dropdown > .caption').on('click', () => {

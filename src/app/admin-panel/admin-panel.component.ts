@@ -9,6 +9,7 @@ import { Validators } from '@angular/forms';
 import { RegistrationServiceService } from '../services/registration-service.service';
 import { MessageService } from 'primeng/api';
 
+
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -42,6 +43,8 @@ export class AdminPanelComponent implements OnInit {
   // Update Employee Details
   updateForm!: FormGroup;
   updateEmpId: any;
+  loginUserDetail: any;
+
   onSelectFile(event: any) {
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();

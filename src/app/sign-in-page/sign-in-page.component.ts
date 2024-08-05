@@ -3,6 +3,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserServicesService } from '../services/user-services.service';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
+import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { state } from '@angular/animations';
 
 @Component({
   selector: 'app-sign-in-page',
@@ -19,6 +21,7 @@ export class SignInPageComponent implements OnInit {
   isConfirmPasswordDirty = false;
   confirmPasswordClass = 'form-control';
   signInRes: any;
+  // public isLoggedIn$: BehaviorSubject<boolean>;
 
   constructor(
     private userService: UserServicesService,
@@ -67,10 +70,9 @@ export class SignInPageComponent implements OnInit {
           });
 
           localStorage.setItem('islogin', this.signInRes.success);
+
           setTimeout(() => {
-            this.Router.navigateByUrl('/dashboard', {
-              state: this.signInRes,
-            });
+            this.Router.navigateByUrl('/dashboard', { state: this.signInRes });
           }, 2000);
         } else {
           this.Router.navigate(['/', 'signin']);

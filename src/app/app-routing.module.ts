@@ -13,29 +13,88 @@ import { UserAuthGuard } from './guards/user-auth.guard';
 import { OrganizationRegisterComponent } from './organization-register/organization-register.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    // canActivate: [UserAuthGuard],
-    children: [
-      { path: 'add-task', component: AddTaskComponent },
-      { path: 'app-registration-form', component: RegistrationFormComponent },
-      { path: 'admin/emp_register', component: RegistrationFormComponent },
-      { path: 'admin', component: AdminPanelComponent },
-      { path: 'resetpassword', component: ResetPasswordComponent },
-      { path: 'addproject', component: AddProjectComponent },
-      { path: 'signin', component: SignInPageComponent },
-      { path: 'add-task', component: AddTaskComponent },
-      { path: 'app-registration-form', component: RegistrationFormComponent },
-      { path: 'emp_register', component: RegistrationFormComponent },
-      { path: 'employees', component: AdminPanelComponent },
-      { path: 'org', component: OrganizationRegisterComponent },
-      { path: 'resetpassword/signin', component: SignInPageComponent },
-      { path: 'resetpassword', component: ResetPasswordComponent },
-      { path: 'addproject', component: AddProjectComponent },
-      { path: '', component: DashboardComponent },
-    ],
-  },
   { path: 'signin', component: SignInPageComponent },
+  { path: '', component: SignInPageComponent },
+  {
+    path: 'add-task',
+    component: AddTaskComponent,
+    canActivate: [UserAuthGuard],
+  },
+  {
+    path: 'app-registration-form',
+    component: RegistrationFormComponent,
+    canActivate: [UserAuthGuard],
+  },
+  {
+    path: 'admin/emp_register',
+    component: RegistrationFormComponent,
+    canActivate: [UserAuthGuard],
+  },
+  {
+    path: 'admin',
+    component: AdminPanelComponent,
+    canActivate: [UserAuthGuard],
+  },
+  {
+    path: 'resetpassword',
+    component: ResetPasswordComponent,
+    canActivate: [UserAuthGuard],
+  },
+  {
+    path: 'addproject',
+    component: AddProjectComponent,
+    canActivate: [UserAuthGuard],
+  },
+  {
+    path: 'signin',
+    component: SignInPageComponent,
+    canActivate: [UserAuthGuard],
+  },
+  {
+    path: 'add-task',
+    component: AddTaskComponent,
+    canActivate: [UserAuthGuard],
+  },
+  {
+    path: 'app-registration-form',
+    component: RegistrationFormComponent,
+    canActivate: [UserAuthGuard],
+  },
+  {
+    path: 'emp_register',
+    component: RegistrationFormComponent,
+    canActivate: [UserAuthGuard],
+  },
+  {
+    path: 'employees',
+    component: AdminPanelComponent,
+    canActivate: [UserAuthGuard],
+  },
+  {
+    path: 'org',
+    component: OrganizationRegisterComponent,
+    canActivate: [UserAuthGuard],
+  },
+  {
+    path: 'resetpassword/signin',
+    component: SignInPageComponent,
+    canActivate: [UserAuthGuard],
+  },
+  {
+    path: 'resetpassword',
+    component: ResetPasswordComponent,
+    canActivate: [UserAuthGuard],
+  },
+  {
+    path: 'addproject',
+    component: AddProjectComponent,
+    canActivate: [UserAuthGuard],
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [UserAuthGuard],
+  },
   { path: '**', redirectTo: '' },
 ];
 
