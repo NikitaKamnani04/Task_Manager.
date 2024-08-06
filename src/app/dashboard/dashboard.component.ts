@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import * as $ from 'jquery';
 import { Location } from '@angular/common';
+import { CookieService } from 'ngx-cookie-service';
 Chart.register(...registerables);
 @Component({
   selector: 'app-dashboard',
@@ -25,10 +26,12 @@ export class DashboardComponent implements OnInit {
   loginUserDetail: any;
   loginUserDepartment: any;
   router: any;
+
   constructor(
     private UserServicesService: UserServicesService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private cookieService: CookieService
   ) {
     this.loginUserDetail = this.location.getState();
 
@@ -60,8 +63,18 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     // console.log(this.loginUserDetail.data.id);
-
-    this.getChartData();
+    // const userEmail = this.cookieService.get('Name');
+    // const userPassword = this.cookieService.get('Value');
+    // console.log(userEmail);
+    // console.log(userPassword);
+    if (this.cookieService.get('email')===""){
+      console.log('hello prince');
+      
+    }else{
+      console.log(`something`);
+      
+    }
+       this.getChartData();
     $(() => {
       $('.dropdown > .caption').on('click', () => {
         $(this).parent().toggleClass('open');

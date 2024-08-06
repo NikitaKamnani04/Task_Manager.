@@ -12,11 +12,10 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UserAuthGuard implements CanActivate {
-  public isLoggedIn$!: BehaviorSubject<boolean>;
+
 
   constructor(private Router: Router) {
-    // const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
-    // this.isLoggedIn$ = new BehaviorSubject(isLoggedIn);
+
   }
   canActivate(
     route: ActivatedRouteSnapshot,

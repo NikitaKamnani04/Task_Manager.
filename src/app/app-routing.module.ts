@@ -46,11 +46,6 @@ const routes: Routes = [
     canActivate: [UserAuthGuard],
   },
   {
-    path: 'signin',
-    component: SignInPageComponent,
-    canActivate: [UserAuthGuard],
-  },
-  {
     path: 'add-task',
     component: AddTaskComponent,
     canActivate: [UserAuthGuard],
