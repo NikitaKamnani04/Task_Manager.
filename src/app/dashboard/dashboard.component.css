@@ -12,7 +12,7 @@
 }
 .parent {
   width: 100%;
-  /* background-color: #1c4bb9; */
+  /* / background-color: #1c4bb9; / */
   background-color: #e2eafc;
   height: 100vh;
   overflow: hidden;
@@ -40,12 +40,12 @@ img {
   border-bottom: 3px solid #9994;
 }
 .user_card {
-  width: 100%;
-  height: 250px;
+  width: 50%;
+  height: 27vh;
   background-color: #f2eff888;
   border-radius: 10px;
   border: 3px solid #9994;
-  margin-bottom: 8%;
+  margin-bottom: 5%;
 }
 /* .graph_one {
   display: block !important;
@@ -58,10 +58,18 @@ img {
   width: 85%;
   height: 85%;
   border-radius: 15px;
+  box-shadow: 0 0 19px 12px rgba(112, 112, 112, 0.267);
 }
 .contianer_graph_two {
   background-color: white;
   width: 95%;
+  height: 80%;
+  border-radius: 15px;
+  box-shadow: 0 0 19px 12px rgba(112, 112, 112, 0.267);
+}
+.contianer_doughnut_graph_two {
+  background-color: white;
+  width: 85%;
   height: 80%;
   border-radius: 15px;
   box-shadow: 0 0 19px 12px rgba(112, 112, 112, 0.267);
@@ -77,11 +85,11 @@ img {
   border-radius: 15px;
   box-shadow: 0 0 19px 12px rgba(112, 112, 112, 0.267);
 }
-.piechart {
+.linechart {
   width: 50%;
-  height: 30vh;
-  margin-left: 2%;
-  margin-top: 4%;
+  height: 27vh;
+  margin-left: 3%;
+  /* / margin-top: 4%; / */
   background-color: #f2eff888;
   border: 3px solid #9994;
   border-radius: 15px;
@@ -90,8 +98,8 @@ img {
 .task_card {
   width: 100%;
   height: 460px;
-  margin-left: 2%;
-  /* background-color: bisque; */
+  /* / margin-left: 2%; / */
+  /* / background-color: bisque; / */
   border: 3px solid #9994;
   border-radius: 15px;
 }
@@ -101,7 +109,7 @@ img {
   padding-left: 10px;
   padding-bottom: 15px;
   background-color: #f2eff888;
-  /* border-bottom: 3px solid #9994; */
+  /* / border-bottom: 3px solid #9994; / */
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
 }
@@ -131,13 +139,13 @@ img {
   height: 50px;
   width: 175px;
   padding: 12px;
-  /* background-color: #999999; */
+  /* / background-color: #999999; / */
   font-style: bold;
 }
 .task_search {
   width: 370px;
 
-  /* border: none; */
+  /* / border: none; / */
 }
 .search_bar_task {
   width: 415px;
@@ -172,7 +180,7 @@ img {
 }
 
 .button-36 {
-  /* background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%); */
+  /* / background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%); / */
   background-color: #9381ff;
   border-radius: 8px;
   border-style: none;
@@ -199,14 +207,32 @@ img {
   box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
   transition-duration: 0.1s;
 } */
-.linechart {
+.doughnut {
   position: relative;
   width: 100%;
-  height: 52vh;
+  height: 460px;
+  background-color: #f2eff888;
+  border-radius: 10px;
+  border: 3px solid #9994;
+  margin-top: 10%;
+}
+.projectData {
+  position: relative;
+  width: 100%;
+  height: 27vh;
   background-color: #f2eff888;
   border-radius: 10px;
   border: 3px solid #9994;
   margin-bottom: 8%;
+}
+.projectBody{
+  padding: 30px;
+}
+.inProgressCount{
+  margin-right: 90px
+}
+.projectCount{
+  font-size:xx-large;
 }
 .table-responsive {
   width: 100%;
@@ -219,7 +245,7 @@ table {
   height: 245px;
   position: absolute;
   width: 53%;
-  /* background-color: red; */
+  /* / background-color: red; / */
 }
 
 tbody::-webkit-scrollbar {
@@ -229,7 +255,7 @@ td {
   font-size: large;
 }
 
-/* start: Global */
+/* / start: Global / */
 
 body {
   font-family: "Work Sans", sans-serif;
@@ -238,9 +264,9 @@ body {
   align-items: center;
   justify-content: center;
 }
-/* end: Global */
+/* / end: Global / */
 
-/* start: Avatar */
+/* / start: Avatar / */
 .avatar-group {
   display: flex;
   align-items: center;
@@ -295,9 +321,9 @@ body {
   border: 3px solid #fff;
   box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
 }
-/* end: Avatar */
+/* / end: Avatar / */
 
-/* status section */
+/* / status section / */
 div.container {
   /* margin: 34px auto;
   width: 260px; */
@@ -311,9 +337,9 @@ div.dropdown {
 }
 
 div.dropdown > div.caption {
-  /* background-color: #f2f2f2; */
+  /* / background-color: #f2f2f2; / */
   padding: 11px 10px;
-  /* border-radius: 10px; */
+  /* / border-radius: 10px; / */
   cursor: pointer;
   width: 105px;
 }

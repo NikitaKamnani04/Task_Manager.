@@ -10,11 +10,11 @@ export class AdminPanelServiceService {
   constructor(private http: HttpClient) {}
   // working
   empDetail() {
-    return this.http.get<any>(environment.apiurlReg+'/showEmpDetails');
+    return this.http.get<any>(environment.API+'/showEmpDetails');
   }
 
   // working
   deleteEmpDetail(id: number) {
-    return this.http.post(environment.apiurlReg+'/deleteEmp', { id: id });
+    return this.http.post(environment.API+'/deleteEmp', { id: id });
   }
 }
