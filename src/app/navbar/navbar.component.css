@@ -76,9 +76,20 @@ p {
   color: #9381ff;
   font-size: 28px;
   font-weight: 600;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
 }
+.notes_textArea {
+  height: fixed !important;
+  overflow-y: auto;
+}
+.notes_heading {
+  position: relative;
+  top: 20px;
+}
+textarea {
+  resize: none;
 
+}
 ::ng-deep .p-sidebar-top {
   background-color: #eaecfa;
   background-image: none;
@@ -105,15 +116,21 @@ p {
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
-  width: 100% !important;
+  width: 0 !important;
   height: 0 !important;
 }
 ::ng-deep #button {
   background-color: #9381ff !important;
 }
 ::ng-deep .p-sidebar-top {
-  width: 90% !important;
+  width: 60% !important;
+  height: 50% !important;
 }
-::ng-deep .p-sidebar-close >span {
-display: hidden !important;
+::ng-deep .p-sidebar-close {
+  display: none !important;
+}
+::ng-deep .p-sidebar .p-sidebar-header + .p-sidebar-content {
+  padding-top: 0;
+  width: 100%;
+  height: 100%;
 }

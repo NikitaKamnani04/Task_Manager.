@@ -1,86 +1,108 @@
+* {
+    box-sizing: border-box;
+}
+
 .btn-dark {
     color: #fff;
     background-color: #212529;
     border-color: #212529;
     margin-top: 25px;
-    margin-left:16%;
+    margin-left: 16%;
 }
 
-.offcanvas.show{
-	width: 85%;
-    background-color:white;
-}  
-
-.col1{
-   width:50%;
-   margin-top:40px;
-  
+.offcanvas.show {
+    width: 85%;
+    background-color: white;
 }
 
-.col2{
-    margin-top:40px;
-    width:50%;
- }
- 
-label{
-    margin-bottom:10px;
-    
+.col1 {
+    width: 50%;
+    margin-top: 40px;
 }
 
-.col3{
-   margin-top:40px;
-   width:50%;
+.col2 {
+    margin-top: 40px;
+    width: 50%;
 }
 
-.col4{
-    margin-top:40px;
-    width:25%;
+label {
+    margin-bottom: 10px;
+
 }
 
-.col5{
-    margin-top:40px;
-    width:25%;
+.col3 {
+    margin-top: 40px;
+    width: 50%;
 }
 
-.col7{
-    margin-top:40px;
-    width:100%;
+.col4 {
+    margin-top: 40px;
+    width: 25%;
 }
 
-.col8{
-    margin-top:40px;
-    width:50%;
+.col5 {
+    margin-top: 40px;
+    width: 25%;
 }
 
- .input-group{
+.col6 {
+    margin-top: 77px;
+    width: 25%;
+}
+
+.col7 {
+    margin-top: 40px;
+}
+
+.col8 {
+    margin-top: 40px;
+    width: 50%;
+}
+
+.col9 {
+    margin-top: 40px;
+    width: 50%;
+}
+
+
+
+.input-group {
     width: 20%;
 }
 
-.form-select-duration{
+.form-check-input {
+    width: 20px;
+    height: 20px;
+    margin-top: .25em;
+    border: 1px solid rgba(0, 0, 0, .25);
+}
+
+.form-select-duration {
     font-size: small;
-    color:gray ;  
+    color: gray;
 
 }
-.form-select-status{
+
+.form-select-status {
     font-size: small;
-    color:gray ;  
+    color: gray;
     width: 13%;
 }
 
-.form-control .rounded{
+.form-control .rounded {
     padding: 3px 4px;
 }
 
-.fas{
+.fas {
     margin-right: 12px;
     position: relative;
     top: 5px;
 }
 
-  .toggle {
+.toggle {
     position: absolute;
-     top: 5%;
-     right: 100%;
+    top: 5%;
+    right: 100%;
     height: 36px;
     width: 47px;
     opacity: 1;
@@ -89,19 +111,90 @@ label{
     align-items: center;
     justify-content: center;
     font-size: 22px;
-    border-top-left-radius: 50%; 
-    border-bottom-left-radius: 50%; 
-    border-top-right-radius: 0; 
-    border-bottom-right-radius: 0; 
-  }
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
 
- .btn:hover{
-background-color: #25282b;
-color: #fff;
-  }
+.btn:hover {
+    background-color: #25282b;
+    color: #fff;
+}
 
-  .table{
+._name {
+    height: 0px;
+}
+
+._startdt,
+._enddt {
+    height: 72px;
+}
+
+.form-check-label {
+    margin-left: 6px;
+}
+
+.table {
     margin-left: 16%;
-    margin-top: 2%;
-    margin-right:2%;
-  }
+    margin-top: 3%;
+    width: 80%;
+}
+
+.table>thead {
+    text-align: center;
+}
+
+.table>tbody {
+    text-align: center;
+}
+
+a {
+    color: black;
+}
+
+img,
+svg {
+    vertical-align: middle;
+    margin-top: 0px;
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+    stroke: currentColor;
+    fill: none;
+    margin-top: 0px;
+    margin-left: 5px;
+}
+
+.edit-btn {
+    margin-left: 8px;
+}
+
+.delete-btn {
+    margin-left: 8px;
+}
+
+.bi {
+    margin-top: 12px;
+}
+
+.form-select-Status-options {
+    margin-top: 10px;
+}
+
+.btn-light {
+    color: #000;
+    border-color: #0e0e0e;
+    margin-top: 25px;
+    margin-left: 15px;
+}
+
+.bi {
+    margin-top: 0px;
+}
+
+.form-select{
+    color:gray;
+}

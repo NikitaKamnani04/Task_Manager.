@@ -59,6 +59,7 @@ export class SignInPageComponent implements OnInit {
       email: this.loginForm.value.email,
       password: this.loginForm.value.password,
     };
+
     console.log(loginCred);
     // this.userService.loginData(loginCred).subscribe(
     //   (res:any) => {
@@ -93,6 +94,42 @@ export class SignInPageComponent implements OnInit {
     //     });
     //   }
     // );
+
+    // console.log(loginCred);
+    this.userService.loginData(loginCred).subscribe(
+      (res: any) => {
+        this.signInRes = res;
+        console.log(this.signInRes);
+        if (this.signInRes.success === 1) {
+          this.messageService.add({
+            severity: 'success',
+            detail: 'Login successful',
+          });
+
+          localStorage.setItem('islogin', this.signInRes.success);
+          setTimeout(() => {
+            this.Router.navigateByUrl('/dashboard', {
+              state: this.signInRes,
+            });
+          }, 2000);
+        } else {
+          this.Router.navigate(['/', 'signin']);
+          this.messageService.add({
+            severity: 'error',
+            summary: 'Login Fail',
+            detail: 'Incorrect Credentials',
+          });
+        }
+      },
+      (error) => {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Incorrect Username and Password',
+          detail: 'something went wrong',
+        });
+      }
+    );
+
   }
 
   forgotPassword() {
@@ -103,6 +140,12 @@ export class SignInPageComponent implements OnInit {
 
     };
     console.log(forgotPass);
+
     
+
+    this.userService.resetPassword(forgotPass).subscribe((res) => {
+      console.log(res);
+    });
+
   }
 }

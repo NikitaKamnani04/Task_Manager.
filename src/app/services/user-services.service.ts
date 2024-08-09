@@ -8,14 +8,12 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class UserServicesService {
-  
-  constructor(private HttpClient: HttpClient) {
-
-  }
+  constructor(private HttpClient: HttpClient) {}
 
   getChartInfo() {
     return this.HttpClient.get('http://localhost:3000/tasks');
   }
+
 
  
 
@@ -48,6 +46,31 @@ export class UserServicesService {
   // Integrated by Nikita
   orgRegister(data:any){
     return this.HttpClient.post(environment.apiurl+'/orgApi',data);
+
+  // working
+  loginData(data: any) {
+    //Fetching the data from server using post method
+    return this.HttpClient.post(' http://localhost:4000/userLogin', data);
   }
 
+  projectData(data: any) {
+    return this.HttpClient.post('http://localhost:3000/empDetails', data);
+  }
+  // working
+  orgRegister(data: any) {
+    return this.HttpClient.post('http://localhost:4000/orgApi', data);
+  }
+
+  resetPassword(data: any) {
+    return this.HttpClient.post('http://localhost:4000/forgotPassword', data);
+  }
+  updateEmpDetails(data: any) {
+    console.log(data);
+    return this.HttpClient.post('http://localhost:4000/updateUserApi/', data);
+
+  }
+
+  departments() {
+    return this.HttpClient.get('http://localhost:4000/deptList');
+  }
 }

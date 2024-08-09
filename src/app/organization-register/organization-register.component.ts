@@ -34,7 +34,7 @@ export class OrganizationRegisterComponent implements OnInit {
       address : this.registerForm.value.address,
       password : this.registerForm.value.password
     }
-    // console.log(orgReg);
+    console.log(orgReg);
     this.userService.orgRegister(orgReg).subscribe(res=>{
       console.log(res);
     })

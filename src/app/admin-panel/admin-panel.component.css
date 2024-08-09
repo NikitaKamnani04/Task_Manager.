@@ -13,18 +13,13 @@
   margin: 50px;
 }
 
-input {
-  padding-left: 10px;
-  outline: none;
-  border: none;
-}
 .btn_name:link {
   text-decoration: none;
-  color: red 
+  color: red;
 }
 
 .body {
-  margin-top:3%;
+  margin-top: 3%;
   margin-left: 13%;
   width: 100%;
 }
@@ -88,12 +83,17 @@ input {
 }
 .emp_count {
   width: 200px;
+  background-color: #9381ff;
 }
 .task_search {
-  width: 445px;
+  width: 446px;
   height: 38px;
+  padding: 6px 32px 6px 22px;
+}
+input{
+  border: none;
+  outline: none ;
 
-  /* border: none; */
 }
 .search_bar_task {
   width: 450px;
@@ -138,7 +138,7 @@ th {
   border-bottom: 3px solid black;
   white-space: nowrap;
 }
-th div {
+/* th div {
   position: absolute;
   background: transparent;
   color: #000000;
@@ -146,7 +146,7 @@ th div {
   top: 0;
   margin-left: -25px;
   line-height: normal;
-}
+} */
 
 .table_data_table ::-webkit-scrollbar {
   display: none;
@@ -255,9 +255,9 @@ td {
   text-align: left;
   width: 200px;
 }
-.username_del{
+.username_del {
   text-transform: capitalize;
-  color: red
+  color: red;
 }
 
 @media (max-width: 820px) {
@@ -299,5 +299,186 @@ td {
 @media (min-width: 821px) {
   .btn_icon {
     display: none;
+  }
+}
+/* Add Employee Form */
+.main {
+  background-color: #e2eafc;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.form_container {
+  position: relative;
+  margin-top: 5%;
+  width: 100%;
+  margin-left: 12%;
+  padding-left: 0;
+}
+
+/* form {
+  position: absolute;
+  left: 145px;
+} */
+
+.registration_heading {
+  font-weight: 600;
+  font-size: 26px;
+  margin-left: 8%;
+}
+
+.col1 {
+  width: 48%;
+  margin-top: 30px;
+  margin-right: 2%;
+}
+
+.col2 {
+  margin-top: 30px;
+  width: 48%;
+}
+
+.row {
+  /* margin-left: 20%; */
+}
+
+.col3 {
+  margin-top: 30px;
+  width: 48%;
+  margin-right: 2%;
+}
+
+.col4 {
+  margin-top: 30px;
+  width: 48%;
+}
+
+.col5 {
+  margin-top: 30px;
+  width: 48%;
+  margin-right: 2%;
+}
+
+.col6 {
+  margin-top: 30px;
+  width: 48%;
+}
+
+.col7 {
+  margin-top: 30px;
+  width: 48%;
+  margin-right: 2%;
+}
+
+.col8 {
+  margin-top: 30px;
+  width: 48%;
+}
+
+.col9 {
+  margin-top: 30px;
+  width: 48%;
+  margin-right: 2%;
+}
+
+.col10 {
+  margin-top: 30px;
+  width: 48%;
+}
+
+.button-23 {
+  background-color: #9381ff;
+  border-color: #fff;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 20px;
+  padding: 10px 23px;
+  width: auto;
+  margin-left: 1%;
+  margin-top: 6%;
+  cursor: pointer;
+}
+
+.button-23:focus-visible {
+  box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+  transition: box-shadow 0.2s;
+}
+
+/* .button-23:active {
+    background-color: #F7F7F7;
+    transform: scale(.96);
+  } */
+
+.form_field {
+  margin-top: 8px;
+}
+
+.email_valid,
+.name_valid,
+.contact_valid,
+.password_valid,
+.add_valid,
+.gender_valid,
+.birthdate_valid,
+.joindate_valid,
+.dept_valid,
+.role_valid {
+  height: 0px;
+}
+
+::placeholder {
+  color: grey;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+  border: 2px solid #000;
+  margin-top: 20px;
+}
+
+.select-profile-picture {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.icon {
+  margin-top: -30px;
+  float: right;
+  margin-right: 10px;
+}
+.formpage {
+  position: absolute;
+  width: 90%;
+  left: 150px;
+}
+
+@media screen and (max-width: 768px) {
+  .heading {
+    margin-top: 8%;
+  }
+
+  .addEmpbutton {
+    margin-left: 3%;
+    margin-top: 18%;
+  }
+
+  .formpage {
+    margin-left: 16%;
+  }
+
+  .resetbutton {
+    margin-top: 18%;
   }
 }

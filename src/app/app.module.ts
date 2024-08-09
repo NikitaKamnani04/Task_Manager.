@@ -19,7 +19,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { AddProjectComponent } from './add-project/add-project.component';
-import { CommonModule } from '@angular/common';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -31,9 +30,13 @@ import { ToastModule } from 'primeng/toast';
 import { DropdownModule } from 'primeng/dropdown';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { QuillModule } from 'ngx-quill';
+
 import { PaginatorModule } from 'primeng/paginator';
 import { DividerModule } from 'primeng/divider';
 import { SliderModule } from 'primeng/slider';
+
+
+import { DropdownModule } from 'primeng/dropdown';
 
 
 
@@ -50,6 +53,7 @@ import { SliderModule } from 'primeng/slider';
     AddProjectComponent,
     AddTaskComponent,
     NavbarComponent,
+
   ],
   imports: [
     ReactiveFormsModule,
@@ -71,6 +75,7 @@ import { SliderModule } from 'primeng/slider';
     PaginatorModule,
     DividerModule,
     SliderModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],
