@@ -1,13 +1,36 @@
 <nav>
     <span>Dashboard</span>
     <div class="nav_items">
-        <p class="showtime">Show Time</p>
+
+        <p class="showtime">Show time </p>
+
         <ul>
 
             <li type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight_notes"
-                aria-controls="offcanvasRight_notes"><i class="fa-solid fa-note-sticky"></i></li>
-            <li><i class="fa-solid fa-clock"></i></li>
-            <li><i class="fa-solid fa-circle-plus"></i></li>
+                aria-controls="offcanvasRight_notes"><i class="fa-solid fa-note-sticky fs-4" pTooltip="Notes"
+                    tooltipPosition="bottom"></i></li>
+            <li><i class="fa-solid fa-calendar-days fs-4" pTooltip="work in progress" tooltipPosition="bottom"></i>
+            
+                <full-calendar [options]="calendarOptions"></full-calendar>
+            </li>
+            <li>
+                <i class="fa-solid fa-circle-plus showMenuList fs-4" pTooltip="Create"
+                    tooltipPosition="bottom"></i><label class="dropdown">
+
+                    <input type="checkbox" class="dd-input" id="test">
+
+                    <ul class="dd-menu " id="dd-menu" data-bs-toggle="dropdown">
+                        <li routerLink="/addproject"><i class="fa-solid fa-plus pe-2"></i>Add Project</li>
+                        <li routerLink="/add-task"><i class="fa-solid fa-plus pe-2"></i>Add Task</li>
+                    </ul>
+
+                </label>
+            </li>
+
+            <div>
+
+
+            </div>
         </ul>
     </div>
 </nav>
@@ -18,7 +41,7 @@
     <span type="button" class="btn-close  toggle" data-bs-dismiss="offcanvas" aria-label="Close"></span>
 
     <div *ngIf="!toggleNote" class="offcanvas-header">
-        <h5 class="offcanvas-title add_notes_heading" id="offcanvasRight_notesLabel">Sticky Notes</h5>
+        <h5 class="offcanvas-title add_notes_heading fs-2 pb-2" id="offcanvasRight_notesLabel">Sticky Notes</h5>
         <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
     </div>
     <div class="offcanvas-body">

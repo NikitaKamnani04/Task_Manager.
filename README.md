@@ -7,3 +7,7 @@
 - gender
 - address
 - role
+# doughnut graph
+- complete task
+- In progress
+- Over due

@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import * as $ from 'jquery';
 import { Location } from '@angular/common';
+import { CookieService } from 'ngx-cookie-service';
 Chart.register(...registerables);
 @Component({
   selector: 'app-dashboard',

@@ -9,6 +9,7 @@ import { Validators } from '@angular/forms';
 import { RegistrationServiceService } from '../services/registration-service.service';
 import { MessageService } from 'primeng/api';
 
+
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
@@ -44,7 +45,11 @@ export class AdminPanelComponent implements OnInit {
   // Update Employee Details
   updateForm!: FormGroup;
   updateEmpId: any;
+
+  loginUserDetail: any;
+
   http: any;
+
 
   onSelectFile(event: any) {
     if (event.target.files && event.target.files[0]) {

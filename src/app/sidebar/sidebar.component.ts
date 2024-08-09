@@ -28,10 +28,9 @@ export class SidebarComponent implements OnInit {
 
     this.toggle = !this.toggle;
   }
-  
 
   logout() {
     localStorage.clear();
-    this.Router.navigate(['/', 'signin']);
+    this.Router.navigate(['/signin']);
   }
 }

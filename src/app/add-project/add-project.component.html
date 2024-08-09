@@ -220,10 +220,18 @@
 
                   <div class="row">
                      <div class="col mt-5">
+
+                        <p class="summary">Project Summary
+                        <p>
+
+                     </div>
+                  </div>
+
                         <p class="summary">Project Description
                         </p>
                         <!-- <quill-editor id="text-editor" placeholder="Enter Text" [(ngModel)]="editorContent" #editor  
                            (onSelectionChanged)="logChange($event)"></quill-editor> -->
+
 
                         <quill-editor id="text-editor" placeholder="Enter Text" [(ngModel)]="editorContent" #editor
                            formControlName="proDesc" style="width: 97.5%; height: 100px;"></quill-editor>
@@ -279,20 +287,47 @@
             <table class="table table-bordered" style="width: 100%;">
                <thead>
                   <tr>
+
+                     <th scope="col">Id</th>
+
                      <th scope="col" style="width: 20px;">Id</th>
+
                      <th scope="col">Code</th>
                      <th scope="col">Project Name</th>
                      <th scope="col">Members</th>
                      <th scope="col">Start Date</th>
                      <th scope="col">Deadline</th>
                      <th scope="col">Client</th>
+
+                     <th scope="col">Status</th>
+
                      <th scope="col" style="width: 30px;">Status</th>
+
                      <th scope="col">Actions</th>
                   </tr>
                </thead>
                <tbody>
                   <tr>
                      <th scope="row">1</th>
+
+                     <td>Mark</td>
+                     <td>Otto</td>
+                     <td>@mdo</td>
+                  </tr>
+                  <tr>
+                     <th scope="row">2</th>
+                     <td>Jacob</td>
+                     <td>Thornton</td>
+                     <td>@fat</td>
+                  </tr>
+                  <tr>
+                     <th scope="row">3</th>
+                     <td colspan="2">Larry the Bird</td>
+                     <td>@twitter</td>
+                  </tr>
+               </tbody>
+            </table>
+
                      <td>1</td>
                      <td>Task Management</td>
                      <td>
@@ -461,6 +496,7 @@
                   ></p-paginator>
                </div>
                <p-divider></p-divider>     
+
          </div>
       </div>
    </div>
@@ -591,5 +627,9 @@
          </div>
       </div>
    </div>
+
+</div>
+
 </form>
 <p-toast></p-toast>
+

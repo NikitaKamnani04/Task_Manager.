@@ -7,13 +7,10 @@ export const environment = {
 
 
   // org-register,project-page,
+
   API: 'https://work-management-ashen.vercel.app/api',
 
    apiurl : 'https://work-management-vercel.vercel.app/api',
-
-  
-
-
 };
 
 /*

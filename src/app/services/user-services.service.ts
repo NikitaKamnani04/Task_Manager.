@@ -8,7 +8,9 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class UserServicesService {
-  constructor(private HttpClient: HttpClient) { }
+
+  constructor(private HttpClient: HttpClient) {}
+  //start - by prince😊
 
   getChartInfo() {
     return this.HttpClient.get('http://localhost:3000/tasks');
@@ -58,11 +60,15 @@ export class UserServicesService {
   }
   updateEmpDetails(data: any) {
     console.log(data);
+
     return this.HttpClient.post(environment.API + 'updateUserApi/', data);
 
-  }
+
+
 
   departments() {
     return this.HttpClient.get(environment.API + '/deptList');
+
   }
+  //End - by prince😊
 }

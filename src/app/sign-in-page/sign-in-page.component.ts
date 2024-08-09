@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Type } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserServicesService } from '../services/user-services.service';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
+import { CookieService } from 'ngx-cookie-service';
+import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { state } from '@angular/animations';
 
 @Component({
   selector: 'app-sign-in-page',
@@ -19,12 +22,19 @@ export class SignInPageComponent implements OnInit {
   isConfirmPasswordDirty = false;
   confirmPasswordClass = 'form-control';
   signInRes: any;
+  // public isLoggedIn$: BehaviorSubject<boolean>;
 
   constructor(
     private userService: UserServicesService,
     private Router: Router,
-    private messageService: MessageService
-  ) {}
+    private messageService: MessageService,
+    private cookieService: CookieService
+  ) {
+    // to restrict the signIn route if the user is successfully logged In
+    if (localStorage.getItem('islogin') === '1') {
+      Router.navigate(['/dashboard']);
+    }
+  }
 
   ngOnInit(): void {
 
@@ -48,11 +58,15 @@ export class SignInPageComponent implements OnInit {
     this.resetForm.reset();
 
     // this.forgotPassword();
+    // this.loginForm.patchValue({
+    //   email: this.cookieService.get('email'),
+    //   password: this.cookieService.get('password'),
+    // });
   }
   toggleFieldTextType() {
     this.FieldTextType = !this.FieldTextType;
   }
-
+  isChecked: boolean = true;
   loginUser() {
     //make the function for login sucessfully
     let loginCred = {
@@ -72,10 +86,9 @@ export class SignInPageComponent implements OnInit {
           });
 
           localStorage.setItem('islogin', this.signInRes.success);
+
           setTimeout(() => {
-            this.Router.navigateByUrl('/dashboard', {
-              state: this.signInRes,
-            });
+            this.Router.navigateByUrl('/dashboard', { state: this.signInRes });
           }, 2000);
         } else {
           this.Router.navigate(['/', 'signin']);
@@ -97,20 +110,20 @@ export class SignInPageComponent implements OnInit {
 
   }
 
-  // forgotPassword() {
-  //   //for reset sucessfully
-  //   let forgotPass = {
-  //     email: this.resetForm.value.email,      
-  //     name: this.resetForm.value.name,      
-
-  //   };
-  //   console.log(forgotPass);
-
-    
-
-  //   this.userService.resetPassword(forgotPass).subscribe((res) => {
-  //     console.log(res);
-  //   });
-
-  // }
+  setCookies(event: any) {
+    console.log(event);
+    this.isChecked = event;
+    if (
+      (this.cookieService.get('email') &&
+        this.cookieService.get('password')) === ''
+    ) {
+      this.cookieService.set('email', this.loginForm.value.email);
+      this.cookieService.set('password', this.loginForm.value.password);
+    } else {
+      this.loginForm.patchValue({
+        email: this.cookieService.get('email'),
+        password: this.cookieService.get('password'),
+      });
+    }
+  }
 }
