@@ -27,12 +27,25 @@ import { ButtonModule } from 'primeng/button';
 import { SidebarModule } from 'primeng/sidebar';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ToastModule } from 'primeng/toast';
+
 import {TooltipModule} from 'primeng/tooltip';
 import { NgSelectModule } from '@ng-select/ng-select';
+
+import { DropdownModule } from 'primeng/dropdown';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { QuillModule } from 'ngx-quill';
+
+import { PaginatorModule } from 'primeng/paginator';
+import { DividerModule } from 'primeng/divider';
+import { SliderModule } from 'primeng/slider';
+
+
+
 import { DropdownModule } from 'primeng/dropdown';
 
 // calender
 import { FullCalendarModule } from '@fullcalendar/angular';
+
 
 @NgModule({
   declarations: [
@@ -60,13 +73,24 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     Ng2SearchPipeModule,
     NgSelectModule,
     BrowserAnimationsModule,
+
+
+    QuillModule,
+
     ToastModule,
     SidebarModule,
     ButtonModule,
     InputTextareaModule,
     DropdownModule,
+
     TooltipModule,
     FullCalendarModule
+
+    PaginatorModule,
+    DividerModule,
+    SliderModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent],

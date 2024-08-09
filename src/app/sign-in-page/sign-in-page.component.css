@@ -117,8 +117,17 @@ body {
 }
 
 .valid_text {
+
   height: 10px;
   width: 300px;
+}
+
+.mb-3 a {
+    color: #494dc0;
+    margin-left: 60%;
+    position: relative;
+    top: 10px;
+
 }
 
 .email-text {
@@ -126,6 +135,15 @@ body {
   width: 300px;
 }
 
+
+.form-check{
+    position: relative;
+    bottom: 30px;
+}
+
+/* .form-check label{
+    color: black;
+} */
 @media (max-width: 360px) {
   .boxText {
     width: 80%;

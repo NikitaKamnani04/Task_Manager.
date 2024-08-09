@@ -5,12 +5,11 @@
 export const environment = {
   production: false,
 
+
+  // org-register,project-page,
   apiurl: 'https://work-management-vercel.vercel.app/api',
 
   API: 'https://work-management-ashen.vercel.app/api'
-
-
-
 };
 
 /*

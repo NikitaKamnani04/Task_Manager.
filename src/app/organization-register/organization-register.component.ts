@@ -14,7 +14,7 @@ export class OrganizationRegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm=new FormGroup({
-      'name': new FormControl('',Validators.required),
+      'name': new FormControl('',[Validators.required,Validators.pattern('[a-zA-Z ]*')]),
       'email':new FormControl('',[Validators.required,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]),
       'contact':new FormControl('',[Validators.required,Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]),
       'address':new FormControl('',Validators.required),

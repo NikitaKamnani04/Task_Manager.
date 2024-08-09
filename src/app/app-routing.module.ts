@@ -12,7 +12,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserAuthGuard } from './guards/user-auth.guard';
 import { OrganizationRegisterComponent } from './organization-register/organization-register.component';
 
+
+
 const routes: Routes = [
+
   { path: 'signin', component: SignInPageComponent },
   { path: '', component: SignInPageComponent },
   {
@@ -90,11 +93,13 @@ const routes: Routes = [
     component: DashboardComponent,
     canActivate: [UserAuthGuard],
   },
+
   { path: '**', redirectTo: '' },
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
