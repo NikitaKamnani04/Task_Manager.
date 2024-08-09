@@ -11,9 +11,9 @@ export class AdminPanelServiceService {
   // working
   empDetail() {
 
-    return this.http.get<any>(environment.API);
+    return this.http.get<any>(environment.API+'/showEmpDetails');
 
-    return this.http.get<any>(environment.apiurlReg+'/showEmpDetails');
+
 
   }
 
@@ -21,8 +21,6 @@ export class AdminPanelServiceService {
   deleteEmpDetail(id: number) {
 
     return this.http.post(environment.API+'/deleteEmp', { id: id });
-
-  
 
   }
 }

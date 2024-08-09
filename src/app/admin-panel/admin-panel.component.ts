@@ -63,13 +63,16 @@ export class AdminPanelComponent implements OnInit {
         // console.log(this.url); 
       };
     }
-    console.log(event);
-    let files: FileList = event.target.files;
-    let file: File = files[0];
-    console.log(file);
-    this.http.post(URL, file).subscribe(
-      (r: any) => { console.log('got r', r) }
-    )
+    // let file = event.target.files[0];
+    // let url = 'your url';
+    // let formData = new FormData();
+    // formData.append("myfile", file);
+
+    // this.http.post(url, formData).subscribe(
+    //   (res: any) => {
+    //     console.log('response', res)
+    //   }
+    // )
   }
 
   toggleFieldTextType() {

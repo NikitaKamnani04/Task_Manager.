@@ -7,21 +7,16 @@ import { environment } from 'src/environments/environment';
 })
 export class RegistrationServiceService {
   constructor(private httpclient: HttpClient) {}
-// working
-  // fetchData() {
-  //   return this.httpclient.get('http://localhost:4000/showEmpDetails');
-  // } 
+
 
 
   fetchData() {
-    return this.httpclient.get(environment.apiurlReg +'/showEmpDetails');
+    return this.httpclient.get(environment.API +'/showEmpDetails');
   }
 
   getEmployeeData(data: any) {
 
-
-
-    return this.httpclient.post(environment.apiurlReg +'/registerUserApi',data);
+    return this.httpclient.post(environment.API +'/registerUserApi',data);
 
   }
 

@@ -31,7 +31,7 @@ export class DashboardComponent implements OnInit {
     private UserServicesService: UserServicesService,
     private route: ActivatedRoute,
     private location: Location,
-    private cookieService: CookieService
+
   ) {
     this.loginUserDetail = this.location.getState();
 
