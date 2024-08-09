@@ -1,8 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { RegistrationServiceService } from '../services/registration-service.service';
+
+
 import { QuillEditorComponent } from 'ngx-quill';
 import { MessageService } from 'primeng/api';
+
 
 
 @Component({
@@ -15,8 +18,13 @@ import { MessageService } from 'primeng/api';
 
 export class AddTaskComponent implements OnInit {
 
+
+
+ editorContent='';
+
   @ViewChild('editor', { static: true }) editor: QuillEditorComponent | any;  //RESET DATA OF QUILL EDITOR
   editorContent = '';
+
 
 
   Taskform !: FormGroup<any>;
@@ -176,7 +184,13 @@ hideStart: any = false
   }
 
   ResetTaskData() {
+
+
+
+
+
     this.editor.quillEditor.setContents([]);  //reset data of quill editor
+
     this.Taskform.reset();
 
   }

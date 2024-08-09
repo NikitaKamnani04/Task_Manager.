@@ -18,7 +18,11 @@ export class RegistrationServiceService {
   }
 
   getEmployeeData(data: any) {
+
+
+
     return this.httpclient.post(environment.apiurlReg +'/registerUserApi',data);
+
   }
 
 
@@ -34,6 +38,9 @@ export class RegistrationServiceService {
   Taskcategorydata(data:any){
   return this.httpclient.get(environment.apiurl +'/tskCategoryList',data)
  }
+
+
+  }
 
   ProjectNamedata(data:any){
     return this.httpclient.get(environment.apiurl +'/projectList',data)

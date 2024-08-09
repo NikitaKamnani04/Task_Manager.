@@ -6,13 +6,17 @@ import {
   RouterStateSnapshot,
   UrlTree,
 } from '@angular/router';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserAuthGuard implements CanActivate {
-  constructor(private Router: Router) {}
+
+
+  constructor(private Router: Router) {
+
+  }
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -21,7 +25,7 @@ export class UserAuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (localStorage.getItem('islogin')) {
+    if (localStorage.getItem('islogin') === '1') {
       return true;
     }
     this.Router.navigate(['/', 'signin']);

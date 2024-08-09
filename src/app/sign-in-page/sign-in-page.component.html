@@ -44,9 +44,15 @@
 					</div>
 				</div>
 
-				<div class="mb-3 password">
-					<a href="#exampleModal" class="form-password" for="exampleCheck1" data-bs-toggle="modal"
-						data-bs-target="#exampleModal">Forgot Password</a>
+				<div class="d-flex justify-content-between">
+					<div class="mb-3 mt-3 rememberMe">
+						<input type="checkbox"  #saveUserNameCheckBox  class="me-2"  (click)="setCookies(saveUserNameCheckBox.checked)">Remember Me
+					</div>
+					<div class="mb-3 mt-3 password">
+						<a href="#exampleModal" class="form-password" for="exampleCheck1" data-bs-toggle="modal"
+							data-bs-target="#exampleModal">Forgot Password</a>
+					</div>
+
 				</div>
 
 				<div class="form-check">

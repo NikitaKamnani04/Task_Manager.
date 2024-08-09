@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import * as $ from 'jquery';
 import { Location } from '@angular/common';
+import { CookieService } from 'ngx-cookie-service';
 Chart.register(...registerables);
 @Component({
   selector: 'app-dashboard',
@@ -25,23 +26,24 @@ export class DashboardComponent implements OnInit {
   loginUserDetail: any;
   loginUserDepartment: any;
   router: any;
+
   constructor(
     private UserServicesService: UserServicesService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private cookieService: CookieService
   ) {
     this.loginUserDetail = this.location.getState();
 
     // to get the department of the login User
-    this.UserServicesService.departments().subscribe((res: any) => {
-      res.data.forEach((element: any, index: any, array: any) => {
-        if (element.id == this.loginUserDetail.data.deptId) {
-          this.loginUserDepartment = element.deptName;
-          console.log(this.loginUserDepartment);
-        }
-      });
-    });
-    // console.log(this.loginUserDetail.data.id);
+    // this.UserServicesService.departments().subscribe((res: any) => {
+    //   res.data.forEach((element: any, index: any, array: any) => {
+    //     if (element.id == this.loginUserDetail.data.deptId) {
+    //       this.loginUserDepartment = element.deptName;
+    //       // console.log(this.loginUserDepartment);
+    //     }
+    //   });
+    // });
 
     this.statusList = [
       { status: 'in progress', name: 'In Progress' },
@@ -60,6 +62,12 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // console.log(this.loginUserDetail.data.id);
+    // const userEmail = this.cookieService.get('Name');
+    // const userPassword = this.cookieService.get('Value');
+    // console.log(userEmail);
+    // console.log(userPassword);
+
     this.getChartData();
     $(() => {
       $('.dropdown > .caption').on('click', () => {
