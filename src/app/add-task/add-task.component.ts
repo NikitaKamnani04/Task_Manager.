@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { RegistrationServiceService } from '../services/registration-service.service';
-import { QuillEditorComponent } from 'ngx-quill';
 
 @Component({
   selector: 'app-add-task',
@@ -12,7 +11,7 @@ import { QuillEditorComponent } from 'ngx-quill';
 
 export class AddTaskComponent implements OnInit {
 
-  @ViewChild('editor',{static:true}) editor : QuillEditorComponent| any ;
+
  editorContent='';
 
   
@@ -151,7 +150,7 @@ memberId = [
   // }
    
   ResetTaskData() {
-    this.editor.quillEditor.setContents([]);
+
 
 
     this.Taskform.reset();

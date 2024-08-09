@@ -57,9 +57,8 @@ export class RegistrationFormComponent implements OnInit {
   gender_items = ['Male', 'Female'];
 
   constructor(
-    private Regservice: RegistrationServiceService
-  ) // private route: ActivatedRoute
-  {
+    private Regservice: RegistrationServiceService // private route: ActivatedRoute
+  ) {
     // this.createFormGroup();
     // this.route.queryParams.subscribe((params) => {
     //   console.log(params);
@@ -95,7 +94,7 @@ export class RegistrationFormComponent implements OnInit {
       password: new FormControl('', [
         Validators.required,
         Validators.pattern(
-          /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,12}$/
+          /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$/
         ),
       ]),
       address: new FormControl('', [Validators.required]),
@@ -119,17 +118,14 @@ export class RegistrationFormComponent implements OnInit {
       joinDate: this.regform.value.joinDate,
       gender: this.regform.value.gender,
       dob: this.regform.value.dob,
+    };
 
-    }
-  
     if (this.regform.valid) {
       this.Regservice.getEmployeeData(emp_data).subscribe((res: any) => {
         console.log(res);
-      })
+      });
+    } else {
     }
-    else {
-
-    };
 
     console.log(emp_data);
 
@@ -142,12 +138,10 @@ export class RegistrationFormComponent implements OnInit {
         this.regform.reset();
       });
     } else {
-
       this.regform.markAllAsTouched();
     }
   }
 
-  
   resetForm() {
     this.regform.reset();
   }

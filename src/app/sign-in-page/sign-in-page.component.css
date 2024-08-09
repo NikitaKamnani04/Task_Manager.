@@ -10,6 +10,7 @@ body {
   display: flex;
   justify-content: center;
   background-color: #8285e4;
+  z-index: 10;
 }
 
 .container {
@@ -120,7 +121,6 @@ body {
   width: 300px;
 }
 
-
 .email-text {
   height: 35px;
   width: 300px;
@@ -216,9 +216,9 @@ body {
     right: 15px;
   }
 
-  .main {
+  /* .main {
     background-color: #f5f5f5;
-  }
+  } */
 
   .mb-3 .btn {
     margin-top: 40px;
@@ -315,11 +315,9 @@ body {
     top: 3px;
   }
 
-  .password  {
-
+  .password {
   }
   .remeberMe {
-
   }
   .foot {
     width: 22% !important ;

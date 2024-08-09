@@ -27,11 +27,12 @@ import { ButtonModule } from 'primeng/button';
 import { SidebarModule } from 'primeng/sidebar';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ToastModule } from 'primeng/toast';
-
+import {TooltipModule} from 'primeng/tooltip';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { QuillModule } from 'ngx-quill';
 import { DropdownModule } from 'primeng/dropdown';
 
+// calender
+import { FullCalendarModule } from '@fullcalendar/angular';
 
 @NgModule({
   declarations: [
@@ -59,12 +60,13 @@ import { DropdownModule } from 'primeng/dropdown';
     Ng2SearchPipeModule,
     NgSelectModule,
     BrowserAnimationsModule,
-    QuillModule.forRoot(),
     ToastModule,
     SidebarModule,
     ButtonModule,
     InputTextareaModule,
     DropdownModule,
+    TooltipModule,
+    FullCalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent],

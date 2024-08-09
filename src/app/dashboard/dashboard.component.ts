@@ -67,14 +67,8 @@ export class DashboardComponent implements OnInit {
     // const userPassword = this.cookieService.get('Value');
     // console.log(userEmail);
     // console.log(userPassword);
-    if (this.cookieService.get('email')===""){
-      console.log('hello prince');
-      
-    }else{
-      console.log(`something`);
-      
-    }
-       this.getChartData();
+
+    this.getChartData();
     $(() => {
       $('.dropdown > .caption').on('click', () => {
         $(this).parent().toggleClass('open');

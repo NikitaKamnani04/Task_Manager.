@@ -207,8 +207,7 @@
                      <div class="col mt-5">
                         <p class="summary">Project Summary
                         <p>
-                           <quill-editor id="text-editor" placeholder="Enter Text" [modules]="modules"
-                              (onSelectionChanged)="logChange($event)"></quill-editor>
+
                      </div>
                   </div>
 
@@ -260,38 +259,38 @@
          <div class="col mt-4">
             <table class="table table-bordered">
                <thead>
-                 <tr>
-                   <th scope="col">Id</th>
-                   <th scope="col">Code</th>
-                   <th scope="col">Project Name</th>
-                   <th scope="col">Members</th>
-                   <th scope="col">Start Date</th>
-                   <th scope="col">Deadline</th>
-                   <th scope="col">Client</th>
-                   <th scope="col">Status</th>
-                   <th scope="col">Actions</th>
-                 </tr>
+                  <tr>
+                     <th scope="col">Id</th>
+                     <th scope="col">Code</th>
+                     <th scope="col">Project Name</th>
+                     <th scope="col">Members</th>
+                     <th scope="col">Start Date</th>
+                     <th scope="col">Deadline</th>
+                     <th scope="col">Client</th>
+                     <th scope="col">Status</th>
+                     <th scope="col">Actions</th>
+                  </tr>
                </thead>
                <tbody>
-                 <tr>
-                   <th scope="row">1</th>
-                   <td>Mark</td>
-                   <td>Otto</td>
-                   <td>@mdo</td>
-                 </tr>
-                 <tr>
-                   <th scope="row">2</th>
-                   <td>Jacob</td>
-                   <td>Thornton</td>
-                   <td>@fat</td>
-                 </tr>
-                 <tr>
-                   <th scope="row">3</th>
-                   <td colspan="2">Larry the Bird</td>
-                   <td>@twitter</td>
-                 </tr>
+                  <tr>
+                     <th scope="row">1</th>
+                     <td>Mark</td>
+                     <td>Otto</td>
+                     <td>@mdo</td>
+                  </tr>
+                  <tr>
+                     <th scope="row">2</th>
+                     <td>Jacob</td>
+                     <td>Thornton</td>
+                     <td>@fat</td>
+                  </tr>
+                  <tr>
+                     <th scope="row">3</th>
+                     <td colspan="2">Larry the Bird</td>
+                     <td>@twitter</td>
+                  </tr>
                </tbody>
-             </table>
+            </table>
          </div>
       </div>
    </div>
@@ -374,12 +373,14 @@
                <form [formGroup]="projectDetails">
                   <div class="mb-3">
                      <label for="exampleInput1" class="form-label" class="required">Project Category</label>
-                     <input formControlName="projectCategory-modal"  type="text" id="exampleInput1" class="form-control" aria-describedby="emailHelp"/>
+                     <input formControlName="projectCategory-modal" type="text" id="exampleInput1" class="form-control"
+                        aria-describedby="emailHelp" />
                      <div class="valid-text">
                         <div
                            *ngIf="projectDetails.get('projectCategory-modal')?.invalid && (projectDetails.get('projectCategory-modal')?.touched || projectDetails.get('projectCategory-modal')?.dirty)"
                            class="text-danger text">
-                           <span *ngIf="projectDetails.controls?.['projectCategory-modal']?.errors?.['required']">Project
+                           <span
+                              *ngIf="projectDetails.controls?.['projectCategory-modal']?.errors?.['required']">Project
                               Category is required</span>
                         </div>
                      </div>

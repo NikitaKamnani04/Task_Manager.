@@ -62,11 +62,12 @@ body.dark {
   left: 0px;
   height: 100%;
   width: 250px;
-  box-shadow: rgba(80, 63, 205, 0.5) 0 0px 30px;
+  /* box-shadow: rgba(80, 63, 205, 0.5) 0 0px 30px; */
   /* background-color: var(--sidebar-color); */
   background-color: #b8b8ff;
   padding: 10px 14px;
   transition: var(--trans-02);
+  z-index: 10;
   /* border-top-right-radius: 15px;
   border-bottom-right-radius: 15px; */
 }
