@@ -127,7 +127,9 @@ body {
 
 .mb-3 a {
     color: #494dc0;
-    margin-left: 60%
+    margin-left: 60%;
+    position: relative;
+    top: 10px;
 }
 
 .email-text {
@@ -135,6 +137,15 @@ body {
     width: 300px;
 }
 
+
+.form-check{
+    position: relative;
+    bottom: 30px;
+}
+
+/* .form-check label{
+    color: black;
+} */
 @media (max-width: 360px) {
 
 

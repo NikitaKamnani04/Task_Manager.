@@ -27,10 +27,17 @@ import { ButtonModule } from 'primeng/button';
 import { SidebarModule } from 'primeng/sidebar';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ToastModule } from 'primeng/toast';
-
+import { DropdownModule } from 'primeng/dropdown';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { QuillModule } from 'ngx-quill';
+
+import { PaginatorModule } from 'primeng/paginator';
+import { DividerModule } from 'primeng/divider';
+import { SliderModule } from 'primeng/slider';
+
+
 import { DropdownModule } from 'primeng/dropdown';
+
 
 
 @NgModule({
@@ -59,12 +66,16 @@ import { DropdownModule } from 'primeng/dropdown';
     Ng2SearchPipeModule,
     NgSelectModule,
     BrowserAnimationsModule,
-    QuillModule.forRoot(),
+    QuillModule,
     ToastModule,
     SidebarModule,
     ButtonModule,
     InputTextareaModule,
     DropdownModule,
+    PaginatorModule,
+    DividerModule,
+    SliderModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],
