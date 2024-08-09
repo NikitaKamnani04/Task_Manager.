@@ -17,33 +17,37 @@ export class UserServicesService {
     return this.HttpClient.get('http://localhost:3000/tasks');
   }
 
-  loginData(data: any) {
-    //Fetching the data from server using post method
-    return this.HttpClient.post(' http://localhost:4000/userLogin', data);
-  }
+ 
 
-
-
-  // projectData(data:any){        //using fake api
-  //   return this.HttpClient.post('http://localhost:3000/empDetails',data);
-  // }
-
+  // Integrated by Nikita
   projectData(data:any)
   {
     return this.HttpClient.post(environment.apiurl +'/createProject',data)
   }
 
-  // deptData(data: any)
-  // {
-  //   return this.HttpClient.get('https://work-management-ashen.vercel.app/api/deptList',data)
+  // deptData(){
+  //   return this.HttpClient.get(environment.apiurl +'/deptList')
   // }
 
-  deptData(data:any){
-    return this.HttpClient.get(environment.apiurl +'/deptList',data)
+  // Integrated by Nikita, client list api
+  clientData(){
+    return this.HttpClient.get(environment.apiurl +'/clientList')
   }
 
+  // Integrated by Nikita
+  clientAddData(data:any){
+    return this.HttpClient.post(environment.apiurl+'/addClient',data)
+  }
+
+
+  //project Members api, Integrated by Nikita
+  membersData(){
+    return this.HttpClient.get(environment.apiurl+'/showEmpDetails')
+  }
+
+  // Integrated by Nikita
   orgRegister(data:any){
-    return this.HttpClient.post('http://localhost:3000/empDetails',data);
+    return this.HttpClient.post(environment.apiurl+'/orgApi',data);
   }
 
 }

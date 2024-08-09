@@ -4,9 +4,9 @@
 
       <div class="col d-flex" style="margin-top: 60px;">
          <div class="input-group mt-4">
-            <div class="input-group-prepend">
+            <!-- <div class="input-group-prepend"> -->
                <span class="input-group-text" id="duration">Duration</span>
-            </div>
+            <!-- </div> -->
             <select class="form-select-duration">
 
                <option selected disabled>Start Date to End Date</option>
@@ -17,10 +17,11 @@
             </select>
          </div>
 
+
          <div class="input-group mt-4">
-            <div class="input-group-prepend">
+            <!-- <div class="input-group-prepend"> -->
                <span class="input-group-text" id="status">Status</span>
-            </div>
+            <!-- </div> -->
             <select class="form-select-status">
 
                <option selected disabled>All</option>
@@ -38,17 +39,19 @@
             <i class="fas fa-search mt-2 mr-2"></i>
             <input type="search" class="form-control rounded" id="search-field" placeholder="Start typing to search"
                aria-label="Search" aria-describedby="search-addon" />
-
          </div>
-
       </div>
    </div>
 
+
+   
+
    <div class="row">
-      <div class="col d-flex mt-4">
+      <div class="col d-flex mt-4" >
 
          <button type="button" class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"  (click)="projectCred()">+ Add Project</button>
+            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" (click)="projectCred()">+ Add
+            Project</button>
          <button type="button" class="btn btn-light">Import</button>
 
          <div class="offcanvas offcanvas-end" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
@@ -79,6 +82,8 @@
                               <span *ngIf="projectDetails.controls?.['proName']?.errors?.['required']">Project
                                  Name
                                  is required</span>
+                              <span *ngIf="projectDetails.controls?.['proName']?.errors?.['pattern']">Enter Only
+                                 Characters</span>
                            </div>
                         </div>
                      </div>
@@ -110,21 +115,21 @@
                      </div> -->
 
                      <div class="col mt-5">
-                        
-                        <label for="exampleFormControlInput2" class="required">Project Lead</label>
-                        <input type="text" class="form-control" placeholder="Enter project lead"
-                           id="inputGroupSelect02" formControlName="proLead">
-                           <div class="valid-text">
-                              <div
-                                 *ngIf="projectDetails.get('proLead')?.invalid && (projectDetails.get('proLead')?.touched || projectDetails.get('proLead')?.dirty)"
-                                 class="text-danger text">
-                                 <span *ngIf="projectDetails.controls?.['proLead']?.errors?.['required']">Project Lead is
-                                    required</span>
-                              </div>
-                           </div>
-                    
 
-                  </div>
+                        <label for="exampleFormControlInput2" class="required">Project Lead</label>
+                        <input type="text" class="form-control" placeholder="Enter project lead" id="inputGroupSelect02"
+                           formControlName="proLead">
+                        <div class="valid-text">
+                           <div
+                              *ngIf="projectDetails.get('proLead')?.invalid && (projectDetails.get('proLead')?.touched || projectDetails.get('proLead')?.dirty)"
+                              class="text-danger text">
+                              <span *ngIf="projectDetails.controls?.['proLead']?.errors?.['required']">Project Lead is
+                                 required</span>
+                              <span *ngIf="projectDetails.controls?.['proLead']?.errors?.['pattern']">Enter only
+                                 Characters</span>
+                           </div>
+                        </div>
+                     </div>
                   </div>
 
 
@@ -133,8 +138,9 @@
 
                         <label for="exampleFormControlInput1" class="required">Start Date</label>
 
-                        <input placeholder="Select start date" class="form-control" type="date" id="date"
+                        <input placeholder="Select start date" class="form-control"  type="date" id="date" (change)="getDate($event)"
                            formControlName="startDate" />
+                           
 
                         <div class="valid-text">
                            <div
@@ -149,17 +155,20 @@
 
                      <div *ngIf="!isShown" class="col-sm mt-5" style="max-width: 30%;">
                         <label for="exampleFormControlInput1" class="required">Deadline</label>
-                        <input type="date" class="form-control" id="deadline" placeholder="Select end date"
+                        <input type="date" class="form-control" id="deadline" placeholder="Select end date" (change)="getDate($event)"
                            formControlName="deadLine" />
-                        <!-- <div class="valid-text">
+                        <div class="valid-text">
                            <div
-                              *ngIf="projectDetails.get('deadLine')?.invalid && (projectDetails.get('deadLine')?.touched || projectDetails.get('deadLine')?.dirty)"
+                              *ngIf=" projectDetails.get('deadLine')?.invalid && (projectDetails.get('deadLine')?.touched || projectDetails.get('deadLine')?.dirty)"
                               class="text-danger text">
                               <span *ngIf="projectDetails.controls?.['deadLine']?.errors?.['required']">End date is
                                  required</span>
-                           </div> -->
-                        <!-- </div> -->
+                           </div>
+                        </div>
                      </div>
+
+
+                     
                      <div class="col-sm mt-5">
                         <div class="form-check">
                            <input class="form-check-input" (click)="toggleShow()" type="checkbox" value=""
@@ -176,10 +185,11 @@
                         <label for="exampleFormControlInput1" class="required">Department</label>
                         <div class="input-department d-flex">
                            <select class="form-select" id="inputGroupSelect03"
-                              aria-label="Example select with button addon" formControlName="deptId" [(ngModel)]="department" >
-                              <option   value="null" selected disabled>Select Department</option>
-                              <option *ngFor="let names of this.deptList;"  value="{{names.id}}">{{names.deptName}}</option> 
-                           </select>  
+                              aria-label="Example select with button addon" formControlName="deptId"
+                              [(ngModel)]="department">
+                              <option value="null" selected disabled>Select Department</option>
+                              <option *ngFor="let names of this.deptId;" value="{{names.value}}">{{names.name}}</option>
+                           </select>
                         </div>
                         <div class="valid-text">
                            <div
@@ -195,16 +205,16 @@
                         <label for="exampleFormControlInput1">Client</label>
                         <div class="input-category d-flex">
                            <select class="form-select" id="inputGroupSelect04"
-                           aria-label="Example select with button addon" [(ngModel)]="selectedclient" formControlName="client">
-                              <option selected disabled value="null">Select Client</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
+                              aria-label="Example select with button addon" [(ngModel)]="selectedclient"
+                              formControlName="clientId">
+                              <option value="null" selected disabled>Select Client</option>
+                              <option *ngFor="let clientNames of this.clientList;" value="{{clientNames.id}}">
+                                 {{clientNames.clientName}}</option>
                            </select>
                            <button class="btn btn-outline-secondary" type="button" data-bs-toggle="modal"
                               data-dismiss="modal" data-bs-target="#exampleModal2">Add</button>
                         </div>
-                        
+
                      </div>
                   </div>
 
@@ -212,46 +222,48 @@
                      <div class="col mt-5">
                         <p class="summary">Project Description
                         </p>
-                           <!-- <quill-editor id="text-editor" placeholder="Enter Text" [(ngModel)]="editorContent" #editor  
-                           (onSelectionChanged)="logChange($event)" ></quill-editor> -->
-                         
-                               <quill-editor  id="text-editor" placeholder="Enter Text"  [(ngModel)]="editorContent" #editor formControlName="proDesc" style="width: 100%; height: 100px;"
-                              ></quill-editor> 
-                      
-                         
-                     </div> 
-                  </div>
+                        <!-- <quill-editor id="text-editor" placeholder="Enter Text" [(ngModel)]="editorContent" #editor  
+                           (onSelectionChanged)="logChange($event)"></quill-editor> -->
 
+                        <quill-editor id="text-editor" placeholder="Enter Text" [(ngModel)]="editorContent" #editor
+                           formControlName="proDesc" style="width: 97.5%; height: 100px;"></quill-editor>
+
+
+                     </div>
+                  </div>
                   <div class="row">
                      <div class="col mt-5">
                         <label for="exampleFormControlInput1" class="required">Add Project Members</label>
                         <br />
-                        <ng-select id="inputGroupSelect06" [multiple]="true" [hideSelected]="true" [(ngModel)]="proMem"
-                           [closeOnSelect]="false" [items]="source" bindValue="value" bindLabel="name"
-                           placeholder="Select members" formControlName="projectMembers">
+                        <ng-select id="inputGroupSelect06" [multiple]="true" [hideSelected]="true"
+                           [items]="showEmpDetails" [(ngModel)]="selectedArray" formControlName="userId"
+                           [closeOnSelect]="false" bindValue="id" bindLabel="name" placeholder="Select members">
                         </ng-select>
+                        <!-- <select id="inputGroupSelect06" [multiple]="true" [(ngModel)]="selectedMembers" id="" formControlName="proId">
+                        <option  value="null" selected disabled>Select Client</option>
+                        <option *ngFor="let membersNames of this.showEmpDetails;"  value="{{membersNames.id}}">{{membersNames.name}} </option> 
                         <br />
+                     </select> -->
                      </div>
                      <div class="members-text">
                         <div
-                           *ngIf="projectDetails.get('projectMembers')?.invalid && (projectDetails.get('projectMembers')?.touched || projectDetails.get('projectMembers')?.dirty)"
+                           *ngIf="projectDetails.get('userId')?.invalid && (projectDetails.get('userId')?.touched || projectDetails.get('userId')?.dirty)"
                            class="text-danger text">
-                           <span *ngIf="projectDetails.controls?.['projectMembers']?.errors?.['required']">Project
+                           <span *ngIf="projectDetails.controls?.['userId']?.errors?.['required']">Project
                               Members is required</span>
                         </div>
                      </div>
                   </div>
                   <div>
-
                   </div>
 
                   <div class="row">
                      <div class="col mt-5">
                         <div class="buttons">
-                           <button type="button" class="btn btn-primary" id="saveButton" (click)=" onFormSubmit()"
-                             > ✓ Save</button>
-                           <button type="button" class="btn btn-light" id="resetButton" (click)="resetData()">Reset
-                              Form</button>
+                           <button type="button" class="btn btn-primary" id="saveButton" (click)=" onFormSubmit()"> ✓
+                              Save</button>
+                           <button type="button" class="btn btn-light" id="resetButton" (click)="resetData()">Cancel
+                              </button>
                         </div>
                      </div>
                   </div>
@@ -264,10 +276,10 @@
 
       <div class="row">
          <div class="col mt-4">
-            <table class="table table-bordered" style="width: 100%;height: 100%;">
+            <table class="table table-bordered" style="width: 100%;">
                <thead>
                   <tr>
-                     <th scope="col">Id</th>
+                     <th scope="col" style="width: 20px;">Id</th>
                      <th scope="col">Code</th>
                      <th scope="col">Project Name</th>
                      <th scope="col">Members</th>
@@ -281,36 +293,44 @@
                <tbody>
                   <tr>
                      <th scope="row">1</th>
-                     <td>Mark</td>
-                     <td>Otto</td>
+                     <td>1</td>
+                     <td>Task Management</td>
                      <td>
                         <div class="avatar-group">
-                        <div class="avatars">
-                           <span class="avatar-name" data-bs-toggle="tooltip" title="Nikita Kamnani">
-                              <img src="https://www.gravatar.com/avatar/9856688a1f2ba7b213c7a28f124913a8.png?s=200&d=mp" width="30" height="30" alt="img">   
-                           </span>
+                           <div class="avatars">
+                              <span class="avatar-name" data-bs-toggle="tooltip" title="Nikita Kamnani">
+                                 <img
+                                    src="https://www.gravatar.com/avatar/9856688a1f2ba7b213c7a28f124913a8.png?s=200&d=mp"
+                                    width="30" height="30" alt="img">
+                              </span>
+                           </div>
+                           <div class="avatars">
+                              <span class="avatar-name" data-bs-toggle="tooltip" title="Rahi Adokar"
+                                 style="position: relative; right: 10px;">
+                                 <img
+                                    src="https://www.gravatar.com/avatar/9856688a1f2ba7b213c7a28f124913a8.png?s=200&d=mp"
+                                    width="30" height="30" alt="img">
+                              </span>
+                           </div>
+                           <div class="avatars">
+                              <span class="avatar-name" data-bs-toggle="tooltip" title="Prince Palewar"
+                                 style="position: relative; right: 20px;">
+                                 <img
+                                    src="https://www.gravatar.com/avatar/9856688a1f2ba7b213c7a28f124913a8.png?s=200&d=mp"
+                                    width="30" height="30" alt="img">
+                              </span>
+                           </div>
                         </div>
-                        <div class="avatars">
-                           <span class="avatar-name"  data-bs-toggle="tooltip" title="Rahi Adokar" style="position: relative; right: 10px;">
-                              <img src="https://www.gravatar.com/avatar/9856688a1f2ba7b213c7a28f124913a8.png?s=200&d=mp" width="30" height="30" alt="img">
-                           </span>
-                        </div>
-                        <div class="avatars">
-                           <span class="avatar-name"  data-bs-toggle="tooltip" title="Prince Palewar" style="position: relative; right: 20px;">
-                              <img src="https://www.gravatar.com/avatar/9856688a1f2ba7b213c7a28f124913a8.png?s=200&d=mp" width="30" height="30" alt="img">
-                           </span>
-                        </div>
-                     </div>
-                        
+
                      </td>
-                     <td>@mdo</td>
-                     <td>@mdo</td>
-                     <td>@mdo</td>
-                     
+                     <td>02-12-2025</td>
+                     <td>12-12-2025</td>
+                     <td>4</td>
+
 
                      <td>
                         <div class="progress" style="max-width: 100%;">
-                           <div class="progress-bar" role="progressbar"  style="width: 100%" aria-valuenow="100"
+                           <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100"
                               aria-valuemin="0" aria-valuemax="70">70%</div>
                         </div>
                         <p></p>
@@ -351,13 +371,13 @@
                            <option value="green">🟢 Completed</option>
                            <option value="yellow">🟡 Overdue</option>
                            <option value="brown">🟤 Sent For Review</option>
-                         </select>
+                        </select>
                      </td>
 
                      <td class="icon-right">
                         <div class="icon-view" data-bs-toggle="dropdown-menu">
                            <div class="dropdown">
-                              <a  data-bs-toggle="dropdown"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                              <a data-bs-toggle="dropdown"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                     height="16" fill="black" role="button" class="bi bi-three-dots-vertical "
                                     viewBox="0 0 16 16">
                                     <path
@@ -383,24 +403,68 @@
                                           d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
                                     </svg> Edit
                                  </a>
-
                               </div>
                            </div>
                         </div>
                      </td>
-
-
                   </tr>
 
+                 
+
+                
                </tbody>
 
-            </table>
+               
 
-            
+               <!-- <div class="">
+                  <span class="justify-content-start">Items per page: </span>
+                  <p-dropdown id="dropdown"
+                    [options]="options"
+                    optionLabel="label"
+                    optionValue="value"
+                    [(ngModel)]="rows2"
+                    (ngModelChange)="first2 = 0"
+                  ></p-dropdown>
+                  
+                  <p-paginator
+                    [first]="first2"
+                    [rows]="rows2"
+                    [totalRecords]="120"
+                    (onPageChange)="onPageChange2($event)"
+                    [showCurrentPageReport]="true"
+                    currentPageReportTemplate="{first} - {last} of {totalRecords}"
+                    [showPageLinks]="false"
+                    [showFirstLastIcon]="false"
+                  ></p-paginator>
+                </div> -->
 
+               </table>
+
+               <div class="align-items-center justify-content-end">
+                  <span class="mx-1 text-color">Items per page: </span>
+                  <p-dropdown
+                    [options]="options"
+                    optionLabel="label"
+                    optionValue="value"
+                    [(ngModel)]="rows2"
+                    (ngModelChange)="first2 = 0"
+                  ></p-dropdown>
+                  <p-paginator
+                    [first]="first2"
+                    [rows]="rows2"
+                    [totalRecords]="120"
+                    (onPageChange)="onPageChange2($event)"
+                    [showCurrentPageReport]="true"
+                    currentPageReportTemplate="{first} - {last} of {totalRecords}"
+                    [showPageLinks]="false"
+                    [showFirstLastIcon]="false"
+                  ></p-paginator>
+               </div>
+               <p-divider></p-divider>     
          </div>
       </div>
    </div>
+
 </div>
 
 <div class="modal fade" id="exampleModal1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -448,8 +512,8 @@
                            </td>
 
                            <td class="text-right">
-                              <button class="btn btn-light" type="button" data-bs-toggle="tooltip" data-bs-placement="top"
-                                 title="Delete"><i class="fa fa-trash"></i></button>
+                              <button class="btn btn-light" type="button" data-bs-toggle="tooltip"
+                                 data-bs-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
                            </td>
                         </div>
                      </tr>
@@ -464,8 +528,8 @@
                            </td>
 
                            <td class="text-right">
-                              <button class="btn btn-light" type="button" data-bs-toggle="tooltip" data-bs-placement="top"
-                                 title="Delete"><i class="fa fa-trash"></i></button>
+                              <button class="btn btn-light" type="button" data-bs-toggle="tooltip"
+                                 data-bs-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
                            </td>
                         </div>
                      </tr>
@@ -473,7 +537,7 @@
                </table>
 
                <!-- <form [formGroup]="projectDetails"> -->
-                  <!-- <div class="mb-3">
+               <!-- <div class="mb-3">
                      <label for="exampleInput1" class="form-label" class="required">Project Category</label>
                      <input formControlName="projectCategory-modal" type="text" id="exampleInput1" class="form-control"
                         aria-describedby="emailHelp" />
@@ -498,24 +562,34 @@
    </div>
 </div>
 
-<div class="modal fade" id="exampleModal2" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-   <div class="modal-dialog" role="document">
-      <div class="modal-content">
-         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Client Details</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-               <span aria-hidden="true">&times;</span>
-            </button>
-         </div>
-         <div class="modal-body">
-            <label for="exampleInput1" class="form-label" class="required">Client Name</label>
-            <input  type="text" id="exampleInput1" class="form-control"
-               aria-describedby="emailHelp" />
-         </div>
-         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" [disabled]="false">Save changes</button>
+<form [formGroup]="projectDetails">
+   <div class="modal fade" id="exampleModal2" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">Client Details</h5>
+            </div>
+
+            <div class="modal-body">
+               <label for="exampleInput1" class="form-label" class="required">Client Name</label>
+               <input formControlName="clientName" type="text" id="exampleInput1" class="form-control"
+                  aria-describedby="emailHelp" />
+               <div class="valid-text">
+                  <div
+                     *ngIf="projectDetails.get('clientName')?.invalid && (projectDetails.get('clientName')?.touched || projectDetails.get('clientName')?.dirty)"
+                     class="text-danger text">
+                     <span *ngIf="projectDetails.controls?.['clientName']?.errors?.['pattern']">Enter only
+                        characters</span>
+                  </div>
+               </div>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+               <button type="button" class="btn btn-primary" (click)="addingClient()"
+                  [disabled]="projectDetails.invalid">Save </button>
+            </div>
          </div>
       </div>
    </div>
-</div>
+</form>
+<p-toast></p-toast>

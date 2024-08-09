@@ -10,6 +10,8 @@ import { RegistrationFormComponent } from './registration-form/registration-form
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserAuthGuard } from './guards/user-auth.guard';
+
+
 const routes: Routes = [
   // {
     // path: '',
@@ -45,12 +47,12 @@ const routes: Routes = [
   { path: 'emp_register', component: RegistrationFormComponent },
   { path: 'employees', component: AdminPanelComponent },
   { path: 'workControl', component: DashboardComponent },
-  { path: 'resetpassword/signin', component: SignInPageComponent },
-  { path: 'resetpassword', component: ResetPasswordComponent },
+      { path: 'resetpassword', component: ResetPasswordComponent },
   { path: 'addproject', component: AddProjectComponent },
   { path: '', component: DashboardComponent },
   { path: 'signin', component: SignInPageComponent },
   { path: '**', redirectTo: '' },
+
 ];
 
 @NgModule({

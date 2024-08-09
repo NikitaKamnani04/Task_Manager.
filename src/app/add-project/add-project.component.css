@@ -96,19 +96,19 @@
     width: 7%;
 }
 
- #text-editor {
+ /* #text-editor {
     width: 97.5%;
     height: 20%;
-}
+} */
 
 .summary {
     margin-bottom: 3px;
 } 
 
-p{
+/* p{
     margin-right: 33px;
   
-}
+} */
 
 
 #inputGroupSelect02{
@@ -118,7 +118,7 @@ p{
 
 .members-text {
     position: relative;
-    bottom: 38px;
+    bottom: 21px;
 }
 
 .text {
@@ -353,6 +353,9 @@ option::before {
     background: #333;
 }
 
+.p-dropdown .p-dropdown-trigger {
+    width: 20px;
+}
 
 
 
@@ -367,8 +370,10 @@ option::before {
     }
 
     #duration{
-        position: absolute;
-        right: 67px;
+        /* position: absolute;
+        right: 67px; */
+        position: relative;
+        right: 20px;
     }
 
     .form-select-duration{
@@ -379,24 +384,28 @@ option::before {
     }
 
     #status{
-        margin-left: 130px;
+        margin-left: 230px;
     }
 
-    .fas{
-        margin-left: 130px;
-    }
+    /* .fas{
+        position: relative;
+        top: 49px;
+        right: 35px;
+    
+    } */
 
-    #search-field{
-        margin-left: 161px;
+    /* #search-field{ 
         width: 197px;
         position: absolute;
-    }
+        top: 45px;
+     
+    } */
 
     .form-select-status{
         height: 37px;
         width: 40px;
         position: absolute;
-        left: 190px;
+        left: 300px;
     }
 
     #text-editor{
@@ -420,4 +429,36 @@ option::before {
     position: relative;
     right: 15px;
  }
+
+ .btn-primary{
+    position: relative;
+    right: 22px;
+    /* top: 32px; */
+ }
+
+ .btn-light{
+    position: relative;
+    right: 20px;
+    /* top: 32px; */
+ }
+
+ /*  */
+ .input-group {
+    position: relative;
+    width: 20px;
+ }
+
+ #search-field{
+    width: 195px;
+    position: absolute;
+    top: 1px;
+    left: 408px;
+ }
+
+ .fas {
+    position: relative;
+    top: 5px;
+    left: 377px;
+ }
+ 
 }

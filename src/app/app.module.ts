@@ -31,6 +31,12 @@ import { ToastModule } from 'primeng/toast';
 import { DropdownModule } from 'primeng/dropdown';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { QuillModule } from 'ngx-quill';
+import { PaginatorModule } from 'primeng/paginator';
+import { DividerModule } from 'primeng/divider';
+import { SliderModule } from 'primeng/slider';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +67,10 @@ import { QuillModule } from 'ngx-quill';
     SidebarModule,
     ButtonModule,
     InputTextareaModule,
-    DropdownModule
+    DropdownModule,
+    PaginatorModule,
+    DividerModule,
+    SliderModule
   ],
   providers: [],
   bootstrap: [AppComponent],
