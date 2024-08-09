@@ -133,10 +133,11 @@
                         <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'" />
                         <div class="hover-text">Choose file</div>
                     </label>
-                    <input id="fileInput" type="file" accept=".png, .jpg, .jpeg" [(ngModel)]="url"
+                    <input id="fileInput" type="file" accept=".png, .jpg, .jpeg" [(ngModel)]="url" accept="image/*"
                         class="select-profile-picture" formControlName="profile" (change)="onSelectFile($event)" />
-                    <!-- <span class="message">Tap here to select your picture</span> -->
                 </div>
+                <!-- <img [src]="url" height="150"> <br />
+                <input class="hover-text" type='file' (change)="onSelectFile($event)"> -->
                 <div class="row">
 
                     <div class="col1">
@@ -204,7 +205,7 @@
                                     <span *ngIf="regform.get('email')?.errors?.['required']">
                                         Email is Required.
                                     </span>
-                                    <span *ngIf="regform.get('email')?.errors?.['email']">Enter Valid email
+                                    <span *ngIf="regform.get('email')?.errors?.['pattern']">Enter Valid email
                                         address</span>
                                 </small>
                             </div>

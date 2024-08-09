@@ -14,34 +14,36 @@ export class RegistrationServiceService {
 
 
   fetchData() {
-    return this.httpclient.get('http://localhost:4000/showEmpDetails');
+    return this.httpclient.get(environment.apiurlReg +'/showEmpDetails');
   }
 
   getEmployeeData(data: any) {
-    return this.httpclient.post('http://localhost:3000/employees/', data);
+    return this.httpclient.post(environment.apiurlReg +'/registerUserApi',data);
   }
 
-  // taskformData(data:any){
-  //  return this.httpclient.post('http://localhost:3000/employees/',data)
-  // }
 
   taskformData(data:any){
      return this.httpclient.post(environment.apiurl +'/createTask',data);
      
      }
 
- 
  Taskprioritydata(data: any){  
    return this.httpclient.get(environment.apiurl +'/priorityList',data)
   }
 
   Taskcategorydata(data:any){
   return this.httpclient.get(environment.apiurl +'/tskCategoryList',data)
+ }
 
-  // working
-  getEmployeeData(data: any) {
-    return this.httpclient.post('http://localhost:4000/registerUserApi/', data);
-
+  ProjectNamedata(data:any){
+    return this.httpclient.get(environment.apiurl +'/projectList',data)
   }
 
+  TaskMembersdata(data:any){
+    return this.httpclient.get(environment.apiurl +'/showEmpDetails',data)
+  }
+
+  // TaskMemberslist(data:any){
+  //   return this.httpclient.post(environment.apiurl +'/tskAssign',data)
+  // }
 }

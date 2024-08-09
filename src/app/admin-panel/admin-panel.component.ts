@@ -10,6 +10,7 @@ import { RegistrationServiceService } from '../services/registration-service.ser
 import { MessageService } from 'primeng/api';
 
 import { ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-admin-panel',
@@ -37,11 +38,14 @@ export class AdminPanelComponent implements OnInit {
   gender: any = null;
   url: any = '';
   FieldTextType: any;
+
   // End of Employee Form
 
   // Update Employee Details
   updateForm!: FormGroup;
   updateEmpId: any;
+  http: any;
+
   onSelectFile(event: any) {
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
@@ -51,9 +55,16 @@ export class AdminPanelComponent implements OnInit {
       reader.onload = (event: any) => {
         // called once readAsDataURL is completed
         this.url = event.target.result;
-        console.log(this.url);
+        // console.log(this.url); 
       };
     }
+    console.log(event);
+    let files: FileList = event.target.files;
+    let file: File = files[0];
+    console.log(file);
+    this.http.post(URL, file).subscribe(
+      (r: any) => { console.log('got r', r) }
+    )
   }
 
   toggleFieldTextType() {
@@ -61,8 +72,8 @@ export class AdminPanelComponent implements OnInit {
   }
 
   roles_items = [
-    { name: 'Hr', value: 2 },
-    { name: 'Admin', value: 1 },
+    { name: 'Hr', value: 1 },
+    { name: 'Admin', value: 2 },
     { name: 'Employee', value: 3 },
     { name: 'Manager', value: 4 },
   ];
@@ -84,8 +95,8 @@ export class AdminPanelComponent implements OnInit {
     private AdminPanelServiceService: AdminPanelServiceService,
     private Regservice: RegistrationServiceService,
     private UserServicesService: UserServicesService,
-    private messageService: MessageService
-  ) {}
+    private messageService: MessageService,
+  ) { }
 
   ngOnInit(): void {
     this.showEmpDetail();
@@ -118,7 +129,10 @@ export class AdminPanelComponent implements OnInit {
         Validators.required,
         Validators.pattern(/^[a-zA-Z]+ [a-zA-Z]+$/),
       ]),
-      email: new FormControl('', [Validators.required, Validators.email]),
+      email: new FormControl('', [
+        Validators.required,
+        Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]),
+
       contact: new FormControl('', [
         Validators.required,
         Validators.pattern('^[0-9]{10}$'),
@@ -176,6 +190,7 @@ export class AdminPanelComponent implements OnInit {
       joinDate: this.regform.value.joinDate,
       gender: this.regform.value.gender,
       dob: this.regform.value.dob,
+      profile: this.regform.value.profile,
     };
 
     console.log(emp_data);
@@ -253,6 +268,7 @@ export class AdminPanelComponent implements OnInit {
       deptId: Number(this.updateForm.value.deptId),
       gender: this.updateForm.value.gender,
       roleId: Number(this.updateForm.value.roleId),
+      profile: this.updateForm.value.profile,
     };
     console.log(updatedEmp);
 

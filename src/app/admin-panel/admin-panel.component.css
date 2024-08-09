@@ -340,10 +340,6 @@ td {
   width: 48%;
 }
 
-.row {
-  /* margin-left: 20%; */
-}
-
 .col3 {
   margin-top: 30px;
   width: 48%;
@@ -451,6 +447,7 @@ img {
   position: absolute;
   opacity: 0;
   cursor: pointer;
+  border: 2px solid black
 }
 
 .icon {
