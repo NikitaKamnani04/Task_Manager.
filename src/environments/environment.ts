@@ -6,6 +6,7 @@ export const environment = {
   production: false,
 
    apiurl : 'https://work-management-vercel.vercel.app/api',
+   apiurlReg:'https://work-management-ashen.vercel.app/api',
 };
 
 /*

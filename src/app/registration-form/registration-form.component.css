@@ -42,10 +42,6 @@
   width: 48%;
 }
 
-.row {
-  /* margin-left: 20%; */
-}
-
 .col3 {
   margin-top: 30px;
   width: 48%;
@@ -109,11 +105,6 @@
   box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
   transition: box-shadow 0.2s;
 }
-
-/* .button-23:active {
-    background-color: #F7F7F7;
-    transform: scale(.96);
-  } */
 
 .form-control {
   margin-top: 8px;

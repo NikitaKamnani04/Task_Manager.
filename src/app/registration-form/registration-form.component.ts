@@ -135,9 +135,6 @@ export class RegistrationFormComponent implements OnInit {
 
     if (this.regform.valid) {
       this.Regservice.getEmployeeData(emp_data).subscribe((res: any) => {
-        // if (res.success == 1) {
-
-        // }
         console.log(res);
         this.regform.reset();
       });
