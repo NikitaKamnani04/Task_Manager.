@@ -5,8 +5,15 @@
 export const environment = {
   production: false,
 
+
+  // org-register,project-page,
+  apiurl: 'https://work-management-ashen.vercel.app/api',
+
    apiurl : 'https://work-management-vercel.vercel.app/api',
+
    apiurlReg:'https://work-management-ashen.vercel.app/api',
+
+
 };
 
 /*

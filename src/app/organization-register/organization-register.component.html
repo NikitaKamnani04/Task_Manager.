@@ -19,6 +19,7 @@
                                 class="text-danger text">
                                 <span *ngIf="registerForm.controls?.['name']?.errors?.['required']">Name is
                                     Required</span>
+                                <span *ngIf="registerForm.controls?.['name']?.errors?.['pattern']">Enter only Characters </span>
                             </div>
                         </div>
                         <div class="mb-1">
@@ -41,11 +42,15 @@
                             <div *ngIf="registerForm.get('contact')?.invalid && (registerForm.get('contact')?.dirty || registerForm.get('contact')?.touched)"
                                 class="text-danger text">
                                 <div>
-                                    <span *ngIf="registerForm.controls?.['contact']?.errors?.['required']">Mobile.no is
+
+                                    <span *ngIf="registerForm.controls?.['contact']?.errors?.['required']">Contact.no is
+                                        Required</span>
+                                        <span *ngIf="registerForm.controls?.['contact']?.errors?.['pattern']">Please, Enter 10 digit Mobile Number.</span>
+                                <span *ngIf="registerForm.controls?.['contact']?.errors?.['required']">Mobile.no is
                                         Required</span>
                                     <span *ngIf="registerForm.controls?.['contact']?.errors?.['pattern']">Please, Enter 10
                                         digit Mobile Number.</span>
-                                </div>
+                </div>
                             </div>
                         </div>
                         <div class="mb-1">
@@ -71,12 +76,17 @@
                             </span>
 
                             <div *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)"
-                                class="text-danger text">
+                                class="text-danger Ptext">
                                 <div>
                                     <span *ngIf="registerForm.controls?.['password']?.errors?.['required']">Password is
                                         Required</span>
-                                    <span *ngIf="registerForm.controls?.['password']?.errors?.['pattern']">Password is
+
+                                    <span *ngIf="registerForm.controls?.['password']?.errors?.['pattern']" style="font-size: 12px;">Password must contain at least 8 characters.In a
+                                        combo of uppercase letters, lowercase letters, numbers, and 
+                                        some special characters</span>
+                                <span *ngIf="registerForm.controls?.['password']?.errors?.['pattern']">Password is
                                         not Valid</span>
+
                                 </div>
                                 <!-- <label for="hint">Sample: Harry@123</label> -->
                             </div>
