@@ -35,7 +35,7 @@ export class RegistrationServiceService {
  }
 
 
-  }
+
 
   ProjectNamedata(data:any){
     return this.httpclient.get(environment.apiurl +'/projectList',data)

@@ -20,7 +20,7 @@ export class AddTaskComponent implements OnInit {
 
 
 
- editorContent='';
+
 
   @ViewChild('editor', { static: true }) editor: QuillEditorComponent | any;  //RESET DATA OF QUILL EDITOR
   editorContent = '';

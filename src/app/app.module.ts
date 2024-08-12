@@ -32,7 +32,6 @@ import {TooltipModule} from 'primeng/tooltip';
 import { NgSelectModule } from '@ng-select/ng-select';
 
 import { DropdownModule } from 'primeng/dropdown';
-import { NgSelectModule } from '@ng-select/ng-select';
 import { QuillModule } from 'ngx-quill';
 
 import { PaginatorModule } from 'primeng/paginator';
@@ -43,11 +42,10 @@ import { SliderModule } from 'primeng/slider';
 
 
 
-import { DropdownModule } from 'primeng/dropdown';
 
 
 // calender
-import { FullCalendarModule } from '@fullcalendar/angular';
+
 
 
 @NgModule({
@@ -87,7 +85,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     DropdownModule,
 
     TooltipModule,
-    FullCalendarModule
+
 
     PaginatorModule,
     DividerModule,

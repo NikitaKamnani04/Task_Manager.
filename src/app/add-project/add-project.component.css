@@ -165,7 +165,6 @@
     font-size: small;
     width: 150px;
     margin: 0;
-    /* column-span: all; */
 }
 
 .myDIV:hover+.hide {
@@ -433,16 +432,15 @@ option::before {
  .btn-primary{
     position: relative;
     right: 22px;
-    /* top: 32px; */
+ 
  }
 
  .btn-light{
     position: relative;
     right: 20px;
-    /* top: 32px; */
+
  }
 
- /*  */
  .input-group {
     position: relative;
     width: 20px;

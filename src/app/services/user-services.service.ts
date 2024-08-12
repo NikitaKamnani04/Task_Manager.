@@ -64,7 +64,7 @@ export class UserServicesService {
     return this.HttpClient.post(environment.API + 'updateUserApi/', data);
 
 
-
+  }
 
   departments() {
     return this.HttpClient.get(environment.API + '/deptList');

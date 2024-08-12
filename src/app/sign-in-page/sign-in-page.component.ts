@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserServicesService } from '../services/user-services.service';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
-import { CookieService } from 'ngx-cookie-service';
+
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { state } from '@angular/animations';
 
@@ -28,7 +28,7 @@ export class SignInPageComponent implements OnInit {
     private userService: UserServicesService,
     private Router: Router,
     private messageService: MessageService,
-    private cookieService: CookieService
+
   ) {
     // to restrict the signIn route if the user is successfully logged In
     if (localStorage.getItem('islogin') === '1') {
@@ -110,20 +110,5 @@ export class SignInPageComponent implements OnInit {
 
   }
 
-  setCookies(event: any) {
-    console.log(event);
-    this.isChecked = event;
-    if (
-      (this.cookieService.get('email') &&
-        this.cookieService.get('password')) === ''
-    ) {
-      this.cookieService.set('email', this.loginForm.value.email);
-      this.cookieService.set('password', this.loginForm.value.password);
-    } else {
-      this.loginForm.patchValue({
-        email: this.cookieService.get('email'),
-        password: this.cookieService.get('password'),
-      });
-    }
-  }
+  
 }

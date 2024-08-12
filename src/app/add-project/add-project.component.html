@@ -5,7 +5,7 @@
       <div class="col d-flex" style="margin-top: 60px;">
          <div class="input-group mt-4">
             <!-- <div class="input-group-prepend"> -->
-               <span class="input-group-text" id="duration">Duration</span>
+            <span class="input-group-text" id="duration">Duration</span>
             <!-- </div> -->
             <select class="form-select-duration">
 
@@ -20,7 +20,7 @@
 
          <div class="input-group mt-4">
             <!-- <div class="input-group-prepend"> -->
-               <span class="input-group-text" id="status">Status</span>
+            <span class="input-group-text" id="status">Status</span>
             <!-- </div> -->
             <select class="form-select-status">
 
@@ -44,17 +44,19 @@
    </div>
 
 
-   
-
    <div class="row">
-      <div class="col d-flex mt-4" >
+      <div class="col d-flex mt-4">
 
          <button type="button" class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" (click)="projectCred()">+ Add
             Project</button>
          <button type="button" class="btn btn-light">Import</button>
 
+
+
+
          <div class="offcanvas offcanvas-end" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+
 
 
             <span type="button" class="btn-close toggle" data-bs-dismiss="offcanvas" aria-label="Close"></span>
@@ -123,7 +125,8 @@
                            <div
                               *ngIf="projectDetails.get('proLead')?.invalid && (projectDetails.get('proLead')?.touched || projectDetails.get('proLead')?.dirty)"
                               class="text-danger text">
-                              <span *ngIf="projectDetails.controls?.['proLead']?.errors?.['required']">Project Lead is
+                              <span *ngIf="projectDetails.controls?.['proLead']?.errors?.['required']">Project Lead
+                                 is
                                  required</span>
                               <span *ngIf="projectDetails.controls?.['proLead']?.errors?.['pattern']">Enter only
                                  Characters</span>
@@ -138,9 +141,9 @@
 
                         <label for="exampleFormControlInput1" class="required">Start Date</label>
 
-                        <input placeholder="Select start date" class="form-control"  type="date" id="date" (change)="getDate($event)"
-                           formControlName="startDate" />
-                           
+                        <input placeholder="Select start date" class="form-control" type="date" id="date"
+                           (change)="getDate($event)" formControlName="startDate" />
+
 
                         <div class="valid-text">
                            <div
@@ -155,8 +158,8 @@
 
                      <div *ngIf="!isShown" class="col-sm mt-5" style="max-width: 30%;">
                         <label for="exampleFormControlInput1" class="required">Deadline</label>
-                        <input type="date" class="form-control" id="deadline" placeholder="Select end date" (change)="getDate($event)"
-                           formControlName="deadLine" />
+                        <input type="date" class="form-control" id="deadline" placeholder="Select end date"
+                           (change)="getDate($event)" formControlName="deadLine" />
                         <div class="valid-text">
                            <div
                               *ngIf=" projectDetails.get('deadLine')?.invalid && (projectDetails.get('deadLine')?.touched || projectDetails.get('deadLine')?.dirty)"
@@ -168,7 +171,7 @@
                      </div>
 
 
-                     
+
                      <div class="col-sm mt-5">
                         <div class="form-check">
                            <input class="form-check-input" (click)="toggleShow()" type="checkbox" value=""
@@ -188,7 +191,8 @@
                               aria-label="Example select with button addon" formControlName="deptId"
                               [(ngModel)]="department">
                               <option value="null" selected disabled>Select Department</option>
-                              <option *ngFor="let names of this.deptId;" value="{{names.value}}">{{names.name}}</option>
+                              <option *ngFor="let names of this.deptId;" value="{{names.value}}">{{names.name}}
+                              </option>
                            </select>
                         </div>
                         <div class="valid-text">
@@ -226,7 +230,8 @@
 
                      </div>
                   </div>
-
+                  <div>
+                     <div>
                         <p class="summary">Project Description
                         </p>
                         <!-- <quill-editor id="text-editor" placeholder="Enter Text" [(ngModel)]="editorContent" #editor  
@@ -271,17 +276,16 @@
                            <button type="button" class="btn btn-primary" id="saveButton" (click)=" onFormSubmit()"> ✓
                               Save</button>
                            <button type="button" class="btn btn-light" id="resetButton" (click)="resetData()">Cancel
-                              </button>
+                           </button>
                         </div>
                      </div>
                   </div>
+
                </form>
             </div>
          </div>
 
       </div>
-
-
       <div class="row">
          <div class="col mt-4">
             <table class="table table-bordered" style="width: 100%;">
@@ -290,7 +294,7 @@
 
                      <th scope="col">Id</th>
 
-                     <th scope="col" style="width: 20px;">Id</th>
+
 
                      <th scope="col">Code</th>
                      <th scope="col">Project Name</th>
@@ -301,7 +305,7 @@
 
                      <th scope="col">Status</th>
 
-                     <th scope="col" style="width: 30px;">Status</th>
+
 
                      <th scope="col">Actions</th>
                   </tr>
@@ -309,26 +313,7 @@
                <tbody>
                   <tr>
                      <th scope="row">1</th>
-
-                     <td>Mark</td>
-                     <td>Otto</td>
-                     <td>@mdo</td>
-                  </tr>
-                  <tr>
-                     <th scope="row">2</th>
-                     <td>Jacob</td>
-                     <td>Thornton</td>
-                     <td>@fat</td>
-                  </tr>
-                  <tr>
-                     <th scope="row">3</th>
-                     <td colspan="2">Larry the Bird</td>
-                     <td>@twitter</td>
-                  </tr>
-               </tbody>
-            </table>
-
-                     <td>1</td>
+                     <th scope="row">10</th>
                      <td>Task Management</td>
                      <td>
                         <div class="avatar-group">
@@ -358,45 +343,45 @@
                         </div>
 
                      </td>
+
                      <td>02-12-2025</td>
                      <td>12-12-2025</td>
-                     <td>4</td>
-
+                     <td>Client Name</td>
 
                      <td>
                         <div class="progress" style="max-width: 100%;">
                            <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100"
                               aria-valuemin="0" aria-valuemax="70">70%</div>
                         </div>
-                        <p></p>
+
                         <!-- <div class="dropdown">
-                           <p-dropdown 
-                           [options]="groupedCities" 
-                    
-                           placeholder="Choose the status" 
-                           [group]="true">
-                               <ng-template let-group pTemplate="group">
-                                   <div class="select-status" style="max-width: 30%;">
-                                       <input class=""
-                                       [style.background]="group.color"
-                                           [class]="'mr-2 bi-circle' + group.value" 
-                                           style="width: 20px; height: 20px; border-radius: 50%;" />
-                                       <span>{{ group.label }}</span>
-                                   </div>
-                               </ng-template>
-                       </p-dropdown>
-                        </div> -->
+                                    <p-dropdown 
+                                    [options]="groupedCities" 
+                             
+                                    placeholder="Choose the status" 
+                                    [group]="true">
+                                        <ng-template let-group pTemplate="group">
+                                            <div class="select-status" style="max-width: 30%;">
+                                                <input class=""
+                                                [style.background]="group.color"
+                                                    [class]="'mr-2 bi-circle' + group.value" 
+                                                    style="width: 20px; height: 20px; border-radius: 50%;" />
+                                                <span>{{ group.label }}</span>
+                                            </div>
+                                        </ng-template>
+                                </p-dropdown>
+                                 </div> -->
 
                         <!-- <select>
-                        
-                            <option  id="progress"  value='fa-circle-o' style="color: black;">&#xf10c; In Progress</option>
-                            <option value=' fa-circle-o'><span  class="primary">&#xf10c;</span>&#xf10c; On Hold</option>
-                            <option value=' fa-circle-o'> &#xf10c; Not Started</option>
-                            <option value=' fa-circle-o'>&#xf10c; Canceled</option>
-                            <option value=' fa-circle-o'>&#xf10c; Completed</option>
-                            <option value=' fa-circle-o'>&#xf10c; Overdue</option>
-                            <option value=' fa-circle-o'>&#xf10c; Sent for Review</option>
-                        </select> -->
+                                 
+                                     <option  id="progress"  value='fa-circle-o' style="color: black;">&#xf10c; In Progress</option>
+                                     <option value=' fa-circle-o'><span  class="primary">&#xf10c;</span>&#xf10c; On Hold</option>
+                                     <option value=' fa-circle-o'> &#xf10c; Not Started</option>
+                                     <option value=' fa-circle-o'>&#xf10c; Canceled</option>
+                                     <option value=' fa-circle-o'>&#xf10c; Completed</option>
+                                     <option value=' fa-circle-o'>&#xf10c; Overdue</option>
+                                     <option value=' fa-circle-o'>&#xf10c; Sent for Review</option>
+                                 </select> -->
 
                         <select>
                            <option value="blue">🔵 In Progress</option>
@@ -422,21 +407,24 @@
 
                               <div class="dropdown-menu">
                                  <a class="dropdown-item">
+                                    <!-- svg view -->
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                       class="bi bi-eye-fill" viewBox="0 0 16 16">
-                                       <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
-                                       <path
-                                          d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7" />
-                                    </svg> View
+                                    class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
+                                    <path
+                                       d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7" />
+                                 </svg> View
+                                    <!-- svg view -->
+
                                  </a>
                                  <a class="dropdown-item">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                       class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                       <path
-                                          d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                                       <path fill-rule="evenodd"
-                                          d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
-                                    </svg> Edit
+                                    class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                    <path
+                                       d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                                    <path fill-rule="evenodd"
+                                       d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
+                                 </svg> Edit
                                  </a>
                               </div>
                            </div>
@@ -444,192 +432,147 @@
                      </td>
                   </tr>
 
-                 
-
-                
                </tbody>
-
-               
-
-               <!-- <div class="">
-                  <span class="justify-content-start">Items per page: </span>
-                  <p-dropdown id="dropdown"
-                    [options]="options"
-                    optionLabel="label"
-                    optionValue="value"
-                    [(ngModel)]="rows2"
-                    (ngModelChange)="first2 = 0"
-                  ></p-dropdown>
-                  
-                  <p-paginator
-                    [first]="first2"
-                    [rows]="rows2"
-                    [totalRecords]="120"
-                    (onPageChange)="onPageChange2($event)"
-                    [showCurrentPageReport]="true"
-                    currentPageReportTemplate="{first} - {last} of {totalRecords}"
-                    [showPageLinks]="false"
-                    [showFirstLastIcon]="false"
-                  ></p-paginator>
-                </div> -->
-
-               </table>
-
-               <div class="align-items-center justify-content-end">
-                  <span class="mx-1 text-color">Items per page: </span>
-                  <p-dropdown
-                    [options]="options"
-                    optionLabel="label"
-                    optionValue="value"
-                    [(ngModel)]="rows2"
-                    (ngModelChange)="first2 = 0"
-                  ></p-dropdown>
-                  <p-paginator
-                    [first]="first2"
-                    [rows]="rows2"
-                    [totalRecords]="120"
-                    (onPageChange)="onPageChange2($event)"
-                    [showCurrentPageReport]="true"
-                    currentPageReportTemplate="{first} - {last} of {totalRecords}"
-                    [showPageLinks]="false"
-                    [showFirstLastIcon]="false"
-                  ></p-paginator>
-               </div>
-               <p-divider></p-divider>     
+            </table>
+            <div class="align-items-center justify-content-end">
+               <span class="mx-1 text-color">Items per page: </span>
+               <p-dropdown [options]="options" optionLabel="label" optionValue="value" [(ngModel)]="rows2"
+                  (ngModelChange)="first2 = 0"></p-dropdown>
+               <p-paginator [first]="first2" [rows]="rows2" [totalRecords]="120" (onPageChange)="onPageChange2($event)"
+                  [showCurrentPageReport]="true" currentPageReportTemplate="{first} - {last} of {totalRecords}"
+                  [showPageLinks]="false" [showFirstLastIcon]="false"></p-paginator>
+            </div>
+            <p-divider></p-divider>
 
          </div>
       </div>
-   </div>
 
-</div>
 
-<div class="modal fade" id="exampleModal1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-   <div class="modal-dialog" role="document">
-      <div class="custom-modal1">
-         <div class="modal-content">
-            <div class="modal-header">
-               <h5 class="modal-title" id="exampleModalLabel">Project Category</h5>
-            </div>
-            <div class="modal-body">
+      <div class="modal fade" id="exampleModal1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="custom-modal1">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <h5 class="modal-title" id="exampleModalLabel">Project Category</h5>
+                  </div>
+                  <div class="modal-body">
 
-               <table class="table table-bordered">
-                  <thead>
-                     <tr>
-                        <th>#</th>
-                        <th>Category Name</th>
-                        <th class="text-action">Action</th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                     <tr>
-                        <th scope="row">1</th>
-                        <div class="category-edit">
-                           <td>
-                              <div>
-                                 <p class="myDIV">mark</p>
-                                 <span class="hide">Click to edit</span>
+                     <table class="table table-bordered">
+                        <thead>
+                           <tr>
+                              <th>#</th>
+                              <th>Category Name</th>
+                              <th class="text-action">Action</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <th scope="row">1</th>
+                              <div class="category-edit">
+                                 <td>
+                                    <div>
+                                       <p class="myDIV">mark</p>
+                                       <span class="hide">Click to edit</span>
+                                    </div>
+                                 </td>
+
+                                 <td style="width: 50%;" class="text-right">
+                                    <button class="btn btn-light" type="button" data-bs-placement="top"
+                                       title="Delete"><i class="fa fa-trash"></i></button>
+                                 </td>
                               </div>
-                           </td>
+                           </tr>
+                           <tr>
+                              <th scope="row">1</th>
+                              <div class="category-edit">
+                                 <td>
+                                    <div>
+                                       <p class="myDIV">mark</p>
+                                       <span class="hide">Click to edit</span>
+                                    </div>
+                                 </td>
 
-                           <td style="width: 50%;" class="text-right">
-                              <button class="btn btn-light" type="button" data-bs-placement="top" title="Delete"><i
-                                    class="fa fa-trash"></i></button>
-                           </td>
-                        </div>
-                     </tr>
-                     <tr>
-                        <th scope="row">1</th>
-                        <div class="category-edit">
-                           <td>
-                              <div>
-                                 <p class="myDIV">mark</p>
-                                 <span class="hide">Click to edit</span>
+                                 <td class="text-right">
+                                    <button class="btn btn-light" type="button" data-bs-toggle="tooltip"
+                                       data-bs-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
+                                 </td>
                               </div>
-                           </td>
+                           </tr>
+                           <tr>
+                              <th scope="row">1</th>
+                              <div class="category-edit">
+                                 <td>
+                                    <div>
+                                       <p class="myDIV">mark</p>
+                                       <span class="hide">Click to edit</span>
+                                    </div>
+                                 </td>
 
-                           <td class="text-right">
-                              <button class="btn btn-light" type="button" data-bs-toggle="tooltip"
-                                 data-bs-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
-                           </td>
-                        </div>
-                     </tr>
-                     <tr>
-                        <th scope="row">1</th>
-                        <div class="category-edit">
-                           <td>
-                              <div>
-                                 <p class="myDIV">mark</p>
-                                 <span class="hide">Click to edit</span>
+                                 <td class="text-right">
+                                    <button class="btn btn-light" type="button" data-bs-toggle="tooltip"
+                                       data-bs-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
+                                 </td>
                               </div>
-                           </td>
+                           </tr>
+                        </tbody>
+                     </table>
 
-                           <td class="text-right">
-                              <button class="btn btn-light" type="button" data-bs-toggle="tooltip"
-                                 data-bs-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
-                           </td>
-                        </div>
-                     </tr>
-                  </tbody>
-               </table>
-
-               <!-- <form [formGroup]="projectDetails"> -->
-               <!-- <div class="mb-3">
-                     <label for="exampleInput1" class="form-label" class="required">Project Category</label>
-                     <input formControlName="projectCategory-modal" type="text" id="exampleInput1" class="form-control"
-                        aria-describedby="emailHelp" />
-                     <div class="valid-text">
-                        <div
-                           *ngIf="projectDetails.get('projectCategory-modal')?.invalid && (projectDetails.get('projectCategory-modal')?.touched || projectDetails.get('projectCategory-modal')?.dirty)"
-                           class="text-danger text">
-                           <span
-                              *ngIf="projectDetails.controls?.['projectCategory-modal']?.errors?.['required']">Project
-                              Category is required</span>
-                        </div>
-                     </div>
-                  </div> -->
-               <!-- </form> -->
-            </div>
-            <div class="modal-footer">
-               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-               <button type="button" class="btn btn-primary" [disabled]="false">Save</button>
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
-
-<form [formGroup]="projectDetails">
-   <div class="modal fade" id="exampleModal2" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-         <div class="modal-content">
-            <div class="modal-header">
-               <h5 class="modal-title" id="exampleModalLabel">Client Details</h5>
-            </div>
-
-            <div class="modal-body">
-               <label for="exampleInput1" class="form-label" class="required">Client Name</label>
-               <input formControlName="clientName" type="text" id="exampleInput1" class="form-control"
+                     <!-- <form [formGroup]="projectDetails"> -->
+                     <!-- <div class="mb-3">
+               <label for="exampleInput1" class="form-label" class="required">Project Category</label>
+               <input formControlName="projectCategory-modal" type="text" id="exampleInput1" class="form-control"
                   aria-describedby="emailHelp" />
                <div class="valid-text">
                   <div
-                     *ngIf="projectDetails.get('clientName')?.invalid && (projectDetails.get('clientName')?.touched || projectDetails.get('clientName')?.dirty)"
+                     *ngIf="projectDetails.get('projectCategory-modal')?.invalid && (projectDetails.get('projectCategory-modal')?.touched || projectDetails.get('projectCategory-modal')?.dirty)"
                      class="text-danger text">
-                     <span *ngIf="projectDetails.controls?.['clientName']?.errors?.['pattern']">Enter only
-                        characters</span>
+                     <span
+                        *ngIf="projectDetails.controls?.['projectCategory-modal']?.errors?.['required']">Project
+                        Category is required</span>
+                  </div>
+               </div>
+            </div> -->
+                     <!-- </form> -->
+                  </div>
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                     <button type="button" class="btn btn-primary" [disabled]="false">Save</button>
                   </div>
                </div>
             </div>
-            <div class="modal-footer">
-               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-               <button type="button" class="btn btn-primary" (click)="addingClient()"
-                  [disabled]="projectDetails.invalid">Save </button>
-            </div>
          </div>
       </div>
-   </div>
 
-</div>
+      <form [formGroup]="projectDetails">
+         <div class="modal fade" id="exampleModal2" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <h5 class="modal-title" id="exampleModalLabel">Client Details</h5>
+                  </div>
 
-</form>
-<p-toast></p-toast>
+                  <div class="modal-body">
+                     <label for="exampleInput1" class="form-label" class="required">Client Name</label>
+                     <input formControlName="clientName" type="text" id="exampleInput1" class="form-control"
+                        aria-describedby="emailHelp" />
+                     <div class="valid-text">
+                        <div
+                           *ngIf="projectDetails.get('clientName')?.invalid && (projectDetails.get('clientName')?.touched || projectDetails.get('clientName')?.dirty)"
+                           class="text-danger text">
+                           <span *ngIf="projectDetails.controls?.['clientName']?.errors?.['pattern']">Enter only
+                              characters</span>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                     <button type="button" class="btn btn-primary" (click)="addingClient()"
+                        [disabled]="projectDetails.invalid">Save </button>
+                  </div>
+               </div>
+            </div>
+         </div>
 
+      </form>
+      <p-toast></p-toast>
