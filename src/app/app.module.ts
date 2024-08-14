@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,7 +28,7 @@ import { SidebarModule } from 'primeng/sidebar';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ToastModule } from 'primeng/toast';
 
-import {TooltipModule} from 'primeng/tooltip';
+import { TooltipModule } from 'primeng/tooltip';
 import { NgSelectModule } from '@ng-select/ng-select';
 
 import { DropdownModule } from 'primeng/dropdown';
@@ -37,17 +37,11 @@ import { QuillModule } from 'ngx-quill';
 import { PaginatorModule } from 'primeng/paginator';
 import { DividerModule } from 'primeng/divider';
 import { SliderModule } from 'primeng/slider';
-
-
-
-
-
-
-
-// calender
-
-
-
+import {
+  FullCalendarComponent,
+  FullCalendarModule,
+} from '@fullcalendar/angular';
+import { CalendarComponent } from './calendar/calendar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +55,7 @@ import { SliderModule } from 'primeng/slider';
     AddProjectComponent,
     AddTaskComponent,
     NavbarComponent,
-
+    CalendarComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -75,24 +69,20 @@ import { SliderModule } from 'primeng/slider';
     NgSelectModule,
     BrowserAnimationsModule,
 
-
     QuillModule,
-
     ToastModule,
     SidebarModule,
     ButtonModule,
     InputTextareaModule,
     DropdownModule,
-
     TooltipModule,
-
 
     PaginatorModule,
     DividerModule,
-    SliderModule
-
-
+    SliderModule,
+    FullCalendarModule,
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent],
 })

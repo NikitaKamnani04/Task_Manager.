@@ -11,6 +11,7 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserAuthGuard } from './guards/user-auth.guard';
 import { OrganizationRegisterComponent } from './organization-register/organization-register.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 
 
@@ -92,6 +93,10 @@ const routes: Routes = [
     path: 'dashboard',
     component: DashboardComponent,
     canActivate: [UserAuthGuard],
+  },{
+    path:'calendar',
+    component: CalendarComponent,
+    canActivate: [UserAuthGuard]
   },
 
   { path: '**', redirectTo: '' },

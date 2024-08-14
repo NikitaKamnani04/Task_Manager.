@@ -1,0 +1,17 @@
+.body{
+  position: absolute;
+  margin-left:250px;
+  width: 87%;
+  height: 93.7%;
+  margin-top: 60px;
+  background-color: #E2EAFC;
+  /* border: 10px solid black; */
+display: flex;
+justify-content: center;
+}
+#parent{
+  position: fixed;
+  margin-top: 30px;
+  /* margin-left:17%; */
+  width: 55%; 
+}

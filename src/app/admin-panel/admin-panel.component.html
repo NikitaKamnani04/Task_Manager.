@@ -134,7 +134,8 @@
                         <div class="hover-text">Choose file</div>
                     </label>
                     <input id="fileInput" type="file" accept=".png, .jpg, .jpeg" [(ngModel)]="url" accept="image/*"
-                        class="select-profile-picture" formControlName="profile" (change)="onSelectFile($event)" />
+                        class="select-profile-picture" formControlName="profile" (change)="onSelectFile($event)"
+                        [disabled]="true" />
                 </div>
                 <!-- <img [src]="url" height="150"> <br />
                 <input class="hover-text" type='file' (change)="onSelectFile($event)"> -->
@@ -474,7 +475,7 @@
                         <label for="roles">Roles<span class="text-danger">*</span></label>
                         <div class="form-group role_valid ">
 
-                            <select [(ngModel)]="roles"  formControlName="roleId" class="form-select mt-2"
+                            <select [(ngModel)]="roles" formControlName="roleId" class="form-select mt-2"
                                 aria-label=".form-select-lg example">
                                 <option [value]="null" [disabled]="true" [selected]="true">
                                     Select Roles
@@ -522,7 +523,7 @@
 
                         <label for="Dept">Department<span class="text-danger">*</span></label>
                         <div class="form-group  dept_valid  ">
-                            <select [(ngModel)]="department"  formControlName="deptId" class="form-select mt-2"
+                            <select [(ngModel)]="department" formControlName="deptId" class="form-select mt-2"
                                 aria-label=".form-select-lg example">
                                 <option [value]="null" [disabled]="true" [selected]="true">
                                     Select Department

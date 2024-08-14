@@ -9,7 +9,7 @@
             <li type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight_notes"
                 aria-controls="offcanvasRight_notes"><i class="fa-solid fa-note-sticky fs-4" pTooltip="Notes"
                     tooltipPosition="bottom"></i></li>
-            <li><i class="fa-solid fa-calendar-days fs-4" pTooltip="work in progress" tooltipPosition="bottom"></i>
+            <li ><i routerLink="/calendar" class="fa-solid fa-calendar-days fs-4" pTooltip="work in progress" tooltipPosition="bottom"></i>
             
             </li>
             <li>
@@ -54,10 +54,13 @@
                     <!-- <div class="notes_heading">Notes Details</div> -->
                     <textarea class="notes_textArea" [rows]="10" [cols]="120" pInputTextarea
                         [autoResize]="false"></textarea>
+                  <div>
                     <p-button type="button" (click)="visibleSidebar3 = false" label="Save" styleClass="p-button-success"
-                        (onClick)="showAddNotes()"></p-button>
-                    <p-button type="button" (click)="visibleSidebar3 = false" label="Cancel"
-                        styleClass="p-button-secondary" (onClick)="showAddNotes()"></p-button>
+                    (onClick)="showAddNotes()"></p-button>
+                <p-button type="button" (click)="visibleSidebar3 = false" label="Cancel"
+                    styleClass="p-button-secondary" (onClick)="showAddNotes()"></p-button>
+                  </div>
+            
                 </div>
             </p-sidebar>
         </div>

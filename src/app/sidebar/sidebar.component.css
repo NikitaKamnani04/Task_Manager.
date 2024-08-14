@@ -68,6 +68,8 @@ body.dark {
   padding: 10px 14px;
   transition: var(--trans-02);
   z-index: 10;
+  border-right: 2px solid #9381ff;
+
   /* border-top-right-radius: 15px;
   border-bottom-right-radius: 15px; */
 }

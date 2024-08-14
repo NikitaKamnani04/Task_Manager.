@@ -9,7 +9,6 @@ import { Validators } from '@angular/forms';
 import { RegistrationServiceService } from '../services/registration-service.service';
 import { MessageService } from 'primeng/api';
 
-
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
@@ -50,7 +49,6 @@ export class AdminPanelComponent implements OnInit {
 
   http: any;
 
-
   onSelectFile(event: any) {
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
@@ -60,7 +58,7 @@ export class AdminPanelComponent implements OnInit {
       reader.onload = (event: any) => {
         // called once readAsDataURL is completed
         this.url = event.target.result;
-        // console.log(this.url); 
+        // console.log(this.url);
       };
     }
     // let file = event.target.files[0];
@@ -103,8 +101,8 @@ export class AdminPanelComponent implements OnInit {
     private AdminPanelServiceService: AdminPanelServiceService,
     private Regservice: RegistrationServiceService,
     private UserServicesService: UserServicesService,
-    private messageService: MessageService,
-  ) { }
+    private messageService: MessageService
+  ) {}
 
   ngOnInit(): void {
     this.showEmpDetail();
@@ -139,7 +137,8 @@ export class AdminPanelComponent implements OnInit {
       ]),
       email: new FormControl('', [
         Validators.required,
-        Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]),
+        Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
+      ]),
 
       contact: new FormControl('', [
         Validators.required,

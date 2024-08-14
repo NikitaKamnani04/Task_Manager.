@@ -61,7 +61,7 @@ export class UserServicesService {
   updateEmpDetails(data: any) {
     console.log(data);
 
-    return this.HttpClient.post(environment.API + 'updateUserApi/', data);
+    return this.HttpClient.post(environment.API + '/updateUserApi', data);
 
 
   }
@@ -70,5 +70,7 @@ export class UserServicesService {
     return this.HttpClient.get(environment.API + '/deptList');
 
   }
+
+  
   //End - by prince😊
 }
