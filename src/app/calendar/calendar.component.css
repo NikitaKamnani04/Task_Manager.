@@ -1,17 +1,22 @@
-.body{
+.body {
   position: absolute;
-  margin-left:250px;
+  margin-left: 250px;
   width: 87%;
   height: 93.7%;
   margin-top: 60px;
-  background-color: #E2EAFC;
+  background-color: #e2eafc;
+  display: flex;
+  justify-content: space-evenly;
   /* border: 10px solid black; */
-display: flex;
-justify-content: center;
 }
-#parent{
-  position: fixed;
-  margin-top: 30px;
+#parent {
+  /* position: fixed; */
+  margin-right: 10%;
+  margin-top: 2%;
   /* margin-left:17%; */
-  width: 55%; 
+  width: 64%;
+}
+.demo-app-sidebar {
+  /* margin-left: 5%; */
+  margin-top: 2%;
 }

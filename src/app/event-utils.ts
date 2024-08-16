@@ -7,20 +7,32 @@ export const INITIAL_EVENTS: EventInput[] = [
   {
     id: createEventId(),
     title: 'All-day event',
-    start: TODAY_STR
+    start: TODAY_STR,
   },
   {
     id: createEventId(),
-    title: 'Timed event',
-    start: TODAY_STR + 'T00:00:00',
-    end: TODAY_STR + 'T03:00:00'
+    title: 'Changes in Dashboard',
+    start: TODAY_STR,
   },
   {
     id: createEventId(),
-    title: 'Timed event',
-    start: TODAY_STR + 'T12:00:00',
-    end: TODAY_STR + 'T15:00:00'
-  }
+    title: 'Last Event:- Work on navbar',
+    start: TODAY_STR,
+  }, {
+    id: createEventId(),
+    title: 'All-day event',
+    start: TODAY_STR,
+  },
+  {
+    id: createEventId(),
+    title: 'Changes in Dashboard',
+    start: TODAY_STR,
+  },
+  {
+    id: createEventId(),
+    title: 'Last Event:- Work on navbar',
+    start: TODAY_STR,
+  },
 ];
 
 export function createEventId() {
