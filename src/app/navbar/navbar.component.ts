@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MenuItem } from 'primeng/api';
 import * as $ from 'jquery';
-// import Container from 'quill/blots/container';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -11,8 +11,7 @@ export class NavbarComponent implements OnInit {
   visibleSidebar3: any;
   toggleNote: boolean = false;
   toggleMenuIcon: boolean = true;
-
- 
+  public items: MenuItem[];
 
   constructor() {}
 
@@ -24,6 +23,13 @@ export class NavbarComponent implements OnInit {
         container.toggle();
       });
     });
+
+    this.items = [
+      { label: 'Dashboard' },
+      { label: 'Project' },
+      { label: 'Task' },
+      { label: 'Employees' },
+    ];
   }
 
   toggelNoteSection() {

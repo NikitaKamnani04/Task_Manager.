@@ -70,7 +70,5 @@ export class UserServicesService {
     return this.HttpClient.get(environment.API + '/deptList');
 
   }
-
-  
   //End - by prince😊
 }

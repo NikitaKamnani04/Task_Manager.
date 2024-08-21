@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { SignInPageComponent } from './sign-in-page/sign-in-page.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { AddTaskComponent } from './add-task/add-task.component';
-// import { SidebarModule } from 'ng-sidebar';
+
 import { OrganizationRegisterComponent } from './organization-register/organization-register.component';
 import {
   FormGroup,
@@ -13,7 +13,6 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -37,11 +36,14 @@ import { QuillModule } from 'ngx-quill';
 import { PaginatorModule } from 'primeng/paginator';
 import { DividerModule } from 'primeng/divider';
 import { SliderModule } from 'primeng/slider';
+import {SkeletonModule} from 'primeng/skeleton';
 import {
   FullCalendarComponent,
   FullCalendarModule,
 } from '@fullcalendar/angular';
+
 import { CalendarComponent } from './calendar/calendar.component';
+import { SidebarComponent } from './navbar/sidebar/sidebar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +57,8 @@ import { CalendarComponent } from './calendar/calendar.component';
     AddProjectComponent,
     AddTaskComponent,
     NavbarComponent,
-    CalendarComponent
+    CalendarComponent,
+    
   ],
   imports: [
     ReactiveFormsModule,
@@ -68,7 +71,6 @@ import { CalendarComponent } from './calendar/calendar.component';
     Ng2SearchPipeModule,
     NgSelectModule,
     BrowserAnimationsModule,
-
     QuillModule,
     ToastModule,
     SidebarModule,
@@ -76,11 +78,12 @@ import { CalendarComponent } from './calendar/calendar.component';
     InputTextareaModule,
     DropdownModule,
     TooltipModule,
-
     PaginatorModule,
     DividerModule,
     SliderModule,
     FullCalendarModule,
+    SkeletonModule
+
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

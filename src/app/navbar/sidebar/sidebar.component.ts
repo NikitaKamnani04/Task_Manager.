@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserServicesService } from '../services/user-services.service';
+
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 
@@ -13,7 +13,7 @@ import * as $ from 'jquery'; // var document: Document;
 export class SidebarComponent implements OnInit {
   constructor(
     private Router: Router,
-    public authService: UserServicesService
+    
   ) {}
   toggle: boolean = false;
 

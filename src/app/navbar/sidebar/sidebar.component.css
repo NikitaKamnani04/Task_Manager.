@@ -23,21 +23,6 @@
   --trans-04: all 0.5s ease;
 }
 
-body {
-  height: 100vh;
-  background-color: var(--body-color);
-  transition: var(--trans-02);
-}
-
-body.dark {
-  --body-color: #181914;
-  --sidebar-color: #242526;
-  --primary-color: #34383c;
-  --primary-color-light: #383a3c;
-  --toggle-color: #fff;
-  --text-color: #ccc;
-  --dark-color: #fff;
-}
 /* Reusable CSS */
 
 .sidebar .text {

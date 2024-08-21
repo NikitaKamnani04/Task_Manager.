@@ -14,7 +14,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   z-index: 10;
-  background-color: #B8B8FF;
+  background-color: #b8b8ff;
 }
 nav > span {
   padding-left: 300px;
@@ -146,7 +146,7 @@ textarea {
   width: 100%;
   height: 100%;
 }
-::ng-deep .p-tooltip-text{
+::ng-deep .p-tooltip-text {
   padding: 5px !important;
 }
 
@@ -230,4 +230,79 @@ textarea {
 .dd-menu li.divider {
   padding: 0;
   border-bottom: 1px solid #cccccc;
+}
+/* ::ng-deep .p-breadcrumb {
+  background-color: #b8b8ff;
+  border: none;
+  font-weight: 600;
+  font-size: large;
+  padding: 0rem;
+} */
+::ng-deep .p-breadcrumb > ul > li:focus {
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+/* Breadcrumb */
+
+a {
+  text-decoration: none;
+}
+
+/* -------------------------------- 
+
+Basic Style
+
+-------------------------------- */
+.cd-breadcrumb li {
+  display: inline-block;
+  float: left;
+  margin: 0.5em 0;
+}
+.cd-breadcrumb li::after {
+  /* this is the separator between items */
+  display: inline-block;
+  content: "\00bb";
+  margin: 0 0.6em;
+  color: #6e6e6e;
+}
+.cd-breadcrumb li:last-of-type::after {
+  /* hide separator after the last item */
+  display: none;
+}
+.cd-breadcrumb li > * {
+  /* single step */
+  display: inline-block;
+  color: #707070;
+
+
+}
+.cd-breadcrumb li.current > * {
+  /* selected step */
+  color: #ffffff;
+}
+.cd-breadcrumb.custom-separator li::after {
+  /* replace the default separator with a custom icon */
+  content: "";
+  height: 16px;
+  width: 16px;
+  background: url(https://codyhouse.co/demo/breadcrumbs-multi-steps-indicator/img/cd-custom-separator.svg)
+    no-repeat center center ;
+  vertical-align: middle;
+  fill: rgb(221, 113, 11);
+}
+@media only screen and (min-width: 768px) {
+  .cd-breadcrumb {
+    padding: 0 1.2em;
+  }
+  .cd-breadcrumb li {
+    margin: 1.2em 0;
+  }
+  .cd-breadcrumb li::after {
+    margin: 0 1em;
+  }
+  .cd-breadcrumb li > * {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
 }

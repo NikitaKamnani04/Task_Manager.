@@ -12,33 +12,16 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserAuthGuard } from './guards/user-auth.guard';
 import { OrganizationRegisterComponent } from './organization-register/organization-register.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  { path: 'signin', component: SignInPageComponent },
-  { path: '', component: SignInPageComponent },
   {
-    path: 'add-task',
-    component: AddTaskComponent,
-    canActivate: [UserAuthGuard],
+    path: 'signin',
+    component: SignInPageComponent,
   },
   {
-    path: 'app-registration-form',
-    component: RegistrationFormComponent,
-    canActivate: [UserAuthGuard],
-  },
-  {
-    path: 'admin/emp_register',
-    component: RegistrationFormComponent,
-    canActivate: [UserAuthGuard],
-  },
-  {
-    path: 'admin',
-    component: AdminPanelComponent,
-    canActivate: [UserAuthGuard],
-  },
-  {
-    path: 'resetpassword',
-    component: ResetPasswordComponent,
+    path: 'dashboard',
+    component: DashboardComponent,
     canActivate: [UserAuthGuard],
   },
   {
@@ -49,16 +32,6 @@ const routes: Routes = [
   {
     path: 'add-task',
     component: AddTaskComponent,
-    canActivate: [UserAuthGuard],
-  },
-  {
-    path: 'app-registration-form',
-    component: RegistrationFormComponent,
-    canActivate: [UserAuthGuard],
-  },
-  {
-    path: 'emp_register',
-    component: RegistrationFormComponent,
     canActivate: [UserAuthGuard],
   },
   {
@@ -69,26 +42,6 @@ const routes: Routes = [
   {
     path: 'org',
     component: OrganizationRegisterComponent,
-    canActivate: [UserAuthGuard],
-  },
-  {
-    path: 'resetpassword/signin',
-    component: SignInPageComponent,
-    canActivate: [UserAuthGuard],
-  },
-  {
-    path: 'resetpassword',
-    component: ResetPasswordComponent,
-    canActivate: [UserAuthGuard],
-  },
-  {
-    path: 'addproject',
-    component: AddProjectComponent,
-    canActivate: [UserAuthGuard],
-  },
-  {
-    path: 'dashboard',
-    component: DashboardComponent,
     canActivate: [UserAuthGuard],
   },
   {
